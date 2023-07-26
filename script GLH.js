@@ -12,8 +12,7 @@ var VisibilidadDelHost = false // Si quieres que tu sala sea pública dejar 'tru
 var BanderaDelHost = 'CL' // Se puede reemplazar GU (Bandera de Guam) por la que quieran.
 
 // CODIGOS DE LAS BANDERAS: AF Afghanistan ▇ AL Albania ▇ DZ Algeria ▇ AS American Samoa ▇ AD Andorra ▇ AO Angola ▇ AI Anguilla ▇ AQ Antarctica ▇ AG Antigua and Barbuda ▇ AR Argentina ▇ AM Armenia ▇ AW Aruba ▇ AU Australia ▇ AT Austria ▇ AZ Azerbaijan ▇ BS Bahamas ▇BH Bahrain ▇ BD Bangladesh ▇ BB Barbados ▇ BY Belarus ▇ BE Belgium ▇ BZ Belize ▇ BJ Benin ▇ BM Bermuda ▇ BT Bhutan ▇ BO Bolivia ▇ BQ Bonaire, Saint Eustatius and Saba ▇ BA Bosnia and Herzegovina  ▇  BW Botswana  ▇  BV Bouvet Island  ▇  BR Brazil  ▇  IO British Indian Ocean Territory  ▇   BN Brunei Darussalam  ▇  BG Bulgaria ▇ BF Burkina Faso ▇ BI Burundi ▇ KH Cambodia (Kampuchea)  ▇ CM Cameroon ▇ CA Canada ▇ CV Cape Verde ▇ KY Cayman Islands ▇ CF Central African Republic ▇ TD Chad ▇ CL Chile ▇ CN China ▇ CX Christmas Island ▇ CC Cocos (Keeling) Islands ▇ CO Colombia ▇ KM Comoros ▇ CG Congo ▇ CD Congo, the Democratic Republic of the ▇ CK Cook Islands ▇ CR Costa Rica ▇ CI Côte d’Ivoire ▇ HR Croatia ▇ CU Cuba ▇ CW Curaçao ▇ CY Cyprus ▇ CZ Czech Republic ▇ DK Denmark ▇ DJ Djibouti ▇ DM Dominica ▇ DO Dominican Republic ▇ EC Ecuador ▇ EG Egypt ▇ SV El Salvador ▇ GB England (United Kingdom) ▇ GQ Equatorial Guinea  ▇ ER Eritrea ▇ EE Estonia ▇ ET Ethiopia ▇ FK Falkland Islands (Malvinas) ▇ FO Faroe Islands ▇ FJ Fiji ▇ FI Finland ▇ FR France ▇ PF French Polynesia ▇ TF French Southern Territories ▇ GA Gabon ▇ GM Gambia ▇ GE Georgia ▇ DE Germany ▇ GH Ghana ▇ GI Gibraltar ▇ GB Great Britain ▇ GR Greece ▇ GL Greenland ▇ GD Grenada ▇ GU Guam ▇ GT Guatemala ▇ GG Guernsey ▇ GN Guinea ▇ GW Guinea ▇ Bissau ▇ GY Guyana ▇ HT Haiti ▇ HM Heard Island and McDonald Islands ▇ VA Holy See (Vatican City State) ▇ HN Honduras ▇ HK Hong Kong ▇ HU Hungary ▇ IS Iceland ▇ IN India ▇ ID Indonesia ▇ IR Iran, Islamic Republic of ▇ IQ Iraq ▇ IE Ireland ▇ IM Isle of Man ▇ IL Israel ▇ IT Italy ▇ JM Jamaica ▇ JP Japan ▇ JE Jersey ▇ JO Jordan ▇ KZ Kazakhstan ▇ KE Kenya ▇ KI Kiribati ▇ KP Korea, Democratic People’s Republic of (North Korea) ▇ KR Korea, Republic of (South Korea) ▇ XK Kosovo ▇ KW Kuwait ▇ KG Kyrgyzstan ▇ LA Lao People’s Democratic Republic ▇ LV Latvia ▇ LB Lebanon ▇ LS Lesotho ▇ LR Liberia ▇ LY Libyan Arab Jamahiriya ▇ LI Liechtenstein ▇ LT Lithuania ▇ LU Luxembourg ▇ MO Macao ▇ MK Macedonia, the Former Yugoslav Republic of ▇ MG Madagascar ▇ MW Malawi ▇ MY Malaysia ▇ MV Maldives ▇ ML Mali ▇ MT Malta ▇ MH Marshall Islands ▇ MR Mauritania ▇ MU Mauritius ▇ MX Mexico ▇ FM Micronesia, Federated States of ▇ U9 Missing data ▇ MD Moldova, Republic of ▇ MC Monaco ▇ MN Mongolia ▇ ME Montenegro ▇ MS Montserrat ▇ MA Morocco ▇ MZ Mozambique ▇ MM Myanmar ▇ NA Namibia ▇ NR Nauru ▇ NP Nepal ▇ NL Netherlands ▇ AN Netherlands Antilles ▇ NC New Caledonia ▇ NZ New Zealand ▇ NI Nicaragua ▇ NE Niger ▇ NG Nigeria ▇ NU Niue ▇ NF Norfolk Island ▇ GB Northern Ireland (United Kingdom) ▇ MP Northern Mariana Islands ▇ NO Norway ▇ OM Oman ▇ PK Pakistan ▇ PW Palau ▇ PS Palestinian Territory, Occupied ▇ PA Panama ▇ PG Papua New Guinea ▇ PY Paraguay ▇ PE Peru ▇ PH Philippines ▇ PN Pitcairn ▇ PL Poland ▇ PT Portugal ▇ PR Puerto Rico ▇ QA Qatar ▇ RO Romania ▇ RU Russian Federation ▇ RW Rwanda ▇ LC Saint Lucia ▇ WS Samoa ▇ SM San Marino ▇ ST Sao Tome and Principe ▇ SA Saudi Arabia ▇ GB Scottland (United Kingdom) ▇ SN Senegal ▇ RS Serbia ▇ SC Seychelles ▇ SL Sierra Leone ▇ SG Singapore ▇ SX Sint Maarten, Dutch part ▇ SK Slovakia ▇ SI Slovenia ▇ SB Solomon Islands ▇ SO Somalia ▇ ZA South Africa ▇ GS South Georgia and the South Sandwich Islands ▇ SS South Sudan ▇ ES Spain ▇ LK Sri Lanka ▇ SH St Helena ▇ KN St Kitts and Nevis ▇ VC St Vincent and the Grenadines ▇ SD Sudan ▇ SR Suriname ▇ SZ Swaziland ▇ CH Switzerland ▇ SY Syrian Arab Republic ▇ TW Taiwan, Province of China ▇ TJ Tajikistan ▇ TZ Tanzania, United Republic of ▇ TH Thailand ▇ TL Timor ▇ Leste ▇ TG Togo ▇ TK Tokelau ▇ TO Tonga ▇ TT Trinidad and Tobago ▇ TN Tunisia ▇ TR Turkey ▇ TM Turkmenistan ▇ TC Turks and Caicos Islands ▇ TV Tuvalu ▇ UG Uganda ▇ UA Ukraine ▇ AE United Arab Emirates ▇ GB United Kingdom ▇ US United States ▇ UM United States Minor Outlying Islands ▇ UY Uruguay ▇ UZ Uzbekistan ▇ GB Wales (United Kingdom) ▇ WF Wallis and Futuna ▇ VU Vanuatu ▇ VE Venezuela ▇ VN Viet Nam ▇ VG Virgin Islands, British ▇ VI Virgin Islands, U.S. ▇ YE Yemen ▇ ZM Zambia ▇ ZW Zimbabw
-// Bandera HaxBall = FAM
-
+// Bandera HaxBall = FAM   
 
 //  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇  CONFIGURACIÓN AVANZADA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 // PARA TORNEOS
@@ -20543,12 +20542,10 @@ function imprimirInfoJugador(id){
 			// Redondeamos los porcentajes a dos decimales
 			var porcentajePartidosGanados = estadisticas.porcentajePartidosGanados.toFixed(2);
 			var porcentajePartidosPerdidos = estadisticas.porcentajePartidosPerdidos.toFixed(2);
-			room.sendAnnouncement("------------------------------------------------------------");
-			room.sendAnnouncement("█ " + jugador.name + " estadisticas", null, 0xFF7400, 'normal', 2);
-			room.sendAnnouncement("█ " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%)", null, 0x00FF49, 'normal', 2);
-			room.sendAnnouncement("█ " + estadisticas.partidosPerdidos + " / " + estadisticas.partidosTotal + " partidos perdidos. (" + porcentajePartidosPerdidos + "%)", null, 0x00FF49, 'normal', 2);
-			room.sendAnnouncement("█ Goles: " + estadisticas.goles + " Autogoles: " + estadisticas.autogoles + " Asistencias: " + estadisticas.asistencias, null, 0x00FF49, 'normal', 2);
-			room.sendAnnouncement("------------------------------------------------------------");
+			room.sendAnnouncement("█ " + jugador.name + " estadisticas", null, 0xFF7400, 'bold', 1);
+			room.sendAnnouncement("█ " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%)", null, 0x00FF49, 'normal', 1);
+			room.sendAnnouncement("█ " + estadisticas.partidosPerdidos + " / " + estadisticas.partidosTotal + " partidos perdidos. (" + porcentajePartidosPerdidos + "%)", null, 0x00FF49, 'normal', 1);
+			room.sendAnnouncement("█ Goles: " + estadisticas.goles + " Autogoles: " + estadisticas.autogoles + " Asistencias: " + estadisticas.asistencias, null, 0x00FF49, 'normal', 1);
 			return true;
 		}
 	}
@@ -20559,30 +20556,28 @@ function mostrarMaximosAsistidores(){
 		room.sendAnnouncement("No hay asistidores todavia.");
 		return false;
 	}
-	room.sendAnnouncement("----------------- MAXIMOS ASISTIDORES ------------------");
+	room.sendAnnouncement("----------------- MAXIMOS ASISTIDORES ------------------",null, 0x00F3FF, 'bold', 2);
 	for (var i = 0; i < maximosAsistidores.length ;i++){
 		if(maximosAsistidores[i] != undefined){
 			jugador = maximosAsistidores[i].jugador;
 			estadisticas = maximosAsistidores[i].estadisticas;
-			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.asistencias + " asistencias.");
+			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.asistencias + " asistencias.",null, 0xFFD100, 'normal', 0);
 		}	
 	}
-	room.sendAnnouncement("------------------------------------------------------------");
 }
 function mostrarMaximosGoleadores(){
 	if(maximosGoleadores.length == 0 ){
 		room.sendAnnouncement("No hay goleadores todavia.");
 		return false;
 	}
-	room.sendAnnouncement("----------------- MAXIMOS GOLEADORES ------------------");
+	room.sendAnnouncement("----------------- MAXIMOS GOLEADORES ------------------",null, 0x00F3FF, 'bold', 0);
 	for (var i = 0; i < maximosGoleadores.length ;i++){
 		if(maximosGoleadores[i] != undefined){
 			jugador = maximosGoleadores[i].jugador;
 			estadisticas = maximosGoleadores[i].estadisticas;
-			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.goles + " goles.");
+			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.goles + " goles.",null, 0xFFD100, 'normal', 0);
 		}	
 	}
-	room.sendAnnouncement("------------------------------------------------------------");
 }
 /*
 entra jugador -> aumenta lista jugadores
@@ -20596,8 +20591,8 @@ room.onPlayerChat = function(player, message) {
 	//imprimirInfoJugadores();
 	//room.sendAnnouncement("getscores:"+room.getScores());//-> si room.getScores() != null -> PARTIDO EN JUEGO, SI ES NULL ->NO ESTA EN PARTIDO.
 	if(message.toLowerCase() == "!ranking"){
-		mostrarMaximosGoleadores();
 		mostrarMaximosAsistidores();
+		mostrarMaximosGoleadores();
 		return true;
 	}
 	if(message.toLowerCase() == "!jugadores"){
@@ -20614,7 +20609,7 @@ room.onPlayerChat = function(player, message) {
 		return false;
   	}
   	if(message.toLowerCase() == "!admin"){
-		room.sendAnnouncement('██████████ '+player.name+' INTENTO SER ADMIN USANDO: !admin XD ██████████', null, 0x06ff00, 'normal', 2);
+		room.sendAnnouncement('█ '+player.name+' INTENTO SER ADMIN USANDO: !admin XD █', null, 0x06ff00, 'normal', 2);
 		return false;
 	}
 	/*
