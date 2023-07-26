@@ -1,5 +1,5 @@
 // ▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN BÁSICA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-var NombreHost = 'xd'
+var NombreHost = "test"
 var CantidadDeJugadores = 30  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
 var ClaveParaSerAdmin = "!tHeAdm1n991"  // La clave va dentro de las comillas
@@ -21041,47 +21041,70 @@ room.onPlayerChat = function(player, message) {
     adminMessage = message;
     message = message.split(/ +/);
     	var adminChatColor = 0xFFD700; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		room.sendAnnouncement(`     « ID: ` +  player.id + ` »  👑 ADMIN ~ ` +  player.name + `: ` + adminMessage, null, adminChatColor, 'normal', 1);
+		room.sendAnnouncement(`     « 👑 ADMIN ~ ` +  player.name + ` »: ` + adminMessage, null, adminChatColor, 'normal', 1);
 		return false;
 }
-			if (player.admin==false && ModoChatPausado.includes(player.id)==false  && player.team == 1) {
-	if (message['startsWith']('t ')) {
-		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
-		if (player[_0x21989d(0x128)] == 0x1) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
-			_0x2789fd['forEach'](function (_0x1f1703) {
-				var _0x541b0a = _0x21989d;
-				room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
-			});
+	//EQUIPO ROJO CHAT
+	if (player.admin==false && ModoChatPausado.includes(player.id)==false  && player.team == 1) {
+		if (message['startsWith']('t ')) {
+			teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
+			if (player[_0x21989d(0x128)] == 0x1) {
+				var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
+				_0x2789fd['forEach'](function (_0x1f1703) {
+					var _0x541b0a = _0x21989d;
+					room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
+				});
+			}
+			if (player['team'] == 0x2) {
+				var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
+				_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
+					var _0x9b122b = _0x21989d;
+					room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
+				});
+			}
+			return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
 		}
-		if (player['team'] == 0x2) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
-			_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
-				var _0x9b122b = _0x21989d;
-				room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
-			});
-		}
-		return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
-	}
-				ModoChatPausado.push(player.id);				
-				
-				setTimeout(function(){
+		ModoChatPausado.push(player.id);						
+		setTimeout(function(){
 				ModoChatPausado.splice(ModoChatPausado.indexOf(player.id),1);
-				}, 2000);
-    adminMessage = message;
-    message = message.split(/ +/);
+		}, 2000);
+	    adminMessage = message;
+    	message = message.split(/ +/);
     	var RedChatColor = 0xff8e8e; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔴 ~ ` +  player.name + `: ` + adminMessage, null, RedChatColor, 'normal', 1);
-		return false;
-}
-			if (ModoChatPausado.includes(player.id)==true){
-				room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);
-				
-				return false;
-	
+		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔴 ~ ` +  player.name + `: ` + adminMessage, null, RedChatColor, 'normal', 1);
+		//" 🔴⚽ «" +  player.name + " » : ";
+		//bandera chat rojo
+		var textoPersonalizar = "" ;
+		textoPersonalizar+=" 🔴";
+		//room.sendAnnouncement(`🔴 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
 
-    	}
-			if (player.admin==false && ModoChatPausado.includes(player.id)==false && player.team == 2) {
+		//si es maximo goleador o asistidor agregare un emoji antes
+		if(buscarJugadorEstadisticas(player.id) != null){
+			//emoji maximo goleador
+			if(maximosGoleadores[0] != undefined){
+				//si es max goleador y no es admin
+				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+					//room.sendAnnouncement(` 🔴⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
+					textoPersonalizar+=" ⚽" ;
+				}
+			}
+			//emoji maximo asistidor
+			if(maximosAsistidores[0] != undefined){
+				if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
+					textoPersonalizar+=" 👟";
+				}
+			}
+		}
+		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
+		room.sendAnnouncement(textoPersonalizar, null, RedChatColor, 'normal', 1);
+		return false;
+	}
+	if (ModoChatPausado.includes(player.id)==true){
+		room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);
+		return false;
+    }
+	//EQUIPO AZUL CHAT
+	if (player.admin==false && ModoChatPausado.includes(player.id)==false && player.team == 2) {
 
 	if (message['startsWith']('t ')) {
 		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
@@ -21109,7 +21132,35 @@ room.onPlayerChat = function(player, message) {
     adminMessage = message;
     message = message.split(/ +/);
     	var BlueChatColor = 0x8eb1ff; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔵 ~ ` +  player.name + `: ` + adminMessage, null, BlueChatColor, 'normal', 1);
+		var textoPersonalizar = "" ;
+		textoPersonalizar+=" 🔵";
+		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
+
+		//si es maximo goleador o asistidor agregare un emoji antes
+		if(buscarJugadorEstadisticas(player.id) != null){
+			//emoji maximo goleador
+			if(maximosGoleadores[0] != undefined){
+				//si es max goleador y no es admin
+				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+					//room.sendAnnouncement(` 🔵⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
+					textoPersonalizar+=" ⚽" ;
+				}
+			}
+			//emoji maximo asistidor
+			if(maximosAsistidores[0] != undefined){
+				if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
+					textoPersonalizar+=" 👟";
+				}
+			}
+		}
+		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
+		room.sendAnnouncement(textoPersonalizar, null, BlueChatColor, 'normal', 1);
+		
+		
+		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔵 ~ ` +  player.name + `: ` + adminMessage, null, BlueChatColor, 'normal', 1);
+		//bandera chat azul
+		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, BlueChatColor, 'normal', 1);
+
 		return false;
 }
 			if (ModoChatPausado.includes(player.id)==true){
@@ -21145,8 +21196,36 @@ room.onPlayerChat = function(player, message) {
 				}, 2000);
     adminMessage = message;
     message = message.split(/ +/);
+		//bandera chat espectador
     	var SpectChatColor = 0xcccccc; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		room.sendAnnouncement(`« ID: ` +  player.id + ` »  👁️ ~ ` +  player.name + `: ` + adminMessage, null, SpectChatColor, 'normal', 1);
+		
+		
+		var textoPersonalizar = "" ;
+		textoPersonalizar+=" 👁️";
+		//room.sendAnnouncement(`👁️ « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
+
+		//si es maximo goleador o asistidor agregare un emoji antes
+		if(buscarJugadorEstadisticas(player.id) != null){
+			//emoji maximo goleador
+			if(maximosGoleadores[0] != undefined){
+				//si es max goleador y no es admin
+				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+					//room.sendAnnouncement(` 🔵⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
+					textoPersonalizar+=" ⚽" ;
+				}
+			}
+			//emoji maximo asistidor
+			if(maximosAsistidores[0] != undefined){
+				if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
+					textoPersonalizar+=" 👟";
+				}
+			}
+		}
+		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
+		room.sendAnnouncement(textoPersonalizar, null, SpectChatColor, 'normal', 1);
+
+		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  👁️ ~ ` +  player.name + `: ` + adminMessage, null, SpectChatColor, 'normal', 1);
+		
 		return false;
 }	
     if(CensuradorDeSpammeros(message)) return false;
