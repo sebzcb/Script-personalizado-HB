@@ -2902,6 +2902,7 @@ function getRealSoccerMap() {
 	return realSoccerMap;
 }
 
+
 function getRealSoccerMap2() {
 	var realSoccerMap2 = `{
 
