@@ -2,7 +2,7 @@
 var NombreHost = "Juegan todos si no se crashea XD"
 var CantidadDeJugadores = 30  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
-var ClaveParaSerAdmin = "!tHeAdm1n991"  // La clave va dentro de las comillas
+var ClaveParaSerAdmin = "!a"  // La clave va dentro de las comillas
 var TiempoDeJuego = 5 // Son la cantidad de minutos que quieres que duren los partidos.
 var TamanoMinimoPermitido = 14 // Tamaño mínimo permitido para un jugador
 var TamanoMaximoPermitido = 16 // Tamaño máximo permitido para un jugador
@@ -5888,7 +5888,7 @@ function getRSX10Map() {
 			],
 			[ -487, 0
 			],
-			[ -144, 1034
+			[ -144,1034//-132, 681 // spawn cuando se mueve automaticamente un jugador o manualmente un jugador a un team mientras esta en curso.
 			]
 	
 		],
@@ -5914,7 +5914,7 @@ function getRSX10Map() {
 			],
 			[ 487, 0
 			],
-			[ 113, 1037
+			[ 113,1037//132, 681
 			]
 	
 		],
@@ -6091,12 +6091,12 @@ function getRSX10Map() {
 			/* 128 */ { "x" : -3.6831242630433323, "y" : 649.6231159394631, "trait" : "line", "color" : "6e965d", "curve" : 0 },
 			/* 129 */ { "x" : 27.008440928272066, "y" : 616.6530109031239, "trait" : "line", "color" : "6e965d", "curve" : 0 },
 			/* 130 */ { "x" : -5.085067679753664, "y" : 648.1967377791065, "trait" : "line", "color" : "6e965d", "curve" : 0 },
-			/* 131 */ { "x" : -1275.1902567378631, "y" : 974.235441659279, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 132 */ { "x" : 1254.8097432621369, "y" : 974.235441659279, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 133 */ { "x" : -1288.4190393007748, "y" : 977.8703089582747, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 134 */ { "x" : 1257.4576055196287, "y" : 976.2826444762344, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 135 */ { "x" : -1286.1028317546093, "y" : 976.7791025174996, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 136 */ { "x" : 1259.0874206290075, "y" : 976.0960127885166, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 131 */ { "x" : -1265, "y" : 650, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 132 */ { "x" : 1265, "y" : 650, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 133 */ { "x" : -1265, "y" : 652, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 134 */ { "x" : 1265, "y" : 652, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 135 */ { "x" : -1265, "y" : 648, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 136 */ { "x" : 1265, "y" : 648, "trait" : "line", "color" : "43774e", "curve" : 0 },
 			/* 137 */ { "x" : -1241.5240259394243, "y" : -651.4006293133806, "trait" : "line", "curve" : -90 },
 			/* 138 */ { "x" : -1262.3289235748528, "y" : -632.661466194945, "trait" : "line", "curve" : -90 },
 			/* 139 */ { "x" : -1240.1855142881075, "y" : -649.9145651965642, "trait" : "line", "curve" : -90 },
@@ -6252,12 +6252,7 @@ function getRSX10Map() {
 			/* 249 */ { "x" : 204.161024097003, "y" : 1058.3627615440196, "trait" : "line" },
 			/* 250 */ { "x" : 204.161024097003, "y" : 1044.3627615440196, "trait" : "line" },
 			/* 251 */ { "x" : 23.161024097003008, "y" : 1058.3627615440196, "trait" : "line" },
-			/* 252 */ { "x" : 23.161024097003008, "y" : 1044.3627615440196, "trait" : "line" },
-			/* 253 */ { "x" : -1893.2563220877578, "y" : 974.799218434399, "trait" : "line" },
-			/* 254 */ { "x" : -1287.381173474962, "y" : 973.6943440093479, "trait" : "line", "curve" : 0 },
-			/* 255 */ { "x" : -1561.85603733885, "y" : 974.4205856511597, "trait" : "line", "curve" : 0 },
-			/* 256 */ { "x" : 1892.6804646942023, "y" : 974.8820112523293, "trait" : "line" },
-			/* 257 */ { "x" : 1252.1231647300417, "y" : 973.9847390049505, "trait" : "line" }
+			/* 252 */ { "x" : 23.161024097003008, "y" : 1044.3627615440196, "trait" : "line" }
 	
 		],
 	
@@ -6361,7 +6356,7 @@ function getRSX10Map() {
 			{ "v0" : 129, "v1" : 130, "curve" : 0, "vis" : true, "color" : "6e965d", "trait" : "line", "x" : -2 },
 			{ "v0" : 131, "v1" : 132, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1260, "y" : 650 },
 			{ "v0" : 133, "v1" : 134, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1262, "y" : 652 },
-			{ "v0" : 135, "v1" : 136, "curve" : 0.07009674287626012, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1258, "y" : 648 },
+			{ "v0" : 135, "v1" : 136, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1258, "y" : 648 },
 			{ "v0" : 137, "v1" : 138, "curve" : -90, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -752 },
 			{ "v0" : 139, "v1" : 140, "curve" : -90, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -750 },
 			{ "v0" : 141, "v1" : 142, "curve" : -90, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -748 },
@@ -6481,13 +6476,7 @@ function getRSX10Map() {
 			{ "v0" : 245, "v1" : 246, "vis" : true, "color" : "C7E6BD", "trait" : "line", "y" : 653 },
 			{ "v0" : 247, "v1" : 248, "vis" : true, "color" : "C7E6BD", "trait" : "line", "y" : 653 },
 			{ "v0" : 249, "v1" : 250, "vis" : true, "color" : "C7E6BD", "trait" : "line", "x" : -42 },
-			{ "v0" : 251, "v1" : 252, "vis" : true, "color" : "C7E6BD", "trait" : "line", "x" : -223 },
-			{ "v0" : 135, "v1" : 253, "curve" : 0.07009674287626012, "vis" : true, "color" : "43774e", "trait" : "line" },
-			{ "v0" : 135, "v1" : 253, "curve" : 0.07009674287626012, "vis" : true, "color" : "43774e", "trait" : "line" },
-			{ "v0" : 254, "v1" : 253, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line" },
-			{ "v0" : 254, "v1" : 255, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line" },
-			{ "v0" : 134, "v1" : 256, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line" },
-			{ "v0" : 257, "v1" : 256, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line" }
+			{ "v0" : 251, "v1" : 252, "vis" : true, "color" : "C7E6BD", "trait" : "line", "x" : -223 }
 	
 		],
 	
@@ -21690,8 +21679,12 @@ room.onPlayerChat = function(player, message) {
 	//rs que creare yo (es rs normal pero grande para mas personas.)
 	if (message.toLowerCase() == '!rsx10' && player.admin == true) { 
 		if (room.getScores() == null) {
-			RSRMap = false;
+			RSRMap = true;
+			console.log("antes");
+
 			room.setCustomStadium(getRSX10Map());
+			console.log("despues");
+
 		}
 		else {
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
