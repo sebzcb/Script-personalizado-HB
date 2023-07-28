@@ -6556,8 +6556,8 @@ function getRSX10Map() {
 		],
 	
 		"planes" : [
-			{ "normal" : [0,1 ], "dist" : -616.5024, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
-			{ "normal" : [0,-1 ], "dist" : -614.5530968864762, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
+			{ "normal" : [0,1 ], "dist" : -633.7824, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
+			{ "normal" : [0,-1 ], "dist" : -638.3130968864762, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
 			
 			{ "normal" : [0,1 ], "dist" : -1063.9582885651082, "bCoef" : 0 },
 			{ "normal" : [0,-1 ], "dist" : -1061.79561042524, "bCoef" : 0 },
