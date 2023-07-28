@@ -5856,6 +5856,8 @@ function getPenaltyBlueMap() {
 
 //es el mapa de !rs2 , pero mas grande (para que entren mas personas).
 //mapa rs 10 x  10
+//HASTA ESTA VERSION TODO BIEN.
+//AHORA SE PROCEDERA A ELIMINAR UNA LINEA VERDE.
 function getRSX10Map() {
 	var realSoccerMap = `{
 
@@ -5888,7 +5890,7 @@ function getRSX10Map() {
 			],
 			[ -487, 0
 			],
-			[ -144,1034//-132, 681 // spawn cuando se mueve automaticamente un jugador o manualmente un jugador a un team mientras esta en curso.
+			[ -144, 1034
 			]
 	
 		],
@@ -5914,7 +5916,7 @@ function getRSX10Map() {
 			],
 			[ 487, 0
 			],
-			[ 113,1037//132, 681
+			[ 113, 1037
 			]
 	
 		],
@@ -6093,10 +6095,10 @@ function getRSX10Map() {
 			/* 130 */ { "x" : -5.085067679753664, "y" : 648.1967377791065, "trait" : "line", "color" : "6e965d", "curve" : 0 },
 			/* 131 */ { "x" : -1265, "y" : 650, "trait" : "line", "color" : "43774e", "curve" : 0 },
 			/* 132 */ { "x" : 1265, "y" : 650, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 133 */ { "x" : -1265, "y" : 652, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 134 */ { "x" : 1265, "y" : 652, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 135 */ { "x" : -1265, "y" : 648, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 136 */ { "x" : 1265, "y" : 648, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 133 */ { "x" : -1900, "y" : 974, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 134 */ { "x" : 1900, "y" : 974, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 135 */ { "x" : -1897.277667211865, "y" : 976, "trait" : "line", "color" : "43774e", "curve" : 0 },
+			/* 136 */ { "x" : 1902.722332788135, "y" : 975, "trait" : "line", "color" : "43774e", "curve" : 0 },
 			/* 137 */ { "x" : -1241.5240259394243, "y" : -651.4006293133806, "trait" : "line", "curve" : -90 },
 			/* 138 */ { "x" : -1262.3289235748528, "y" : -632.661466194945, "trait" : "line", "curve" : -90 },
 			/* 139 */ { "x" : -1240.1855142881075, "y" : -649.9145651965642, "trait" : "line", "curve" : -90 },
@@ -6354,9 +6356,8 @@ function getRSX10Map() {
 			{ "v0" : 125, "v1" : 126, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1258, "y" : -652 },
 			{ "v0" : 127, "v1" : 128, "curve" : 0, "vis" : true, "color" : "6e965d", "trait" : "line", "x" : 0 },
 			{ "v0" : 129, "v1" : 130, "curve" : 0, "vis" : true, "color" : "6e965d", "trait" : "line", "x" : -2 },
-			{ "v0" : 131, "v1" : 132, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1260, "y" : 650 },
-			{ "v0" : 133, "v1" : 134, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1262, "y" : 652 },
-			{ "v0" : 135, "v1" : 136, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1258, "y" : 648 },
+			{ "v0" : 133, "v1" : 134, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1262, "y" : 974 },
+			{ "v0" : 135, "v1" : 136, "curve" : 0, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -1258, "y" : 976 },
 			{ "v0" : 137, "v1" : 138, "curve" : -90, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -752 },
 			{ "v0" : 139, "v1" : 140, "curve" : -90, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -750 },
 			{ "v0" : 141, "v1" : 142, "curve" : -90, "vis" : true, "color" : "43774e", "trait" : "line", "x" : -748 },
@@ -6658,6 +6659,7 @@ function getRSX10Map() {
 	RSRMap = true;
 	return realSoccerMap;
 }
+//LINEA ELIMINADA.
 /*------------------------------ END OF STADIUMS ----------------------------*/
 
 function whichTeam(){ // gives the players in the red or blue team
