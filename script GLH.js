@@ -5956,10 +5956,10 @@ function getRSX10Map() {
 		},
 	
 		"vertexes" : [
-			/* 0 */ { "x" : 0, "y" : 706, "trait" : "kickOffBarrier" },
+			/* 0 */ { "x" : 0, "y" : 1060, "trait" : "kickOffBarrier" },
 			/* 1 */ { "x" : 0, "y" : 180, "trait" : "kickOffBarrier" },
 			/* 2 */ { "x" : 0, "y" : -180, "trait" : "kickOffBarrier" },
-			/* 3 */ { "x" : 0, "y" : -706, "trait" : "kickOffBarrier" },
+			/* 3 */ { "x" : 0, "y" : -1060, "trait" : "kickOffBarrier" },
 			
 			/* 4 */ { "x" : 1150, "y" : 320, "trait" : "line" },
 			/* 5 */ { "x" : 840, "y" : 320, "trait" : "line" },
@@ -6020,8 +6020,8 @@ function getRSX10Map() {
 			
 			/* 57 */ { "x" : -1300, "y" : -485, "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "color" : "ec644b", "vis" : false },
 			/* 58 */ { "x" : 1300, "y" : -485, "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "color" : "ec644b", "vis" : false },
-			/* 59 */ { "x" : -1300, "y" : 485, "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "color" : "ec644b", "vis" : false },
-			/* 60 */ { "x" : 1300, "y" : 485, "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "color" : "ec644b", "vis" : false },
+			/* 59 */ { "x" : -1900, "y" : 815, "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "color" : "ec644b", "vis" : false },
+			/* 60 */ { "x" : 1900, "y" : 815, "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "color" : "ec644b", "vis" : false },
 			/* 61 */ { "x" : -1295, "y" : -320, "cMask" : ["c0" ], "cGroup" : ["red","blue" ] },
 			/* 62 */ { "x" : -840, "y" : -320, "cMask" : ["c0" ], "cGroup" : ["red","blue" ] },
 			/* 63 */ { "x" : -840, "y" : 320, "cMask" : ["c0" ], "cGroup" : ["red","blue" ] },
@@ -6047,13 +6047,13 @@ function getRSX10Map() {
 			/* 83 */ { "x" : 1211.4000244140625, "y" : 106.00001829862595, "bCoef" : 0 },
 			/* 84 */ { "x" : 1209.4000244140625, "y" : -104.99998170137405, "bCoef" : 0 },
 			
-			/* 85 */ { "x" : -1150, "y" : 600, "trait" : "line" },
-			/* 86 */ { "x" : 1150, "y" : 600, "trait" : "line" },
-			/* 87 */ { "x" : -1150, "y" : 600, "trait" : "line" },
-			/* 88 */ { "x" : -1150, "y" : 600, "trait" : "line" },
+			/* 85 */ { "x" : -1902.9401194111856, "y" : 930, "trait" : "line" },
+			/* 86 */ { "x" : 1897.0598805888144, "y" : 930, "trait" : "line" },
+			/* 87 */ { "x" : -1150.429096414808, "y" : 590.7744270816257, "trait" : "line" },
+			/* 88 */ { "x" : -1156.6509944295256, "y" : 590.1307824594135, "trait" : "line" },
 			/* 89 */ { "x" : -1150, "y" : -600, "trait" : "line" },
 			/* 90 */ { "x" : 1150, "y" : -600, "trait" : "line" },
-			/* 91 */ { "x" : 1150, "y" : 600, "trait" : "line" },
+			/* 91 */ { "x" : 1155.165049437505, "y" : 586.292753415852, "trait" : "line" },
 			/* 92 */ { "x" : 1150, "y" : -600, "trait" : "line" },
 			/* 93 */ { "x" : -1891, "y" : -1000, "trait" : "line", "color" : "43774e" },
 			/* 94 */ { "x" : -1891, "y" : 1000, "trait" : "line", "color" : "43774e" },
@@ -6069,12 +6069,12 @@ function getRSX10Map() {
 			/* 104 */ { "x" : 0, "y" : -601.5, "trait" : "line", "color" : "6e965d", "curve" : 0 },
 			/* 105 */ { "x" : 2, "y" : -646.5, "trait" : "line", "color" : "6e965d", "curve" : 0 },
 			/* 106 */ { "x" : 2, "y" : -601.5, "trait" : "line", "color" : "6e965d", "curve" : 0 },
-			/* 107 */ { "x" : 0, "y" : 601.5, "trait" : "line", "color" : "7ea170", "curve" : 0 },
-			/* 108 */ { "x" : 0, "y" : 646.5, "trait" : "line", "color" : "7ea170", "curve" : 0 },
-			/* 109 */ { "x" : -2, "y" : 601.5, "trait" : "line", "color" : "7ea170", "curve" : 0 },
-			/* 110 */ { "x" : -2, "y" : 646.5, "trait" : "line", "color" : "7ea170", "curve" : 0 },
-			/* 111 */ { "x" : 2, "y" : 601.5, "trait" : "line", "color" : "7ea170", "curve" : 0 },
-			/* 112 */ { "x" : 2, "y" : 646.5, "trait" : "line", "color" : "7ea170", "curve" : 0 },
+			/* 107 */ { "x" : 1.1102230246251565e-16, "y" : 932.9440169554377, "trait" : "line", "color" : "7ea170", "curve" : 0 },
+			/* 108 */ { "x" : 1.1102230246251565e-16, "y" : 977.9440169554377, "trait" : "line", "color" : "7ea170", "curve" : 0 },
+			/* 109 */ { "x" : -2, "y" : 932.9440169554377, "trait" : "line", "color" : "7ea170", "curve" : 0 },
+			/* 110 */ { "x" : -2, "y" : 977.9440169554377, "trait" : "line", "color" : "7ea170", "curve" : 0 },
+			/* 111 */ { "x" : 1.124328597316972, "y" : 934.9872502283648, "trait" : "line", "color" : "7ea170", "curve" : 0 },
+			/* 112 */ { "x" : -5.2972616890252295, "y" : 983.4899358390969, "trait" : "line", "color" : "7ea170", "curve" : 0 },
 			/* 113 */ { "x" : 1.142081210865527, "y" : -647.4445926432836, "trait" : "line", "color" : "7ea170", "curve" : 0 },
 			/* 114 */ { "x" : -30.602942100934982, "y" : -615.5501809864863, "trait" : "line", "color" : "7ea170", "curve" : 0 },
 			/* 115 */ { "x" : 2.559610617834295, "y" : -646.0337027183147, "trait" : "line", "color" : "7ea170", "curve" : 0 },
@@ -6083,10 +6083,10 @@ function getRSX10Map() {
 			/* 118 */ { "x" : 1265, "y" : -980, "trait" : "line", "color" : "43774e", "curve" : 0 },
 			/* 119 */ { "x" : -1900, "y" : -975, "trait" : "line", "color" : "43774e", "curve" : 0 },
 			/* 120 */ { "x" : 1900, "y" : -975, "trait" : "line", "color" : "43774e", "curve" : 0 },
-			/* 121 */ { "x" : 28.41038434498239, "y" : 618.0793890634807, "trait" : "line", "color" : "6e965d", "curve" : 0 },
-			/* 122 */ { "x" : -3.6831242630433323, "y" : 649.6231159394631, "trait" : "line", "color" : "6e965d", "curve" : 0 },
-			/* 123 */ { "x" : 27.008440928272066, "y" : 616.6530109031239, "trait" : "line", "color" : "6e965d", "curve" : 0 },
-			/* 124 */ { "x" : -5.085067679753664, "y" : 648.1967377791065, "trait" : "line", "color" : "6e965d", "curve" : 0 },
+			/* 121 */ { "x" : 28.410384344982393, "y" : 949.5234060189184, "trait" : "line", "color" : "6e965d", "curve" : 0 },
+			/* 122 */ { "x" : -3.6831242630433323, "y" : 981.0671328949009, "trait" : "line", "color" : "6e965d", "curve" : 0 },
+			/* 123 */ { "x" : 27.00844092827207, "y" : 948.0970278585617, "trait" : "line", "color" : "6e965d", "curve" : 0 },
+			/* 124 */ { "x" : -5.085067679753664, "y" : 979.6407547345442, "trait" : "line", "color" : "6e965d", "curve" : 0 },
 			/* 125 */ { "x" : -1900, "y" : 974, "trait" : "line", "color" : "43774e", "curve" : 0 },
 			/* 126 */ { "x" : 1900, "y" : 974, "trait" : "line", "color" : "43774e", "curve" : 0 },
 			/* 127 */ { "x" : -1897.277667211865, "y" : 976, "trait" : "line", "color" : "43774e", "curve" : 0 },
@@ -6141,7 +6141,7 @@ function getRSX10Map() {
 			/* 166 */ { "x" : 1175, "y" : -628, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "line", "color" : "fde73b" },
 			
 			/* 167 */ { "x" : 1169.3924124236926, "y" : 572.0916290810089, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
-			/* 168 */ { "x" : 1148.4570005362957, "y" : 600.139953970475, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
+			/* 168 */ { "x" : 1155.8072631973607, "y" : 599.1466752324932, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
 			
 			/* 169 */ { "x" : 1177.8126717065154, "y" : 580.8722460075145, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "line", "curve" : 0, "color" : "f83d38" },
 			
@@ -6189,7 +6189,7 @@ function getRSX10Map() {
 			/* 194 */ { "x" : -1147, "y" : -626, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "line", "color" : "fde73b" },
 			
 			/* 195 */ { "x" : -1168.2406115927063, "y" : 572.9938153222878, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
-			/* 196 */ { "x" : -1147.8317517070022, "y" : 601.4275705819381, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
+			/* 196 */ { "x" : -1148.6899445366184, "y" : 612.369529159545, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
 			
 			/* 197 */ { "x" : -1177.4062173992804, "y" : 580.8035317190905, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "line", "curve" : 0, "color" : "f83d38" },
 			
@@ -6304,7 +6304,7 @@ function getRSX10Map() {
 			{ "v0" : 55, "v1" : 56, "color" : "FFFF00", "bCoef" : 0, "cMask" : ["ball" ], "trait" : "ballArea", "x" : 1157 },
 			
 			{ "v0" : 57, "v1" : 58, "vis" : false, "color" : "ec644b", "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "y" : -485 },
-			{ "v0" : 59, "v1" : 60, "vis" : false, "color" : "ec644b", "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "y" : 485 },
+			{ "v0" : 59, "v1" : 60, "vis" : false, "color" : "ec644b", "bCoef" : 0, "cMask" : ["c1" ], "cGroup" : ["red","blue" ], "y" : 815 },
 			{ "v0" : 61, "v1" : 62, "vis" : false, "color" : "ec644b", "cMask" : ["c0" ], "cGroup" : ["red","blue" ] },
 			{ "v0" : 62, "v1" : 63, "vis" : false, "color" : "ec644b", "cMask" : ["c0" ], "cGroup" : ["red","blue" ] },
 			{ "v0" : 63, "v1" : 64, "vis" : false, "color" : "ec644b", "cMask" : ["c0" ], "cGroup" : ["red","blue" ] },
@@ -6324,7 +6324,7 @@ function getRSX10Map() {
 			{ "v0" : 76, "v1" : 83, "vis" : false, "color" : "FFFFFF", "bCoef" : 0 },
 			{ "v0" : 78, "v1" : 84, "vis" : false, "color" : "FFFFFF", "bCoef" : 0 },
 			
-			{ "v0" : 85, "v1" : 86, "vis" : true, "color" : "C7E6BD", "trait" : "line", "y" : 600 },
+			{ "v0" : 85, "v1" : 86, "vis" : true, "color" : "C7E6BD", "trait" : "line", "y" : 930 },
 			{ "v0" : 87, "v1" : 88, "vis" : true, "color" : "C7E6BD", "trait" : "line", "x" : -1150 },
 			{ "v0" : 89, "v1" : 90, "vis" : true, "color" : "C7E6BD", "trait" : "line", "y" : -600 },
 			{ "v0" : 91, "v1" : 92, "vis" : true, "color" : "C7E6BD", "trait" : "line", "x" : 1150 },
@@ -6481,9 +6481,9 @@ function getRSX10Map() {
 			{ "radius" : 0, "invMass" : 0, "pos" : [-1310,29 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["blue" ], "cGroup" : ["ball" ] },
 			{ "radius" : 0, "invMass" : 0, "pos" : [-1308,62 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["ball" ] },
 			
-			{ "radius" : 0, "pos" : [-1150,600 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
+			{ "radius" : 0, "pos" : [-1148.9272589629797,610.9419585776069 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
 			{ "radius" : 0, "pos" : [1150,-600 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
-			{ "radius" : 0, "pos" : [1150,600 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
+			{ "radius" : 0, "pos" : [1157.946229903854,597.2188195336512 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
 			
 			{ "radius" : 5, "invMass" : 0, "pos" : [-1150,-124 ], "bCoef" : 0.5, "trait" : "goalPost" },
 			{ "radius" : 5, "invMass" : 0, "pos" : [-1150,124 ], "bCoef" : 0.5, "trait" : "goalPost" },
@@ -6500,10 +6500,10 @@ function getRSX10Map() {
 			{ "radius" : 0, "pos" : [1149,-485 ], "cMask" : ["none" ] },
 			{ "radius" : 0, "pos" : [-1149,-485 ], "cMask" : ["none" ] },
 			{ "radius" : 0, "pos" : [1149,-485 ], "cMask" : ["none" ] },
-			{ "radius" : 0, "pos" : [-1149,485 ], "cMask" : ["none" ] },
-			{ "radius" : 0, "pos" : [1149,485 ], "cMask" : ["none" ] },
-			{ "radius" : 0, "pos" : [-1149,485 ], "cMask" : ["none" ] },
-			{ "radius" : 0, "pos" : [1149,485 ], "cMask" : ["none" ] },
+			{ "radius" : 0, "pos" : [-1804.4259558160736,815.141918774748 ], "cMask" : ["none" ] },
+			{ "radius" : 0, "pos" : [1793.7187928669412,815.0754458161865 ], "cMask" : ["none" ] },
+			{ "radius" : 0, "pos" : [-1804.0449279403445,815.1316244209529 ], "cMask" : ["none" ] },
+			{ "radius" : 0, "pos" : [1790.8038408779148,814.5267489711933 ], "cMask" : ["none" ] },
 			
 			{ "radius" : 1, "invMass" : 0, "pos" : [-1210,-124 ], "color" : "ff3535", "bCoef" : 0, "cMask" : ["red","blue" ], "trait" : "goalPost", "damping" : 0 },
 			{ "radius" : 1, "invMass" : 0, "pos" : [-1210,124 ], "color" : "ff3535", "bCoef" : 0, "cMask" : ["red","blue" ], "trait" : "goalPost", "damping" : 0 },
@@ -6557,7 +6557,7 @@ function getRSX10Map() {
 	
 		"planes" : [
 			{ "normal" : [0,1 ], "dist" : -633.7824, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
-			{ "normal" : [0,-1 ], "dist" : -638.3130968864762, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
+			{ "normal" : [0,-1 ], "dist" : -959.5211425585262, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
 			
 			{ "normal" : [0,1 ], "dist" : -1063.9582885651082, "bCoef" : 0 },
 			{ "normal" : [0,-1 ], "dist" : -1061.79561042524, "bCoef" : 0 },
@@ -6648,7 +6648,7 @@ function getRSX10Map() {
 	RSRMap = true;
 	return realSoccerMap;
 }
-//LINEA ELIMINADA.
+//cambio 2
 /*------------------------------ END OF STADIUMS ----------------------------*/
 
 function whichTeam(){ // gives the players in the red or blue team
@@ -21735,36 +21735,49 @@ room.onPlayerChat = function(player, message) {
 	    adminMessage = message;
     	message = message.split(/ +/);
     	var RedChatColor = 0xff8e8e; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		room.sendAnnouncement(` 🔴 «  ` +  player.name + `» : ` + adminMessage, null, RedChatColor, 'normal', 1);
-		return false;
+		//room.sendAnnouncement(` 🔴 «  ` +  player.name + `» : ` + adminMessage, null, RedChatColor, 'normal', 1);
+		//return false;
 		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔴 ~ ` +  player.name + `: ` + adminMessage, null, RedChatColor, 'normal', 1);
 		//" 🔴⚽ «" +  player.name + " » : ";
 		//bandera chat rojo
-		/*var textoPersonalizar = "" ;
-		textoPersonalizar+=" 🔴";
+		var textoPersonalizar = "" ;
+		textoPersonalizar+=" ";
 		//room.sendAnnouncement(`🔴 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
 		
 		//si es maximo goleador o asistidor agregare un emoji antes
+		var goat = false;
 		if(buscarJugadorEstadisticas(player.id) != null){
-			//emoji maximo goleador
-			if(maximosGoleadores[0] != undefined){
-				//si es max goleador y no es admin
-				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-					//room.sendAnnouncement(` 🔴⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-					textoPersonalizar+=" ⚽" ;
+		
+			if(maximosGoleadores[0] != undefined && maximosAsistidores[0] != undefined){
+				//si es el goat
+				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
+				maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+					textoPersonalizar+=" 🐐🔥";
+					goat = true;
 				}
 			}
-			//emoji maximo asistidor
-			if(maximosAsistidores[0] != undefined){
-				if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
-					textoPersonalizar+=" 👟";
+			if(!goat){
+				//emoji maximo goleador
+				if(maximosGoleadores[0] != undefined){
+					//si es max goleador y no es admin
+					if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+						//room.sendAnnouncement(` 🔴⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
+						textoPersonalizar+=" ⚽🔥" ;
+					}
+				}
+				//emoji maximo asistidor
+				if(maximosAsistidores[0] != undefined){
+					if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
+						textoPersonalizar+=" 👟🔥";
+					}
 				}
 			}
 		}
 		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
 		room.sendAnnouncement(textoPersonalizar, null, RedChatColor, 'normal', 1);
-	}*/
+		return false;
 	}
+	//}
 	if (ModoChatPausado.includes(player.id)==true){
 		room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);
 		return false;
@@ -21798,35 +21811,41 @@ room.onPlayerChat = function(player, message) {
     adminMessage = message;
     message = message.split(/ +/);
     	var BlueChatColor = 0x8eb1ff; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		//var textoPersonalizar = "" ;
-		//textoPersonalizar+=" 🔵";
+		var textoPersonalizar = "" ;
+		textoPersonalizar+=" ";
 		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-		/*
+		
 		//si es maximo goleador o asistidor agregare un emoji antes
+		var goat = false;
 		if(buscarJugadorEstadisticas(player.id) != null){
-			//emoji maximo goleador
-			if(maximosGoleadores[0] != undefined){
-				//si es max goleador y no es admin
-				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-					//room.sendAnnouncement(` 🔵⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-					textoPersonalizar+=" ⚽" ;
-				}
+			//si es el goat
+			if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
+			maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+				textoPersonalizar+=" 🐐🔥";
+				goat = true;
 			}
-			//emoji maximo asistidor
-			if(maximosAsistidores[0] != undefined){
-				if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
-					textoPersonalizar+=" 👟";
+			if(!goat){
+				//emoji maximo goleador
+				if(maximosGoleadores[0] != undefined){
+					//si es max goleador y no es admin
+					if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+						//room.sendAnnouncement(` 🔵⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
+						textoPersonalizar+=" ⚽🔥" ;
+					}
+				}
+				//emoji maximo asistidor
+				if(maximosAsistidores[0] != undefined){
+					if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
+						textoPersonalizar+=" 👟🔥";
+					}
 				}
 			}
 		}
 		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
 		room.sendAnnouncement(textoPersonalizar, null, BlueChatColor, 'normal', 1);
-		*/
-		
 		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔵 ~ ` +  player.name + `: ` + adminMessage, null, BlueChatColor, 'normal', 1);
 		//bandera chat azul
-		room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, BlueChatColor, 'normal', 1);
-
+		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, BlueChatColor, 'normal', 1);
 		return false;
 	}
 		if (ModoChatPausado.includes(player.id)==true){
@@ -22618,6 +22637,7 @@ function realSoccerRef() {
 	}
 	
 	if (game.rsActive == true) {
+		//DETECTA FUERA DE CANCHA O DENTRO DE CANCHA.
 		if ((room.getBallPosition().y > 612 || room.getBallPosition().y < -612)) {
 			game.rsActive = false;
 			if (game.lastPlayAnnounced == true) {
@@ -23086,6 +23106,7 @@ function blockThrowIn() {
 					if (room.getPlayerDiscProperties(player.id).cGroup != 536870918) {
 						room.setPlayerDiscProperties(player.id, {cGroup: 536870918});
 					}
+					//SI EL JUGADAOR PASA LA LINEA DE COLOR ROJO O AZUL PARA SAQUE BANDA SE TPEA A ANTES DE LA LINEA.
 					if (player.position.y < -485) {
 						room.setPlayerDiscProperties(player.id, {y: -470});
 					}
