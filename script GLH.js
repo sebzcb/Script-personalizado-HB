@@ -1,5 +1,5 @@
 // ▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN BÁSICA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-var NombreHost = "test"
+var NombreHost = "Juegan todos si no se crashea XD"
 var CantidadDeJugadores = 30  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
 var ClaveParaSerAdmin = "!tHeAdm1n991"  // La clave va dentro de las comillas
@@ -145,10 +145,127 @@ function getFutx10Map(){
 	"blueSpawnPoints":[[400,-50],[400,0],[400,50],[400,100],[400,-100],[400,150],[400,-150],[1200,450]],
 	"bg":{"type":"hockey","color":"404447","cornerRadius":0,"kickOffRadius":0},
 	
-	"vertexes":[{"x":-1397.222963951936,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":698.611481975968,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":698.611481975968,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":-1457.769292389853,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":-1457.769292389853,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1457.769292389853,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1457.769292389853,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":0,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":0,"y":-197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":698.611481975968,"trait":"art","color":"FFFFFF"},{"x":-916.3453938584779,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-916.3453938584779,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":916.3453938584779,"y":455.692256341789,"trait":"art","curve":-90,"color":"FFFFFF"},{"x":-916.3453938584779,"y":-460.692256341789,"trait":"art","color":"FFFFFF","curve":90},{"x":-916.3453938584779,"y":455.692256341789,"trait":"art","color":"FFFFFF","curve":90},{"x":916.3453938584779,"y":-460.692256341789,"trait":"art","color":"FFFFFF","curve":-90},{"x":-915.678905206942,"y":456.0368696723837,"trait":"art","color":"FFFFFF","curve":90},{"x":-1404.7912550066756,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":-1404.7912550066756,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1796.8869492656875,"y":749.8429906542056,"trait":"art","color":"FFFFFF"},{"x":-1404.7912550066756,"y":698.611481975968,"trait":"art","color":"FFFFFF"},{"x":-1404.7912550066756,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1404.7912550066756,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":1404.7912550066756,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1404.7912550066756,"y":698.611481975968,"trait":"art","color":"FFFFFF"},{"x":1404.7912550066756,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":0,"y":-739.363818424566,"trait":"art","color":"FFFFFF"},{"x":0,"y":739.363818424566,"trait":"art","color":"FFFFFF"},{"x":-1399.5516688918558,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":-1399.5516688918558,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1399.5516688918558,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1399.5516688918558,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},{"x":1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},{"x":-1394.894259012016,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":-1394.894259012016,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},{"x":-1457.769292389853,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":-1396.058611481976,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":-1457.769292389853,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":-1396.058611481976,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":1398.3873164218958,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":1457.769292389853,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":1457.769292389853,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-80.3403204272363,"trait":"art","color":"FFFFFF","curve":0},{"x":1397.222963951936,"y":-48.90280373831776,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-17.465287049399198,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":13.972229639519359,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":45.40974632843792,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":80.3403204272363,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},{"x":-1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},{"x":-1397.222963951936,"y":-80.3403204272363,"trait":"art","color":"FFFFFF","curve":0},{"x":-1397.222963951936,"y":-48.90280373831776,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":-17.465287049399198,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":13.972229639519359,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":45.40974632843792,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":80.3403204272363,"trait":"art","color":"FFFFFF"},{"x":291.08811748998664,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":291.08811748998664,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":582.1762349799733,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":582.1762349799733,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":931.4819759679573,"y":698.611481975968,"trait":"art","color":"FFFFFF"},{"x":931.4819759679573,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":-291.08811748998664,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":-291.08811748998664,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":-582.1762349799733,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":-582.1762349799733,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":-931.4819759679573,"y":698.611481975968,"trait":"art","color":"FFFFFF"},{"x":-931.4819759679573,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":291.08811748998664,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":291.08811748998664,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":582.1762349799733,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":582.1762349799733,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":931.4819759679573,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":931.4819759679573,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":-291.08811748998664,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":-291.08811748998664,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":-582.1762349799733,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},{"x":-582.1762349799733,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":-931.4819759679573,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":-931.4819759679573,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":-1415.852603471295,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":-1397.222963951936,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":-1415.852603471295,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":1415.852603471295,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":1415.852603471295,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},{"x":916.3453938584779,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":916.3453938584779,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":-349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":-355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":-349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":-355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-1397.222963951936,"y":456.0368696723837,"trait":"art","color":"FFFFFF"},{"x":-915.678905206942,"y":-461.5313751668892,"trait":"art","color":"FFFFFF","curve":90},{"x":-1397.222963951936,"y":-461.5313751668892,"trait":"art","color":"FFFFFF"},{"x":915.678905206942,"y":-461.5313751668892,"trait":"art","color":"FFFFFF","curve":-90},{"x":1397.222963951936,"y":-461.5313751668892,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":456.0368696723837,"trait":"art","color":"FFFFFF","curve":90},{"x":915.678905206942,"y":456.0368696723837,"trait":"art","curve":-90,"color":"FFFFFF"},{"x":-1362.2923898531376,"y":-698.611481975968,"trait":"art","curve":90,"color":"FFFFFF"},{"x":-1397.222963951936,"y":-663.6809078771695,"trait":"art","curve":90,"color":"FFFFFF"},{"x":-1397.222963951936,"y":663.6809078771695,"trait":"art","curve":90,"color":"FFFFFF"},{"x":-1362.2923898531376,"y":698.611481975968,"trait":"art","curve":90,"color":"FFFFFF"},{"x":1397.222963951936,"y":663.6809078771695,"trait":"art","curve":-90,"color":"FFFFFF"},{"x":1362.2923898531376,"y":698.611481975968,"trait":"art","curve":-90,"color":"FFFFFF"},{"x":1362.2923898531376,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-663.6809078771695,"trait":"art","color":"FFFFFF"},{"x":-137.89473684210526,"y":142.10526315789474,"cMask":["wall"],"color":"FFC500"},{"x":-135.78947368421052,"y":-143.1578947368421,"cMask":["wall"],"color":"FFC500"},{"x":-69.74358974358977,"y":-144.10256410256414,"cMask":["wall"],"color":"FFC500"},{"x":53.33333333333335,"y":71.28205128205131,"cMask":["wall"],"color":"FFC500"},{"x":51.2820512820513,"y":-192.30769230769238,"cMask":["wall"],"color":"FFC500"},{"x":-65.64102564102566,"y":185.1282051282052,"cMask":["wall"],"color":"FFC500"},{"x":-65.64102564102566,"y":22.051282051282058,"cMask":["wall"],"color":"FFC500"},{"x":34.87179487179488,"y":195.38461538461544,"cMask":["wall"],"color":"FFC500"},{"x":129.23076923076928,"y":-147.69230769230774,"cMask":["wall"],"color":"FFC500"},{"x":131.79487179487185,"y":147.69230769230774,"cMask":["wall"],"color":"FFC500"},{"x":0,"y":-197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":-197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":-850.058128787101,"y":-128.450754852624,"trait":"art","color":"FFFFFF"},{"x":-916.058128787101,"y":-128.450754852624,"trait":"art","color":"FFFFFF"},{"x":-848.9592276881999,"y":130.88990448803537,"trait":"art","color":"FFFFFF"},{"x":-914.9592276881999,"y":130.88990448803537,"trait":"art","color":"FFFFFF"},{"x":915.8759371469649,"y":-126.25295265482178,"trait":"art","color":"FFFFFF"},{"x":849.8759371469649,"y":-126.25295265482178,"trait":"art","color":"FFFFFF"},{"x":916.9748382458662,"y":128.69210229023318,"trait":"art","color":"FFFFFF"},{"x":850.9748382458662,"y":128.69210229023318,"trait":"art","color":"FFFFFF"}],
+	"vertexes":[{"x":-1397.222963951936,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":-1457.769292389853,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":-1457.769292389853,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1457.769292389853,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1457.769292389853,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":0,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":0,"y":-197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},
+	{"x":0,"y":197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},
+	{"x":0,"y":698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":-916.3453938584779,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":-916.3453938584779,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":916.3453938584779,"y":455.692256341789,"trait":"art","curve":-90,"color":"FFFFFF"},
+	{"x":-916.3453938584779,"y":-460.692256341789,"trait":"art","color":"FFFFFF","curve":90},
+	{"x":-916.3453938584779,"y":455.692256341789,"trait":"art","color":"FFFFFF","curve":90},
+	{"x":916.3453938584779,"y":-460.692256341789,"trait":"art","color":"FFFFFF","curve":-90},
+	{"x":-915.678905206942,"y":456.0368696723837,"trait":"art","color":"FFFFFF","curve":90},
+	{"x":-1404.7912550066756,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":-1404.7912550066756,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1796.8869492656875,"y":749.8429906542056,"trait":"art","color":"FFFFFF"},
+	{"x":-1404.7912550066756,"y":698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":-1404.7912550066756,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1404.7912550066756,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":1404.7912550066756,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1404.7912550066756,"y":698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":1404.7912550066756,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":0,"y":-739.363818424566,"trait":"art","color":"FFFFFF"},
+	{"x":0,"y":739.363818424566,"trait":"art","color":"FFFFFF"},
+	{"x":-1399.5516688918558,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":-1399.5516688918558,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1399.5516688918558,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1399.5516688918558,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},
+	{"x":1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},
+	{"x":-1394.894259012016,"y":-128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":-1394.894259012016,"y":128.07877169559413,"trait":"art","color":"FFFFFF"},
+	{"x":-1457.769292389853,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":-1396.058611481976,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":-1457.769292389853,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":-1396.058611481976,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":1398.3873164218958,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":1457.769292389853,"y":-135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":1457.769292389853,"y":135.6470627503338,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":-80.3403204272363,"trait":"art","color":"FFFFFF","curve":0},
+	{"x":1397.222963951936,"y":-48.90280373831776,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":-17.465287049399198,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":13.972229639519359,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":45.40974632843792,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":80.3403204272363,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":-128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},
+	{"x":-1397.222963951936,"y":128.07877169559413,"trait":"art","color":"FFFFFF","curve":0},
+	{"x":-1397.222963951936,"y":-80.3403204272363,"trait":"art","color":"FFFFFF","curve":0},
+	{"x":-1397.222963951936,"y":-48.90280373831776,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":-17.465287049399198,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":13.972229639519359,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":45.40974632843792,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":80.3403204272363,"trait":"art","color":"FFFFFF"},
+	{"x":291.08811748998664,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":291.08811748998664,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":582.1762349799733,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":582.1762349799733,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":931.4819759679573,"y":698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":931.4819759679573,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":-291.08811748998664,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":-291.08811748998664,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":-582.1762349799733,"y":681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":-582.1762349799733,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":-931.4819759679573,"y":698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":-931.4819759679573,"y":717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":291.08811748998664,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":291.08811748998664,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":582.1762349799733,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":582.1762349799733,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":931.4819759679573,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":931.4819759679573,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":-291.08811748998664,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":-291.08811748998664,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":-582.1762349799733,"y":-681.1461949265688,"trait":"art","color":"FFFFFF"},
+	{"x":-582.1762349799733,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":-931.4819759679573,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},
+	{"x":-931.4819759679573,"y":-717.2411214953271,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":-1415.852603471295,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":-1415.852603471295,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":1415.852603471295,"y":-291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":1397.222963951936,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":1415.852603471295,"y":291.08811748998664,"trait":"art","color":"FFFFFF"},
+	{"x":916.3453938584779,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":916.3453938584779,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":710.2550066755674,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":710.2550066755674,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":-710.2550066755674,"y":-5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":-710.2550066755674,"y":5.821762349799733,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":710.2550066755674,"y":-349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":710.2550066755674,"y":-355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":-710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":-710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":-710.2550066755674,"y":349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},
+	{"x":-710.2550066755674,"y":355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":-349.305740987984,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-710.2550066755674,"y":-355.1275033377837,"trait":"art","curve":-110,"color":"FFFFFF"},{"x":-1397.222963951936,"y":456.0368696723837,"trait":"art","color":"FFFFFF"},
+	{"x":-915.678905206942,"y":-461.5313751668892,"trait":"art","color":"FFFFFF","curve":90},{"x":-1397.222963951936,"y":-461.5313751668892,"trait":"art","color":"FFFFFF"},{"x":915.678905206942,"y":-461.5313751668892,"trait":"art","color":"FFFFFF","curve":-90},{"x":1397.222963951936,"y":-461.5313751668892,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":456.0368696723837,"trait":"art","color":"FFFFFF","curve":90},{"x":915.678905206942,"y":456.0368696723837,"trait":"art","curve":-90,"color":"FFFFFF"},{"x":-1362.2923898531376,"y":-698.611481975968,"trait":"art","curve":90,"color":"FFFFFF"},
+	{"x":-1397.222963951936,"y":-663.6809078771695,"trait":"art","curve":90,"color":"FFFFFF"},{"x":-1397.222963951936,"y":663.6809078771695,"trait":"art","curve":90,"color":"FFFFFF"},{"x":-1362.2923898531376,"y":698.611481975968,"trait":"art","curve":90,"color":"FFFFFF"},{"x":1397.222963951936,"y":663.6809078771695,"trait":"art","curve":-90,"color":"FFFFFF"},{"x":1362.2923898531376,"y":698.611481975968,"trait":"art","curve":-90,"color":"FFFFFF"},{"x":1362.2923898531376,"y":-698.611481975968,"trait":"art","color":"FFFFFF"},{"x":1397.222963951936,"y":-663.6809078771695,"trait":"art","color":"FFFFFF"},{"x":-137.89473684210526,"y":142.10526315789474,"cMask":["wall"],"color":"FFC500"},{"x":-135.78947368421052,"y":-143.1578947368421,"cMask":["wall"],"color":"FFC500"},{"x":-69.74358974358977,"y":-144.10256410256414,"cMask":["wall"],"color":"FFC500"},{"x":53.33333333333335,"y":71.28205128205131,"cMask":["wall"],"color":"FFC500"},{"x":51.2820512820513,"y":-192.30769230769238,"cMask":["wall"],"color":"FFC500"},{"x":-65.64102564102566,"y":185.1282051282052,"cMask":["wall"],"color":"FFC500"},{"x":-65.64102564102566,"y":22.051282051282058,"cMask":["wall"],"color":"FFC500"},{"x":34.87179487179488,"y":195.38461538461544,"cMask":["wall"],"color":"FFC500"},{"x":129.23076923076928,"y":-147.69230769230774,"cMask":["wall"],"color":"FFC500"},{"x":131.79487179487185,"y":147.69230769230774,"cMask":["wall"],"color":"FFC500"},{"x":0,"y":-197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":-197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":0,"y":197.9399198931909,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"curve":-180,"color":"FFFFFF"},{"x":-850.058128787101,"y":-128.450754852624,"trait":"art","color":"FFFFFF"},{"x":-916.058128787101,"y":-128.450754852624,"trait":"art","color":"FFFFFF"},{"x":-848.9592276881999,"y":130.88990448803537,"trait":"art","color":"FFFFFF"},{"x":-914.9592276881999,"y":130.88990448803537,"trait":"art","color":"FFFFFF"},{"x":915.8759371469649,"y":-126.25295265482178,"trait":"art","color":"FFFFFF"},{"x":849.8759371469649,"y":-126.25295265482178,"trait":"art","color":"FFFFFF"},{"x":916.9748382458662,"y":128.69210229023318,"trait":"art","color":"FFFFFF"},
+	{"x":850.9748382458662,"y":128.69210229023318,"trait":"art","color":"FFFFFF"}],
 	
-	"segments":[{"v0":0,"v1":1,"color":"FFFFFF","trait":"parede"},{"v0":2,"v1":3,"color":"FFFFFF","trait":"parede"},{"v0":0,"v1":4,"color":"FFFFFF","trait":"parede"},{"v0":1,"v1":5,"color":"FFFFFF","trait":"parede"},{"v0":3,"v1":6,"color":"FFFFFF","trait":"parede"},{"v0":2,"v1":7,"color":"FFFFFF","trait":"parede"},{"v0":4,"v1":8,"color":"FFFFFF","trait":"gol"},{"v0":8,"v1":9,"color":"FFFFFF","trait":"gol","x":-1252},{"v0":9,"v1":7,"color":"FFFFFF","trait":"gol"},{"v0":5,"v1":10,"color":"FFFFFF","trait":"gol"},{"v0":10,"v1":11,"color":"FFFFFF","trait":"gol","x":1252},{"v0":11,"v1":6,"color":"FFFFFF","trait":"gol"},{"v0":12,"v1":13,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":14,"v1":15,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":13,"v1":14,"curve":180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO"]},{"v0":13,"v1":14,"curve":-180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["blueKO"]},{"v0":16,"v1":17,"curve":-180,"color":"FFFFFF","trait":"art","x":-787},{"v0":16,"v1":17,"curve":180,"color":"FFFFFF","trait":"art","x":-787},{"v0":16,"v1":17,"curve":110,"color":"FFFFFF","trait":"art","x":-787},{"v0":16,"v1":17,"curve":-110,"color":"FFFFFF","trait":"art","x":-787},{"v0":19,"v1":20,"curve":0,"color":"FFFFFF","trait":"art","x":-787},{"v0":18,"v1":21,"curve":0,"color":"FFFFFF","trait":"art","x":787},{"v0":23,"v1":24,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":26,"v1":27,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":28,"v1":29,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":30,"v1":31,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":12,"v1":32,"vis":false,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":15,"v1":33,"vis":false,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":38,"v1":39,"curve":0,"color":"FFFFFF","cMask":[""],"trait":"art","x":1200},{"v0":42,"v1":43,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":44,"v1":45,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":46,"v1":47,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":48,"v1":49,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":38,"v1":50,"curve":0,"color":"FFFFFF","trait":"art","x":1200},{"v0":51,"v1":52,"color":"FFFFFF","trait":"art","x":1200},{"v0":53,"v1":54,"color":"FFFFFF","trait":"art","x":1200},{"v0":39,"v1":55,"color":"FFFFFF","trait":"art","x":1200},{"v0":56,"v1":57,"curve":0,"color":"FFFFFF","cMask":[""],"trait":"art","x":-1200},{"v0":56,"v1":58,"curve":0,"color":"FFFFFF","trait":"art","x":-1200},{"v0":59,"v1":60,"color":"FFFFFF","trait":"art","x":-1200},{"v0":61,"v1":62,"color":"FFFFFF","trait":"art","x":-1200},{"v0":57,"v1":63,"color":"FFFFFF","trait":"art","x":-1200},{"v0":64,"v1":65,"color":"FFFFFF","trait":"art"},{"v0":66,"v1":67,"color":"FFFFFF","trait":"art","x":500},{"v0":68,"v1":69,"color":"FFFFFF","trait":"art","x":800},{"v0":70,"v1":71,"color":"FFFFFF","trait":"art","x":-250},{"v0":72,"v1":73,"color":"FFFFFF","trait":"art","x":-500},{"v0":74,"v1":75,"color":"FFFFFF","trait":"art","x":-800},{"v0":76,"v1":77,"color":"FFFFFF","trait":"art"},{"v0":78,"v1":79,"color":"FFFFFF","trait":"art","x":500},{"v0":80,"v1":81,"color":"FFFFFF","trait":"art","x":800},{"v0":82,"v1":83,"color":"FFFFFF","trait":"art","x":-250},{"v0":84,"v1":85,"color":"FFFFFF","trait":"art","x":-500},{"v0":86,"v1":87,"color":"FFFFFF","trait":"art","x":-800},{"v0":88,"v1":89,"color":"FFFFFF","trait":"art"},{"v0":90,"v1":91,"color":"FFFFFF","trait":"art","y":250},{"v0":92,"v1":93,"color":"FFFFFF","trait":"art"},{"v0":94,"v1":95,"color":"FFFFFF","trait":"art","y":250},{"v0":96,"v1":97,"curve":-180,"color":"FFFFFF","trait":"art","x":787},{"v0":96,"v1":97,"curve":180,"color":"FFFFFF","trait":"art","x":787},{"v0":96,"v1":97,"curve":110,"color":"FFFFFF","trait":"art","x":787},{"v0":96,"v1":97,"curve":-110,"color":"FFFFFF","trait":"art","x":787},{"v0":98,"v1":99,"curve":-180,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":180,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":110,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":-110,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":0,"color":"FFFFFF","trait":"art","x":610},{"v0":100,"v1":101,"curve":-180,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":180,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":110,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":-110,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":0,"color":"FFFFFF","trait":"art","x":-610},{"v0":102,"v1":103,"curve":-180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":102,"v1":103,"curve":180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":102,"v1":103,"curve":110,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":102,"v1":103,"curve":-110,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":102,"v1":103,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":610},{"v0":104,"v1":105,"curve":-180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":110,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":-110,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":610},{"v0":106,"v1":107,"curve":-180,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":180,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":110,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":-110,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":0,"color":"FFFFFF","trait":"art","y":-300,"x":610},{"v0":108,"v1":109,"curve":-180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":-110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":-610},{"v0":110,"v1":111,"curve":-180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":-110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":-610},{"v0":112,"v1":113,"curve":-180,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":180,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":110,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":-110,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":0,"color":"FFFFFF","trait":"art","y":-300,"x":-610},{"v0":22,"v1":114,"curve":0,"color":"FFFFFF","trait":"art"},{"v0":115,"v1":116,"curve":0,"color":"FFFFFF","trait":"art","y":-470},{"v0":117,"v1":118,"curve":0,"color":"FFFFFF","trait":"art","y":-470},{"v0":119,"v1":120,"curve":0,"color":"FFFFFF","trait":"art"},{"v0":121,"v1":122,"curve":90,"color":"FFFFFF","trait":"art"},{"v0":123,"v1":124,"curve":90,"color":"FFFFFF","trait":"art"},{"v0":125,"v1":126,"curve":-90,"color":"FFFFFF","trait":"art"},{"v0":127,"v1":128,"curve":-90,"color":"FFFFFF","trait":"art"},{"v0":129,"v1":130,"color":"FFC500","cMask":["wall"]},{"v0":130,"v1":131,"color":"FFC500","cMask":["wall"]},{"v0":131,"v1":132,"color":"FFC500","cMask":["wall"]},{"v0":132,"v1":133,"color":"FFC500","cMask":["wall"]},{"v0":134,"v1":135,"color":"FFC500","cMask":["wall"]},{"v0":135,"v1":136,"color":"FFC500","cMask":["wall"]},{"v0":137,"v1":138,"color":"FFC500","cMask":["wall"]},{"v0":139,"v1":140,"curve":180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO"]},{"v0":141,"v1":142,"curve":-180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["blueKO"]},{"v0":143,"v1":144,"color":"FFFFFF","trait":"art"},{"v0":145,"v1":146,"color":"FFFFFF","trait":"art"},{"v0":147,"v1":148,"color":"FFFFFF","trait":"art"},{"v0":149,"v1":150,"color":"FFFFFF","trait":"art"}],
 	
+	"segments":[{"v0":0,"v1":1,"color":"FFFFFF","trait":"parede"},{"v0":2,"v1":3,"color":"FFFFFF","trait":"parede"},{"v0":0,"v1":4,"color":"FFFFFF","trait":"parede"},{"v0":1,"v1":5,"color":"FFFFFF","trait":"parede"},{"v0":3,"v1":6,"color":"FFFFFF","trait":"parede"},{"v0":2,"v1":7,"color":"FFFFFF","trait":"parede"},{"v0":4,"v1":8,"color":"FFFFFF","trait":"gol"},{"v0":8,"v1":9,"color":"FFFFFF","trait":"gol","x":-1252},{"v0":9,"v1":7,"color":"FFFFFF","trait":"gol"},{"v0":5,"v1":10,"color":"FFFFFF","trait":"gol"},{"v0":10,"v1":11,"color":"FFFFFF","trait":"gol","x":1252},{"v0":11,"v1":6,"color":"FFFFFF","trait":"gol"},{"v0":12,"v1":13,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":14,"v1":15,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":13,"v1":14,"curve":180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO"]},{"v0":13,"v1":14,"curve":-180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["blueKO"]},{"v0":16,"v1":17,"curve":-180,"color":"FFFFFF","trait":"art","x":-787},{"v0":16,"v1":17,"curve":180,"color":"FFFFFF","trait":"art","x":-787},{"v0":16,"v1":17,"curve":110,"color":"FFFFFF","trait":"art","x":-787},{"v0":16,"v1":17,"curve":-110,"color":"FFFFFF","trait":"art","x":-787},{"v0":19,"v1":20,"curve":0,"color":"FFFFFF","trait":"art","x":-787},{"v0":18,"v1":21,"curve":0,"color":"FFFFFF","trait":"art","x":787},{"v0":23,"v1":24,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":26,"v1":27,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":28,"v1":29,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":30,"v1":31,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":12,"v1":32,"vis":false,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":15,"v1":33,"vis":false,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":38,"v1":39,"curve":0,"color":"FFFFFF","cMask":[""],"trait":"art","x":1200},{"v0":42,"v1":43,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":44,"v1":45,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":46,"v1":47,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":48,"v1":49,"vis":false,"color":"FFFFFF","cMask":["ball"]},{"v0":38,"v1":50,"curve":0,"color":"FFFFFF","trait":"art","x":1200},{"v0":51,"v1":52,"color":"FFFFFF","trait":"art","x":1200},{"v0":53,"v1":54,"color":"FFFFFF","trait":"art","x":1200},{"v0":39,"v1":55,"color":"FFFFFF","trait":"art","x":1200},
+	{"v0":56,"v1":57,"curve":0,"color":"FFFFFF","cMask":[""],"trait":"art","x":-1200},{"v0":56,"v1":58,"curve":0,"color":"FFFFFF","trait":"art","x":-1200},{"v0":59,"v1":60,"color":"FFFFFF","trait":"art","x":-1200},{"v0":61,"v1":62,"color":"FFFFFF","trait":"art","x":-1200},{"v0":57,"v1":63,"color":"FFFFFF","trait":"art","x":-1200},{"v0":64,"v1":65,"color":"FFFFFF","trait":"art"},{"v0":66,"v1":67,"color":"FFFFFF","trait":"art","x":500},{"v0":68,"v1":69,"color":"FFFFFF","trait":"art","x":800},{"v0":70,"v1":71,"color":"FFFFFF","trait":"art","x":-250},{"v0":72,"v1":73,"color":"FFFFFF","trait":"art","x":-500},{"v0":74,"v1":75,"color":"FFFFFF","trait":"art","x":-800},{"v0":76,"v1":77,"color":"FFFFFF","trait":"art"},{"v0":78,"v1":79,"color":"FFFFFF","trait":"art","x":500},{"v0":80,"v1":81,"color":"FFFFFF","trait":"art","x":800},{"v0":82,"v1":83,"color":"FFFFFF","trait":"art","x":-250},{"v0":84,"v1":85,"color":"FFFFFF","trait":"art","x":-500},{"v0":86,"v1":87,"color":"FFFFFF","trait":"art","x":-800},{"v0":88,"v1":89,"color":"FFFFFF","trait":"art"},{"v0":90,"v1":91,"color":"FFFFFF","trait":"art","y":250},{"v0":92,"v1":93,"color":"FFFFFF","trait":"art"},{"v0":94,"v1":95,"color":"FFFFFF","trait":"art","y":250},{"v0":96,"v1":97,"curve":-180,"color":"FFFFFF","trait":"art","x":787},{"v0":96,"v1":97,"curve":180,"color":"FFFFFF","trait":"art","x":787},{"v0":96,"v1":97,"curve":110,"color":"FFFFFF","trait":"art","x":787},{"v0":96,"v1":97,"curve":-110,"color":"FFFFFF","trait":"art","x":787},{"v0":98,"v1":99,"curve":-180,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":180,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":110,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":-110,"color":"FFFFFF","trait":"art","x":610},{"v0":98,"v1":99,"curve":0,"color":"FFFFFF","trait":"art","x":610},{"v0":100,"v1":101,"curve":-180,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":180,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":110,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":-110,"color":"FFFFFF","trait":"art","x":-610},{"v0":100,"v1":101,"curve":0,"color":"FFFFFF","trait":"art","x":-610},{"v0":102,"v1":103,"curve":-180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":102,"v1":103,"curve":180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":102,"v1":103,"curve":110,"color":"FFFFFF","trait":"art","x":610,"y":300},
+	{"v0":102,"v1":103,"curve":-110,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":102,"v1":103,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":610},{"v0":104,"v1":105,"curve":-180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":180,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":110,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":-110,"color":"FFFFFF","trait":"art","x":610,"y":300},{"v0":104,"v1":105,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":610},{"v0":106,"v1":107,"curve":-180,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":180,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":110,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":-110,"color":"FFFFFF","trait":"art","x":610,"y":-300},{"v0":106,"v1":107,"curve":0,"color":"FFFFFF","trait":"art","y":-300,"x":610},{"v0":108,"v1":109,"curve":-180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":-110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":108,"v1":109,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":-610},{"v0":110,"v1":111,"curve":-180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":180,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":-110,"color":"FFFFFF","trait":"art","x":-610,"y":300},{"v0":110,"v1":111,"curve":0,"color":"FFFFFF","trait":"art","y":300,"x":-610},{"v0":112,"v1":113,"curve":-180,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":180,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":110,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":-110,"color":"FFFFFF","trait":"art","x":-610,"y":-300},{"v0":112,"v1":113,"curve":0,"color":"FFFFFF","trait":"art","y":-300,"x":-610},{"v0":22,"v1":114,"curve":0,"color":"FFFFFF","trait":"art"},{"v0":115,"v1":116,"curve":0,"color":"FFFFFF","trait":"art","y":-470},{"v0":117,"v1":118,"curve":0,"color":"FFFFFF","trait":"art","y":-470},{"v0":119,"v1":120,"curve":0,"color":"FFFFFF","trait":"art"},{"v0":121,"v1":122,"curve":90,"color":"FFFFFF","trait":"art"},
+	{"v0":123,"v1":124,"curve":90,"color":"FFFFFF","trait":"art"},{"v0":125,"v1":126,"curve":-90,"color":"FFFFFF","trait":"art"},{"v0":127,"v1":128,"curve":-90,"color":"FFFFFF","trait":"art"},{"v0":129,"v1":130,"color":"FFC500","cMask":["wall"]},{"v0":130,"v1":131,"color":"FFC500","cMask":["wall"]},{"v0":131,"v1":132,"color":"FFC500","cMask":["wall"]},{"v0":132,"v1":133,"color":"FFC500","cMask":["wall"]},{"v0":134,"v1":135,"color":"FFC500","cMask":["wall"]},{"v0":135,"v1":136,"color":"FFC500","cMask":["wall"]},{"v0":137,"v1":138,"color":"FFC500","cMask":["wall"]},{"v0":139,"v1":140,"curve":180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["redKO"]},{"v0":141,"v1":142,"curve":-180,"color":"FFFFFF","cMask":["red","blue"],"cGroup":["blueKO"]},{"v0":143,"v1":144,"color":"FFFFFF","trait":"art"},{"v0":145,"v1":146,"color":"FFFFFF","trait":"art"},{"v0":147,"v1":148,"color":"FFFFFF","trait":"art"},{"v0":149,"v1":150,"color":"FFFFFF","trait":"art"}],
+
 	"goals":[{"p0":[-1404.2090787716957,-128.07877169559413],"p1":[-1404.2090787716957,128.07877169559413],"team":"red","color":"FFFFFF"},{"p0":[1404.2090787716957,128.07877169559413],"p1":[1404.2090787716957,-128.07877169559413],"team":"blue","color":"FFFFFF"}],
 	
 	"discs":[{"radius":6.986114819759679,"invMass":0,"pos":[-1397.222963951936,-128.07877169559413],"color":"FFFFFF","bCoef":0.5},{"radius":6.986114819759679,"invMass":0,"pos":[1397.222963951936,-128.07877169559413],"color":"FFFFFF","bCoef":0.5},{"radius":6.986114819759679,"invMass":0,"pos":[-1397.222963951936,128.07877169559413],"color":"FFFFFF","bCoef":0.5},{"radius":6.986114819759679,"invMass":0,"pos":[1397.222963951936,128.07877169559413],"color":"FFFFFF","bCoef":0.5},{"radius":4.657409879839786,"pos":[1397.222963951936,698.611481975968],"color":"FFFFFF","cGroup":[""],"trait":"art"},{"radius":4.657409879839786,"pos":[-1397.222963951936,698.611481975968],"color":"FFFFFF","cGroup":[""],"trait":"art"},{"radius":4.657409879839786,"pos":[-1397.222963951936,-698.611481975968],"color":"FFFFFF","cGroup":[""],"trait":"art"},{"radius":4.657409879839786,"pos":[1397.222963951936,-698.611481975968],"color":"FFFFFF","cGroup":[""],"trait":"art"}],
@@ -2480,7 +2597,7 @@ function getRealSoccerMap() {
 		/* 223 */ { "trait" : "line", "x" : -223, "y" : 668 },
 		/* 224 */ { "trait" : "line", "x" : -223, "y" : 662 },
 		/* 225 */ { "trait" : "line", "x" : -223, "y" : 653 },
-		/* 226 */ { "trait" : "line", "x" : -205, "y" : 653 },
+		/* 226 */ { "trait" : "line", "x" : -205, "y" : 653 }, /*2240-2600*/
 		/* 227 */ { "trait" : "line", "x" : -120, "y" : 653 },
 		/* 228 */ { "trait" : "line", "x" : -96, "y" : 653 },
 		/* 229 */ { "trait" : "line", "x" : -172, "y" : 653 },
@@ -2624,7 +2741,7 @@ function getRealSoccerMap() {
 		{ "vis" : true, "color" : "43774e", "trait" : "line", "v0" : 157, "v1" : 158, "x" : -750, "curve" : -90 },
 		{ "vis" : true, "color" : "43774e", "trait" : "line", "v0" : 159, "v1" : 160, "x" : -748, "curve" : -90 },
 		
-		{ "v0" : 161, "v1" : 162, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 780 },
+		{ "v0" : 161, "v1" : 162, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 780 },//palo blanco del corner
 		
 		{ "v0" : 163, "v1" : 164, "curve" : 0, "vis" : true, "color" : "f7513e", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ] },
 		{ "v0" : 163, "v1" : 164, "curve" : 0, "vis" : true, "color" : "f83d38", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "y" : -553 },
@@ -2646,8 +2763,8 @@ function getRealSoccerMap() {
 		
 		{ "v0" : 172, "v1" : 174, "vis" : true, "color" : "fde73b", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "line", "cGroup" : ["all" ], "y" : -548 },
 		
-		{ "v0" : 175, "v1" : 176, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 780 },
-		
+		{ "v0" : 175, "v1" : 176, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 780 },//palo blanco del corner
+
 		{ "v0" : 177, "v1" : 178, "curve" : 0, "vis" : true, "color" : "f7513e", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ] },
 		{ "v0" : 177, "v1" : 178, "curve" : 0, "vis" : true, "color" : "f83d38", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "y" : -553 },
 		{ "v0" : 178, "v1" : 178, "curve" : 0, "vis" : true, "color" : "f7513e", "bCoef" : 0, "cMask" : ["wall" ], "x" : 903, "cGroup" : ["all" ] },
@@ -2668,7 +2785,7 @@ function getRealSoccerMap() {
 		
 		{ "v0" : 186, "v1" : 188, "vis" : true, "color" : "fde73b", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "line", "cGroup" : ["all" ], "y" : -548 },
 		
-		{ "v0" : 189, "v1" : 190, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 877 },
+		{ "v0" : 189, "v1" : 190, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 877 }, //palo blanco del corner
 		
 		{ "v0" : 191, "v1" : 192, "curve" : 0, "vis" : true, "color" : "f7513e", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ] },
 		{ "v0" : 191, "v1" : 192, "curve" : 0, "vis" : true, "color" : "f83d38", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "y" : -553 },
@@ -2690,7 +2807,7 @@ function getRealSoccerMap() {
 		
 		{ "v0" : 200, "v1" : 202, "vis" : true, "color" : "fde73b", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "line", "cGroup" : ["all" ], "y" : -548 },
 		
-		{ "v0" : 203, "v1" : 204, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 877 },
+		{ "v0" : 203, "v1" : 204, "curve" : 0, "vis" : true, "color" : "D7D7D9", "bCoef" : 0, "cMask" : ["wall" ], "trait" : "cornerflag", "cGroup" : ["all" ], "x" : 877 }, //palo blanco del corner
 		
 		{ "v0" : 205, "v1" : 206, "curve" : 0, "vis" : true, "color" : "f7513e", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ] },
 		{ "v0" : 205, "v1" : 206, "curve" : 0, "vis" : true, "color" : "f83d38", "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "y" : -553 },
@@ -2744,10 +2861,10 @@ function getRealSoccerMap() {
 		{ "radius" : 0, "invMass" : 0, "pos" : [-1311,-19 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["red" ], "cGroup" : ["ball" ] },
 		{ "radius" : 0, "invMass" : 0, "pos" : [-1310,29 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["blue" ], "cGroup" : ["ball" ] },
 		{ "radius" : 0, "invMass" : 0, "pos" : [-1308,62 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["ball" ] },
-		
-		{ "radius" : 2.7, "pos" : [-1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
-		{ "radius" : 2.7, "pos" : [1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
-		{ "radius" : 2.7, "pos" : [1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
+		//radio original: 2.7, RADIO MODIFICADO : 0 (INVISIBLE) , LOS QUE DICEN CORNEFLAG SON LOS 4 CIRCULOS DE LAS ESQUINAS (NEGRO Y VERDE POR DENTRO.)
+		{ "radius" : 0, "pos" : [-1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },  //7af769 original
+		{ "radius" : 0, "pos" : [1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
+		{ "radius" : 0, "pos" : [1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
 		
 		{ "radius" : 5, "invMass" : 0, "pos" : [-1150,-124 ], "bCoef" : 0.5, "trait" : "goalPost" },
 		{ "radius" : 5, "invMass" : 0, "pos" : [-1150,124 ], "bCoef" : 0.5, "trait" : "goalPost" },
@@ -2758,7 +2875,7 @@ function getRealSoccerMap() {
 		{ "radius" : 2, "invMass" : 0, "pos" : [1250,-158 ], "color" : "000000", "bCoef" : 1, "trait" : "goalPost" },
 		{ "radius" : 2, "invMass" : 0, "pos" : [1250,158 ], "color" : "000000", "bCoef" : 1, "trait" : "goalPost" },
 		
-		{ "radius" : 2.7, "pos" : [-1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
+		{ "radius" : 0, "pos" : [-1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" }, //color verde claro
 		
 		{ "radius" : 0, "pos" : [-1149,-485 ], "cMask" : ["none" ] },
 		{ "radius" : 0, "pos" : [1149,-485 ], "cMask" : ["none" ] },
@@ -2780,7 +2897,7 @@ function getRealSoccerMap() {
 		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,52 ], "color" : "d73252", "cMask" : ["ball","red","blue" ], "damping" : 0.96 },
 		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,40 ], "color" : "e73042", "cMask" : ["ball","red","blue" ], "damping" : 0.96 },
 		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,28 ], "color" : "e73042", "cMask" : ["ball","red","blue" ], "damping" : 0.96 },
-		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,16 ], "color" : "f7342e", "cMask" : ["ball","red","blue" ], "damping" : 0.96 },
+		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,16 ], "color" : "f7342e", "cMask" : ["ball","red","blue" ], "damping" : 0.96 }, /*2600-2900*/
 		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,4 ], "color" : "f7342e", "cMask" : ["ball","red","blue" ], "damping" : 0.96 },
 		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,-8 ], "color" : "f94d35", "cMask" : ["ball","red","blue" ], "damping" : 0.96 },
 		{ "radius" : 4, "invMass" : 1.5, "pos" : [-1210,-20 ], "color" : "f94d35", "cMask" : ["ball","red","blue" ], "damping" : 0.96 },
@@ -2838,7 +2955,7 @@ function getRealSoccerMap() {
 		"rightNet" : { "radius" : 0, "invMass" : 1, "bCoef" : 0, "cGroup" : ["ball","c3" ] },
 		"leftNet" : { "radius" : 0, "invMass" : 1, "bCoef" : 0, "cGroup" : ["ball","c2" ] },
 		"stanchion" : { "radius" : 3, "invMass" : 0, "bCoef" : 3, "cMask" : ["none" ] },
-		"cornerflag" : { "radius" : 3, "invMass" : 0, "bCoef" : 0.2, "color" : "FFFF00", "cMask" : ["ball" ] },
+		"cornerflag" : { "radius" : 3, "invMass" : 0, "bCoef" : 0.2, "color" : "FFFF00", "cMask" : ["ball" ] }, 
 		"reargoalNetleft" : { "vis" : true, "bCoef" : 0.1, "cMask" : ["ball","red","blue" ], "curve" : 10, "color" : "C7E6BD" },
 		"reargoalNetright" : { "vis" : true, "bCoef" : 0.1, "cMask" : ["ball","red","blue" ], "curve" : -10, "color" : "C7E6BD" },
 		"sidegoalNet" : { "vis" : true, "bCoef" : 1, "cMask" : ["ball","red","blue" ], "color" : "C7E6BD" },
@@ -5906,19 +6023,19 @@ var cont = 0;
 //bandera fin terminar
 room.onGameStop = function(byPlayer) {
 	if(room.getScores() == null){ //si la partida NO esta en curso
-		room.sendAnnouncement("LA PARTIDA NO ESTA EN CURSO");
+		//room.sendAnnouncement("LA PARTIDA NO ESTA EN CURSO");
 		cont+=1;
 		//room.sendAnnouncement("MENSAJE CUANDO TERMINA PARTIDA XD");
 		if(cont % 2 != 0 ){
-			room.sendAnnouncement("RETORNO FALSE");
+			//room.sendAnnouncement("RETORNO FALSE");
 			return false;
 		}
-		room.sendAnnouncement("SE ACTUALIZARON LAS ESTADISTICAS DE LOS PARTIDOS, PRUEBA : !me");
+		//room.sendAnnouncement("SE ACTUALIZARON LAS ESTADISTICAS DE LOS PARTIDOS, PRUEBA : !me");
 		//ver que equipo gano el partido
 		var players = room.getPlayerList();
 		//GANA TEAM RED
 		if(game.redScore>game.blueScore){
-			room.sendAnnouncement("GANO RED TEAM");
+			//room.sendAnnouncement("GANO RED TEAM");
 			//recorro toda la lista de jugadores con estadisticas
 			for (var i=0; i<listaJugadoresEstadisticas.length;i++){
 				var jugador = listaJugadoresEstadisticas[i].jugador;
@@ -5943,7 +6060,7 @@ room.onGameStop = function(byPlayer) {
 				estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos/(estadisticas.partidosTotal+0.000001))*100; 
 			}
 		}else if(game.blueScore > game.redScore){
-			room.sendAnnouncement("GANO BLUE TEAM");
+			//room.sendAnnouncement("GANO BLUE TEAM");
 			for (var i=0; i<listaJugadoresEstadisticas.length;i++){
 				var estadisticas = listaJugadoresEstadisticas[i].estadisticas;
 				var jugador = listaJugadoresEstadisticas[i].jugador;
@@ -5962,7 +6079,7 @@ room.onGameStop = function(byPlayer) {
 				estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos/(estadisticas.partidosTotal+0.000001))*100;
 			}			
 		}else{
-			room.sendAnnouncement("EMPATE");
+			//room.sendAnnouncement("EMPATE");
 			//aumenta 1 partido total solamente
 			for (var i=0; i<listaJugadoresEstadisticas.length;i++){
 				var estadisticas = listaJugadoresEstadisticas[i].estadisticas;
@@ -6114,24 +6231,25 @@ function ListaDeJugadoresFun(player) { // !help
 function helpFun(player) {
   var message = '📣 COMANDOS DISPONIBLES 📣:\n\n';
   message += '⯌ 👋 SALIR DEL HOST CON ESTILO : !nv    !acomer    !adormir   !bb\n\n';
-  message += '⯌❌ VOTAR BAN: "expulsar + IDdelJugador" o "expulsar + nombre jugador"\n';
-  message += '   Inicia una votación para expulsar a un jugador.\n\n';
-  message += '⯌ ACTIVAR Y DESACTIVAR AFK: !afk\n';
-  message += '   Cambia tu estado a AFK (inactivo) o volver a estar activo.\n\n';
-  message += '⯌ OTROS:      !mapas      !camisetas      !poss      !avatar       !numeros      !script      !tutorial     !adminhelp      !ids\n';
-  message += '   Prueba los diferentes comandos!\n\n';
-  message += '⯌ 💬 CHAT PRIVADO:\n';
-  message += ' CON EQUIPO: "t + Mensaje"    -   CON JUGADOR: "@@Nickname + Mensaje"\n\n';
-  message += '⯌ ⌚ VER DURACIÓN DEL PARTIDO: !time\n';
-  message += '   Ver la duración establecida del partido y los minutos o segundos de tiempo extra.\n\n';
-  message += '⯌ 📏 CAMBIAR DE TAMAÑO: "!size + Número"\n';
-  message += '   Cambiar el tamaño del jugador (Número del ' + TamanoMinimoPermitido + ' al ' + TamanoMaximoPermitido + ').\n\n';
-  message += '⯌ 🏆 TORNEO: !resultados\n';
-  message += '   Ver los resultados del torneo actual.\n\n';
-  message += '⯌ 👑 VER COMANDOS DEL ADMIN: !adminhelp\n';
-  message += '   Ver los comandos disponibles para los administradores.\n';
-  message += '⯌ 👑 Comandos randoms \n';
-  message += ' Comandos randoms : !sexo !me !showme !jugadores \n';
+  //message += '⯌❌ VOTAR BAN: "expulsar + IDdelJugador" o "expulsar + nombre jugador"\n\n';
+  //message += '   Inicia una votación para expulsar a un jugador.\n\n';
+  //message += '⯌ PONTE AFK O DEJA DE ESTAR AFK: !afk\n';
+  //message += '   Cambia tu estado a AFK (inactivo) o volver a estar activo.\n\n';
+  //message += '⯌ OTROS:    !poss  !mapas  !camisetas     !script      !tutorial     !adminhelp     !ids\n';
+  //message += '   Prueba los diferentes comandos!\n\n';
+  //message += '⯌ 💬 CHAT PRIVADO:\n';
+  //message += ' CON EQUIPO: "t + Mensaje"    -   CON JUGADOR: "@@Nickname + Mensaje"\n\n';
+  //message += '⯌ ⌚ VER DURACIÓN DEL PARTIDO: !time\n';
+  //message += '   Ver la duración establecida del partido y los minutos o segundos de tiempo extra.\n\n';
+  //message += '⯌ 📏 CAMBIAR DE TAMAÑO: "!size + Número"\n';
+  //message += '   Cambiar el tamaño del jugador (Número del ' + TamanoMinimoPermitido + ' al ' + TamanoMaximoPermitido + ').\n\n';
+  //message += '⯌ 🏆 TORNEO: !resultados\n';
+  //message += '   Ver los resultados del torneo actual.\n\n';
+  //message += '⯌ 👑 VER COMANDOS DEL ADMIN: !adminhelp\n';
+  //message += '   Ver los comandos disponibles para los administradores.\n';
+  message += '⯌ 👑 Comandos randoms : !sexo  -  !size + numero \n\n';
+  message += '⯌ 👑 Comandos  utiles : !afk  -  t + mensaje  - expulsar + nombreJugador o expulsar + idJugador - !time\n\n';
+  message += '⯌ 👑 Comandos de estadisticas: !me  - !poss   -  !jugadores   -  !ranking \n\n';
 
   room.sendAnnouncement(message, player.id, 0xffffff, "small-bold", 1);
 }
@@ -17601,7 +17719,7 @@ function unmuteFun(player, message){ // !unmute Anddy
         mutedPlayers.splice(pos, 1);
     }
 }
-
+/*
 function NumeroUnoFun(player) { // !1
     room.sendAnnouncement('para más ve a https://tell.wtf', player.id, 0xFF003C, "normal", 0);
 }
@@ -17631,7 +17749,7 @@ function NumeroNueveFun(player) { // !1
 }
 function NumeroDiezFun(player) { // !1
     room.sendAnnouncement('', player.id, 0xFF003C, "normal", 0);
-}
+}*/
 function LinkDiscordFun(player) { // !1
 }
 
@@ -17642,12 +17760,12 @@ function LinkScriptFun(player) { // !1
     var GeneradorColoresRandom2 = ColoresRandomBot2[(Math.random() * ColoresRandomBot2.length) | 0]
     room.sendAnnouncement('🔗 CREÁ TU PROPIO HOST: https://discord.gg/tDEUbJU8QB', player.id, GeneradorColoresRandom2, "normal", 0);
 }
-
+/*
 function AvatarNumerosFun(player) { // !1
     var ColoresRandomBot2 = [0xF6FF43, 0x00ffd5, 0xbfff50, 0xffd050];
     var GeneradorColoresRandom2 = ColoresRandomBot2[(Math.random() * ColoresRandomBot2.length) | 0]
     room.sendAnnouncement('Para ver números para tu avatar escribe !1, !2, !3, !4, !5, !6, !7, !8, !9 o !10.', player.id, GeneradorColoresRandom2, "normal", 0);
-}
+}*/
 
 function TamanoJugadorFun(player) {
     var ColoresRandomBot2 = [0xF6FF43, 0x00ffd5, 0xbfff50, 0xffd050];
@@ -17699,8 +17817,9 @@ var commands = {
     "!tamaño": TamanoJugadorFun,
     "!discord": LinkDiscordFun,
     "!script": LinkScriptFun,
-    "!avatar": AvatarNumerosFun,
-    "!numeros": AvatarNumerosFun,
+    //"!avatar": AvatarNumerosFun,
+    //"!numeros": AvatarNumerosFun,
+	/*
     "!1": NumeroUnoFun,
     "!2": NumeroDosFun,
     "!3": NumeroTresFun,
@@ -17710,7 +17829,7 @@ var commands = {
     "!7": NumeroSieteFun,
     "!8": NumeroOchoFun,
     "!9": NumeroNueveFun,
-    "!10": NumeroDiezFun,
+    "!10": NumeroDiezFun,*/
     "!banip" : BanIpFun,
     "!unbanip" : unBanIpFun,
     "!unbanallips": unBanAllIpsFun,
@@ -20275,6 +20394,12 @@ function imprimirInfoJugador(id){
 			room.sendAnnouncement("█ " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%)", null, 0x00FF49, 'normal', 1);
 			room.sendAnnouncement("█ " + estadisticas.partidosPerdidos + " / " + estadisticas.partidosTotal + " partidos perdidos. (" + porcentajePartidosPerdidos + "%)", null, 0x00FF49, 'normal', 1);
 			room.sendAnnouncement("█ Goles: " + estadisticas.goles + " Autogoles: " + estadisticas.autogoles + " Asistencias: " + estadisticas.asistencias, null, 0x00FF49, 'normal', 1);
+			//imprime en consola
+			console.log(" " + jugador.name + " estadisticas consola");
+			console.log(" " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%)");
+			console.log(" " + estadisticas.partidosPerdidos + " / " + estadisticas.partidosTotal + " partidos perdidos. (" + porcentajePartidosPerdidos + "%)");
+			console.log(" Goles: " + estadisticas.goles + " Autogoles: " + estadisticas.autogoles + " Asistencias: " + estadisticas.asistencias);
+
 			return true;
 		}
 	}
@@ -20291,6 +20416,7 @@ function mostrarMaximosAsistidores(){
 			jugador = maximosAsistidores[i].jugador;
 			estadisticas = maximosAsistidores[i].estadisticas;
 			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.asistencias + " asistencias.",null, 0xFFD100, 'normal', 0);
+			console.log(i+1+". "+jugador.name + " - " + estadisticas.asistencias + " asistencias.");
 		}	
 	}
 }
@@ -20305,6 +20431,7 @@ function mostrarMaximosGoleadores(){
 			jugador = maximosGoleadores[i].jugador;
 			estadisticas = maximosGoleadores[i].estadisticas;
 			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.goles + " goles.",null, 0xFFD100, 'normal', 0);
+			console.log(i+1+". "+jugador.name + " - " + estadisticas.goles + " goles.");
 		}	
 	}
 }
@@ -20800,13 +20927,15 @@ room.onPlayerChat = function(player, message) {
 	    adminMessage = message;
     	message = message.split(/ +/);
     	var RedChatColor = 0xff8e8e; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
+		room.sendAnnouncement(` 🔴 «  ` +  player.name + `» : ` + adminMessage, null, RedChatColor, 'normal', 1);
+		return false;
 		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔴 ~ ` +  player.name + `: ` + adminMessage, null, RedChatColor, 'normal', 1);
 		//" 🔴⚽ «" +  player.name + " » : ";
 		//bandera chat rojo
-		var textoPersonalizar = "" ;
+		/*var textoPersonalizar = "" ;
 		textoPersonalizar+=" 🔴";
 		//room.sendAnnouncement(`🔴 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-
+		
 		//si es maximo goleador o asistidor agregare un emoji antes
 		if(buscarJugadorEstadisticas(player.id) != null){
 			//emoji maximo goleador
@@ -20826,7 +20955,7 @@ room.onPlayerChat = function(player, message) {
 		}
 		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
 		room.sendAnnouncement(textoPersonalizar, null, RedChatColor, 'normal', 1);
-		return false;
+	}*/
 	}
 	if (ModoChatPausado.includes(player.id)==true){
 		room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);
@@ -20861,10 +20990,10 @@ room.onPlayerChat = function(player, message) {
     adminMessage = message;
     message = message.split(/ +/);
     	var BlueChatColor = 0x8eb1ff; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		var textoPersonalizar = "" ;
-		textoPersonalizar+=" 🔵";
+		//var textoPersonalizar = "" ;
+		//textoPersonalizar+=" 🔵";
 		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-
+		/*
 		//si es maximo goleador o asistidor agregare un emoji antes
 		if(buscarJugadorEstadisticas(player.id) != null){
 			//emoji maximo goleador
@@ -20884,20 +21013,17 @@ room.onPlayerChat = function(player, message) {
 		}
 		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
 		room.sendAnnouncement(textoPersonalizar, null, BlueChatColor, 'normal', 1);
-		
+		*/
 		
 		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔵 ~ ` +  player.name + `: ` + adminMessage, null, BlueChatColor, 'normal', 1);
 		//bandera chat azul
-		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, BlueChatColor, 'normal', 1);
+		room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, BlueChatColor, 'normal', 1);
 
 		return false;
-}
-			if (ModoChatPausado.includes(player.id)==true){
-				room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);
-				
-				return false;
-	
-
+	}
+		if (ModoChatPausado.includes(player.id)==true){
+			room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);		
+			return false;
     	}
 			if (player.admin==false && ModoChatPausado.includes(player.id)==false && player.team == 0) {
 	if (message['startsWith']('t ')) {
@@ -22362,7 +22488,7 @@ setTimeout(function() {
 room.sendAnnouncement("[⌨] ¡Hola @" + playerName + "! Escribe '!help' en el chat para ver los comandos. ¡Estamos aquí para ayudarte! 🌟🎮", player.id, 0x00FFB3, "normal", 0);
 }, 5000);
 setTimeout(function() {
-  room.sendAnnouncement("⚽️ ¡EQUIPOS SELECCIONADOS! ⚔️ \n\nEquipo Rojo 🔴: " + teamRed + "  vs  Equipo Azul 🔵: " + teamBlue + " \n\n¡Que empiece el juego! 🎉⚽️", player.id, 0x00FFB3, "normal", 0);
+  //room.sendAnnouncement("⚽️ ¡EQUIPOS SELECCIONADOS! ⚔️ \n\nEquipo Rojo 🔴: " + teamRed + "  vs  Equipo Azul 🔵: " + teamBlue + " \n\n¡Que empiece el juego! 🎉⚽️", player.id, 0x00FFB3, "normal", 0);
 }, 3000);
 //añadir jugador a la lista.
 var jugadorEstadisticas = {
