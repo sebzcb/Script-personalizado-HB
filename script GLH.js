@@ -3641,10 +3641,10 @@ function getRealSoccerMap2() {
 		{ "radius" : 0, "invMass" : 0, "pos" : [-1311,-19 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["red" ], "cGroup" : ["ball" ] },
 		{ "radius" : 0, "invMass" : 0, "pos" : [-1310,29 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["blue" ], "cGroup" : ["ball" ] },
 		{ "radius" : 0, "invMass" : 0, "pos" : [-1308,62 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["ball" ] },
-		
-		{ "radius" : 2.7, "pos" : [-1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
-		{ "radius" : 2.7, "pos" : [1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
-		{ "radius" : 2.7, "pos" : [1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
+		//EL RADIO PASO DE 2.7 A 0 (INVISIBLE ) LOS CIRCULOS DE LAS ESQUINAS EN RS
+		{ "radius" : 0, "pos" : [-1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
+		{ "radius" : 0, "pos" : [1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
+		{ "radius" : 0, "pos" : [1150,600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
 		
 		{ "radius" : 5, "invMass" : 0, "pos" : [-1150,-124 ], "bCoef" : 0.5, "trait" : "goalPost", "color" : "d6cbcb" },
 		{ "radius" : 5, "invMass" : 0, "pos" : [-1150,124 ], "bCoef" : 0.5, "trait" : "goalPost", "color" : "d6cbcb" },
@@ -3655,7 +3655,7 @@ function getRealSoccerMap2() {
 		{ "radius" : 3, "invMass" : 0, "pos" : [1250,-158 ], "color" : "2e51dd", "bCoef" : 1, "trait" : "goalPost" },
 		{ "radius" : 3, "invMass" : 0, "pos" : [1250,158 ], "color" : "2e51dd", "bCoef" : 1, "trait" : "goalPost" },
 		
-		{ "radius" : 2.7, "pos" : [-1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
+		{ "radius" : 0, "pos" : [-1150,-600 ], "cGroup" : ["ball" ], "trait" : "cornerflag", "color" : "7af769" },
 		
 		{ "radius" : 0, "pos" : [-1149,-485 ], "cMask" : ["none" ] },
 		{ "radius" : 0, "pos" : [1149,-485 ], "cMask" : ["none" ] },
