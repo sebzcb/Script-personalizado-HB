@@ -6568,10 +6568,10 @@ function getRSX10Map() {
 			{ "normal" : [0,1 ], "dist" : -627, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
 			{ "normal" : [0,-1 ], "dist" : -627, "bCoef" : 0, "cGroup" : ["ball" ], "trait" : "ballArea" },
 			
-			{ "normal" : [0,1 ], "dist" : -706, "bCoef" : 0 },
-			{ "normal" : [0,-1 ], "dist" : -706, "bCoef" : 0 },
-			{ "normal" : [1,0 ], "dist" : -1300, "bCoef" : 0 },
-			{ "normal" : [-1,0 ], "dist" : -1300, "bCoef" : 0.1 },
+			{ "normal" : [0,1 ], "dist" : -1063.9582885651082, "bCoef" : 0 },
+			{ "normal" : [0,-1 ], "dist" : -1061.79561042524, "bCoef" : 0 },
+			{ "normal" : [1,0 ], "dist" : -1947.9736818688002, "bCoef" : 0 },
+			{ "normal" : [-1,0 ], "dist" : -1945.610903306797, "bCoef" : 0.1 },
 			{ "normal" : [1,0 ], "dist" : -1240, "bCoef" : 0, "cMask" : ["ball" ], "cGroup" : ["ball" ] },
 			{ "normal" : [-1,0 ], "dist" : -1240, "bCoef" : 0, "cMask" : ["ball" ], "cGroup" : ["ball" ] }
 	
