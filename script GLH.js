@@ -21298,32 +21298,32 @@ function imprimirInfoJugador(id){
 	}
 	return false;
 }
-function mostrarMaximosAsistidores(){
+function mostrarMaximosAsistidores(player){
 	if(maximosAsistidores.length == 0 ){
-		room.sendAnnouncement("No hay asistidores todavia.");
+		room.sendAnnouncement("No hay asistidores todavia.",player.id);
 		return false;
 	}
-	room.sendAnnouncement("----------------- MAXIMOS ASISTIDORES ------------------",null, 0x00F3FF, 'bold', 2);
+	room.sendAnnouncement("----------------- MAXIMOS ASISTIDORES ------------------",player.id, 0x00F3FF, 'bold', 2);
 	for (var i = 0; i < maximosAsistidores.length ;i++){
 		if(maximosAsistidores[i] != undefined){
 			jugador = maximosAsistidores[i].jugador;
 			estadisticas = maximosAsistidores[i].estadisticas;
-			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.asistencias + " asistencias.",null, 0xFFD100, 'normal', 0);
+			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.asistencias + " asistencias.",player.id, 0xFFD100, 'normal', 0);
 			console.log(i+1+". "+jugador.name + " - " + estadisticas.asistencias + " asistencias.");
 		}	
 	}
 }
-function mostrarMaximosGoleadores(){
+function mostrarMaximosGoleadores(player){
 	if(maximosGoleadores.length == 0 ){
-		room.sendAnnouncement("No hay goleadores todavia.");
+		room.sendAnnouncement("No hay goleadores todavia.",player.id);
 		return false;
 	}
-	room.sendAnnouncement("----------------- MAXIMOS GOLEADORES ------------------",null, 0x00F3FF, 'bold', 0);
+	room.sendAnnouncement("----------------- MAXIMOS GOLEADORES ------------------",player.id, 0x00F3FF, 'bold', 0);
 	for (var i = 0; i < maximosGoleadores.length ;i++){
 		if(maximosGoleadores[i] != undefined){
 			jugador = maximosGoleadores[i].jugador;
 			estadisticas = maximosGoleadores[i].estadisticas;
-			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.goles + " goles.",null, 0xFFD100, 'normal', 0);
+			room.sendAnnouncement(i+1+". "+jugador.name + " - " + estadisticas.goles + " goles.",player.id, 0xFFD100, 'normal', 0);
 			console.log(i+1+". "+jugador.name + " - " + estadisticas.goles + " goles.");
 		}	
 	}
@@ -21358,8 +21358,8 @@ room.onPlayerChat = function(player, message) {
 		return false;
 	}
 	if(message.toLowerCase() == "!ranking"){
-		mostrarMaximosAsistidores();
-		mostrarMaximosGoleadores();
+		mostrarMaximosAsistidores(player);
+		mostrarMaximosGoleadores(player);
 		return true;
 	}
 	if(message.toLowerCase() == "!jugadores"){
@@ -21815,6 +21815,7 @@ room.onPlayerChat = function(player, message) {
 		room.sendAnnouncement(`     « 👑 ADMIN ~ ` +  player.name + ` »: ` + adminMessage, null, adminChatColor, 'normal', 1);
 		return false;
 }
+
 	//EQUIPO ROJO CHAT
 	if (player.admin==false && ModoChatPausado.includes(player.id)==false  && player.team == 1) {
 		if (message['startsWith']('t ')) {
@@ -21926,7 +21927,7 @@ room.onPlayerChat = function(player, message) {
 		var goat = false;
 		if(buscarJugadorEstadisticas(player.id) != null){
 			//si es el goat
-			if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
+			if(maximosGoleadores[0] != undefined && maximosAsistidores[0] != undefined && maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
 			maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
 				textoPersonalizar+=" 🐐";
 				goat = true;
@@ -21996,7 +21997,7 @@ room.onPlayerChat = function(player, message) {
 		//si es maximo goleador o asistidor agregare un emoji antes
 		if(buscarJugadorEstadisticas(player.id) != null){
 			//si es el goat
-			if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
+			if(maximosGoleadores[0] != undefined && maximosAsistidores[0] != undefined && maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
 			maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
 				textoPersonalizar+=" 🐐";
 				goat = true;
@@ -22027,7 +22028,9 @@ room.onPlayerChat = function(player, message) {
 }	
     if(CensuradorDeSpammeros(message)) return false;
     if (message.indexOf("!") == 0) return false; 
-    }
+
+	console.log("ningun ! seleccionado");
+}
 
 // Función para enviar el mensaje de publicidad
 function sendAdvertisingMessage() {
@@ -22345,28 +22348,7 @@ function actualizarMasGolesAsistidores(){
 					}
 				}
 }
-//ve si algun jugador de listaJugadoresEstadisticasEnPartida no esta en lj.
-function verificarSiEstaEnListaJugadores(listaJugadores) {
-	for (var i = 0; i < listaJugadores.length; i++) {
-	  var idJug = listaJugadores[i].id;
-	  var encontroId = false; // Suponemos inicialmente que el jugador no está en la lista.
-	  for (var j = 0; j < listaJugadoresEstadisticasEnPartida.length; j++) {
-		
-		if (idJug == listaJugadoresEstadisticasEnPartida[j].jugador.id) {
-		  // Si encuentra una coincidencia, establecemos noEncontroId en false.
-		  encontroId = true;
-		  break; // No es necesario seguir buscando, ya encontramos una coincidencia.
-		}
-	  }
-	  // Ahora, realizamos una acción basada en el valor de noEncontroId.
-	  if (!encontroId) {
-		return false; // el jugador no esta en listaJugadores.
-		// Puedes realizar otras acciones aquí, como agregar el jugador a listaJugadoresEstadisticasEnPartida
-		// o llevar un registro de los jugadores que no están en la lista, según lo que necesites.
-	  }
-	}
-	return true; //el jugador esta en lista jugadores.
-}
+
 function agregarJugadoresListaJugadoresEstadisticasEnPartidaSiFalta(listaActualizada) {
 	var listaJugadoresAgregar = [];
 	for (var i = 0; i < listaActualizada.length; i++) {
