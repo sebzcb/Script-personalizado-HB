@@ -19,5 +19,11 @@ Mapas modificados :
 Mapas agregados : 
 !futx10 -> se agrego un mapa al script 10 vs 10 , ideal para cuando hay 30 personas en la sala.
 
+!futx7 -> posiciones de spawn modificadas a lugares mas cercas al  centro.
+
 Chat modificado : 
 Interfaz cambiada -> el maximo goleador y maximo asistente se les agrega un emoji de pelota o zapato en su nombre cada vez que chatean para que sean reconocidos como el maximo goleador/asistente.
+
+recomendaciones aleatorias tras cada partida
+
+aparecen los mvps del red y blue tras cada partida.
