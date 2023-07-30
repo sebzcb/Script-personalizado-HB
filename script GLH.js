@@ -98,6 +98,8 @@ var posMaxGoleadores = 3; //dicen el maximo que se almacenara en goleadores
 var posMaxAsistidores = 3; //dicen el maximo que se almacenara en asistidores
 var maximosGoleadores = []; //arreglo que su maximo es controlado por posMaxGoleadores 
 var maximosAsistidores = []; //arreglo que su maximo es controlado por posMaxAsistidores
+//booleanos mapas aleatorios.
+var elegirMapaAleatorioX7 = false;
 
 //variables de la partida
 /*incia partida-> listaJugadoresEstadisticasEnPartida = [jugador: player.name , id:player.id | estadisticas: goles,autog,asist,kda]*/ 
@@ -4339,7 +4341,29 @@ function getPenaltyRedMap() {
 	RSRMap = false;
 	return PenaltyRedMap;
 }
-
+function getFutx7MapBrianCruyff() {
+	var Futx7Map = `{"name":"Futsal x7 Brian Cruyff from HaxMaps","width":1275,
+	"height":635,
+	"bg":{"type":"grass", "width":1200,"height":600,"color":"5B6D52"},
+	"vertexes":[{"x":-1200,"y":-600,"cMask":[],"cGroup":[]},{"x":1200,"y":-600,"cMask":[],"cGroup":[]},{"x":-1200,"y":600,"cMask":[],"cGroup":[]},{"x":1200,"y":600,"cMask":[],"cGroup":[]},{"x":-1200,"y":-110,"cMask":[],"cGroup":[]},{"x":1200,"y":-110,"cMask":[],"cGroup":[]},{"x":1200,"y":110,"cMask":[],"cGroup":[]},{"x":-1200,"y":110,"cMask":[],"cGroup":[]},{"x":-1250,"y":-110,"cMask":[],"cGroup":[]},{"x":-1250,"y":110,"cMask":[],"cGroup":[]},{"x":1250,"y":-110,"cMask":[],"cGroup":[]},{"x":1250,"y":110,"cMask":[],"cGroup":[]},{"x":0,"y":-600,"cMask":[],"cGroup":[]},{"x":0,"y":-170,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":0,"y":170,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":0,"y":600,"cMask":[],"cGroup":[]},{"x":-1206.5,"y":-600,"cMask":[],"cGroup":[]},{"x":-1206.5,"y":-110,"cMask":[],"cGroup":[]},{"x":-1206.5,"y":600,"cMask":[],"cGroup":[]},{"x":-1206.5,"y":110,"cMask":[],"cGroup":[]},
+	{"x":1206.5,"y":-600,"cMask":[],"cGroup":[]},{"x":1206.5,"y":-110,"cMask":[],"cGroup":[]},{"x":1206.5,"y":600,"cMask":[],"cGroup":[]},{"x":1206.5,"y":110,"cMask":[],"cGroup":[]},{"x":0,"y":-635,"cMask":[],"cGroup":[]},{"x":0,"y":635,"cMask":[],"cGroup":[]},{"x":-1202,"y":-110,"cMask":[],"cGroup":[]},{"x":-1202,"y":110,"cMask":[],"cGroup":[]},{"x":1202,"y":-110,"cMask":[],"cGroup":[]},{"x":1202,"y":110,"cMask":[],"cGroup":[]},{"x":-1198,"y":-110,"cMask":[],"cGroup":[]},{"x":-1198,"y":110,"cMask":[],"cGroup":[]},{"x":-1252,"y":116.5,"cMask":[],"cGroup":[]},{"x":-1199,"y":116.5,"cMask":[],"cGroup":[]},{"x":-1252,"y":-116.5,"cMask":[],"cGroup":[]},{"x":-1199,"y":-116.5,"cMask":[],"cGroup":[]},{"x":1201,"y":-116.5,"cMask":[],"cGroup":[]},{"x":1252,"y":-116.5,"cMask":[],"cGroup":[]},{"x":1200,"y":116.5,"cMask":[],"cGroup":[]},{"x":1252,"y":116.5,"cMask":[],"cGroup":[]},{"x":-1170,"y":-600,"cMask":[],"cGroup":[]},{"x":-1200,"y":-570,"cMask":[],"cGroup":[]},{"x":-1200,"y":570,"cMask":[],"cGroup":[]},{"x":-1170,"y":600,"cMask":[],"cGroup":[]},
+	{"x":1200,"y":570,"cMask":[],"cGroup":[]},{"x":1170,"y":600,"cMask":[],"cGroup":[]},{"x":1170,"y":-600,"cMask":[],"cGroup":[]},{"x":1200,"y":-570,"cMask":[],"cGroup":[]},{"x":1200,"y":-140,"cMask":[],"cGroup":[]},{"x":1100,"y":-140,"cMask":[],"cGroup":[]},{"x":1100,"y":140,"cMask":[],"cGroup":[]},{"x":1200,"y":140,"cMask":[],"cGroup":[]},{"x":1200,"y":350,"cMask":[],"cGroup":[]},{"x":800,"y":350,"cMask":[],"cGroup":[]},{"x":800,"y":-350,"cMask":[],"cGroup":[]},{"x":1200,"y":-350,"cMask":[],"cGroup":[]},{"x":800,"y":115,"cMask":[],"cGroup":[]},{"x":800,"y":-115,"cMask":[],"cGroup":[]},{"x":0,"y":-170,"cMask":[],"cGroup":[]},{"x":0,"y":170,"cMask":[],"cGroup":[]},{"x":0,"y":-2,"cMask":[],"cGroup":[]},{"x":0,"y":2,"cMask":[],"cGroup":[]},{"x":0,"y":-4,"cMask":[],"cGroup":[]},{"x":0,"y":4,"cMask":[],"cGroup":[]},{"x":0,"y":-2,"cMask":[],"cGroup":[]},{"x":0,"y":2,"cMask":[],"cGroup":[]},{"x":0,"y":-4,"cMask":[],"cGroup":[]},{"x":0,"y":4,"cMask":[],"cGroup":[]},{"x":950,"y":-2,"cMask":[],"cGroup":[]},{"x":950,"y":2,"cMask":[],"cGroup":[]},{"x":950,"y":-2,"cMask":[],"cGroup":[]},{"x":950,"y":2,"cMask":[],"cGroup":[]},{"x":-1200,"y":-140,"cMask":[],"cGroup":[]},{"x":-1100,"y":-140,"cMask":[],"cGroup":[]},{"x":-1100,"y":140,"cMask":[],"cGroup":[]},{"x":-1200,"y":140,"cMask":[],"cGroup":[]},{"x":-1200,"y":350,"cMask":[],"cGroup":[]},{"x":-800,"y":350,"cMask":[],"cGroup":[]},{"x":-800,"y":-350,"cMask":[],"cGroup":[]},{"x":-1200,"y":-350,"cMask":[],"cGroup":[]},{"x":-800,"y":115,"cMask":[],"cGroup":[]},{"x":-800,"y":-115,"cMask":[],"cGroup":[]},{"x":-950,"y":-2,"cMask":[],"cGroup":[]},{"x":-950,"y":2,"cMask":[],"cGroup":[]},{"x":-950,"y":-2,"cMask":[],"cGroup":[]},{"x":-950,"y":2,"cMask":[],"cGroup":[]},{"x":1200,"y":-110,"cMask":[],"cGroup":[]},{"x":1200,"y":110,"cMask":[],"cGroup":[]},{"x":-1200,"y":-110,"cMask":[],"cGroup":[]},{"x":-1200,"y":110,"cMask":[],"cGroup":[]},{"x":1211,"y":574,"cMask":[],"cGroup":[]},{"x":1226,"y":574,"cMask":[],"cGroup":[]},{"x":1241,"y":574,"cMask":[],"cGroup":[]},{"x":1211,"y":571.5,"cMask":[],"cGroup":[]},{"x":1226,"y":571.5,"cMask":[],"cGroup":[]},
+	{"x":1241,"y":571.5,"cMask":[],"cGroup":[]},{"x":1201,"y":599,"cMask":[],"cGroup":[]},{"x":-1189,"y":573,"cMask":[],"cGroup":[]},{"x":-1174,"y":573,"cMask":[],"cGroup":[]},{"x":-1159,"y":573,"cMask":[],"cGroup":[]},{"x":-1189,"y":570.5,"cMask":[],"cGroup":[]},{"x":-1174,"y":570.5,"cMask":[],"cGroup":[]},{"x":-1159,"y":570.5,"cMask":[],"cGroup":[]},{"x":-1199,"y":598,"cMask":[],"cGroup":[]},{"x":-1190,"y":-625,"cMask":[],"cGroup":[]},{"x":-1175,"y":-625,"cMask":[],"cGroup":[]},{"x":-1160,"y":-625,"cMask":[],"cGroup":[]},{"x":-1190,"y":-627.5,"cMask":[],"cGroup":[]},{"x":-1175,"y":-627.5,"cMask":[],"cGroup":[]},{"x":-1160,"y":-627.5,"cMask":[],"cGroup":[]},{"x":-1200,"y":-600,"cMask":[],"cGroup":[]},{"x":1212,"y":-625,"cMask":[],"cGroup":[]},{"x":1227,"y":-625,"cMask":[],"cGroup":[]},{"x":1242,"y":-625,"cMask":[],"cGroup":[]},{"x":1212,"y":-627.5,"cMask":[],"cGroup":[]},{"x":1227,"y":-627.5,"cMask":[],"cGroup":[]},{"x":1242,"y":-627.5,"cMask":[],"cGroup":[]},{"x":1202,"y":-600,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":0,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":0,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":30,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":30,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":60,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":60,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":90,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":90,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":-90,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":-90,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":-60,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":-60,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":-30,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":-30,"cMask":[],"cGroup":[]},
+	{"x":-1215,"y":-108.5,"cMask":[],"cGroup":[]},{"x":-1215,"y":108.5,"cMask":[],"cGroup":[]},{"x":-1230,"y":-108.5,"cMask":[],"cGroup":[]},{"x":-1230,"y":108.5,"cMask":[],"cGroup":[]},{"x":-1245,"y":-108.5,"cMask":[],"cGroup":[]},{"x":-1245,"y":108.5,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":-75,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":-75,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":-105,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":-105,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":-45,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":-45,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":-15,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":-15,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":15,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":15,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":45,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":45,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":75,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":75,"cMask":[],"cGroup":[]},{"x":-1248.5,"y":105,"cMask":[],"cGroup":[]},{"x":-1201.5,"y":105,"cMask":[],"cGroup":[]},{"x":1201.5,"y":15,"cMask":[],"cGroup":[]},{"x":1248.5,"y":15,"cMask":[],"cGroup":[]},{"x":1201.5,"y":30,"cMask":[],"cGroup":[]},{"x":1248.5,"y":30,"cMask":[],"cGroup":[]},{"x":1201.5,"y":45,"cMask":[],"cGroup":[]},{"x":1248.5,"y":45,"cMask":[],"cGroup":[]},{"x":1201.5,"y":60,"cMask":[],"cGroup":[]},{"x":1248.5,"y":60,"cMask":[],"cGroup":[]},{"x":1201.5,"y":75,"cMask":[],"cGroup":[]},{"x":1248.5,"y":75,"cMask":[],"cGroup":[]},{"x":1201.5,"y":90,"cMask":[],"cGroup":[]},{"x":1248.5,"y":90,"cMask":[],"cGroup":[]},{"x":1201.5,"y":105,"cMask":[],"cGroup":[]},{"x":1248.5,"y":105,"cMask":[],"cGroup":[]},{"x":1201.5,"y":-105,"cMask":[],"cGroup":[]},{"x":1248.5,"y":-105,"cMask":[],"cGroup":[]},{"x":1201.5,"y":-90,"cMask":[],"cGroup":[]},{"x":1248.5,"y":-90,"cMask":[],"cGroup":[]},{"x":1201.5,"y":-75,"cMask":[],"cGroup":[]},{"x":1248.5,"y":-75,"cMask":[],"cGroup":[]},{"x":1201.5,"y":-60,"cMask":[],"cGroup":[]},{"x":1248.5,"y":-60,"cMask":[],"cGroup":[]},{"x":1201.5,"y":-45,"cMask":[],"cGroup":[]},{"x":1248.5,"y":-45,"cMask":[],"cGroup":[]},{"x":1201.5,"y":-30,"cMask":[],"cGroup":[]},{"x":1248.5,"y":-30,"cMask":[],"cGroup":[]},{"x":1201.5,"y":-15,"cMask":[],"cGroup":[]},{"x":1248.5,"y":-15,"cMask":[],"cGroup":[]},{"x":1201.5,"y":0,"cMask":[],"cGroup":[]},{"x":1248.5,"y":0,"cMask":[],"cGroup":[]},{"x":1215,"y":108.5,"cMask":[],"cGroup":[]},{"x":1215,"y":-108.5,"cMask":[],"cGroup":[]},
+	{"x":1230,"y":108.5,"cMask":[],"cGroup":[]},{"x":1230,"y":-108.5,"cMask":[],"cGroup":[]},{"x":1245,"y":108.5,"cMask":[],"cGroup":[]},{"x":1245,"y":-108.5,"cMask":[],"cGroup":[]}],
+	"segments":[{"v0":0,"v1":1,"cMask":["ball"],"color":"C4F0C8"},{"v0":2,"v1":3,"cMask":["ball"],"color":"C4F0C8"},{"v0":0,"v1":4,"cMask":["ball"],"color":"C4F0C8"},{"v0":1,"v1":5,"cMask":["ball"],"color":"C4F0C8"},{"v0":3,"v1":6,"cMask":["ball"],"color":"C4F0C8"},{"v0":2,"v1":7,"cMask":["ball"],"color":"C4F0C8"},{"v0":4,"v1":8,"bCoef":0.1,"cMask":["ball"],"color":"FFFFFF"},{"v0":8,"v1":9,"bCoef":0.1,"cMask":["ball"],"color":"FFFFFF"},{"v0":9,"v1":7,"bCoef":0.1,"cMask":["ball"],"color":"FFFFFF"},{"v0":5,"v1":10,"bCoef":0.1,"cMask":["ball"],"color":"FFFFFF"},{"v0":10,"v1":11,"bCoef":0.1,"cMask":["ball"],"color":"FFFFFF"},{"v0":11,"v1":6,"bCoef":0.1,"cMask":["ball"],"color":"FFFFFF"},{"v0":12,"v1":13,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"color":"C4F0C8"},{"v0":14,"v1":15,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"color":"C4F0C8"},{"v0":13,"v1":14,"curve":180,"curveF":6.123233995736766e-17,"cMask":["red","blue"],"cGroup":["redKO"],"color":"C4F0C8"},{"v0":14,"v1":13,"curve":180,"curveF":6.123233995736766e-17,"cMask":["red","blue"],"cGroup":["blueKO"],"color":"C4F0C8"},{"v0":16,"v1":17,"vis":false,"cMask":["ball"]},{"v0":18,"v1":19,"vis":false,"cMask":["ball"]},{"v0":20,"v1":21,"vis":false,"cMask":["ball"]},{"v0":22,"v1":23,"vis":false,"cMask":["ball"]},{"v0":12,"v1":24,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":15,"v1":25,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":32,"v1":33,"vis":false,"cMask":["ball"]},{"v0":34,"v1":35,"vis":false,"cMask":["ball"]},{"v0":36,"v1":37,"vis":false,"cMask":["ball"]},{"v0":38,"v1":39,"vis":false,"cMask":["ball"]},{"v0":40,"v1":41,"curve":89.99999999999999,"curveF":1.0000000000000002,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":42,"v1":43,"curve":89.99999999999999,"curveF":1.0000000000000002,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":45,"v1":44,"curve":89.99999999999999,"curveF":1.0000000000000002,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":47,"v1":46,"curve":89.99999999999999,"curveF":1.0000000000000002,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":48,"v1":49,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":49,"v1":50,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":51,"v1":50,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":52,"v1":53,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":54,"v1":53,"cMask":[],"cGroup":[],"color":"C4F0C8"},
+	{"v0":55,"v1":54,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":56,"v1":57,"curve":115,"curveF":0.6370702608074932,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":58,"v1":59,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":60,"v1":61,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":62,"v1":63,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":65,"v1":64,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":67,"v1":66,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":68,"v1":69,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":71,"v1":70,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":72,"v1":73,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":73,"v1":74,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":75,"v1":74,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":76,"v1":77,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":78,"v1":77,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":79,"v1":78,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":81,"v1":80,"curve":115,"curveF":0.6370702608074932,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":82,"v1":83,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":85,"v1":84,"curve":180,"curveF":6.123233995736766e-17,"cMask":[],"cGroup":[],"color":"C4F0C8"},{"v0":86,"v1":87,"cMask":[],"cGroup":[],"color":"FFFFFF"},{"v0":88,"v1":89,"cMask":[],"cGroup":[],"color":"FFFFFF"},{"v0":90,"v1":91,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":92,"v1":91,"cMask":[],"cGroup":[],"color":"F2222C"},{"v0":93,"v1":94,"cMask":[],"cGroup":[],"color":"F2222C"},{"v0":95,"v1":94,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":96,"v1":93,"cMask":[],"cGroup":[],"color":"FFFFFF"},{"v0":97,"v1":98,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":99,"v1":98,"cMask":[],"cGroup":[],"color":"F2222C"},{"v0":100,"v1":101,"cMask":[],"cGroup":[],"color":"F2222C"},{"v0":102,"v1":101,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":103,"v1":100,"cMask":[],"cGroup":[],"color":"FFFFFF"},{"v0":104,"v1":105,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":106,"v1":105,"cMask":[],"cGroup":[],"color":"F2222C"},{"v0":107,"v1":108,"cMask":[],"cGroup":[],"color":"F2222C"},
+	{"v0":109,"v1":108,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":110,"v1":107,"cMask":[],"cGroup":[],"color":"FFFFFF"},{"v0":111,"v1":112,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":113,"v1":112,"cMask":[],"cGroup":[],"color":"F2222C"},
+	{"v0":114,"v1":115,"cMask":[],"cGroup":[],"color":"F2222C"},{"v0":116,"v1":115,"cMask":[],"cGroup":[],"color":"F7E71C"},{"v0":117,"v1":114,"cMask":[],"cGroup":[],"color":"FFFFFF"},{"v0":118,"v1":119,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":120,"v1":121,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":122,"v1":123,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":124,"v1":125,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":126,"v1":127,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":128,"v1":129,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":130,"v1":131,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":132,"v1":133,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":134,"v1":135,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":136,"v1":137,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":138,"v1":139,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":140,"v1":141,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":142,"v1":143,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":144,"v1":145,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":146,"v1":147,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":148,"v1":149,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":150,"v1":151,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":152,"v1":153,"cMask":[],"cGroup":[],"color":"E89C8D"},{"v0":154,"v1":155,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":156,"v1":157,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":158,"v1":159,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":160,"v1":161,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":162,"v1":163,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":164,"v1":165,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":166,"v1":167,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":168,"v1":169,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":170,"v1":171,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":172,"v1":173,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":174,"v1":175,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":176,"v1":177,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":178,"v1":179,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":180,"v1":181,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":182,"v1":183,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":184,"v1":185,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":186,"v1":187,"cMask":[],"cGroup":[],"color":"9DBAE8"},{"v0":188,"v1":189,"cMask":[],"cGroup":[],"color":"9DBAE8"}],
+	"planes":[{"normal":[0,1],"dist":-600,"cMask":["ball"]},{"normal":[0,-1],"dist":-600,"cMask":["ball"]},{"normal":[-1,0],"dist":-1252,"bCoef":0.1,"cMask":["ball"]},{"normal":[1,0],"dist":-1252,"bCoef":0.1,"cMask":["ball"]},{"normal":[0,1],"dist":-635},{"normal":[0,-1],"dist":-635},{"normal":[1,0],"dist":-1275},{"normal":[-1,0],"dist":-1275}],
+	"goals":[{"p0":[-1206,110],"p1":[-1206,-110],"team":"red"},{"p0":[1206,110],"p1":[1206,-110],"team":"blue"}],
+	"discs":[{"radius":6.25,"bCoef":0.35,"invMass":1.5,"cGroup":["ball","kick","score"]},{"pos":[-1200,-110],"radius":4.5,"invMass":0},{"pos":[1200,-110],"radius":4.5,"invMass":0},{"pos":[-1200,110],"radius":4.5,"invMass":0},{"pos":[1200,110],"radius":4.5,"invMass":0},{"pos":[1200,600],"radius":3.5,"cMask":[],"cGroup":[]},{"pos":[-1200,600],"radius":3.5,"cMask":[],"cGroup":[]},{"pos":[-1200,-600],"radius":3.5,"cMask":[],"cGroup":[]},{"pos":[1200,-600],"radius":3.5,"cMask":[],"cGroup":[]},{"pos":[1250,-110],"radius":3.5,"invMass":0},{"pos":[1250,110],"radius":3.5,"invMass":0},{"pos":[-1250,-110],"radius":3.5,"invMass":0},{"pos":[-1250,110],"radius":3.5,"invMass":0}],"playerPhysics":{"bCoef":0,"acceleration":0.11,"kickingAcceleration":0.083,"kickStrength":5.2},"ballPhysics":"disc0",
+	"spawnDistance":450,
+	"redSpawnPoints":[[-400,-50],[-400,0],[-400,50],[-400,100],[-400,-100],[-400,150],[-400,-150],[-1200,-450]],
+	"blueSpawnPoints":[[400,-50],[400,0],[400,50],[400,100],[400,-100],[400,150],[400,-150],[1200,450]]}`;
+	RSRMap = false;
+	return Futx7Map;
+}
 function getFutx7Map() {
 	var Futx7Map = `{
 
@@ -6793,17 +6817,26 @@ room.onGameStart = function(byPlayer) {
   let redTeam = players.filter(p => p.team === 1);
   let blueTeam = players.filter(p => p.team === 2);
 
-  let redPlayers = redTeam.map(p => `${p.name}`);
-  let bluePlayers = blueTeam.map(p => `${p.name}`);
 
-  //room.sendAnnouncement(`Formación ` + teamRed + `: ` + ` ${redPlayers.join(' - ')}`, null, 0xFF0000, 'bold', 1);
-  //room.sendAnnouncement(`Formación ` + teamBlue + `: ` + ` ${bluePlayers.join(' - ')}`, null, 0x0080ff, 'bold', 1);
 	//inicializa listaJugadoresEstadisticasEnPartida con los jugadores en la partida
 	//si durante la partida se une alguien y NO esta en listaJugadoresEstadisticasEnPartida, se agrega.
 	//actualizar listaJugadoresEstadisticasEnPartida , cuando se vaya un jugador o cuando se termine la partida o gol.
 	if(contJuegoEmpezar%2 != 0){ //si es impar.
+		//ver si : elegirMapaAleatorioX7 == true -> elije de los mapas x7 uno aleatorio y lo pone.
+		/*room.sendAnnouncement(" elegir mapa aleatorio x 7 = " + elegirMapaAleatorioX7);
+		if(elegirMapaAleatorioX7){
+			room.sendAnnouncement("entro");
+			const p = Math.random(); //n entre 0 y 1
+			if(p >= 0.5){
+				room.sendAnnouncement("1 1 1");
+				room.setCustomStadium(getFutx7Map());
+			}else{
+				room.sendAnnouncement("2 2 2");
+				room.setCustomStadium(getFutx7MapBrianCruyff());
+			}
+		}
+		*/
 
-		//room.sendAnnouncement(" largo jugadores : " + players.length);
 		for (var i = 0 ; i < players.length;i++){
 			var jugadorEstadisticasPartida = {
 				jugador: {name : players[i].name , id : players[i].id, team : players[i].team },
@@ -6931,10 +6964,22 @@ function mostrarMensajeRecomendacionRandom() {
 	  room.sendAnnouncement("\n█ "+mensajeAleatorio, jugador.id, 0x43FBB8, 'bold', 0);
 	}
   }
-  
+function elegirMapaAleatorio(){
+	var p = Math.random();
+	if(elegirMapaAleatorioX7){
+		if(p>=0.5){
+			room.setCustomStadium(getFutx7Map());
+		}else{
+			room.setCustomStadium(getFutx7MapBrianCruyff());
+		}
+		return true;
+	}
+	
+}
 var cont = 0;
 //bandera fin terminar
 room.onGameStop = function(byPlayer) {
+	
 	if(room.getScores() == null){ //si la partida NO esta en curso
 		//room.sendAnnouncement("LA PARTIDA NO ESTA EN CURSO");
 		cont+=1;
@@ -6943,6 +6988,9 @@ room.onGameStop = function(byPlayer) {
 			//room.sendAnnouncement("RETORNO FALSE");
 			return false;
 		}
+		//room.sendAnnouncement("room.onGameStop par");
+		elegirMapaAleatorio();
+		
 		var lj = room.getPlayerList();
 		actualizarEquiposDeJugadores(lj); 
 		//room.sendAnnouncement("SE ACTUALIZARON LAS ESTADISTICAS DE LOS PARTIDOS, PRUEBA : !me");
@@ -7012,6 +7060,8 @@ room.onGameStop = function(byPlayer) {
 		listaJugadoresEstadisticasEnPartida = [];
 		//Mostrar mensaje de recomendacion 
 		mostrarMensajeRecomendacionRandom();
+		//si hay una bandera de mapa aleatorio se asignara un mapa aleatorio. x7  x4 o otro modo.
+		elegirMapaAleatorio();
 	}
 	PartidoArrancado = false;
     whoTouchedLast = undefined;
@@ -21388,6 +21438,9 @@ function mostrarMaximosGoleadores(player){
 		}	
 	}
 }
+function reiniciarValoresMapasAleatorios(){
+	elegirMapaAleatorioX7 = false;
+}
 /*
 entra jugador -> aumenta lista jugadores
 sale jugador -> resta lista jugadores y stats.
@@ -21726,8 +21779,12 @@ room.onPlayerChat = function(player, message) {
     if(message.includes("tiempo") && PartidoArrancado == true) return penalespregunta(player, message);
     if(message.includes("equipos") && PartidoArrancado == true) return QuienJuegaPregunta(player, message);*/
 	//getFutx10Map
+
+	//reinicia los booleanos de mapas aleatorios.
+
 	if (message == '!rs2' && player.admin == true) { 			
 		if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = true;
 				room.setCustomStadium(getRealSoccerMap());
 			}
@@ -21737,6 +21794,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!entrenamiento' && player.admin == true) { 			
 		if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = true;
 				room.setCustomStadium(getRealSoccerMap3());
 			}
@@ -21746,6 +21804,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!rs' && player.admin == true) { 			
 		if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = true;
 				room.setCustomStadium(getRealSoccerMap2());
 			}
@@ -21755,6 +21814,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!pensred' && player.admin == true) { 
 			if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
 				room.setCustomStadium(getPenaltyRedMap());
 			}
@@ -21764,6 +21824,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!pensblue' && player.admin == true) { 
 			if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
 				room.setCustomStadium(getPenaltyBlueMap());
 			}
@@ -21773,6 +21834,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!futx5' && player.admin == true) { 
 			if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
 				room.setCustomStadium(getFutx5Map());
 			}
@@ -21782,8 +21844,18 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!futx7' && player.admin == true) { 
 			if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
-				room.setCustomStadium(getFutx7Map());
+				//room.setCustomStadium(getFutx7MapBrianCruyff());
+				elegirMapaAleatorioX7 = true;
+
+				const numRandom = Math.random();
+				if(numRandom >= 0.5){
+					room.setCustomStadium(getFutx7Map());
+				}else{
+					room.setCustomStadium(getFutx7MapBrianCruyff());
+				}
+				//room.sendAnnouncement("El mapa x7 a jugar sera aleatorio!");
 			}
 			else {
 				whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -21791,6 +21863,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!futx10' && player.admin == true) { 
 		if (room.getScores() == null) {
+			reiniciarValoresMapasAleatorios();
 			RSRMap = false;
 			room.setCustomStadium(getFutx10Map());
 		}
@@ -21800,6 +21873,7 @@ room.onPlayerChat = function(player, message) {
 	}	
 	if (message == '!minirs' && player.admin == true) { 
 			if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
 				room.setCustomStadium(getMiniRSMap());
 			}
@@ -21810,6 +21884,7 @@ room.onPlayerChat = function(player, message) {
 	
 	if (message == '!futx2' && player.admin == true) { 
 			if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
 				room.setCustomStadium(getFutx2Map());
 			}
@@ -21819,6 +21894,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!futx3' && player.admin == true) { 
 			if (room.getScores() == null) {
+				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
 				room.setCustomStadium(getFutx3Map());
 			}
@@ -21828,6 +21904,7 @@ room.onPlayerChat = function(player, message) {
 		}
 	if (message == '!futx4' && player.admin == true) { 
 		if (room.getScores() == null) {
+			reiniciarValoresMapasAleatorios();
 			RSRMap = false;
 			room.setCustomStadium(getFutx4Map());
 		}
@@ -21838,12 +21915,9 @@ room.onPlayerChat = function(player, message) {
 	//rs que creare yo (es rs normal pero grande para mas personas.)
 	if (message.toLowerCase() == '!rsx10' && player.admin == true) { 
 		if (room.getScores() == null) {
+			reiniciarValoresMapasAleatorios();
 			RSRMap = true;
-			console.log("antes");
-
 			room.setCustomStadium(getRSX10Map());
-			console.log("despues");
-
 		}
 		else {
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -22089,8 +22163,6 @@ room.onPlayerChat = function(player, message) {
 }	
     if(CensuradorDeSpammeros(message)) return false;
     if (message.indexOf("!") == 0) return false; 
-
-	console.log("ningun ! seleccionado");
 }
 
 // Función para enviar el mensaje de publicidad
@@ -22311,7 +22383,7 @@ function getRandomGoalEmoji() {
 }
 
 function getRandomAutoGoalEmoji() {
-  const goalEmojis = ["❌", "😖", "🙈", "🤡", "😅"];
+  const goalEmojis = ["❌", "😖", "🙈", "🤡", "😅","🥶"];
   return goalEmojis[Math.floor(Math.random() * goalEmojis.length)];
 }
 function buscarJugadorEnPartida(idJugador){
