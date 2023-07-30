@@ -18495,12 +18495,39 @@ function ReglasFun(player) { // !reglas
     room.sendAnnouncement("Los arqueros deberán enfrentarse entre ellos hasta 5️⃣ v̲e̲c̲e̲s̲ c̲o̲m̲o̲ m̲á̲x̲i̲m̲o̲. ", player.id, 0x00FFBB, "normal", 0);
     room.sendAnnouncement("Y si el empate persiste, t̲o̲d̲o̲s̲ l̲o̲s̲ j̲u̲g̲a̲d̲o̲r̲e̲s̲ d̲e̲b̲e̲r̲á̲n̲ p̲a̲t̲e̲a̲r̲ l̲o̲s̲ p̲e̲n̲a̲l̲e̲s̲ n̲u̲e̲v̲a̲m̲e̲n̲t̲e̲.", player.id, 0x00FFBB, "normal", 0);
 }
+function moverJugadorEquipoCorrespondiente(player){
+	const players = room.getPlayerList();
 
+  	// Filtrar jugadores activos para saber quienes estan jugando.
+  	const activePlayers = players.filter(player => !player.spectator);
+
+  	const team1Players = activePlayers.filter(player => player.team === 1);
+    const team2Players = activePlayers.filter(player => player.team === 2);
+	
+	if(team1Players.length > team2Players.length){
+		room.setPlayerTeam(player.id, 2);
+		
+	}else if(team1Players.length < team2Players.length){
+		room.setPlayerTeam(player.id, 1);
+	}else{
+		// Elegir aleatoriamente a qué equipo poner al jugador.
+		const randomTeam = Math.random() < 0.5 ? 1 : 2;
+		room.setPlayerTeam(player.id, randomTeam);	
+	}
+}
+//bandera afk
 function afkFun(player, message){ // !classic
     if (afkPlayerIDs.has(player.id)){
         afkPlayerIDs.delete(player.id);
-    room.sendAnnouncement("↩ " + player.name + " volvió! y está listo para jugar! 🎮", null, 0x00FFBB, "normal", 0);}
-    else {afkPlayerIDs.add(player.id); room.setPlayerTeam(player.id, 0);room.sendAnnouncement("[💤] " + player.name + " se encuentra actualmente 𝐀𝐅𝐊 ❗ ⌛ ", null, 0xff8400, 'normal', 2);}
+    	room.sendAnnouncement("↩ " + player.name + " volvió! 🎮", null, 0x00FFBB, "normal", 0);
+		moverJugadorEquipoCorrespondiente(player);
+	}
+    else {
+		afkPlayerIDs.add(player.id); 
+		room.setPlayerTeam(player.id, 0);
+		room.sendAnnouncement("[💤] " + player.name + " se encuentra 𝐀𝐅𝐊 ❗ ⌛ ", null, 0xff8400, 'normal', 2);
+		room.sendAnnouncement("[💤]  Para volver a la partida usa !afk", player.id, 0xff8400, 'normal', 2);
+	}
 }
  
 function afksFun(player, message){ // !huge
