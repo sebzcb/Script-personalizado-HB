@@ -1,6 +1,6 @@
 // ▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN BÁSICA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-var NombreHost = "🥶🥶🥶Juegan todos🥶🥶🥶"
-var CantidadDeJugadores = 30  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
+var NombreHost = "entra si eres discapacitado"
+var CantidadDeJugadores = 21  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
 var ClaveParaSerAdmin = "!admin"  // La clave va dentro de las comillas
 var TiempoDeJuego = 5 // Son la cantidad de minutos que quieres que duren los partidos.
@@ -101,10 +101,13 @@ var maximosAsistidores = []; //arreglo que su maximo es controlado por posMaxAsi
 //booleanos mapas aleatorios.
 var elegirMapaAleatorioX7 = false;
 var elegirMapaAleatorioX5 = false;
+
+var jugadoresVersus = null;
 //variables de la partida
 /*incia partida-> listaJugadoresEstadisticasEnPartida = [jugador: player.name , id:player.id | estadisticas: goles,autog,asist,kda]*/ 
 var listaJugadoresEstadisticasEnPartida=[]; 
-
+var golesRojoCopia = 0 ;
+var golesAzulCopia =0 ;
 // Variables para almacenar los datos de la publicidad
 let advertisingInterval;
 let advertisingMessage = '';
@@ -6790,7 +6793,51 @@ function eliminarJugadorDeListaJugadoresEstadisticas(jugadorEliminar){
 	}
 	return true;
 }
-
+function actualizarModoVersus(player){
+/*Si algun jugador se ha ido (room.onPlayerLeave)
+Revisa si el jugador era de algun team
+  si lo era entonces
+	nEspectadores = espectadores.length()
+	recorre espectadores
+	Si no esta en lista afks el espectador
+	   mueve jugador a team que le falte un jugador.
+	   */
+	//modo versus esta activado
+	if(jugadoresVersus != null){
+		room.sendAnnouncement("jugadores versus estaba activado y jugador se fue.");
+		var players = room.getPlayerList(); // toma los jugadores sin el jugador actual. (si eran 3 y se fue 1 , el resultado sera 2.)
+		room.sendAnnouncement("total jug : "+players.length);
+		for (var x = 0 ; x < players.length ; x++){
+			room.sendAnnouncement(players[x].name +" ES ESPEC: "+ players[x].spectator );
+		}
+//		const espectadores = players.filter(player => !player.spectator);
+		const espectadores = players.filter(player => player.team === 0);
+		
+		room.sendAnnouncement("espec total: " +espectadores.length );
+		//const espectadoresNoAFKs = obtenerJugadoresNoAFKs(espectadores);
+		if(player.team == 1){
+			//jugador era de team red.
+			for (var i = 0 ; i < espectadores.length;i++ ){
+				if(!afkPlayerIDs.has(espectadores[i].id)){
+					//mueve jugador a red  team.
+					room.setPlayerTeam(espectadores[i].id, 1); // Equipo red (team = 1)
+					return false;
+				}
+			}
+		}else if (player.team == 2){
+			//jugador era de team blue.
+			room.sendAnnouncement("jugador era blue" );
+			for (var i = 0 ; i < espectadores.length;i++ ){
+				if(!afkPlayerIDs.has(espectadores[i].id)){
+					room.sendAnnouncement("el jugador " + espectadores[i].name + " se movera a blue team.");
+					//mueve jugador a red  team.
+					room.setPlayerTeam(espectadores[i].id, 2); // Equipo blue (team = 2)
+					return false;
+				}
+			}
+		}
+	}
+}
 
 room.setTeamsLock(true);
 room.setTeamColors(1, 70, 0xe2bd62, [0xe50029, 0x94001a, 0x321e20]); // red
@@ -6825,6 +6872,8 @@ room[_0x3c81f9(0x12f)] = function (_0x4a7fbc) {
         	listaIdsAdmins.splice(index, 1);
     	}
 	}
+
+	actualizarModoVersus(player);
 	eliminarJugadorDeListaJugadoresEstadisticas(player);
     DeletePlayer(player.id);
 	connections = connections.filter(a => a[0] !== player.id);
@@ -6958,10 +7007,13 @@ function mostrarMVPdelPartido() {
 	  }
 	  mvpAzul += mvpNombresAzul.join(", ");
 	}
-  
-	// Mostrar los resultados en un único anuncio
-	room.sendAnnouncement("█ " + mvpRojo, null, 0xFF7171, 'bold', 0);
-	room.sendAnnouncement("█ " + mvpAzul, null, 0x6394FA, 'bold', 0);
+
+	if(ordenarJugadoresRed.length > 0 ){
+		room.sendAnnouncement("█🥇 " + mvpRojo, null, 0xFF7171, 'bold', 0)
+	}
+	if(ordenarJugadoresBlue.length>0){
+		room.sendAnnouncement("█🥇" + mvpAzul, null, 0x6394FA, 'bold', 0);
+	}
 }
   
   
@@ -6984,7 +7036,7 @@ function mostrarMensajeRecomendacionRandom() {
 	for (var i = 0; i < listaJugadoresEstadisticas.length; i++) {
 	  var jugador = listaJugadoresEstadisticas[i].jugador;
 	  var mensajeAleatorio = mensajesRecomendaciones[Math.floor(Math.random() * mensajesRecomendaciones.length)];
-	  room.sendAnnouncement("\n█ "+mensajeAleatorio, jugador.id, 0x43FBB8, 'bold', 0);
+	  room.sendAnnouncement("\n"+mensajeAleatorio, jugador.id, 0x43FBB8, 'small-bold', 0);
 	}
   }
 
@@ -7007,6 +7059,98 @@ function elegirMapaAleatorio(){
 		return true;
 	}
 }
+function cambiarEquipos(players){
+	if ( players.length == 0 ) {
+		return false;
+	}
+	players.forEach(function(player) {	
+		if (player.team == 1) {
+			room.sendAnnouncement(player.name + " era de equipo 1 , ahora cambiado a 2");
+			room.setPlayerTeam(player.id, 2);
+			player.team = 2;
+		} else if (player.team == 2) {
+			room.sendAnnouncement(player.name + " era de equipo 2 , ahora cambiado a 1");
+
+			room.setPlayerTeam(player.id, 1);
+			player.team = 1;
+		}
+	});
+	announce("🔄 Los equipos han cambiado");
+}
+function obtenerPerdedoresAleatorio(nJugadoresCambiar, jugadores){
+	var jugadoresElegidos=[];
+	var elegidos = 0 ;
+	for (var i = 0; i < jugadores.length && elegidos < nJugadoresCambiar ;i++){
+		jugadoresElegidos.push(jugadores[i]);
+		elegidos+=1;
+	}
+	return jugadoresElegidos;
+}
+function actualizarModoVersusFinalizar(equipoGanador){
+	var jugadores2 = room.getPlayerList();
+	var jugadoresRed2 = jugadores2.filter(j => j.team === 1 );
+
+	var jugadoresBlue2 = jugadores2.filter(j => j.team === 2 );
+	/*for (a = 0 ; a < jugadoresRed2.length ; a++){
+		room.sendAnnouncement(jugadoresRed2[a].name + " es red");
+	}
+	for(z = 0 ; z < jugadoresBlue2.length ; z++){
+		room.sendAnnouncement(jugadoresBlue2[z].name + " es blue");
+	}*/
+	if(jugadores2.length/2 < jugadoresVersus){
+		room.sendAnnouncement("No hay suficientes jugadores para otro " + jugadoresVersus +" vs "+jugadoresVersus);
+		room.sendAnnouncement("hay : " + jugadores2.length);
+		jugadoresVersus = null;
+		return false;
+	}
+	if(equipoGanador == 2){//si gano blue hacer swap
+		room.sendAnnouncement("largo juga: " + jugadores2.length);
+		cambiarEquipos(jugadores2);
+		room.sendAnnouncement("equipos cambiadosd");
+	}
+	var jugadores = room.getPlayerList();
+	var espectadores = jugadores.filter(j => j.team === 0 );
+	var jugadoresRed = jugadores.filter(j => j.team === 1 );
+
+	var jugadoresBlue = jugadores.filter(j => j.team === 2 );
+	var espectadoresNoAFKs = obtenerJugadoresNoAFKs(espectadores);
+	
+	for (a = 0 ; a < jugadoresRed.length ; a++){
+		room.sendAnnouncement(jugadoresRed[a].name + " es red");
+	}
+	for(z = 0 ; z < jugadoresBlue.length ; z++){
+		room.sendAnnouncement(jugadoresBlue[z].name + " es blue");
+	}
+	
+	
+	//si los n espectadores es menor a jugadoresVersus, funciona de 2vs2 en adelante
+	if(espectadoresNoAFKs.length < jugadoresVersus){
+		room.sendAnnouncement("espectadoresnoafks " +espectadoresNoAFKs.length + " < " + jugadoresVersus );
+		var perdedoresElegidos = obtenerPerdedoresAleatorio(espectadoresNoAFKs.length,jugadoresBlue);
+
+		for (var i = 0 ; i < perdedoresElegidos.length ;i++){
+			room.sendAnnouncement(perdedoresElegidos[i].name + "movido a spec");
+			room.setPlayerTeam(perdedoresElegidos[i].id,0); //a espectador.
+		}		
+
+		for ( var j = 0; j < espectadoresNoAFKs.length ; j++){
+			room.sendAnnouncement(espectadoresNoAFKs[j].name + "movido a blue (equipo perdedor)");
+			room.setPlayerTeam(espectadoresNoAFKs[j].id , 2);
+		}
+
+	}
+	
+
+}
+function mostrarDatosPartida(){
+	//resultado partido.
+	room.sendAnnouncement(`${toMathBoldSmall(teamRed)} ${golesRojoCopia} 🆚 ${golesAzulCopia} ${toMathBoldSmall(teamBlue)}`,null,0xF9F264, 'bold', 0);
+	//posesion balon
+	mostrarPosesionBalon();
+	//mvp
+	mostrarMVPdelPartido();
+
+}
 var cont = 0;
 //bandera fin terminar
 room.onGameStop = function(byPlayer) {
@@ -7027,6 +7171,7 @@ room.onGameStop = function(byPlayer) {
 		//room.sendAnnouncement("SE ACTUALIZARON LAS ESTADISTICAS DE LOS PARTIDOS, PRUEBA : !me");
 		//ver que equipo gano el partido
 		var players = room.getPlayerList();
+		var equipoGanador = null;
 		//GANA TEAM RED
 		if(game.redScore>game.blueScore){
 			//room.sendAnnouncement("GANO RED TEAM");
@@ -7053,6 +7198,7 @@ room.onGameStop = function(byPlayer) {
 				estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados/(estadisticas.partidosTotal+0.000001))*100; 
 				estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos/(estadisticas.partidosTotal+0.000001))*100; 
 			}
+			equipoGanador = 1;
 		}else if(game.blueScore > game.redScore){
 			//room.sendAnnouncement("GANO BLUE TEAM");
 			for (var i=0; i<listaJugadoresEstadisticas.length;i++){
@@ -7071,7 +7217,8 @@ room.onGameStop = function(byPlayer) {
 				}
 				estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados/(estadisticas.partidosTotal+0.000001))*100;
 				estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos/(estadisticas.partidosTotal+0.000001))*100;
-			}			
+			}	
+			equipoGanador = 2	;	
 		}else{
 			//room.sendAnnouncement("EMPATE");
 			//aumenta 1 partido total solamente
@@ -7081,18 +7228,27 @@ room.onGameStop = function(byPlayer) {
 				estadisticas.partidosTotal+=1;
 				estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados/(estadisticas.partidosTotal+0.000001))*100;
 				estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos/(estadisticas.partidosTotal+0.000001))*100;
-			}			
+			}	
+			equipoGanador = 0;		
 		}
 		//mostrarMaximosAsistidores();
 		//mostrarMaximosGoleadores();
+		//mostrar datos partida.
+		mostrarDatosPartida();
 		//MOSTRAR MVPS DE LA PARTIDA ( GOLES + ASISTENCIAS - AUTOGOLES), NO EL RANKING.
-		mostrarMVPdelPartido();
 		//resetear lista estadisticas en partida
 		listaJugadoresEstadisticasEnPartida = [];
 		//Mostrar mensaje de recomendacion 
 		mostrarMensajeRecomendacionRandom();
 		//si hay una bandera de mapa aleatorio se asignara un mapa aleatorio. x7  x4 o otro modo.
 		elegirMapaAleatorio();
+
+		//actualiza datos de modo versus
+		if(jugadoresVersus != null){
+			actualizarModoVersusFinalizar(equipoGanador);
+		}
+		golesRojoCopia = 0 ;
+		golesAzulCopia = 0 ;
 	}
 	PartidoArrancado = false;
     whoTouchedLast = undefined;
@@ -18477,7 +18633,7 @@ function swapFun(player){
 			else {
 				whisper("Comando solo de administrador", player.id);
 			}
-		}
+}
 
 function unmuteFun(player, message){ // !unmute Anddy
     // Allow somebody to talk if he has been muted
@@ -21418,16 +21574,17 @@ function imprimirInfoJugador(id){
 			// Redondeamos los porcentajes a dos decimales
 			var porcentajePartidosGanados = estadisticas.porcentajePartidosGanados.toFixed(2);
 			var porcentajePartidosPerdidos = estadisticas.porcentajePartidosPerdidos.toFixed(2);
-			room.sendAnnouncement("█ " + jugador.name + " estadisticas", null, 0xFF7400, 'bold', 1);
-			room.sendAnnouncement("█ " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%)", null, 0x00FF49, 'normal', 1);
-			room.sendAnnouncement("█ " + estadisticas.partidosPerdidos + " / " + estadisticas.partidosTotal + " partidos perdidos. (" + porcentajePartidosPerdidos + "%)", null, 0x00FF49, 'normal', 1);
-			room.sendAnnouncement("█ Goles: " + estadisticas.goles + " Autogoles: " + estadisticas.autogoles + " Asistencias: " + estadisticas.asistencias, null, 0x00FF49, 'normal', 1);
+			room.sendAnnouncement("⭐📊 " + jugador.name + " estadisticas 📊⭐", null, 0xFF7400, 'bold', 1);
+			room.sendAnnouncement("⚔️ " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%) ⚔️", null, 0x00FF49, 'normal', 1);
+			room.sendAnnouncement("❌ " + estadisticas.partidosPerdidos + " / " + estadisticas.partidosTotal + " partidos perdidos. (" + porcentajePartidosPerdidos + "%) ❌", null, 0x00FF49, 'normal', 1);
+			room.sendAnnouncement("⚽ " + "Goles: " + estadisticas.goles + " 🥶 " + "Autogoles: " + estadisticas.autogoles + " 👟 " + "Asistencias: " + estadisticas.asistencias , null, 0x00FF49, 'normal', 1);
+			/*
 			var lj = room.getPlayerList();
 			for (var j = 0 ; j < lj.length ; j++){
 				if(lj[j].id == jugador.id){
 					room.sendAnnouncement("team: "+lj[j].team);
 				}
-			}
+			}*/
 			//imprime en consola
 			console.log(" " + jugador.name + " estadisticas consola");
 			console.log(" " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%)");
@@ -21444,7 +21601,7 @@ function mostrarMaximosAsistidores(player){
 		room.sendAnnouncement("No hay asistidores todavia.",player.id);
 		return false;
 	}
-	room.sendAnnouncement("----------------- MAXIMOS ASISTIDORES ------------------",player.id, 0x00F3FF, 'bold', 2);
+	room.sendAnnouncement("🏆🥇----------------- MAXIMOS ASISTIDORES ------------------🏆🥇",player.id, 0x00F3FF, 'bold', 2);
 	for (var i = 0; i < maximosAsistidores.length ;i++){
 		if(maximosAsistidores[i] != undefined){
 			jugador = maximosAsistidores[i].jugador;
@@ -21459,7 +21616,7 @@ function mostrarMaximosGoleadores(player){
 		room.sendAnnouncement("No hay goleadores todavia.",player.id);
 		return false;
 	}
-	room.sendAnnouncement("----------------- MAXIMOS GOLEADORES ------------------",player.id, 0x00F3FF, 'bold', 0);
+	room.sendAnnouncement("🏆🥇 ---------------  MAXIMOS GOLEADORES --------------- 🥇🏆", player.id, 0x00F3FF, 'bold', 0);
 	for (var i = 0; i < maximosGoleadores.length ;i++){
 		if(maximosGoleadores[i] != undefined){
 			jugador = maximosGoleadores[i].jugador;
@@ -21473,6 +21630,55 @@ function reiniciarValoresMapasAleatorios(){
 	elegirMapaAleatorioX7 = false;
 	elegirMapaAleatorioX5 = false;
 }
+function obtenerJugadoresNoAFKs(listaJugadores){
+	var jugadoresEspectadorNoAFKs=[];
+	for (var j = 0 ; j < listaJugadores.length;j++){
+		if(!afkPlayerIDs.has(listaJugadores[j].id)){
+			jugadoresEspectadorNoAFKs.push(listaJugadores[j]);
+		}
+	}
+	return jugadoresEspectadorNoAFKs;
+}
+function inicializarVersus(jugadoresNoAFKs) {
+	// Mover jugadores no afks a espectador. los afks ya estan en espectador.
+	for (var i = 0; i < jugadoresNoAFKs.length; i++) {
+		room.setPlayerTeam(jugadoresNoAFKs[i].id, 0);
+	}
+	// Jugadores versus.
+	var jugadoresAsignadosTeam1 = 0;
+	var jugadoresAsignadosTeam2 = 0;
+
+	setTimeout(function() {
+		for (var j = 0; j < jugadoresNoAFKs.length; j++) {
+	
+			if (jugadoresAsignadosTeam1 < jugadoresVersus) {
+			  room.setPlayerTeam(jugadoresNoAFKs[j].id, 1);
+			  jugadoresAsignadosTeam1++;
+			} else {
+			  if (jugadoresAsignadosTeam2 < jugadoresVersus) {
+				room.setPlayerTeam(jugadoresNoAFKs[j].id, 2);
+				jugadoresAsignadosTeam2++;
+			  }
+			}
+		  }
+	},1000);
+}
+function mostrarPosesionBalon(){
+	const totalPosesion = equipoAzulPosesion + equipoRojoPosesion;
+    let porcentajeAzul = 0;
+    let porcentajeRojo = 0;
+
+    // Calcular el porcentaje de posesión de cada equipo
+    if (totalPosesion > 0) {
+      porcentajeAzul = (equipoAzulPosesion / totalPosesion) * 100;
+      porcentajeRojo = (equipoRojoPosesion / totalPosesion) * 100;
+    }
+
+    // Enviar el anuncio con el porcentaje de posesión de cada equipo
+    room.sendAnnouncement(
+     teamRed + `  ${porcentajeAzul.toFixed(2)}% - ` + teamBlue + ` : ${porcentajeRojo.toFixed(2)}%`,null,0xF9F264,'bold',0
+    );
+}
 /*
 entra jugador -> aumenta lista jugadores
 sale jugador -> resta lista jugadores y stats.
@@ -21484,7 +21690,39 @@ room.onPlayerChat = function(player, message) {
 	//room.sendAnnouncement("jugador : " + player.name + " es admin ? : " + player.admin);
 	//imprimirInfoJugadores();
 	//room.sendAnnouncement("getscores:"+room.getScores());//-> si room.getScores() != null -> PARTIDO EN JUEGO, SI ES NULL ->NO ESTA EN PARTIDO.
+//room.sendAnnouncement(estadisticas, null, 0x00FF49, 'normal', 1);
+	var modoElegido = false;
+	if(message.toLowerCase() == "!1v1" && player.admin){
+		if (room.getScores() == null) {
+			modoElegido = true;
+			jugadoresVersus = 1;
+		}else{
+			room.sendAnnouncement("No puede usar el comando durante la partida.",player.id);
+		}
+	}
+	if(message.toLowerCase() == "!2v2" && player.admin){
+		if (room.getScores() == null) {
+			modoElegido = true;
+			jugadoresVersus = 2;
+		}else{
+			room.sendAnnouncement("No puede usar el comando durante la partida.",player.id);
+		}
+	}
+	if(modoElegido){
+		var listaJugadores = room.getPlayerList();
+		var jugadoresNoAFKs = obtenerJugadoresNoAFKs(listaJugadores); 
 	
+		if(jugadoresNoAFKs.length >= jugadoresVersus * 2){
+			jueganTodosMode = false;
+			room.sendAnnouncement("inicializa versus");
+			inicializarVersus(jugadoresNoAFKs);
+			return false;
+		}else{
+			room.sendAnnouncement("NO hay jugadores suficientes para elejir el modo.");
+			jugadoresVersus = null;
+		}
+	}
+
 	if(message.toLowerCase() == "!resetranking" && player.admin){
 		for ( var i = 0 ; i < listaJugadoresEstadisticas.length;i++){
 			var jugador = listaJugadoresEstadisticas[i].jugador;
@@ -21567,6 +21805,7 @@ room.onPlayerChat = function(player, message) {
     }
    
   }
+  
   
   //bandera2 funcion !cambiarjugador creado por mi xd
   if (player.admin && message.startsWith('!cambiarjugador')){ //!cambiarjugador red o !cambiarjugador blue ->sintaxis mensaje
@@ -21677,20 +21916,7 @@ room.onPlayerChat = function(player, message) {
     room.sendAnnouncement("Para cambiar tu tamaño, utiliza el comando !size", player.id, 0xFF0000);
   }
   if (message === "!posesion") {
-    const totalPosesion = equipoAzulPosesion + equipoRojoPosesion;
-    let porcentajeAzul = 0;
-    let porcentajeRojo = 0;
-
-    // Calcular el porcentaje de posesión de cada equipo
-    if (totalPosesion > 0) {
-      porcentajeAzul = (equipoAzulPosesion / totalPosesion) * 100;
-      porcentajeRojo = (equipoRojoPosesion / totalPosesion) * 100;
-    }
-
-    // Enviar el anuncio con el porcentaje de posesión de cada equipo
-    room.sendAnnouncement(
-      ` ` + teamRed + `  ${porcentajeAzul.toFixed(2)}% - ` + teamBlue + ` : ${porcentajeRojo.toFixed(2)}%`
-    );
+	mostrarPosesionBalon();
   }
   if (player.admin) {
     // Comando para activar el "Modo Juegan Todos"
@@ -21985,7 +22211,7 @@ room.onPlayerChat = function(player, message) {
     adminMessage = message;
     message = message.split(/ +/);
     	var adminChatColor = 0xFFD700; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		room.sendAnnouncement(`     « 👑 ADMIN ~ ` +  player.name + ` »: ` + adminMessage, null, adminChatColor, 'normal', 1);
+		room.sendAnnouncement(`   « 👑 ADMIN ~ ` +  player.name + ` »: ` + adminMessage, null, adminChatColor, 'normal', 1);
 		return false;
 }
 
@@ -22056,6 +22282,9 @@ room.onPlayerChat = function(player, message) {
 		}
 		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
 		room.sendAnnouncement(textoPersonalizar, null, RedChatColor, 'normal', 1);
+
+	
+		
 		return false;
 	}
 	//}
@@ -22764,6 +22993,8 @@ room.onTeamGoal = function(team) {
 			}
 			game.blueScore++;
 		}
+	golesRojoCopia = game.redScore;
+	golesAzulCopia = game.blueScore;
     // Reemplazar los números de game.redScore y game.blueScore
     const redScore = replaceNumbers(game.redScore);
     const blueScore = replaceNumbers(game.blueScore);
@@ -23674,18 +23905,27 @@ function getGeoLocation(ip) {
 let connections = []
 //bandera entrar join
 room.onPlayerJoin = function(player) {
-  // Verificar si el "Modo Juegan Todos" está activado
-  if (jueganTodosMode) {
-    // Verificar el número de jugadores en cada equipo
-    const blueTeamCount = room.getPlayerList().filter(p => p.team === 1).length;
-    const redTeamCount = room.getPlayerList().filter(p => p.team === 2).length;
+  // Verificar el número de jugadores en cada equipo
+  const blueTeamCount = room.getPlayerList().filter(p => p.team === 2).length;
+  const redTeamCount = room.getPlayerList().filter(p => p.team === 1).length;
 
+	// Verificar si el "Modo Juegan Todos" está activado
+  if (jueganTodosMode) {
+    
     // Asignar al jugador al equipo con menos jugadores
     if (blueTeamCount <= redTeamCount) {
       room.setPlayerTeam(player.id, 1); // Equipo azul (team = 1)
     } else {
       room.setPlayerTeam(player.id, 2); // Equipo rojo (team = 2)
     }
+  }else{
+	if(jugadoresVersus!=null){
+		if(redTeamCount < jugadoresVersus){
+			room.setPlayerTeam(player.id,1);
+		}else if ( blueTeamCount < jugadoresVersus){
+			room.setPlayerTeam(player.id,2);
+		}
+	}
   }
   if(IpPlayers.includes(decryptHex(player.conn)) == true){
         room.kickPlayer(player.id,"❌ El admin ha baneado tu IP 📶 por imbecil", true);
