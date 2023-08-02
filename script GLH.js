@@ -18758,20 +18758,53 @@ function moverJugadorEquipoCorrespondiente(player){
 	}
 }
 //bandera afk
-function afkFun(player, message){ // !classic
-    if (afkPlayerIDs.has(player.id)){
-        afkPlayerIDs.delete(player.id);
-    	room.sendAnnouncement("↩ " + player.name + " volvió! 🎮", null, 0x00FFBB, "normal", 0);
-		moverJugadorEquipoCorrespondiente(player);
-	}
-    else {
-		afkPlayerIDs.add(player.id); 
-		room.setPlayerTeam(player.id, 0);
-		room.sendAnnouncement("[💤] " + player.name + " se encuentra 𝐀𝐅𝐊 ❗ ⌛ ", null, 0xff8400, 'normal', 2);
-		room.sendAnnouncement("[💤]  Para volver a la partida usa !afk", player.id, 0xff8400, 'normal', 2);
-	}
+
+
+const lastAfkUsage = {};
+const afkCooldown = 30000; // 30 segundos en milisegundos
+const afkToGameCooldown = 60000; // 1 minuto en milisegundos
+
+function afkFun(player, message) { // !classic
+  if (afkPlayerIDs.has(player.id)) {
+    // Si el jugador ya está en modo AFK, se verifica si ha pasado el tiempo suficiente para volver a la partida
+    const currentTime = Date.now();
+    const lastUsageTime = lastAfkUsage[player.id] || 0;
+    const timeSinceLastUsage = currentTime - lastUsageTime;
+
+    if (timeSinceLastUsage >= afkToGameCooldown) {
+      afkPlayerIDs.delete(player.id);
+      room.setPlayerTeam(player.id, 1); // Se asume que el equipo rojo es el equipo 1, puedes ajustarlo según tu código
+      room.sendAnnouncement("↩ " + player.name + " volvió! 🎮", null, 0x00FFBB, "normal", 0);
+      // Puedes agregar aquí cualquier otra acción que desees realizar cuando el jugador vuelva a la partida
+    } else {
+      const secondsLeft = Math.ceil((afkToGameCooldown - timeSinceLastUsage) / 1000);
+      // El tiempo de enfriamiento aún no ha pasado, por lo que no se permite volver a la partida.
+      room.sendAnnouncement("¡Espera un momento antes de volver a la partida! " + secondsLeft + " segundos restantes", player.id, 0xF9F264, 'normal', 2);
+    }
+  } else {
+	room.sendAnnouncement("entro aca");
+    // Si el jugador no está en modo AFK, se verifica si ha pasado un tiempo mínimo desde la última vez que usó el comando !afk
+    const currentTime = Date.now();
+    const lastUsageTime = lastAfkUsage[player.id] || 0;
+    const timeSinceLastUsage = currentTime - lastUsageTime;
+
+    if (timeSinceLastUsage >= afkCooldown) {
+      afkPlayerIDs.add(player.id);
+      room.setPlayerTeam(player.id, 0);
+      room.sendAnnouncement("[💤] " + player.name + " se encuentra 𝐀𝐅𝐊 ❗ ⌛ ", null, 0xff8400, 'normal', 2);
+      room.sendAnnouncement("[💤]  Para volver a la partida usa !afk", player.id, 0xff8400, 'normal', 2);
+
+      // Registra el tiempo actual como la última vez que usó el comando !afk
+      lastAfkUsage[player.id] = currentTime;
+    } else {
+      const secondsLeft = Math.ceil((afkCooldown - timeSinceLastUsage) / 1000);
+      // El tiempo de enfriamiento aún no ha pasado, por lo que no se permite usar el comando !afk nuevamente.
+      room.sendAnnouncement("¡Espera un momento antes de volver a usar !afk! " + secondsLeft + " segundos restantes", player.id, 0xF9F264, 'normal', 2);
+    }
+  }
 }
- 
+
+
 function afksFun(player, message){ // !huge
     afkPlayers_list = room.getPlayerList().filter((x) => afkPlayerIDs.has(x.id));
     afkPlayers_list_string = afkPlayers_list.map(x => x.name).join(", ");
@@ -18782,7 +18815,6 @@ function afksFun(player, message){ // !huge
     room.sendAnnouncement("[💤] Jugadores 𝐀𝐅𝐊: " + afkPlayers_list_string, null, 0x00FFBB, "normal", 0);
     }
 }
- 
 function kickafksFun(player, message){ // !huge
     if (player.admin == true){
         afksPlayers = room.getPlayerList().filter((x) => afkPlayerIDs.has(x.id));
