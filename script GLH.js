@@ -6801,19 +6801,18 @@ Revisa si el jugador era de algun team
 	recorre espectadores
 	Si no esta en lista afks el espectador
 	   mueve jugador a team que le falte un jugador.
-	   */
+*/
 	//modo versus esta activado
 	if(jugadoresVersus != null){
-		room.sendAnnouncement("jugadores versus estaba activado y jugador se fue.");
+		//room.sendAnnouncement("jugadores versus estaba activado y jugador se fue.");
 		var players = room.getPlayerList(); // toma los jugadores sin el jugador actual. (si eran 3 y se fue 1 , el resultado sera 2.)
-		room.sendAnnouncement("total jug : "+players.length);
-		for (var x = 0 ; x < players.length ; x++){
+		//room.sendAnnouncement("total jug : "+players.length);
+		/*for (var x = 0 ; x < players.length ; x++){
 			room.sendAnnouncement(players[x].name +" ES ESPEC: "+ players[x].spectator );
-		}
-//		const espectadores = players.filter(player => !player.spectator);
+		}*/
 		const espectadores = players.filter(player => player.team === 0);
 		
-		room.sendAnnouncement("espec total: " +espectadores.length );
+		//room.sendAnnouncement("espec total: " +espectadores.length );
 		//const espectadoresNoAFKs = obtenerJugadoresNoAFKs(espectadores);
 		if(player.team == 1){
 			//jugador era de team red.
@@ -6826,10 +6825,10 @@ Revisa si el jugador era de algun team
 			}
 		}else if (player.team == 2){
 			//jugador era de team blue.
-			room.sendAnnouncement("jugador era blue" );
+			//room.sendAnnouncement("jugador era blue" );
 			for (var i = 0 ; i < espectadores.length;i++ ){
 				if(!afkPlayerIDs.has(espectadores[i].id)){
-					room.sendAnnouncement("el jugador " + espectadores[i].name + " se movera a blue team.");
+					//room.sendAnnouncement("el jugador " + espectadores[i].name + " se movera a blue team.");
 					//mueve jugador a red  team.
 					room.setPlayerTeam(espectadores[i].id, 2); // Equipo blue (team = 2)
 					return false;
@@ -7077,7 +7076,7 @@ function cambiarEquipos(players){
 	});
 	announce("🔄 Los equipos han cambiado");
 }
-function obtenerPerdedoresAleatorio(nJugadoresCambiar, jugadores){
+function obtenerJugadoresAleatorio(nJugadoresCambiar, jugadores){
 	var jugadoresElegidos=[];
 	var elegidos = 0 ;
 	for (var i = 0; i < jugadores.length && elegidos < nJugadoresCambiar ;i++){
@@ -7086,62 +7085,68 @@ function obtenerPerdedoresAleatorio(nJugadoresCambiar, jugadores){
 	}
 	return jugadoresElegidos;
 }
-function actualizarModoVersusFinalizar(equipoGanador){
-	var jugadores2 = room.getPlayerList();
-	var jugadoresRed2 = jugadores2.filter(j => j.team === 1 );
-
-	var jugadoresBlue2 = jugadores2.filter(j => j.team === 2 );
-	/*for (a = 0 ; a < jugadoresRed2.length ; a++){
-		room.sendAnnouncement(jugadoresRed2[a].name + " es red");
+function moverJugadoresBlueToEspectador(jugadoresAzul){
+	// Mover todos los jugadores del blue a espectador
+	for (var i = 0; i < jugadoresAzul.length; i++) {
+		room.setPlayerTeam(jugadoresAzul[i].id, 0); // Mueve jugador blue a espectador
+		jugadoresAzul[i].team = 0;
 	}
-	for(z = 0 ; z < jugadoresBlue2.length ; z++){
-		room.sendAnnouncement(jugadoresBlue2[z].name + " es blue");
-	}*/
-	if(jugadores2.length/2 < jugadoresVersus){
-		room.sendAnnouncement("No hay suficientes jugadores para otro " + jugadoresVersus +" vs "+jugadoresVersus);
-		room.sendAnnouncement("hay : " + jugadores2.length);
-		jugadoresVersus = null;
-		return false;
-	}
-	if(equipoGanador == 2){//si gano blue hacer swap
-		room.sendAnnouncement("largo juga: " + jugadores2.length);
-		cambiarEquipos(jugadores2);
-		room.sendAnnouncement("equipos cambiadosd");
-	}
-	var jugadores = room.getPlayerList();
-	var espectadores = jugadores.filter(j => j.team === 0 );
-	var jugadoresRed = jugadores.filter(j => j.team === 1 );
-
-	var jugadoresBlue = jugadores.filter(j => j.team === 2 );
-	var espectadoresNoAFKs = obtenerJugadoresNoAFKs(espectadores);
-	
-	for (a = 0 ; a < jugadoresRed.length ; a++){
-		room.sendAnnouncement(jugadoresRed[a].name + " es red");
-	}
-	for(z = 0 ; z < jugadoresBlue.length ; z++){
-		room.sendAnnouncement(jugadoresBlue[z].name + " es blue");
-	}
-	
-	
-	//si los n espectadores es menor a jugadoresVersus, funciona de 2vs2 en adelante
-	if(espectadoresNoAFKs.length < jugadoresVersus){
-		room.sendAnnouncement("espectadoresnoafks " +espectadoresNoAFKs.length + " < " + jugadoresVersus );
-		var perdedoresElegidos = obtenerPerdedoresAleatorio(espectadoresNoAFKs.length,jugadoresBlue);
-
-		for (var i = 0 ; i < perdedoresElegidos.length ;i++){
-			room.sendAnnouncement(perdedoresElegidos[i].name + "movido a spec");
-			room.setPlayerTeam(perdedoresElegidos[i].id,0); //a espectador.
-		}		
-
-		for ( var j = 0; j < espectadoresNoAFKs.length ; j++){
-			room.sendAnnouncement(espectadoresNoAFKs[j].name + "movido a blue (equipo perdedor)");
-			room.setPlayerTeam(espectadoresNoAFKs[j].id , 2);
-		}
-
-	}
-	
-
 }
+function moverEspectadoresToBlue(espectadores){
+	for (var h = 0; h < espectadores.length; h++) {
+		room.setPlayerTeam(espectadores[h].id, 2); // Mueve espectador a team blue.
+		espectadores[h].team = 2;
+	  }
+}
+// Función para mover jugadores a espectador
+function moverJugadoresToEspectador(jugadores, jugadoresVersus, jugadoresGanadores,espectadoresNoAFKs) {  
+	// Si hay menos jugadores espectadores que el número de jugadoresVersus
+	if (espectadoresNoAFKs.length <= jugadoresVersus) { // si espectadoresNoAFKs.length == 0 -> 
+		room.sendAnnouncement("espectadores : " + espectadoresNoAFKs.length);
+
+	    // Elije jugadores blue para mover a espectador., si espectadoresNoAFKs.length es 0 entonces no elegira a niguno
+		var jugadoresAzulElegidos = obtenerJugadoresAleatorio(espectadoresNoAFKs.length, jugadoresGanadores);
+	    //moverEspectadoresToBlue(jugadores, espectadoresNoAFKs, espectadoresNoAFKs.length);
+	    //mueve azules elegidos a espectador
+		moverJugadoresBlueToEspectador(jugadoresAzulElegidos);
+		moverEspectadoresToBlue(espectadoresNoAFKs);
+	} else { // Si hay más espectadores que jugadoresVersus
+		/*4 jugadores, nJugadoresMoverEspectadorBlue = 2 - 1 = 1 , 1 jugador a mover */
+		/*5 jugadores ,nJugadoresMoverEspectadorBlue = 3 - 1 = 2 , 2 jugadores a mover, deberia ser 1 .  */
+		/*6 jugadores ,nJugadoresMoverEspectadorBlue = 4 - 1 = 3 , 3 jugadores se mueven  */ 
+	    var nJugadoresMoverEspectadorBlue = jugadoresVersus; // Número de jugadores a mover de espectador a blue (equipo perdedor)
+	    var jugadoresBlue = jugadores.filter(j => j.team === 2); //lo hace aca porque esta actualizada la lista en caso que haya ganado el blue.
+		// Mover todos los jugadores del blue a espectador
+		moverJugadoresBlueToEspectador(jugadoresBlue);
+		//si espectadoresNoAFKs es 0 , entonces nunca se elejira un jugador aleatorio, por tanto nada se pondra en el team blue.
+		// Elige espectadores para mover a blue
+		var jugadoresMoverEspectadorToBlue = obtenerJugadoresAleatorio(nJugadoresMoverEspectadorBlue, espectadoresNoAFKs);
+		moverEspectadoresToBlue(jugadoresMoverEspectadorToBlue);
+	}
+}
+  
+function actualizarModoVersusFinalizar(equipoGanador) {
+	var jugadores = room.getPlayerList();
+	var jugadoresRed = jugadores.filter(j => j.team === 1);
+	var jugadoresBlue = jugadores.filter(j => j.team === 2);
+	var espectadores = jugadores.filter(j => j.team === 0);
+	var espectadoresNoAFKs = obtenerJugadoresNoAFKs(espectadores);
+  
+	// Si no hay suficientes jugadores para otro versus, mostrar mensaje y terminar
+	if (jugadores.length / 2 < jugadoresVersus) {
+	  room.sendAnnouncement("No hay suficientes jugadores para otro " + jugadoresVersus + " vs " + jugadoresVersus + "Hay: " + jugadores.length);
+	  jugadoresVersus = null;
+	  return false;
+	}
+	// Si gano blue, cambiar equipos y asignar jugadores perdedores a espectador
+	if (equipoGanador === 2) {
+	  cambiarEquipos(jugadores);
+	  moverJugadoresToEspectador(jugadores, jugadoresVersus, jugadoresRed,espectadoresNoAFKs);
+	} else if (equipoGanador == 1) {
+	  moverJugadoresToEspectador(jugadores, jugadoresVersus, jugadoresBlue,espectadoresNoAFKs);
+	}
+}
+  
 function mostrarDatosPartida(){
 	//resultado partido.
 	room.sendAnnouncement(`${toMathBoldSmall(teamRed)} ${golesRojoCopia} 🆚 ${golesAzulCopia} ${toMathBoldSmall(teamBlue)}`,null,0xF9F264, 'bold', 0);
@@ -21708,6 +21713,30 @@ room.onPlayerChat = function(player, message) {
 			room.sendAnnouncement("No puede usar el comando durante la partida.",player.id);
 		}
 	}
+	if(message.toLowerCase() == "!3v3" && player.admin){
+		if (room.getScores() == null) {
+			modoElegido = true;
+			jugadoresVersus = 3;
+		}else{
+			room.sendAnnouncement("No puede usar el comando durante la partida.",player.id);
+		}
+	}
+	if(message.toLowerCase() == "!4v4" && player.admin){
+		if (room.getScores() == null) {
+			modoElegido = true;
+			jugadoresVersus = 4;
+		}else{
+			room.sendAnnouncement("No puede usar el comando durante la partida.",player.id);
+		}
+	}
+	if(message.toLowerCase() == "!5v5" && player.admin){
+		if (room.getScores() == null) {
+			modoElegido = true;
+			jugadoresVersus = 5;
+		}else{
+			room.sendAnnouncement("No puede usar el comando durante la partida.",player.id);
+		}
+	}
 	if(modoElegido){
 		var listaJugadores = room.getPlayerList();
 		var jugadoresNoAFKs = obtenerJugadoresNoAFKs(listaJugadores); 
@@ -21823,7 +21852,7 @@ room.onPlayerChat = function(player, message) {
 					const jugadorAleatorio = team1Players[Math.floor(Math.random() * team1Players.length)];
 					//poner en el team azul
 					room.setPlayerTeam(jugadorAleatorio.id,2);
-					room.sendAnnouncement('JUGADOR RED : ' + jugadorAleatorio.name +' CAMBIADO ALEATORIAMENTE!');
+					room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente.');
 				}else{
 					room.sendAnnouncement('No hay jugadores en el team red uwu');
 				}

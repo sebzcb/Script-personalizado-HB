@@ -52,7 +52,6 @@ Si algun jugador se ha ido (room.onPlayerLeave)
 
 termina partida
 
-
 jugadores  = room.get
 espectadores = filtrar jugadores totales por espectadores.
 espectadoresNoAFK = filtrar espectadores por jugadores que no esten en lista afks.
