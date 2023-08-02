@@ -1,6 +1,6 @@
 // ▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN BÁSICA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-var NombreHost = "entra si eres discapacitado"
-var CantidadDeJugadores = 21  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
+var NombreHost = " COLO COLO VS U DE CHILE "
+var CantidadDeJugadores = 16  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
 var ClaveParaSerAdmin = "!admin"  // La clave va dentro de las comillas
 var TiempoDeJuego = 5 // Son la cantidad de minutos que quieres que duren los partidos.
@@ -12,7 +12,6 @@ var VisibilidadDelHost = false // Si quieres que tu sala sea pública dejar 'tru
 var BanderaDelHost = 'CL' // Se puede reemplazar GU (Bandera de Guam) por la que quieran.
 
 // Bandera HaxBall = FAM   
-
 //  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇  CONFIGURACIÓN AVANZADA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 // PARA TORNEOS
 
@@ -2321,7 +2320,7 @@ function getRealSoccerMap() {
 	},
 
 	"ballPhysics" : {
-		"radius" : 9,
+		"radius" :  6.5,
 		"bCoef" : 0.5,
 		"invMass" : 1.05,
 		"damping" : 0.99,
@@ -3106,7 +3105,7 @@ function getRealSoccerMap2() {
 	},
 
 	"ballPhysics" : {
-		"radius" : 9,
+		"radius" : 6.5,
 		"bCoef" : 0.5,
 		"invMass" : 1.05,
 		"damping" : 0.99,
@@ -7820,6 +7819,7 @@ function BocaFun(player) { // !BOC
 }
 function BOCTitularRedFun(player){
     if (player.admin == true){
+		//EQUIPO NUM, ANGULO, , COLOR LETRA [COLOR ARRIBA , COLOR MEDIO , COLOR ABAJO]
         room.setTeamColors(1, 90, 0xFFFFFF, [0x033f86, 0xfab900, 0x033f86]);
 	teamRed = "BOCA JRS.";
     }
@@ -23940,12 +23940,12 @@ room.onPlayerJoin = function(player) {
 
 	// Verificar si el "Modo Juegan Todos" está activado
   if (jueganTodosMode) {
-    
+	room.sendAnnouncement("blue: "+blueTeamCount + " red : " + redTeamCount);
     // Asignar al jugador al equipo con menos jugadores
-    if (blueTeamCount <= redTeamCount) {
-      room.setPlayerTeam(player.id, 1); // Equipo azul (team = 1)
+    if (redTeamCount <= blueTeamCount) {
+      room.setPlayerTeam(player.id, 1); // Equipo rojo (team = 1)
     } else {
-      room.setPlayerTeam(player.id, 2); // Equipo rojo (team = 2)
+      room.setPlayerTeam(player.id, 2); // Equipo azul (team = 2)
     }
   }else{
 	if(jugadoresVersus!=null){
