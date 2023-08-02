@@ -21728,6 +21728,23 @@ room.onPlayerChat = function(player, message) {
 	//imprimirInfoJugadores();
 	//room.sendAnnouncement("getscores:"+room.getScores());//-> si room.getScores() != null -> PARTIDO EN JUEGO, SI ES NULL ->NO ESTA EN PARTIDO.
 //room.sendAnnouncement(estadisticas, null, 0x00FF49, 'normal', 1);
+	if(message.toLowerCase() =="!reset me" && player.admin){ //resetea stats del jugador que puso eso
+		for ( var i = 0 ; i < listaJugadoresEstadisticas.length;i++){
+			var jugador = listaJugadoresEstadisticas[i].jugador;
+			var estadisticas = listaJugadoresEstadisticas[i].estadisticas;
+			if(player.id == jugador.id){
+				estadisticas.partidosTotal = 0;
+				estadisticas.partidosGanados = 0;
+				estadisticas.partidosPerdidos = 0;
+				estadisticas.porcentajePartidosGanados = 0;
+				estadisticas.porcentajePartidosPerdidos=0;
+				estadisticas.goles = 0;
+				estadisticas.asistencias = 0 ;
+				estadisticas.autogoles = 0;
+				room.sendAnnouncement("Estadisticas del admin reseteadads correctamente.",player.id);
+			}
+		}
+	}
 	var modoElegido = false;
 	if(message.toLowerCase() == "!1v1" && player.admin){
 		if (room.getScores() == null) {
@@ -23972,7 +23989,7 @@ room.onPlayerJoin = function(player) {
 
 	// Verificar si el "Modo Juegan Todos" está activado
   if (jueganTodosMode) {
-	room.sendAnnouncement("blue: "+blueTeamCount + " red : " + redTeamCount);
+	//room.sendAnnouncement("blue: "+blueTeamCount + " red : " + redTeamCount);
     // Asignar al jugador al equipo con menos jugadores
     if (redTeamCount <= blueTeamCount) {
       room.setPlayerTeam(player.id, 1); // Equipo rojo (team = 1)
