@@ -49,3 +49,19 @@ FFF0F0 FFE1E1 FFCECE FFBFBF FFAFAF FD9F9F FF8F8F FF8080 FF7171 FF6161 FF4F4F FF4
 sumar : +6,25
 
 					game.outStatus = "blueGK"; "redGK";						game.outStatus = "redCK";
+
+// GRAVEDAD EN haxball
+    // UNA GRAVEDAD DE 0.1 ES MUCHO EN HAXBALL .
+
+    //Si se inicia la partida y en room.gameticks esta asi todo el tiempo : 
+	room.setDiscProperties(0, { xgravity : 0 , ygravity : 0.1 });
+    la pelota caera hacia abajo desde la vista del jugador. (eje y esta bien. y x tambien.)
+
+    Si 	room.setDiscProperties(0, { xgravity : 0 , ygravity : -0.1 }); 
+    Si ygravity es negativo entonces -> la pelota ira caera hacia arriba. 
+
+    importante : saber desde donde el jugador le pega a la pelota. (xspeed o xgravity no se). para poder hacer comba.
+
+el jugador pega -> despues de pegar se asigna una gravedad en y + / -  para que la pelota tome curva.
+
+dependiendo desde que zona el jugador (playerDiscPropertioes) le pegue al balon (discProperties(0))cambiar la gravedad x e y del balon
