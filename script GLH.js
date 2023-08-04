@@ -3372,7 +3372,7 @@ function getRealSoccerMap2() {
 		"bCoef" : 0.5,
 		"invMass" : 1.05,
 		"damping" : 0.99,
-		"color" : "d0ff00",
+		"color" : "FFFFFF", /*original : d0ff00*/
 		"cMask" : [ "all"
 		],
 		"cGroup" : [ "ball"
@@ -7562,17 +7562,7 @@ room.onPlayerBallKick = function(player) {
 		room.sendAnnouncement("DATOS disc0 : bcoef: " +bcoef1d+" inv mass: "+invMasd+" damping: "+damingd+" jug acc: " +accJugd+" kick acc : " + kickAccd +" kickDump : " + kickDumpd +
 		" kick st: " + kickStd);
 */
-	if(colorBalonCambiado){
-		room.setDiscProperties(0, {color: colorBalonOriginal });
-		colorBalonCambiado = false;
-		room.sendAnnouncement("color reseteado.");
-	}
-	if (powerShoot){
-		room.sendAnnouncement("PW estaba activado, desactivado ahora." );
-		room.setDiscProperties(0, { invMass : masaInvertidaBalon, color: colorBalonOriginal });
-		powerShoot = false;
-		colorBalonCambiado = false;
-	}
+
   // Incrementar la posesión de balón del equipo del jugador que realiza el disparo
   if (player.team === 1) {
     equipoAzulPosesion++;
@@ -7648,6 +7638,17 @@ room.onPlayerBallKick = function(player) {
   if (map !== "RSR") {
     // Agrega aquí tu lógica personalizada para cuando el mapa no es "RSR"
   }
+	if(colorBalonCambiado){
+		room.setDiscProperties(0, {color: colorBalonOriginal });
+		colorBalonCambiado = false;
+		room.sendAnnouncement("color reseteado.");
+	}
+	if (powerShoot){
+			room.sendAnnouncement("PW estaba activado, desactivado ahora." );
+			powerShoot = false;
+			colorBalonCambiado = false;
+			room.setDiscProperties(0, { invMass : masaInvertidaBalon, color: colorBalonOriginal });
+	}
 }
 
 
@@ -23538,6 +23539,25 @@ room.onPositionsReset = function() {
 }
 
 var listaJugadoresTiempoConBalon = {}; // Objeto para almacenar el tiempo con balón de cada jugador
+//var listaColoresBalon = [16308954, 16760767, 16752800, 16744576, 16736352, 16728128, 16720418,14942208]; // 8 colores
+var listaColoresBalon = [16773360, 16769505, 16764622, 16760767, 16756655, 16621471, 16748431, 16744576, 16740721, 16736609, 16731983, 16728128, 16724016, 16719904, 16716306, 16711680];
+function actualizarColoresBalon(tiempo) {
+  if (tiempo < 1) {
+    return false;
+  }
+  var indiceColor = Math.floor((tiempo - 1) / (1 / listaColoresBalon.length));
+  if (indiceColor >= listaColoresBalon.length - 1) {
+    // Color más oscuro (último color de la lista)
+    room.setDiscProperties(0, { color: listaColoresBalon[listaColoresBalon.length - 1] });
+  } else {
+    // Restamos 1 al índice para ajustarlo a la lista
+    room.setDiscProperties(0, { color: listaColoresBalon[indiceColor] });
+  }
+
+  colorBalonCambiado = true;
+}
+
+
 
 function actualizarPowerShootJugador(player, distance) {
   var playerId = player.id;
@@ -23545,31 +23565,19 @@ function actualizarPowerShootJugador(player, distance) {
   if (listaJugadoresTiempoConBalon[playerId] === undefined) {
     // Agrego al jugador al objeto con tiempo con balón en 0, solo si no existe previamente
     listaJugadoresTiempoConBalon[playerId] = 1/60;
-    room.sendAnnouncement("Se agregó al jugador.");
 	return false;
   }
   //room.sendAnnouncement("Jugador mas cercano: " + player.name);
   //room.sendAnnouncement("DIST: " + distance.toFixed(3) + " invMass pelota: " +room.getDiscProperties(0).invMass );
   if (distance.toFixed(0) <= 24) { // Si el jugador toca el balón
 	var tiempoConBalon = listaJugadoresTiempoConBalon[playerId];
-	
-	if(tiempoConBalon >= 1 && tiempoConBalon <= 1.25){
-		room.setDiscProperties(0, { color: 16762823 });
-		colorBalonCambiado = true;
-	}else if (tiempoConBalon >= 1.25 && tiempoConBalon <= 1.5){
-		room.setDiscProperties(0, { color: 16751001 });
-		colorBalonCambiado = true;
 
-	}else if(tiempoConBalon >= 1.5 && tiempoConBalon <= 1.75){
-		room.setDiscProperties(0, { color: 16669274 });
-		colorBalonCambiado = true;
-
-	}
+	actualizarColoresBalon(tiempoConBalon);
 
 	if (tiempoConBalon >= 2){
 		room.sendAnnouncement(player.name + " POWERSHOOT ");
 		if(!powerShoot){ //Si pw esta en false, pw esta en true ahora y el set se ejecuta 1 sola vez.
-			room.setDiscProperties(0, { invMass : masaInvertidaBalon*MULTIPLICADOR_POWERSHOT, color: 16725504 }); //rojo.
+			room.setDiscProperties(0, { invMass : masaInvertidaBalon*MULTIPLICADOR_POWERSHOT }); //rojo.
 			powerShoot = true;
 			colorBalonCambiado = true;
 	  	}
@@ -23609,7 +23617,6 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 
   for (var i = 0; i < players.length; i++) {
     var player = players[i];
-
     // Verifica si el jugador tiene una posición válida
     if (player.position === null || player.position === undefined) {
       continue; // Salta al siguiente jugador si no tiene una posición válida
