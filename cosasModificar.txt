@@ -47,3 +47,5 @@ arreglar : autogoles -> aumentar gol al que lo hizo.
 FFF0F0 FFE1E1 FFCECE FFBFBF FFAFAF FD9F9F FF8F8F FF8080 FF7171 FF6161 FF4F4F FF4040 FF3030 FF2020 FF1212 FF0000 
 
 sumar : +6,25
+
+					game.outStatus = "blueGK"; "redGK";						game.outStatus = "redCK";
