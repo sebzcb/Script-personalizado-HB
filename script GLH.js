@@ -21732,7 +21732,7 @@ function generar_respuesta_aleatoria() {
 "No lo creo ❌",
 "Ni idea 🤷‍♂️",
 "No tengo una respuesta clara 🤔",
-"Sí, sin duda ✅",
+"Tu mama, sin duda ✅",
 "No, en absoluto ❌",
 "Puede ser 🤔",
 "No puedo predecir el futuro 🔮",
@@ -21944,13 +21944,6 @@ function imprimirInfoJugador(id){
 			room.sendAnnouncement("⚔️ " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%) ⚔️", null, 0x00FF49, 'normal', 1);
 			room.sendAnnouncement("❌ " + estadisticas.partidosPerdidos + " / " + estadisticas.partidosTotal + " partidos perdidos. (" + porcentajePartidosPerdidos + "%) ❌", null, 0x00FF49, 'normal', 1);
 			room.sendAnnouncement("⚽ " + "Goles: " + estadisticas.goles + " 🥶 " + "Autogoles: " + estadisticas.autogoles + " 👟 " + "Asistencias: " + estadisticas.asistencias , null, 0x00FF49, 'normal', 1);
-			/*
-			var lj = room.getPlayerList();
-			for (var j = 0 ; j < lj.length ; j++){
-				if(lj[j].id == jugador.id){
-					room.sendAnnouncement("team: "+lj[j].team);
-				}
-			}*/
 			//imprime en consola
 			console.log(" " + jugador.name + " estadisticas consola");
 			console.log(" " + estadisticas.partidosGanados + " / " + estadisticas.partidosTotal + " partidos ganados. (" + porcentajePartidosGanados + "%)");
@@ -22053,22 +22046,6 @@ room.onPlayerChat = function(player, message) {
 	//room.sendAnnouncement("getscores:"+room.getScores());//-> si room.getScores() != null -> PARTIDO EN JUEGO, SI ES NULL ->NO ESTA EN PARTIDO.
 	/*room.sendAnnouncement("se ajusto inv mas a 1.05");
 	room.setDiscProperties(0,{invMass : 1.05}); //original 
-	if(message.toLowerCase() == "pw15"){
-		room.setDiscProperties(0, { invMass : 1.5 });
-		return false;
-	}
-	if(message.toLowerCase() == "pw2"){
-		room.setDiscProperties(0, { invMass : 2 });
-		return false;
-	}
-	if(message.toLowerCase() == "pw3"){
-		room.setDiscProperties(0, { invMass : 3 });
-		return false;
-	}
-	if(message.toLowerCase() == "pw4"){
-		room.setDiscProperties(0, { invMass : 4 });
-		return false;
-	}
 	if(message.toLowerCase() =="pw"){
 		//la pelota ahora ira con mas potencia al pegarle.
 		/*room.sendAnnouncement("jugador : ");
@@ -22110,10 +22087,10 @@ room.onPlayerChat = function(player, message) {
 	if(message.toLowerCase() == "!pw" && player.admin){
 		if(efectoPowerShot == false){
 			efectoPowerShot = true;
-			room.sendAnnouncement(" Powershot activado. ");
+			room.sendAnnouncement(" Powershot activado. ", null, 0xFF0000, "bold");
 		}else{
 			efectoPowerShot = false;
-			room.sendAnnouncement(" Powershot desactivado. ");
+			room.sendAnnouncement(" Powershot desactivado. ", null, 0xFF0000, "bold");
 		}
 		return false;
 	}
@@ -22130,7 +22107,7 @@ room.onPlayerChat = function(player, message) {
 				estadisticas.goles = 0;
 				estadisticas.asistencias = 0 ;
 				estadisticas.autogoles = 0;
-				room.sendAnnouncement("Estadisticas del admin reseteadads correctamente.",player.id);
+				room.sendAnnouncement("Estadisticas del admin reseteadas correctamente.",player.id);
 			}
 		}
 	}
@@ -22181,11 +22158,11 @@ room.onPlayerChat = function(player, message) {
 	
 		if(jugadoresNoAFKs.length >= jugadoresVersus * 2){
 			jueganTodosMode = false;
-			room.sendAnnouncement("inicializa versus");
+			//room.sendAnnouncement("inicializa versus");
 			inicializarVersus(jugadoresNoAFKs);
 			return false;
 		}else{
-			room.sendAnnouncement("NO hay jugadores suficientes para elejir el modo.");
+			room.sendAnnouncement("No hay jugadores suficientes para inicializar el versus.", null, 0xFF0000, "bold");
 			jugadoresVersus = null;
 		}
 	}
@@ -22213,10 +22190,10 @@ room.onPlayerChat = function(player, message) {
 		return true;
 	}
 	if(message.toLowerCase() == "!jugadores"){
-		room.sendAnnouncement("Hay : " + room.getPlayerList().length + " jugadores en la sala.");
+		room.sendAnnouncement(room.getPlayerList().length + " jugadores en la sala.",player.id, 0xFF0000, "bold");
 		return true;
 	}
-	if (message.toLowerCase() == "!me" || message.toLowerCase() == "!showme"){
+	if (message.toLowerCase() == "!me" || message.toLowerCase() == "!stats"){
 		var jugadorBuscado = buscarJugadorEstadisticas(player.id); //objeto
 		if(jugadorBuscado != null){
 			imprimirInfoJugador(jugadorBuscado.jugador.id);
@@ -22226,8 +22203,9 @@ room.onPlayerChat = function(player, message) {
 		return false;
   	}
   if(message.toLowerCase().includes("https://discord.gg/")){
-	room.kickPlayer(player.id,"LINKS DISCORD = BAN",true);
-	room.sendAnnouncement("Se ha baneado a "+player.name+" por compartir un link discord ");
+	room.kickPlayer(player.id,"LINKS DISCORD = BAN",true);			 
+
+	room.sendAnnouncement(player.name +"baneado por compartir links ",null, 0xFF0000, "bold");
 	return false;
   }
   if (message.toLowerCase() == "!sexo"){
@@ -22235,7 +22213,7 @@ room.onPlayerChat = function(player, message) {
 	//elije a otro jugador aleatorio
 	const jugadorAleatorio = players[Math.floor(Math.random() * players.length)];
 	//mensaje con ambos jugadores
-	room.sendAnnouncement(player.name +' quiere culearse a '+ jugadorAleatorio.name);
+	room.sendAnnouncement(player.name +' quiere culearse a '+ jugadorAleatorio.name,null, 0xFF0000, "bold");
 	return false;
   }
   //verificar si el jugador es admin y el mensaje es solo !publicidadfin, entonces elimina la publicidad    programada
@@ -22290,9 +22268,9 @@ room.onPlayerChat = function(player, message) {
 					const jugadorAleatorio = team1Players[Math.floor(Math.random() * team1Players.length)];
 					//poner en el team azul
 					room.setPlayerTeam(jugadorAleatorio.id,2);
-					room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente.');
+					room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente.',null, 0xFF0000, "bold");
 				}else{
-					room.sendAnnouncement('No hay jugadores en el team red uwu');
+					room.sendAnnouncement('No hay jugadores en el team red uwu',null, 0xFF0000, "bold");
 				}
 				break;
 			case "blue" :
@@ -22304,13 +22282,13 @@ room.onPlayerChat = function(player, message) {
 					const jugadorAleatorio = team2Players[Math.floor(Math.random() * team2Players.length)];
 					//poner en el team azul
 					room.setPlayerTeam(jugadorAleatorio.id,1);
-					room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente ');
+					room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente ',null, 0xFF0000, "bold");
 				}else{
-					room.sendAnnouncement('No hay jugadores en el team blue uwu');
+					room.sendAnnouncement('No hay jugadores en el team blue uwu',null, 0xFF0000, "bold");
 				}
 				break;
 			default :
-				room.sendAnnouncement('No se eligio team red o blue, formato : !cambiarjugador red o !cambiarjugador blue ',player.id);
+				room.sendAnnouncement('No se eligio team red o blue, formato : !cambiarjugador red o !cambiarjugador blue ',player.id, 0xFF0000, "bold");
 				break;
 		}
 	}
