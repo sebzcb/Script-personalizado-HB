@@ -65,3 +65,32 @@ sumar : +6,25
 el jugador pega -> despues de pegar se asigna una gravedad en y + / -  para que la pelota tome curva.
 
 dependiendo desde que zona el jugador (playerDiscPropertioes) le pegue al balon (discProperties(0))cambiar la gravedad x e y del balon
+
+
+jugador tiene balon >= 2 seg. -> powershot = true;->jugador pega balon -> reinicio pelota a invMass normal y powershot = false;
+
+
+(Tick) jug tiene balon >= 2 seg. -> powershot = true.-> Si jugador pega balon -> 
+reinicio pelota a invMass normal y powershot = false Y ajusto gravedad.
+
+
+
+
+Si jugador pega pelota , balonGolpeado = true -> guarda x,y de ese momento ->
+el siguiente tick si balonGolpeado == true -> obten x,y de ese momento.-> resta x e y.
+
+resultado : Jug tiene balon >= 2 seg. -> powerhost = true-> Si jug. pega balon -> 
+reinicio pelota a invMass y pw = false. Y balonGolpeado = true -> siguiente tick -> si balonGolpeado==true->obten x,y de ese momento -> ajusta gravedad.
+
+
+Si tiro powershot -> pelotaMoviendoseConPowershot = true -> si pelota toca con jugador O tocaConParedMapa && pelotaMoviendoseConPowershot == true 
+-> poner gravedad en 0 otra vez.
+
+si es gk -> +1 tamaño , pw en 1 segundo desde de su area. 
+mco-> pw en 1.5 seg. desde la mitad hasta el area rival.
+!gk ->rs -> futx4 , futx5 , futx7, futx10.
+
+ARREGLAR :
+NUEVO : 0-1 SEGUNDO -> NADA , COLOR NORMAL
+1-1.8 SEGUNDOS -> PASE CON EFECTO , COLOR VERDE
+1.8 SEGUNDOS EN ADELANTE -> TIRO POTENTE + EFECTO , COLOR ROJO

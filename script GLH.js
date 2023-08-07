@@ -1,11 +1,11 @@
 // ▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN BÁSICA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-var NombreHost = "[RS/FUTSAL] HUACHIPATO VS BOCA JUNIORS "
-var CantidadDeJugadores = 16  // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
+var NombreHost = " todos juegan + tiros potentes "
+var CantidadDeJugadores = 20 // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
 var ClaveParaSerAdmin = "a"  // La clave va dentro de las comillas
 var TiempoDeJuego = 5 // Son la cantidad de minutos que quieres que duren los partidos.
-var TamanoMinimoPermitido = 1 //14 // Tamaño mínimo permitido para un jugador
-var TamanoMaximoPermitido = 30 //16 Tamaño máximo permitido para un jugador
+var TamanoMinimoPermitido = 14 //14 // Tamaño mínimo permitido para un jugador
+var TamanoMaximoPermitido = 16 //16 Tamaño máximo permitido para un jugador
 // ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN INTERMEDIA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 var PasswordDelHost = null    // Dejar "null" si no quieres que tu Host tenga una Contraseña. Si quieres una contraseña,  reemplazar el null por la contraseña que quieras (debe llevar comillas).
 var VisibilidadDelHost = false // Si quieres que tu sala sea pública dejar 'true'. Si quieres que sea privada, poner 'false'.
@@ -132,9 +132,10 @@ var limiteParedEjeYbottom = null; //pared abajo.
 
 var limiteParedEjeXleft = null; //pared izq.
 var limiteParedEjeXright = null; //pared der.
+var efectoComba = false;
 
-
-
+var gkRedLimiteEjeX = -270; //es por el mapa default de rs.
+var gkBlueLimiteEjeX = 270;//es por el mapa default de rs.
 
 var _0x24f1 = ['floor', 'getPlayerDiscProperties', '      👋 Bɪᴇɴᴠᴇɴɪᴅᴏ ᴀʟ ʜᴏsᴛ ᴅᴇ G L H      ', 'ballOutPositionY', 'court', 'blueGK', 'toFixed', 'RSR', 'onRoomLink', 'secondLastKickerTeam', 'auth', 'method', 'El administrador se encuentra presente', 'ceil', 'clearBans', 'sendAnnouncement', 'blueScore', 'secondLastKickerId', 'secondLastKicker', 'normal', '50nCLuSN', '0x00ccff', '🔥 ÚLTIMA JUGADA DEL PARTIDO 🔥 - Si la pelota sale del terreno de juego, se finalizará el partido.', 'radius', '🚫 NO puedes cambiar el fondo del mapa cuando un partido se esta jugando.', 'xgravity', '𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 💬 ⌨: !rs, !rr, !bb, !clearbans, !swap, t [mensaje a tu equipo], !court, !court [hexcolor], !court reset', 'setPlayerDiscProperties', 'round', '478VrIjpd', 'team', 'onGameStop', 'lastKicker', '"},"playerPhysics":{"acceleration":0.12,"kickStrength":5.65},"ballPhysics":{"radius":9,"invMass":1.05,"color":"d0ff00","cGroup":["ball","kick","score"]},"vertexes":[{"x":0,"y":660,"trait":"kickOffBarrier"},{"x":0,"y":180,"trait":"kickOffBarrier"},{"x":0,"y":-180,"trait":"kickOffBarrier"},{"x":0,"y":-660,"trait":"kickOffBarrier"},{"x":1150,"y":320,"trait":"line"},{"x":840,"y":320,"trait":"line"},{"x":1150,"y":-320,"trait":"line"},{"x":840,"y":-320,"trait":"line"},{"x":1150,"y":180,"trait":"line"},{"x":1030,"y":180,"trait":"line"},{"x":1150,"y":-180,"trait":"line"},{"x":1030,"y":-180,"trait":"line"},{"x":840,"y":-130,"trait":"line","curve":-130},{"x":840,"y":130,"trait":"line","curve":-130},{"x":-1150,"y":-320,"trait":"line"},{"x":-840,"y":-320,"trait":"line"},{"x":-1150,"y":320,"trait":"line"},{"x":-840,"y":320,"trait":"line"},{"x":-1150,"y":-175,"trait":"line"},{"x":-1030,"y":-175,"trait":"line"},{"x":-1150,"y":175,"trait":"line"},{"x":-1030,"y":175,"trait":"line"},{"x":-840,"y":130,"trait":"line","curve":-130},{"x":-840,"y":-130,"trait":"line","curve":-130},{"x":935,"y":3,"trait":"line"},{"x":935,"y":-3,"trait":"line"},{"x":-935,"y":3,"trait":"line"},{"x":-935,"y":-3,"trait":"line"},{"x":-1150,"y":570,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":-1120,"y":600,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":-1120,"y":-600,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":-1150,"y":-570,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":1120,"y":600,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":1150,"y":570,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":1150,"y":-570,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":1120,"y":-600,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"x":0,"y":180,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["blueKO"],"trait":"kickOffBarrier","curve":-180},{"x":0,"y":-180,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO"],"trait":"kickOffBarrier","curve":180},{"x":0,"y":180,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO"],"trait":"kickOffBarrier","curve":180},{"x":-1030,"y":-40,"bCoef":-5.7,"cMask":["ball"],"cGroup":["c0"],"trait":"line","curve":70,"color":"576C46","vis":false},{"x":-1030,"y":40,"bCoef":-5.7,"cMask":["ball"],"cGroup":["c0"],"trait":"line","curve":70,"color":"576C46","vis":false},{"x":1030,"y":-40,"bCoef":-5.7,"cMask":["ball"],"cGroup":["c0"],"trait":"line","curve":-70,"color":"576C46","vis":false},{"x":1030,"y":40,"bCoef":-5.7,"cMask":["ball"],"cGroup":["c0"],"trait":"line","curve":-70,"color":"576C46","vis":false},{"x":1030,"y":-40,"trait":"line","color":"576C46"},{"x":1030,"y":40,"trait":"line","color":"576C46"},{"x":-1030,"y":-40,"trait":"line","color":"576C46"},{"x":-1030,"y":40,"trait":"line","color":"576C46"},{"x":0,"y":3,"trait":"line"},{"x":0,"y":-3,"trait":"line"},{"x":-1157,"y":605,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":-1157,"y":655,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":-1157,"y":-655,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":-1157,"y":-605,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":1157,"y":605,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":1157,"y":655,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":1157,"y":-655,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":1157,"y":-605,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":-1300,"y":-485,"bCoef":0,"cMask":["c1"],"cGroup":["red","blue"],"color":"ec644b","vis":false},{"x":1300,"y":-485,"bCoef":0,"cMask":["c1"],"cGroup":["red","blue"],"color":"ec644b","vis":false},{"x":-1300,"y":485,"bCoef":0,"cMask":["c1"],"cGroup":["red","blue"],"color":"ec644b","vis":false},{"x":1300,"y":485,"bCoef":0,"cMask":["c1"],"cGroup":["red","blue"],"color":"ec644b","vis":false},{"x":-1295,"y":-320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":-840,"y":-320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":-840,"y":320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":-1295,"y":320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":1295,"y":-320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":840,"y":-320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":840,"y":320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":1295,"y":320,"cMask":["c0"],"cGroup":["red","blue"]},{"x":-1150,"y":-124,"bCoef":0,"cMask":["ball"]},{"x":-1210,"y":-124,"bCoef":0,"cMask":["ball"],"bias":0,"curve":5},{"x":-1150,"y":124,"bCoef":0,"cMask":["ball"]},{"x":-1210,"y":124,"bCoef":0,"cMask":["ball"],"bias":0,"curve":5},{"x":-1250,"y":-158,"bCoef":0,"cMask":["ball"]},{"x":-1250,"y":158,"bCoef":0,"cMask":["ball"]},{"x":1150,"y":124,"bCoef":0,"cMask":["ball"]},{"x":1210,"y":124,"bCoef":0,"cMask":["ball"],"curve":-5},{"x":1150,"y":-124,"bCoef":0,"cMask":["ball"]},{"x":1210,"y":-124,"bCoef":0,"cMask":["ball"],"curve":-5},{"x":1250,"y":-158,"bCoef":0,"cMask":["ball"]},{"x":1250,"y":158,"bCoef":0,"cMask":["ball"]}],"segments":[{"v0":0,"v1":1,"trait":"kickOffBarrier"},{"v0":2,"v1":3,"trait":"kickOffBarrier"},{"v0":4,"v1":5,"trait":"line","y":320},{"v0":5,"v1":7,"trait":"line","x":840},{"v0":6,"v1":7,"trait":"line","y":-320},{"v0":8,"v1":9,"trait":"line","y":180},{"v0":9,"v1":11,"trait":"line","x":1030},{"v0":10,"v1":11,"trait":"line","y":-180},{"v0":12,"v1":13,"curve":-130,"trait":"line","x":840},{"v0":14,"v1":15,"trait":"line","y":-320},{"v0":15,"v1":17,"trait":"line","x":-840},{"v0":16,"v1":17,"trait":"line","y":320},{"v0":18,"v1":19,"trait":"line","y":-175},{"v0":19,"v1":21,"trait":"line","x":-1030},{"v0":20,"v1":21,"trait":"line","y":175},{"v0":22,"v1":23,"curve":-130,"trait":"line","x":-840},{"v0":24,"v1":25,"curve":-180,"trait":"line","x":935},{"v0":26,"v1":27,"curve":-180,"trait":"line","x":-935},{"v0":24,"v1":25,"curve":180,"trait":"line","x":935},{"v0":26,"v1":27,"curve":180,"trait":"line","x":-935},{"v0":24,"v1":25,"curve":90,"trait":"line","x":935},{"v0":26,"v1":27,"curve":90,"trait":"line","x":-935},{"v0":24,"v1":25,"curve":-90,"trait":"line","x":935},{"v0":26,"v1":27,"curve":-90,"trait":"line","x":-935},{"v0":24,"v1":25,"trait":"line","x":935},{"v0":26,"v1":27,"trait":"line","x":-935},{"v0":28,"v1":29,"curve":90,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"v0":30,"v1":31,"curve":90,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"v0":32,"v1":33,"curve":90,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"v0":34,"v1":35,"curve":90,"bCoef":-2.65,"cMask":["ball"],"cGroup":["c0"],"trait":"line"},{"v0":37,"v1":36,"curve":-180,"vis":false,"bCoef":0.1,"cGroup":["blueKO"],"trait":"kickOffBarrier"},{"v0":39,"v1":40,"curve":70,"vis":false,"color":"576C46","bCoef":-5.7,"cMask":["ball"],"cGroup":["c0"],"trait":"line","x":-1030},{"v0":41,"v1":42,"curve":-70,"vis":false,"color":"576C46","bCoef":-5.7,"cMask":["ball"],"cGroup":["c0"],"trait":"line","x":1030},{"v0":37,"v1":38,"curve":180,"vis":false,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO"],"trait":"kickOffBarrier"},{"v0":43,"v1":44,"vis":true,"color":"576C46","trait":"line","x":1030},{"v0":45,"v1":46,"vis":true,"color":"576C46","trait":"line","x":-1030},{"v0":47,"v1":48,"curve":-180,"trait":"line","x":-935},{"v0":47,"v1":48,"curve":180,"trait":"line","x":-935},{"v0":47,"v1":48,"curve":90,"trait":"line","x":-935},{"v0":47,"v1":48,"curve":-90,"trait":"line","x":-935},{"v0":47,"v1":48,"trait":"line","x":-935},{"v0":49,"v1":50,"color":"FFFF00","bCoef":0,"cMask":["ball"],"trait":"ballArea","x":-1157},{"v0":51,"v1":52,"color":"FFFF00","bCoef":0,"cMask":["ball"],"trait":"ballArea","x":-1157},{"v0":53,"v1":54,"color":"FFFF00","bCoef":0,"cMask":["ball"],"trait":"ballArea","x":1157},{"v0":55,"v1":56,"color":"FFFF00","bCoef":0,"cMask":["ball"],"trait":"ballArea","x":1157},{"v0":57,"v1":58,"vis":false,"color":"ec644b","bCoef":0,"cMask":["c1"],"cGroup":["red","blue"],"y":-485},{"v0":59,"v1":60,"vis":false,"color":"ec644b","bCoef":0,"cMask":["c1"],"cGroup":["red","blue"],"y":485},{"v0":61,"v1":62,"vis":false,"color":"ec644b","cMask":["c0"],"cGroup":["red","blue"]},{"v0":62,"v1":63,"vis":false,"color":"ec644b","cMask":["c0"],"cGroup":["red","blue"]},{"v0":63,"v1":64,"vis":false,"color":"ec644b","cMask":["c0"],"cGroup":["red","blue"]},{"v0":65,"v1":66,"vis":false,"cMask":["c0"],"cGroup":["red","blue"]},{"v0":66,"v1":67,"vis":false,"cMask":["c0"],"cGroup":["red","blue"]},{"v0":67,"v1":68,"vis":false,"cMask":["c0"],"cGroup":["red","blue"]},{"v0":69,"v1":70,"color":"FFFFFF","bCoef":0,"cMask":["ball"],"y":-124},{"v0":71,"v1":72,"color":"FFFFFF","bCoef":0,"cMask":["ball"],"y":124},{"v0":72,"v1":70,"curve":5,"color":"FFFFFF","bCoef":0,"cMask":["ball"],"bias":0},{"v0":70,"v1":73,"color":"FFFFFF","bCoef":0,"cMask":["ball"]},{"v0":72,"v1":74,"color":"FFFFFF","bCoef":0,"cMask":["ball"]},{"v0":75,"v1":76,"color":"FFFFFF","bCoef":0,"cMask":["ball"],"y":124},{"v0":77,"v1":78,"color":"FFFFFF","bCoef":0,"cMask":["ball"],"y":-124},{"v0":76,"v1":78,"curve":-5,"color":"FFFFFF","bCoef":0,"cMask":["ball"]},{"v0":78,"v1":79,"color":"FFFFFF","bCoef":0,"cMask":["ball"]},{"v0":76,"v1":80,"color":"FFFFFF","bCoef":0,"cMask":["ball"]}],"goals":[{"p0":[-1162,124],"p1":[-1162,-124],"team":"red"},{"p0":[1162,124],"p1":[1162,-124],"team":"blue","radius":0,"invMass":1}],"discs":[{"radius":0,"invMass":0,"pos":[-1311,-19],"color":"ffffffff","bCoef":0,"cMask":["red"],"cGroup":["ball"]},{"radius":0,"invMass":0,"pos":[-1310,29],"color":"ffffffff","bCoef":0,"cMask":["blue"],"cGroup":["ball"]},{"radius":0,"invMass":0,"pos":[-1308,62],"color":"ffffffff","bCoef":0,"cMask":["red","blue"],"cGroup":["ball"]},{"radius":2.7,"pos":[-1150,600],"cGroup":["ball"],"trait":"cornerflag"},{"radius":2.7,"pos":[1150,-600],"cGroup":["ball"],"trait":"cornerflag"},{"radius":2.7,"pos":[1150,600],"cGroup":["ball"],"trait":"cornerflag"},{"radius":5,"invMass":0,"pos":[-1150,-124],"bCoef":0.5,"trait":"goalPost"},{"radius":5,"invMass":0,"pos":[-1150,124],"bCoef":0.5,"trait":"goalPost"},{"radius":2,"invMass":0,"pos":[-1250,-158],"color":"000000","bCoef":1,"trait":"goalPost"},{"radius":2,"invMass":0,"pos":[-1250,158],"color":"000000","bCoef":1,"trait":"goalPost"},{"radius":5,"invMass":0,"pos":[1150,-124],"bCoef":0.5,"trait":"goalPost"},{"radius":5,"invMass":0,"pos":[1150,124],"bCoef":0.5,"trait":"goalPost"},{"radius":2,"invMass":0,"pos":[1250,-158],"color":"000000","bCoef":1,"trait":"goalPost"},{"radius":2,"invMass":0,"pos":[1250,158],"color":"000000","bCoef":1,"trait":"goalPost"},{"radius":2.7,"pos":[-1150,-600],"cGroup":["ball"],"trait":"cornerflag"},{"radius":0,"pos":[-1149,-485],"cMask":["none"]},{"radius":0,"pos":[1149,-485],"cMask":["none"]},{"radius":0,"pos":[-1149,-485],"cMask":["none"]},{"radius":0,"pos":[1149,-485],"cMask":["none"]},{"radius":0,"pos":[-1149,485],"cMask":["none"]},{"radius":0,"pos":[1149,485],"cMask":["none"]},{"radius":0,"pos":[-1149,485],"cMask":["none"]},{"radius":0,"pos":[1149,485],"cMask":["none"]},{"pos":[-6.5,-3],"radius":0.8,"invMass":1e+250,"color":"0","cGroup":["c0"]},{"radius":1.4,"invMass":1e+250,"color":"0","cGroup":["c0"]},{"pos":[6.5,-3],"radius":0.8,"invMass":1e+250,"color":"0","cGroup":["c0"]},{"pos":[0,-6.5],"radius":0.8,"invMass":1e+250,"color":"0","cGroup":["c0"]},{"pos":[-4.5,5.5],"radius":0.8,"invMass":1e+250,"color":"0","cGroup":["c0"]},{"pos":[4.5,5.5],"radius":0.8,"invMass":1e+250,"color":"0","cGroup":["c0"]},{"radius":0.8,"invMass":1e+250,"color":"transparent","cGroup":["c0"]}],"planes":[{"normal":[0,1],"dist":-627,"bCoef":0,"cGroup":["ball"],"trait":"ballArea","_data":{"extremes":{"normal":[0,1],"dist":-627,"canvas_rect":[-1311,-660,1300,660],"a":[-1311,-627],"b":[1300,-627]}}},{"normal":[0,-1],"dist":-627,"bCoef":0,"cGroup":["ball"],"trait":"ballArea","_data":{"extremes":{"normal":[0,-1],"dist":-627,"canvas_rect":[-1311,-660,1300,660],"a":[-1311,627],"b":[1300,627]}}},{"normal":[0,1],"dist":-660,"bCoef":0,"_data":{"extremes":{"normal":[0,1],"dist":-660,"canvas_rect":[-1311,-660,1300,660],"a":[-1311,-660],"b":[1300,-660]}}},{"normal":[0,-1],"dist":-660,"bCoef":0,"_data":{"extremes":{"normal":[0,-1],"dist":-660,"canvas_rect":[-1311,-660,1300,660],"a":[-1311,660],"b":[1300,660]}}},{"normal":[1,0],"dist":-1300,"bCoef":0,"_data":{"extremes":{"normal":[1,0],"dist":-1300,"canvas_rect":[-1311,-660,1300,660],"a":[-1300,-660],"b":[-1300,660]}}},{"normal":[-1,0],"dist":-1300,"bCoef":0.1,"_data":{"extremes":{"normal":[-1,0],"dist":-1300,"canvas_rect":[-1311,-660,1300,660],"a":[1300,-660],"b":[1300,660]}}},{"normal":[1,0],"dist":-1230,"bCoef":0,"cMask":["ball"],"cGroup":["ball"],"_data":{"extremes":{"normal":[1,0],"dist":-1230,"canvas_rect":[-1311,-660,1300,660],"a":[-1230,-660],"b":[-1230,660]}}},{"normal":[-1,0],"dist":-1230,"bCoef":0,"cMask":["ball"],"cGroup":["ball"],"_data":{"extremes":{"normal":[-1,0],"dist":-1230,"canvas_rect":[-1311,-660,1300,660],"a":[1230,-660],"b":[1230,660]}}}],"traits":{"ballArea":{"vis":false,"bCoef":0,"cMask":["ball"],"cGroup":["ball"]},"goalPost":{"radius":5,"invMass":0,"bCoef":1,"cGroup":["ball"]},"rightNet":{"radius":0,"invMass":1,"bCoef":0,"cGroup":["ball","c3"]},"leftNet":{"radius":0,"invMass":1,"bCoef":0,"cGroup":["ball","c2"]},"stanchion":{"radius":3,"invMass":0,"bCoef":3,"cMask":["none"]},"cornerflag":{"radius":3,"invMass":0,"bCoef":0.2,"color":"FFFF00","cMask":["ball"]},"reargoalNetleft":{"vis":true,"bCoef":0.1,"cMask":["ball","red","blue"],"curve":10,"color":"C7E6BD"},"reargoalNetright":{"vis":true,"bCoef":0.1,"cMask":["ball","red","blue"],"curve":-10,"color":"C7E6BD"},"sidegoalNet":{"vis":true,"bCoef":1,"cMask":["ball","red","blue"],"color":"C7E6BD"},"kickOffBarrier":{"vis":false,"bCoef":0.1,"cGroup":["redKO","blueKO"],"cMask":["red","blue"]},"line":{"vis":true,"cMask":[],"color":"C7E6BD"}},"joints":[{"d0":16,"d1":17,"strength":"rigid","color":"678859","length":null},{"d0":18,"d1":19,"strength":"rigid","color":"678859","length":null},{"d0":20,"d1":21,"strength":"rigid","color":"678859","length":null},{"d0":22,"d1":23,"strength":"rigid","color":"678859","length":null},{"d0":0,"d1":25,"length":0,"color":"transparent"},{"d0":0,"d1":24,"length":7.158910531638177,"color":"transparent"},{"d0":0,"d1":26,"length":7.158910531638177,"color":"transparent"},{"d0":0,"d1":27,"length":6.5,"color":"transparent"},{"d0":0,"d1":28,"length":7.106335201775948,"color":"transparent"},{"d0":0,"d1":29,"length":7.106335201775948,"color":"transparent"},{"d0":24,"d1":25,"length":7.158910531638177,"color":"transparent"},{"d0":25,"d1":26,"length":7.158910531638177,"color":"transparent"},{"d0":25,"d1":27,"length":6.5,"color":"transparent"},{"d0":25,"d1":28,"length":7.106335201775948,"color":"transparent"},{"d0":25,"d1":29,"length":7.106335201775948,"color":"transparent"},{"d0":24,"d1":27,"length":7.3824115301167,"color":"transparent"},{"d0":24,"d1":28,"length":8.73212459828649,"color":"transparent"},{"d0":28,"d1":29,"length":9,"color":"transparent"},{"d0":26,"d1":29,"length":8.73212459828649,"color":"transparent"},{"d0":26,"d1":27,"length":7.3824115301167,"color":"transparent"},{"d0":26,"d1":28,"length":13.901438774457844,"color":"transparent"},{"d0":27,"d1":28,"length":12.816005617976296,"color":"transparent"},{"d0":27,"d1":29,"length":12.816005617976296,"color":"transparent"},{"d0":24,"d1":29,"length":13.901438774457844,"color":"transparent"},{"d0":24,"d1":26,"length":13,"color":"transparent"},{"d0":0,"d1":25,"length":0,"color":"transparent"},{"d0":0,"d1":24,"length":7.158910531638177,"color":"transparent"},{"d0":0,"d1":26,"length":7.158910531638177,"color":"transparent"},{"d0":0,"d1":27,"length":6.5,"color":"transparent"},{"d0":0,"d1":28,"length":7.106335201775948,"color":"transparent"},{"d0":0,"d1":29,"length":7.106335201775948,"color":"transparent"},{"d0":24,"d1":25,"length":7.158910531638177,"color":"transparent"},{"d0":25,"d1":26,"length":7.158910531638177,"color":"transparent"},{"d0":25,"d1":27,"length":6.5,"color":"transparent"},{"d0":25,"d1":28,"length":7.106335201775948,"color":"transparent"},{"d0":25,"d1":29,"length":7.106335201775948,"color":"transparent"},{"d0":24,"d1":27,"length":7.3824115301167,"color":"transparent"},{"d0":24,"d1":28,"length":8.73212459828649,"color":"transparent"},{"d0":28,"d1":29,"length":9,"color":"transparent"},{"d0":26,"d1":29,"length":8.73212459828649,"color":"transparent"},{"d0":26,"d1":27,"length":7.3824115301167,"color":"transparent"},{"d0":26,"d1":28,"length":13.901438774457844,"color":"transparent"},{"d0":27,"d1":28,"length":12.816005617976296,"color":"transparent"},{"d0":27,"d1":29,"length":12.816005617976296,"color":"transparent"},{"d0":0,"d1":30,"length":0,"color":"transparent"},{"d0":25,"d1":30,"length":0,"color":"transparent"}],"redSpawnPoints":[],"blueSpawnPoints":[],"canBeStored":false}', 'onPlayerLeave', 'setCustomStadium', 'extraTimeAnnounced', 'onPlayerJoin', 'application/json', '                                        ▒█▀▀█ ▒█░░░ ▒█░▒█', '⏱ FINAL DEL PARTIDO | Si empataron selecciona penales con: !pensred (para que pateen los rojos🔴) y !pensblue (para que pateen los azules🔵)', 'rsCorner', 'yspeed', 'kickPlayer', 'log', '                                        ▒█░▄▄ ▒█░░░ ▒█▀▀█', 'onPlayerTeamChange', 'lat', 'pauseGame', 'blueCK', '505050', 'boosterCount', 'invMass', 'warningCount', '811oRJfWz', 'stringify', 'ballRadius', 'extraTime', '0xff223c', 'getPlayerList', 'admin', 'rsSwingTimer', 'cGroup', ' 🟦 ⚊ 🕒 ', '✅ 🧹 Lᴏs ʙᴀɴs ғᴜᴇʀᴏɴ ʀᴇᴍᴏᴠɪᴅᴏs ᴘᴏʀ ', 'swap', 'ballOutPositionX', '{"name":"🗦⚽🗧𝚁𝙴𝙰𝙻 𝚂𝙾𝙲𝙲𝙴𝚁 🙼  ᴿ ᴱ ⱽ ᴼ ᴸ ᵁ ᵀ ᴵ ᴼ ᴺ  🙼","width":1300,"height":660,"spawnDistance":560,"bg":{"type":"grass","width":1150,"height":600,"kickOffRadius":180,"cornerRadius":0,"color":"', '👋 Hasta pronto! ', 'extraTimeCount', '2vpbxKS', '      ℹ Escribe !help para ver los comandos ⌨     ', 'secondLastKickerName', 'ticks', 'rsTimer', '] - [', 'help', 'substr', '🔥 ⚽ 𝙂𝙊𝙇! ', 'throwInPosY', '463eHQvaF', 'roomName', ColorFondoRS, 'clearbans', 'setPlayerAvatar', '🔐La clave ha sido cambiada por: ', 'redScore', 'name', 'Real Soccer Revolution', 'No hay admin, escribe el comando para ser administrador.', 'code', 'rsGoalKick', 'setpassword', '🏟🌈 El color del fondo del mapa actual es: ', NombreHost, 'noPlayer', 'clearpassword', 'time', 'lastKickerTeam', '🔐 Comando habilitado sólo para Admistradores ⚙️👤', 'cMask', 'rsReady', 'onPositionsReset', ' 🟥 ', 'getScores', '1823YwCEsH', 'then', 'POST', ' - ', 'username', 'bringThrowBack', 'outStatus', 'normal', 'xspeed', 'length', 'replace', 'position', '145825HWBoCM', '🔗 𝗗𝗶𝘀𝗰𝗼𝗿𝗱 𝗥𝗦𝗜: https://discord.gg/BZkDuSV', 'getDiscProperties', 'color', 'geo', ' (👟 Asistencia: ', 'boosterState', '134249tMXEkv', '🔄 Se han intercambiado los equipos', 'stopGame', 'rsActive', 'redCK', '84221WxdGJY', 'startsWith', 'lastPlayAnnounced', 'split', 'redThrow', 'setPlayerTeam', 'getBallPosition', 'extraTimeEnd', 'sqrt', '❌⚽ GOL EN CONTRA! ', 'setDiscProperties', 'onGameStart', '** Ha quitado la contraseña 🗝🔓 ', 'ygravity', '👟', 'forEach', 'redGK', 'onGameTick', 'paused', 'pushedOut', '107sAuBDh', 'public', ' 🗝🔓 La contraseña fue eliminada por ', 'reset', 'throwinKicked', '                                        ▒█▄▄█ ▒█▄▄█ ▒█░▒█', 'trim', 'lon', '0xd0ff00', 'setTimeLimit', '274921JuGtNr', 'rsTouchTeam', '🌐 𝐖𝐞𝐛 𝐆𝐋𝐇: https://grandesligashaxball.wixsite.com/grandesligashaxball/', 'blueThrow', 'token', 'onTeamGoal', 'timeLimit', 'startGame', 'content', 'body', 'setPassword', 'Content-Type', 'updateLastKicker', 'substring', 'custom', 'https://discord.com/api/webhooks/816061374504763402/Us5kMMIjcwUHylZ7-SBGnH2wkODNDHi24wvPk85wj6XecLB754wIHe-iEM776Sfk9_-Y', 'filter', ' Segundos', 'lastKickerId', 'onStadiumChange', ' by ', 'lastKickerName', 'headers', 'find', 'conn', 'maxPlayers'];
 var _0x2ffa = function (_0x2ee94c, _0x596748) {
@@ -395,9 +396,9 @@ function getRealSoccerMap3() {
 	},
 
 	"ballPhysics" : {
-		"radius" : 9,
+		"radius" : 7.8,
 		"bCoef" : 0.5,
-		"invMass" : 1.05,
+		"invMass" : 1.2,
 		"damping" : 0.99,
 		"color" : "9669ff",
 		"cMask" : [ "all"
@@ -1643,227 +1644,24 @@ function getFutx3Map() {
 }
 
 function getFutx4Map() {
-	var Futx4Map = `{
+	var Futx4Map = `{"name":"AF 4V4 Oveja","width":820,"height":360,"bg":{"kickOffRadius":80,
+	"color":"1D2431","type":"hockey","cornerRadius":0},"vertexes":[{"x":-700,"y":-85,"bCoef":0.1,"cMask":["ball"]},
+	{"x":-735,"y":-85,"bCoef":0.1,"cMask":["ball"]},{"x":-734,"y":-86,"bCoef":0.1,"cMask":["ball"]},
+	{"x":-734,"y":86,"bCoef":0.1,"cMask":["ball"]},{"x":-735,"y":85,"bCoef":0.1,"cMask":["ball"]},{"x":-700,"y":85,"bCoef":0.1,"cMask":["ball"]},{"x":700,"y":85,"bCoef":0.1,"cMask":["ball"]},{"x":735,"y":85,"bCoef":0.1,"cMask":["ball"]},{"x":734,"y":86,"bCoef":0.1,"cMask":["ball"]},{"x":734,"y":-86,"bCoef":0.1,"cMask":["ball"]},{"x":735,"y":-85,"bCoef":0.1,"cMask":["ball"]},{"x":700,"y":-85,"bCoef":0.1,"cMask":["ball"]},{"x":-700,"y":-321.5,"cMask":["ball"]},{"x":-700,"y":-85,"cMask":["ball"]},{"x":-700,"y":85,"cMask":["ball"]},{"x":-700,"y":321.5,"cMask":["ball"]},{"x":-700,"y":320,"cMask":["ball"]},{"x":700,"y":320,"cMask":["ball"]},{"x":700,"y":321.5,"cMask":["ball"]},{"x":700,"y":85,"cMask":["ball"]},{"x":700,"y":-85,"cMask":["ball"]},{"x":700,"y":-321.5,"cMask":["ball"]},{"x":700,"y":-320,"cMask":["ball"]},{"x":-700,"y":-320,"cMask":["ball"]},{"x":-700,"y":-85,"cMask":[]},{"x":-700,"y":85,"cMask":[]},{"x":700,"y":85,"cMask":[]},{"x":700,"y":-85,"cMask":[]},{"x":-360,"y":318,"cMask":[]},{"x":-360,"y":-318,"cMask":[]},
+	{"x":360,"y":-318,"cMask":[]},{"x":360,"y":318,"cMask":[]},{"x":-500,"y":-1,"cMask":[]},{"x":-500,"y":1,"cMask":[]},{"x":-500,"y":-2,"cMask":[]},{"x":-500,"y":2,"cMask":[]},{"x":0,"y":-80,"cMask":["red","blue"],"cGroup":["redKO"]},{"x":0,"y":80,"cMask":["red","blue"],"cGroup":["redKO"]},{"x":0,"y":-350,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":0,"y":350,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":0,"y":-318,"cMask":[]},{"x":0,"y":-80,"cMask":[]},{"x":0,"y":318,"cMask":[]},{"x":0,"y":80,"cMask":[]},{"x":500,"y":-1,"cMask":[]},{"x":500,"y":1,"cMask":[]},{"x":500,"y":-2,"cMask":[]},{"x":500,"y":2,"cMask":[]},{"x":-360,"y":-135,"cMask":[]},{"x":-360,"y":135,"cMask":[]},{"x":360,"y":135,"cMask":[]},{"x":360,"y":-135,"cMask":[]},{"x":-698,"y":125,"cMask":[]},{"x":-630,"y":125,"cMask":[]},{"x":-630,"y":-125,"cMask":[]},{"x":-698,"y":-125,"cMask":[]},{"x":-630,"y":126.5,"cMask":[]},{"x":-630,"y":-126.5,"cMask":[]},{"x":698,"y":125,"cMask":[]},{"x":630,"y":125,"cMask":[]},{"x":630,"y":-125,"cMask":[]},{"x":698,"y":-125,"cMask":[]},{"x":630,"y":126.5,"cMask":[]},{"x":630,"y":-126.5,"cMask":[]},{"x":-50,"y":30,"cMask":[]},
+	{"x":-25,"y":-30,"cMask":[]},{"x":11,"y":30,"cMask":[]},{"x":20,"y":-30,"cMask":[]},{"x":-42.5,"y":30,"cMask":[]},{"x":-17.5,"y":-30,"cMask":[]},{"x":-52,"y":30,"cMask":[]},{"x":-27,"y":-30,"cMask":[]},{"x":-40.5,"y":30,"cMask":[]},{"x":-15.5,"y":-30,"cMask":[]},{"x":-33,"y":30,"cMask":[]},{"x":-8,"y":-30,"cMask":[]},{"x":-31,"y":30,"cMask":[]},{"x":-6,"y":-30,"cMask":[]},{"x":-29,"y":30,"cMask":[]},{"x":-4,"y":-30,"cMask":[]},{"x":-27,"y":30,"cMask":[]},{"x":-2,"y":-30,"cMask":[]},{"x":-25,"y":30,"cMask":[]},{"x":0,"y":-30,"cMask":[]},{"x":5,"y":30,"cMask":[]},{"x":0,"y":-30,"cMask":[]},{"x":3,"y":30,"cMask":[]},{"x":-2,"y":-30,"cMask":[]},{"x":1,"y":30,"cMask":[]},{"x":-4,"y":-30,"cMask":[]},{"x":-1,"y":30,"cMask":[]},{"x":-6,"y":-30,"cMask":[]},{"x":-3,"y":30,"cMask":[]},{"x":-8,"y":-30,"cMask":[]},{"x":-21,"y":19,"cMask":[]},{"x":-5,"y":19,"cMask":[]},{"x":-21,"y":17,"cMask":[]},{"x":-5,"y":17,"cMask":[]},{"x":-21,"y":15,"cMask":[]},{"x":-5,"y":15,"cMask":[]},{"x":-21,"y":13,"cMask":[]},{"x":-5,"y":13,"cMask":[]},{"x":-21,"y":11,"cMask":[]},{"x":-5,"y":11,"cMask":[]},{"x":13,"y":30,"cMask":[]},{"x":22,"y":-30,"cMask":[]},{"x":15,"y":30,"cMask":[]},{"x":24,"y":-30,"cMask":[]},{"x":17,"y":30,"cMask":[]},
+	{"x":26,"y":-30,"cMask":[]},{"x":19,"y":30,"cMask":[]},{"x":28,"y":-30,"cMask":[]},{"x":19,"y":-29,"cMask":[]},{"x":49,"y":-29,"cMask":[]},{"x":19,"y":-27,"cMask":[]},{"x":49,"y":-27,"cMask":[]},{"x":19,"y":-25,"cMask":[]},{"x":49,"y":-25,"cMask":[]},{"x":19,"y":-23,"cMask":[]},{"x":49,"y":-23,"cMask":[]},{"x":19,"y":-21,"cMask":[]},{"x":49,"y":-21,"cMask":[]},{"x":23,"y":-6,"cMask":[]},{"x":42,"y":-6,"cMask":[]},{"x":23,"y":-4,"cMask":[]},{"x":42,"y":-4,"cMask":[]},{"x":23,"y":-2,"cMask":[]},{"x":42,"y":-2,"cMask":[]},{"x":23,"y":0,"cMask":[]},{"x":42,"y":0,"cMask":[]},{"x":23,"y":2,"cMask":[]},{"x":42,"y":2,"cMask":[]},{"x":-52,"y":27,"cMask":[]},{"x":-27,"y":-33,"cMask":[]},{"x":9,"y":27,"cMask":[]},{"x":18,"y":-33,"cMask":[]},{"x":-44.5,"y":27,"cMask":[]},{"x":-19.5,"y":-33,"cMask":[]},{"x":-54,"y":27,"cMask":[]},{"x":-29,"y":-33,"cMask":[]},{"x":-42.5,"y":27,"cMask":[]},{"x":-17.5,"y":-33,"cMask":[]},{"x":-35,"y":27,"cMask":[]},{"x":-10,"y":-33,"cMask":[]},{"x":-33,"y":27,"cMask":[]},{"x":-8,"y":-33,"cMask":[]},{"x":-31,"y":27,"cMask":[]},{"x":-6,"y":-33,"cMask":[]},{"x":-29,"y":27,"cMask":[]},{"x":-4,"y":-33,"cMask":[]},{"x":-27,"y":27,"cMask":[]},{"x":-2,"y":-33,"cMask":[]},{"x":3,"y":27,"cMask":[]},
+	{"x":-2,"y":-33,"cMask":[]},{"x":1,"y":27,"cMask":[]},{"x":-4,"y":-33,"cMask":[]},{"x":-1,"y":27,"cMask":[]},{"x":-6,"y":-33,"cMask":[]},{"x":-3,"y":27,"cMask":[]},{"x":-8,"y":-33,"cMask":[]},{"x":-5,"y":27,"cMask":[]},{"x":-10,"y":-33,"cMask":[]},{"x":-23,"y":16,"cMask":[]},{"x":-7,"y":16,"cMask":[]},{"x":-23,"y":14,"cMask":[]},{"x":-7,"y":14,"cMask":[]},{"x":-23,"y":12,"cMask":[]},{"x":-7,"y":12,"cMask":[]},{"x":-23,"y":10,"cMask":[]},{"x":-7,"y":10,"cMask":[]},{"x":-23,"y":8,"cMask":[]},{"x":-7,"y":8,"cMask":[]},{"x":11,"y":27,"cMask":[]},{"x":20,"y":-33,"cMask":[]},{"x":13,"y":27,"cMask":[]},{"x":22,"y":-33,"cMask":[]},{"x":15,"y":27,"cMask":[]},{"x":24,"y":-33,"cMask":[]},{"x":17,"y":27,"cMask":[]},{"x":26,"y":-33,"cMask":[]},{"x":17,"y":-32,"cMask":[]},{"x":47,"y":-32,"cMask":[]},{"x":17,"y":-30,"cMask":[]},{"x":47,"y":-30,"cMask":[]},{"x":17,"y":-28,"cMask":[]},{"x":47,"y":-28,"cMask":[]},{"x":17,"y":-26,"cMask":[]},{"x":47,"y":-26,"cMask":[]},{"x":17,"y":-24,"cMask":[]},{"x":47,"y":-24,"cMask":[]},{"x":21,"y":-9,"cMask":[]},{"x":40,"y":-9,"cMask":[]},{"x":21,"y":-7,"cMask":[]},{"x":40,"y":-7,"cMask":[]},{"x":21,"y":-5,"cMask":[]},{"x":40,"y":-5,"cMask":[]},{"x":21,"y":-3,"cMask":[]},{"x":40,"y":-3,"cMask":[]},{"x":21,"y":-1,"cMask":[]},{"x":40,"y":-1,"cMask":[]}],"segments":[{"v0":0,"v1":1,"color":"717F98","bCoef":0.1,"cMask":["ball"],"bias":10},{"v0":3,"v1":2,"curve":35,"color":"717F98","bCoef":0.1,"cMask":["ball"],"bias":-10,"curveF":3.1715948023632126},{"v0":4,"v1":5,"color":"717F98","bCoef":0.1,"cMask":["ball"],"bias":10},{"v0":6,"v1":7,"color":"717F98","bCoef":0.1,"cMask":["ball"],"bias":10},{"v0":9,"v1":8,"curve":35,"color":"717F98","bCoef":0.1,"cMask":["ball"],"bias":-10,"curveF":3.1715948023632126},{"v0":10,"v1":11,"color":"717F98","bCoef":0.1,"cMask":["ball"],"bias":10},{"v0":12,"v1":13,"color":"717F98","cMask":["ball"],"bias":10},{"v0":14,"v1":15,"color":"717F98","cMask":["ball"],"bias":10},{"v0":16,"v1":17,"color":"717F98",
+	"cMask":["ball"],"bias":10},{"v0":18,"v1":19,"color":"717F98","cMask":["ball"],"bias":10},{"v0":20,"v1":21,"color":"717F98","cMask":["ball"],"bias":10},{"v0":22,"v1":23,"color":"717F98","cMask":["ball"],"bias":10},{"v0":24,"v1":25,"color":"3B424F","cMask":[]},{"v0":26,"v1":27,"color":"3B424F","cMask":[]},{"v0":28,"v1":29,"color":"161C26","cMask":[]},{"v0":30,"v1":31,"color":"161C26","cMask":[]},{"v0":33,"v1":32,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":32,"v1":33,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":35,"v1":34,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":34,"v1":35,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":38,"v1":36,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":39,"v1":37,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"v0":37,"v1":36,"curve":180,"vis":false,"cMask":["red","blue"],"cGroup":["blueKO"],"curveF":6.123233995736766e-17},{"v0":36,"v1":37,"curve":180,"vis":false,"cMask":["red","blue"],"cGroup":["redKO"],"curveF":6.123233995736766e-17},{"v0":40,"v1":41,"color":"161C26","cMask":[]},{"v0":42,"v1":43,"color":"161C26","cMask":[]},{"v0":43,"v1":41,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":41,"v1":43,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":45,"v1":44,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":44,"v1":45,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":47,"v1":46,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":46,"v1":47,"curve":180,"color":"161C26","cMask":[],"curveF":6.123233995736766e-17},{"v0":48,"v1":49,"curve":89.99999999999999,"color":"161C26","cMask":[],"curveF":1.0000000000000002},{"v0":50,"v1":51,"curve":89.99999999999999,"color":"161C26","cMask":[],"curveF":1.0000000000000002},{"v0":52,"v1":53,"color":"161C26","cMask":[]},{"v0":54,"v1":55,"color":"161C26","cMask":[]},{"v0":56,"v1":57,"color":"161C26","cMask":[]},{"v0":58,"v1":59,"color":"161C26","cMask":[]},{"v0":60,"v1":61,"color":"161C26","cMask":[]},
+	{"v0":62,"v1":63,"color":"161C26","cMask":[]},{"v0":64,"v1":65,"color":"9101D","cMask":[]},{"v0":66,"v1":67,"color":"9101D","cMask":[]},{"v0":68,"v1":69,"color":"9101D","cMask":[]},{"v0":70,"v1":71,"color":"9101D","cMask":[]},{"v0":72,"v1":73,"color":"9101D","cMask":[]},{"v0":74,"v1":75,"color":"9101D","cMask":[]},{"v0":76,"v1":77,"color":"9101D","cMask":[]},{"v0":78,"v1":79,"color":"9101D","cMask":[]},{"v0":80,"v1":81,"color":"9101D","cMask":[]},{"v0":82,"v1":83,"color":"9101D","cMask":[]},{"v0":84,"v1":85,"color":"9101D","cMask":[]},{"v0":86,"v1":87,"color":"9101D","cMask":[]},{"v0":88,"v1":89,"color":"9101D","cMask":[]},{"v0":90,"v1":91,"color":"9101D","cMask":[]},{"v0":92,"v1":93,"color":"9101D","cMask":[]},{"v0":94,"v1":95,"color":"9101D","cMask":[]},{"v0":96,"v1":97,"color":"9101D","cMask":[]},{"v0":98,"v1":99,"color":"9101D","cMask":[]},{"v0":100,"v1":101,"color":"9101D","cMask":[]},{"v0":102,"v1":103,"color":"9101D","cMask":[]},{"v0":104,"v1":105,"color":"9101D","cMask":[]},{"v0":106,"v1":107,"color":"9101D","cMask":[]},{"v0":108,"v1":109,"color":"9101D","cMask":[]},{"v0":110,"v1":111,"color":"9101D","cMask":[]},{"v0":112,"v1":113,"color":"9101D","cMask":[]},{"v0":114,"v1":115,"color":"9101D","cMask":[]},{"v0":116,"v1":117,"color":"9101D","cMask":[]},{"v0":118,"v1":119,"color":"9101D","cMask":[]},{"v0":120,"v1":121,"color":"9101D","cMask":[]},{"v0":122,"v1":123,"color":"9101D","cMask":[]},{"v0":124,"v1":125,"color":"9101D","cMask":[]},{"v0":126,"v1":127,"color":"9101D","cMask":[]},{"v0":128,"v1":129,"color":"9101D","cMask":[]},{"v0":130,"v1":131,"color":"9101D","cMask":[]},{"v0":132,"v1":133,"color":"333945","cMask":[]},{"v0":134,"v1":135,"color":"333945","cMask":[]},{"v0":136,"v1":137,"color":"333945","cMask":[]},{"v0":138,"v1":139,"color":"333945","cMask":[]},{"v0":140,"v1":141,"color":"333945","cMask":[]},{"v0":142,"v1":143,"color":"333945","cMask":[]},{"v0":144,"v1":145,"color":"333945","cMask":[]},{"v0":146,"v1":147,"color":"333945","cMask":[]},{"v0":148,"v1":149,"color":"333945","cMask":[]},{"v0":150,"v1":151,"color":"333945","cMask":[]},{"v0":152,"v1":153,"color":"333945","cMask":[]},{"v0":154,"v1":155,"color":"333945","cMask":[]},{"v0":156,"v1":157,"color":"333945","cMask":[]},{"v0":158,"v1":159,"color":"333945","cMask":[]},
+	{"v0":160,"v1":161,"color":"333945","cMask":[]},{"v0":162,"v1":163,"color":"333945","cMask":[]},{"v0":164,"v1":165,"color":"333945","cMask":[]},{"v0":166,"v1":167,"color":"333945","cMask":[]},{"v0":168,"v1":169,"color":"333945","cMask":[]},{"v0":170,"v1":171,"color":"333945","cMask":[]},{"v0":172,"v1":173,"color":"333945","cMask":[]},{"v0":174,"v1":175,"color":"333945","cMask":[]},{"v0":176,"v1":177,"color":"333945","cMask":[]},{"v0":178,"v1":179,"color":"333945","cMask":[]},{"v0":180,"v1":181,"color":"333945","cMask":[]},{"v0":182,"v1":183,"color":"333945","cMask":[]},{"v0":184,"v1":185,"color":"333945","cMask":[]},{"v0":186,"v1":187,"color":"333945","cMask":[]},{"v0":188,"v1":189,"color":"333945","cMask":[]},{"v0":190,"v1":191,"color":"333945","cMask":[]},{"v0":192,"v1":193,"color":"333945","cMask":[]},{"v0":194,"v1":195,"color":"333945","cMask":[]},{"v0":196,"v1":197,"color":"333945","cMask":[]},{"v0":198,"v1":199,"color":"333945","cMask":[]}],"planes":[{"normal":[0,1],"dist":-350},{"normal":[0,-1],"dist":-350},{"normal":[1,0],"dist":-810},{"normal":[-1,0],"dist":-810},{"normal":[-1,0],"dist":-360,"bCoef":0,"cMask":["c2"]},{"normal":[1,0],"dist":-360,"bCoef":0,"cMask":["c1"]}],"goals":[{"p0":[-708.3,-85],"p1":[-708.3,85],"team":"red"},{"p0":[708.3,85],"p1":[708.3,-85],"team":"blue"}],"discs":[{"radius":8,"cGroup":["ball","kick","score"],"damping":0.989},{"radius":0.8,"invMass":1.0e+250,"pos":[-6.5,-2],"color":"0","cGroup":["c0"],"damping":0.989},{"radius":2.3,"invMass":1.0e+250,"color":"0","cGroup":["c0"],"damping":0.989},{"radius":0.8,"invMass":1.0e+250,"pos":[6.5,-2],"color":"0","cGroup":["c0"],"damping":0.989},{"radius":0.8,"invMass":1.0e+250,"pos":[0,-6.5],"color":"0","cGroup":["c0"],"damping":0.989},{"radius":0.8,"invMass":1.0e+250,"pos":[-4,5],"color":"0","cGroup":["c0"],"damping":0.989},{"radius":0.8,"invMass":1.0e+250,"pos":[4,5],"color":"0","cGroup":["c0"],"damping":0.989},{"radius":9,"invMass":1.0e+250,"color":"transparent","cGroup":["c0"],"damping":0.989},{"radius":5,"invMass":0,"pos":[-1740,-142],"bCoef":1.1,"cMask":["red","blue","ball"],"damping":0},{"radius":5,"invMass":0,"pos":[-1740,142],"bCoef":1.1,"cMask":["red","blue","ball"],"damping":0},{"radius":5,"invMass":0,"pos":[1740,142],"bCoef":1.1,"cMask":["red","blue","ball"],"damping":0},{"radius":5,"invMass":0,"pos":[1740,-142],"bCoef":1.1,"cMask":["red","blue","ball"],"damping":0},{"radius":0,"invMass":0,"pos":[9000,0],"color":"transparent","bCoef":0,"cMask":["red"],
+	"cGroup":["ball"]},{"radius":0,"invMass":0,"pos":[9000,0],"color":"transparent","bCoef":0,"cMask":["blue"],"cGroup":["ball"]},{"radius":0,"invMass":0,"pos":[9000,0],"color":"transparent","bCoef":0,"cMask":["red","blue"],"cGroup":["ball"]},{"radius":0,"invMass":0,"pos":[9000,0],"color":"transparent","bCoef":0,"cMask":["blue"],"cGroup":["ball"]},{"radius":0,"invMass":0,"pos":[9000,0],"color":"transparent","bCoef":0,"cMask":["red"],"cGroup":["ball"]},{"radius":40,"invMass":0,"pos":[1842,2250],"color":"2B591C","bCoef":0,"cMask":["blue"],"cGroup":["ball"]},{"radius":40,"invMass":0,"pos":[1842,2250],"color":"2B591C","bCoef":0,"cMask":["red"],"cGroup":["ball"]},{"radius":15,"pos":[-211,1285],"color":"C5F0C9","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-251,1285],"color":"C5F0C9","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-294,1285],"color":"C5F0C9","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-359,1285],"color":"251B1B","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-404,1285],"color":"251B1B","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-458,1285],"color":"FF4A4A","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-498,1285],"color":"FF4A4A","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-541,1285],"color":"FF4A4A","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-581,1285],"color":"FF4A4A","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[247.03125,1287],"color":"C5F0C9","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[207.03125,1287],"color":"C5F0C9","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[290.03125,1287],"color":"C5F0C9","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[355.03125,1287],"color":"251B1B","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[400.03125,1287],"color":"251B1B","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[454.03125,1287],"color":"4A72FF","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[494.03125,1287],"color":"4A72FF","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[537.03125,1287],"color":"4A72FF","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[577.03125,1287],"color":"4A72FF","bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"invMass":0,"pos":[100,3080],"color":"FFFF00","bCoef":1,"cMask":["red","blue"],"damping":0,"gravity":[1000,0]},
+	{"radius":15,"invMass":0,"pos":[-100,-3080],"color":"FFFF00","bCoef":1,"cMask":["red","blue"],"damping":0,"gravity":[-1000,0]},{"radius":15,"pos":[1870,0],"bCoef":1,"cMask":["ball"],"damping":0},{"radius":12,"pos":[1870,50],"bCoef":1,"cMask":["ball"],"damping":0},{"radius":12,"pos":[1870,-50],"bCoef":1,"cMask":["ball"],"damping":0},{"radius":15,"pos":[-1870,0],"bCoef":1,"cMask":["ball"],"damping":0},{"radius":12,"pos":[-1870,50],"bCoef":1,"cMask":["ball"],"damping":0},{"radius":12,"pos":[-1870,-50],"bCoef":1,"cMask":["ball"],"damping":0},
+	{"radius":5.4,"invMass":0,"pos":[700,-85],"color":"3B424F"},{"radius":5.4,"invMass":0,"pos":[700,85],"color":"3B424F"},{"radius":5.4,"invMass":0,"pos":[-700,-85],"color":"3B424F"},{"radius":5.4,"invMass":0,"pos":[-700,85],"color":"3B424F"}],"playerPhysics":{"bCoef":0.2,"acceleration":0.11,"kickingAcceleration":0.083,"kickStrength":7},
 
-	"name" : "𝑭𝑼𝑻𝑺𝑨𝑳 ✘𝟒 ʙʏ 🅶🅻🅷",
+"ballPhysics":"disc0","spawnDistance":366.5,"traits":{},"joints":[{"d0":0,"d1":2,"color":"transparent","length":0},{"d0":0,"d1":1,"color":"transparent","length":6.800735254367722},{"d0":0,"d1":3,"color":"transparent","length":6.800735254367722},{"d0":0,"d1":4,"color":"transparent","length":6.5},{"d0":0,"d1":5,"color":"transparent","length":6.4031242374328485},{"d0":0,"d1":6,"color":"transparent","length":6.4031242374328485},{"d0":0,"d1":7,"color":"transparent","length":0},{"d0":1,"d1":2,"color":"transparent","length":6.800735254367722},{"d0":1,"d1":3,"color":"transparent","length":13},{"d0":1,"d1":4,"color":"transparent","length":7.905694150420948},{"d0":1,"d1":5,"color":"transparent","length":7.433034373659253},{"d0":1,"d1":6,"color":"transparent","length":12.619429464123963},{"d0":1,"d1":7,"color":"transparent","length":6.800735254367722},{"d0":2,"d1":3,"color":"transparent","length":6.800735254367722},{"d0":2,"d1":4,"color":"transparent","length":6.5},{"d0":2,"d1":5,"color":"transparent","length":6.4031242374328485},{"d0":2,"d1":6,"color":"transparent","length":6.4031242374328485},{"d0":2,"d1":7,"color":"transparent","length":0},{"d0":3,"d1":4,"color":"transparent","length":7.905694150420948},{"d0":3,"d1":5,"color":"transparent","length":12.619429464123963},{"d0":3,"d1":6,"color":"transparent","length":7.433034373659253},{"d0":3,"d1":7,"color":"transparent","length":6.800735254367722},{"d0":4,"d1":5,"color":"transparent","length":12.175795661885921},{"d0":4,"d1":6,"color":"transparent","length":12.175795661885921},{"d0":4,"d1":7,"color":"transparent","length":6.5},{"d0":5,"d1":6,"color":"transparent","length":8},{"d0":5,"d1":7,"color":"transparent","length":6.4031242374328485},{"d0":6,"d1":7,"color":"transparent","length":6.4031242374328485}],"redSpawnPoints":[],"blueSpawnPoints":[],"canBeStored":false
 
-	"width" : 765,
 
-	"height" : 350,
-
-	"bg" : { "type" : "hockey" },
-
-	"vertexes" : [
-		/* 0 */ { "x" : 0, "y" : -350, "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 1 */ { "x" : 0, "y" : -320, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 2 */ { "x" : -700, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 3 */ { "x" : -735, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 4 */ { "x" : -735, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 5 */ { "x" : -700, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 6 */ { "x" : 700, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 7 */ { "x" : 735, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 8 */ { "x" : 735, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 9 */ { "x" : 700, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 10 */ { "x" : -700, "y" : 90, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 11 */ { "x" : -700, "y" : 320, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 12 */ { "x" : -700, "y" : -90, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 13 */ { "x" : -700, "y" : -320, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 14 */ { "x" : -700, "y" : 320, "cMask" : ["ball" ] },
-		/* 15 */ { "x" : 700, "y" : 320, "cMask" : ["ball" ] },
-		/* 16 */ { "x" : 700, "y" : 90, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 17 */ { "x" : 700, "y" : 320, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 18 */ { "x" : 700, "y" : -320, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 19 */ { "x" : 700, "y" : -90, "bCoef" : 1.15, "cMask" : ["ball" ] },
-		/* 20 */ { "x" : -700, "y" : -320, "cMask" : ["ball" ] },
-		/* 21 */ { "x" : 700, "y" : -320, "cMask" : ["ball" ] },
-		/* 22 */ { "x" : -706.5, "y" : 90, "cMask" : ["ball" ] },
-		/* 23 */ { "x" : -706.5, "y" : 320, "cMask" : ["ball" ] },
-		/* 24 */ { "x" : -706.5, "y" : -320, "cMask" : ["ball" ] },
-		/* 25 */ { "x" : -706.5, "y" : -90, "cMask" : ["ball" ] },
-		/* 26 */ { "x" : 706.5, "y" : -320, "cMask" : ["ball" ] },
-		/* 27 */ { "x" : 706.5, "y" : -90, "cMask" : ["ball" ] },
-		/* 28 */ { "x" : 706.5, "y" : 90, "cMask" : ["ball" ] },
-		/* 29 */ { "x" : 706.5, "y" : 320, "cMask" : ["ball" ] },
-		/* 30 */ { "x" : -700, "y" : -90, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 31 */ { "x" : -700, "y" : 90, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 32 */ { "x" : 700, "y" : -90, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 33 */ { "x" : 700, "y" : 90, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 34 */ { "x" : -700, "y" : 280, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 35 */ { "x" : -480, "y" : 60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 36 */ { "x" : -700, "y" : -280, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 37 */ { "x" : -480, "y" : -60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 38 */ { "x" : 700, "y" : 280, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 39 */ { "x" : 480, "y" : 70, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 40 */ { "x" : 700, "y" : -280, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 41 */ { "x" : 480, "y" : -70, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 42 */ { "x" : 480, "y" : 70, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 43 */ { "x" : 480, "y" : -70, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 44 */ { "x" : 480, "y" : 1, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 45 */ { "x" : 480, "y" : -1, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 46 */ { "x" : 480, "y" : 3, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 47 */ { "x" : 480, "y" : -3, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 48 */ { "x" : 480, "y" : 2, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 49 */ { "x" : -480, "y" : 1, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 50 */ { "x" : -480, "y" : -1, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 51 */ { "x" : -480, "y" : 3, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 52 */ { "x" : -480, "y" : -3, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 53 */ { "x" : -480, "y" : 2, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 54 */ { "x" : -700, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 55 */ { "x" : -735, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 56 */ { "x" : -735, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 57 */ { "x" : -700, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 58 */ { "x" : 700, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 59 */ { "x" : 735, "y" : -90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 60 */ { "x" : 735, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 61 */ { "x" : 700, "y" : 90, "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		/* 62 */ { "x" : -765.1, "y" : 15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 63 */ { "x" : -735, "y" : 15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 64 */ { "x" : -765.1, "y" : -15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 65 */ { "x" : -735, "y" : -15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 66 */ { "x" : 735, "y" : -15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 67 */ { "x" : 765.1, "y" : -15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 68 */ { "x" : 735, "y" : 15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 69 */ { "x" : 765.1, "y" : 15, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 70 */ { "x" : 0, "y" : 320, "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 71 */ { "x" : 0, "y" : 350, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 72 */ { "x" : 0, "y" : 90, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 73 */ { "x" : 0, "y" : -90, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 74 */ { "x" : 0, "y" : 90, "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 75 */ { "x" : 0, "y" : -90, "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 76 */ { "x" : 0, "y" : -320, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 77 */ { "x" : 0, "y" : 90, "cMask" : [ ] },
-		/* 78 */ { "x" : 0, "y" : 90, "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 79 */ { "x" : 0, "y" : 320, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 80 */ { "x" : 0, "y" : 60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 81 */ { "x" : 0, "y" : -60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 82 */ { "x" : 0, "y" : 60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 83 */ { "x" : 0, "y" : -60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 84 */ { "x" : 0, "y" : 91, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 85 */ { "x" : 0, "y" : -91, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 86 */ { "x" : 0, "y" : 91, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 87 */ { "x" : 0, "y" : -91, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 88 */ { "x" : 0, "y" : -60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 89 */ { "x" : 0, "y" : -91, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 90 */ { "x" : 0, "y" : 91, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 91 */ { "x" : 0, "y" : 60, "bCoef" : 0.1, "cMask" : ["wall" ] },
-		/* 92 */ { "x" : 0, "y" : -91, "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 93 */ { "x" : 0, "y" : -320, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 94 */ { "x" : 0, "y" : 91, "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 95 */ { "x" : 0, "y" : 320, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		/* 96 */ { "x" : -706.5, "y" : 90, "cMask" : ["ball" ] },
-		/* 97 */ { "x" : -706.5, "y" : 320, "cMask" : ["ball" ] },
-		/* 98 */ { "x" : -706.5, "y" : -320, "cMask" : ["ball" ] },
-		/* 99 */ { "x" : -706.5, "y" : -90, "cMask" : ["ball" ] },
-		/* 100 */ { "x" : 706.5, "y" : -320, "cMask" : ["ball" ] },
-		/* 101 */ { "x" : 706.5, "y" : -90, "cMask" : ["ball" ] },
-		/* 102 */ { "x" : 706.5, "y" : 90, "cMask" : ["ball" ] },
-		/* 103 */ { "x" : 706.5, "y" : 320, "cMask" : ["ball" ] },
-		/* 104 */ { "x" : -735, "y" : -350, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 105 */ { "x" : -735, "y" : 350, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 106 */ { "x" : 735, "y" : 350, "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		/* 107 */ { "x" : 735, "y" : -350, "bCoef" : 0.5, "cMask" : ["red","blue" ] }
-
-	],
-
-	"segments" : [
-		{ "v0" : 0, "v1" : 1, "vis" : false, "color" : "F8F8F8", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		{ "v0" : 2, "v1" : 3, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 3, "v1" : 4, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 4, "v1" : 5, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 6, "v1" : 7, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 7, "v1" : 8, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 8, "v1" : 9, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 10, "v1" : 11, "color" : "FFFFFF", "bCoef" : 1.15, "cMask" : ["ball" ] },
-		{ "v0" : 12, "v1" : 13, "color" : "FFFFFF", "bCoef" : 1.15, "cMask" : ["ball" ] },
-		{ "v0" : 14, "v1" : 15, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 16, "v1" : 17, "color" : "FFFFFF", "bCoef" : 1.15, "cMask" : ["ball" ] },
-		{ "v0" : 18, "v1" : 19, "color" : "FFFFFF", "bCoef" : 1.15, "cMask" : ["ball" ] },
-		{ "v0" : 20, "v1" : 21, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 22, "v1" : 23, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 24, "v1" : 25, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 26, "v1" : 27, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 28, "v1" : 29, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 30, "v1" : 31, "color" : "F80000", "bCoef" : 0.1, "cMask" : ["wall" ] },
-		{ "v0" : 32, "v1" : 33, "color" : "F8", "bCoef" : 0.1, "cMask" : ["wall" ] },
-		{ "v0" : 35, "v1" : 34, "curve" : 93.241608812827, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 0.9449654112221421 },
-		{ "v0" : 36, "v1" : 37, "curve" : 93.241608812827, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 0.9449654112221421 },
-		{ "v0" : 35, "v1" : 37, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ] },
-		{ "v0" : 38, "v1" : 39, "curve" : 93.241608812827, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 0.9449654112221421 },
-		{ "v0" : 41, "v1" : 40, "curve" : 93.241608812827, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 0.9449654112221421 },
-		{ "v0" : 42, "v1" : 43, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ] },
-		{ "v0" : 45, "v1" : 44, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 44, "v1" : 45, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 47, "v1" : 46, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 46, "v1" : 47, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 50, "v1" : 49, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 49, "v1" : 50, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 52, "v1" : 51, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 51, "v1" : 52, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 54, "v1" : 55, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 55, "v1" : 56, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 56, "v1" : 57, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 58, "v1" : 59, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 59, "v1" : 60, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 60, "v1" : 61, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.2, "cMask" : ["red","blue","ball" ] },
-		{ "v0" : 62, "v1" : 63, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		{ "v0" : 64, "v1" : 65, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		{ "v0" : 66, "v1" : 67, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		{ "v0" : 68, "v1" : 69, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		{ "v0" : 70, "v1" : 71, "vis" : false, "color" : "F8F8F8", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		{ "v0" : 72, "v1" : 73, "curve" : 179.42829117403488, "color" : "696969", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["blueKO" ], "curveF" : 0.0049891420830909 },
-		{ "v0" : 75, "v1" : 74, "curve" : 180, "color" : "696969", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO" ], "curveF" : 6.1232339957368e-17 },
-		{ "v0" : 81, "v1" : 80, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 82, "v1" : 83, "curve" : 180, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 85, "v1" : 84, "curve" : 180, "color" : "555555", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 86, "v1" : 87, "curve" : 180, "color" : "555555", "bCoef" : 0.1, "cMask" : ["wall" ], "curveF" : 6.123233995736766e-17 },
-		{ "v0" : 88, "v1" : 89, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ] },
-		{ "v0" : 90, "v1" : 91, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["wall" ] },
-		{ "v0" : 93, "v1" : 92, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		{ "v0" : 94, "v1" : 95, "color" : "FFFFFF", "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO","blueKO" ] },
-		{ "v0" : 96, "v1" : 97, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 98, "v1" : 99, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 100, "v1" : 101, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 102, "v1" : 103, "vis" : false, "color" : "FFFFFF", "cMask" : ["ball" ] },
-		{ "v0" : 104, "v1" : 105, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.5, "cMask" : ["red","blue" ] },
-		{ "v0" : 106, "v1" : 107, "vis" : false, "color" : "FFFFFF", "bCoef" : 0.5, "cMask" : ["red","blue" ] }
-
-	],
-
-	"planes" : [
-		{ "normal" : [0,1 ], "dist" : -350, "bCoef" : 0.1 },
-		{ "normal" : [-1,0 ], "dist" : -765.1, "bCoef" : 0.1 },
-		{ "normal" : [0,-1 ], "dist" : -320, "cMask" : ["ball" ] },
-		{ "normal" : [0,-1 ], "dist" : -350, "bCoef" : 0.1 },
-		{ "normal" : [1,0 ], "dist" : -765.1, "bCoef" : 0.1 },
-		{ "normal" : [0,1 ], "dist" : -320, "cMask" : ["ball" ] }
-
-	],
-
-	"goals" : [
-		{ "p0" : [-707.5,-90 ], "p1" : [-707.5,90 ], "team" : "red" },
-		{ "p0" : [707.5,90 ], "p1" : [707.5,-90 ], "team" : "blue" }
-
-	],
-
-	"discs" : [
-		{ "radius" : 6.25, "invMass" : 1.5, "color" : "FEBA01", "bCoef" : 0.4, "cGroup" : ["ball","kick","score" ] },
-		{ "radius" : 0.01, "invMass" : 0, "pos" : [-765.1,0 ], "color" : "0", "bCoef" : 440 },
-		{ "radius" : 0.1, "invMass" : 0, "pos" : [765.1,0 ], "color" : "0", "bCoef" : 440 },
-		{ "radius" : 5.5, "invMass" : 0, "pos" : [-700,90 ] },
-		{ "radius" : 5.5, "invMass" : 0, "pos" : [-700,-90 ] },
-		{ "radius" : 5.5, "invMass" : 0, "pos" : [700,90 ] },
-		{ "radius" : 5.5, "invMass" : 0, "pos" : [700,-90 ] }
-
-	],
-
-	"playerPhysics" : {
-		"bCoef" : 0.1,
-		"acceleration" : 0.11,
-		"kickingAcceleration" : 0.083
-
-	},
-
-	"ballPhysics" : "disc0"
 }`;
 	RSRMap = false;
 	return Futx4Map;
@@ -1945,9 +1743,9 @@ function getRealSoccerMap() {
 	},
 
 	"ballPhysics" : {
-		"radius" :  8,
+		"radius" :  7.8,
 		"bCoef" : 0.5,
-		"invMass" : 1.05,
+		"invMass" : 1.2,
 		"damping" : 0.99,
 		"color" : "FFFFFF",
 		"cMask" : [ "all"
@@ -2986,9 +2784,9 @@ function getRealSoccerMap2() {
 	},
 
 	"ballPhysics" : {
-		"radius" : 8,
+		"radius" : 7.8,
 		"bCoef" : 0.5,
-		"invMass" : 1.05,
+		"invMass" : 1.2,
 		"damping" : 0.99,
 		"color" : "FFFFFF", /*original : d0ff00*/
 		"cMask" : [ "all"
@@ -5896,9 +5694,9 @@ function getRSX10Map() {
 		},
 	
 		"ballPhysics" : {
-			"radius" : 9,
+			"radius" : 7.8,
 			"bCoef" : 0.5,
-			"invMass" : 1.05,
+			"invMass" : 1.2,
 			"damping" : 0.99,
 			"color" : "FFFFFF",
 			"cMask" : [ "all"
@@ -6676,14 +6474,24 @@ class Game {
 function eliminarJugadorDeListaJugadoresEstadisticas(jugadorEliminar){
 	for (var i = 0 ; i < listaJugadoresEstadisticas.length ;i++){
 		var jugador = listaJugadoresEstadisticas[i].jugador;
-		var estadisticas = listaJugadoresEstadisticas[i].estadisticas;
 		if(jugador.id == jugadorEliminar.id){
 			//proceso eliminar al jugador y sus estadisticas
 			listaJugadoresEstadisticas.splice(i,1);
-			return false;
+			return true;
 		}
 	}
-	return true;
+	return false;
+}
+function eliminarJugadorDeListaJugadoresEstadisticasEnPartida(jugadorEliminar){
+	for (var i = 0 ; i < listaJugadoresEstadisticasEnPartida.length ;i++){
+		var jugador = listaJugadoresEstadisticasEnPartida[i].jugador;
+		if(jugador.id == jugadorEliminar.id){
+			//proceso eliminar al jugador y sus estadisticas
+			listaJugadoresEstadisticasEnPartida.splice(i,1);
+			return true;
+		}
+	}
+	return false;
 }
 function actualizarModoVersus(player){
 /*Si algun jugador se ha ido (room.onPlayerLeave)
@@ -6766,6 +6574,7 @@ room[_0x3c81f9(0x12f)] = function (_0x4a7fbc) {
 
 	actualizarModoVersus(player);
 	eliminarJugadorDeListaJugadoresEstadisticas(player);
+	eliminarJugadorDeListaJugadoresEstadisticasEnPartida(player);
     DeletePlayer(player.id);
 	connections = connections.filter(a => a[0] !== player.id);
 	displayAdminMessage();
@@ -6782,55 +6591,14 @@ room.onGameStart = function(byPlayer) {
 	masaInvertidaBalon = room.getDiscProperties(0).invMass; //guarda la masa inv. 
 	colorBalonOriginal = room.getDiscProperties(0).color; //guarda el color del balon.
 	//room.sendAnnouncement("color balon " + colorBalonOriginal);
-
 	//inicializa listaJugadoresEstadisticasEnPartida con los jugadores en la partida
 	//si durante la partida se une alguien y NO esta en listaJugadoresEstadisticasEnPartida, se agrega.
 	//actualizar listaJugadoresEstadisticasEnPartida , cuando se vaya un jugador o cuando se termine la partida o gol.
 	if(contJuegoEmpezar%2 != 0){ //si es impar.
-		//ver si : elegirMapaAleatorioX7 == true -> elije de los mapas x7 uno aleatorio y lo pone.
-		/*room.sendAnnouncement(" elegir mapa aleatorio x 7 = " + elegirMapaAleatorioX7);
-		if(elegirMapaAleatorioX7){
-			room.sendAnnouncement("entro");
-			const p = Math.random(); //n entre 0 y 1
-			if(p >= 0.5){
-				room.sendAnnouncement("1 1 1");
-				room.setCustomStadium(getFutx7Map());
-			}else{
-				room.sendAnnouncement("2 2 2");
-				room.setCustomStadium(getFutx7MapBrianCruyff());
-			}
-		}
-		*/
-
 		for (var i = 0 ; i < players.length;i++){
-			var jugadorEstadisticasPartida = {
-				jugador: {name : players[i].name , id : players[i].id, team : players[i].team },
-				estadisticas : {
-					//partidosTotal: 0,
-					//partidosGanados:0,
-					//partidosPerdidos:0,
-					//porcentajePartidosGanados: 0,
-					//porcentajePartidosPerdidos: 0,
-					goles:0,
-					autogoles:0,
-					asistencias:0,
-					kda: 0, //es goles+asist-autogoles
-				}
-			};
-			listaJugadoresEstadisticasEnPartida.push(jugadorEstadisticasPartida);
-		}
-
-		//mostrar jugadores del red team y blue team.
-		for(var j = 0 ; j < listaJugadoresEstadisticasEnPartida.length ;j++){
-				var jugador = listaJugadoresEstadisticasEnPartida[j].jugador ;
-				var estadisticas = listaJugadoresEstadisticasEnPartida[j].estadisticas;
-				//room.sendAnnouncement(jugador.name + " team: " + jugador.team + " id : "+ jugador.id);
+			anadirJugadorListaJugadoresEnPartida(players[i]);
 		}
 	}
-	
-	
-
-
 	    tookASize = {};
      [redTeam,blueTeam] = whichTeam();
     ballCarrying = initBallCarrying(redTeam, blueTeam);
@@ -6918,12 +6686,13 @@ function mostrarMVPdelPartido() {
   }
 function mostrarMensajeRecomendacionRandom() {
 	var mensajesRecomendaciones = [
-	  "¿Necesitas irte un momento? usa !afk ",
+	  "Usa !afk y vuelve cuando quieras. ",
 	  "¿Quieres ver tus estadisticas? usa !me",
 	  "¿Alguien te cae mal? usa : expulsar nombre o expulsar id",
 	  "!bb es salir con estilo",
 	  "con !ranking veras los top goleadores y asistidores ",
 	  "¿quieres hablar solo con tu equipo? pon t y luego escribe",
+	  "con !gk aumentas tu tamaño y puedes hacer tiros potentes mas rapido"
 	];
     
 	for (var i = 0; i < listaJugadoresEstadisticas.length; i++) {
@@ -7050,6 +6819,29 @@ function mostrarDatosPartida(){
 	mostrarMVPdelPartido();
 
 }
+function actualizarEstadisticasPorEquipo(equipoGanador, equipoPerdedor) {
+	var players = room.getPlayerList();
+	for (var i = 0; i < listaJugadoresEstadisticas.length; i++) {
+	  var estadisticas = listaJugadoresEstadisticas[i].estadisticas;
+	  var jugador = listaJugadoresEstadisticas[i].jugador;
+  
+	  estadisticas.partidosTotal += 1;
+  
+	  for (var j = 0; j < players.length; j++) {
+		if (players[j].team === equipoGanador && players[j].id === jugador.id) {
+		  estadisticas.partidosGanados += 1;
+		  break;
+		} else if (players[j].team === equipoPerdedor && players[j].id === jugador.id) {
+		  estadisticas.partidosPerdidos += 1;
+		  break;
+		}
+	  }
+  
+	  estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados / (estadisticas.partidosTotal + 0.000001)) * 100;
+	  estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos / (estadisticas.partidosTotal + 0.000001)) * 100;
+	}
+}
+  
 var cont = 0;
 //bandera fin terminar
 room.onGameStop = function(byPlayer) {
@@ -7062,11 +6854,9 @@ room.onGameStop = function(byPlayer) {
 			//room.sendAnnouncement("RETORNO FALSE");
 			return false;
 		}
-		//room.sendAnnouncement("room.onGameStop par");
-		elegirMapaAleatorio();
-		
-		var lj = room.getPlayerList();
-		actualizarEquiposDeJugadores(lj); 
+		//room.sendAnnouncement("room.onGameStop par");		
+		//var lj = room.getPlayerList();
+		//actualizarEquiposDeJugadores(lj); 
 		//room.sendAnnouncement("SE ACTUALIZARON LAS ESTADISTICAS DE LOS PARTIDOS, PRUEBA : !me");
 		//ver que equipo gano el partido
 		var players = room.getPlayerList();
@@ -7075,49 +6865,11 @@ room.onGameStop = function(byPlayer) {
 		if(game.redScore>game.blueScore){
 			//room.sendAnnouncement("GANO RED TEAM");
 			//recorro toda la lista de jugadores con estadisticas
-			for (var i=0; i<listaJugadoresEstadisticas.length;i++){
-				var jugador = listaJugadoresEstadisticas[i].jugador;
-				var estadisticas = listaJugadoresEstadisticas[i].estadisticas;
-				estadisticas.partidosTotal+=1; //a
-				//room.sendAnnouncement("JUGADOR bucle principal: "+listaJugadoresEstadisticas[i].jugador.id);
-				//recorro lista de players que tiene el atributo "team" y me sirve para saber que jugador gano y que no.
-				for (var j = 0; j < players.length ; j++){
-					if(players[j].team == 1 && players[j].id == jugador.id ){ //team rojo
-						//room.sendAnnouncement("JUGADOR bucle 2 ID :"+players[j].id);
-						estadisticas.partidosGanados+=1;
-						break;
-						//estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados/estadisticas.partidosTotal)*100; //a
-					}else if (players[j].team == 2 && players[j].id == jugador.id){ //team blue //a
-						//room.sendAnnouncement("JUGADOR bucle 2 ID :"+players[j].id);
-						estadisticas.partidosPerdidos+=1;
-						break;
-						//estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados/estadisticas.partidosTotal)*100; //a
-					}
-				}
-				estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados/(estadisticas.partidosTotal+0.000001))*100; 
-				estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos/(estadisticas.partidosTotal+0.000001))*100; 
-			}
 			equipoGanador = 1;
+			actualizarEstadisticasPorEquipo(equipoGanador, 2);
 		}else if(game.blueScore > game.redScore){
-			//room.sendAnnouncement("GANO BLUE TEAM");
-			for (var i=0; i<listaJugadoresEstadisticas.length;i++){
-				var estadisticas = listaJugadoresEstadisticas[i].estadisticas;
-				var jugador = listaJugadoresEstadisticas[i].jugador;
-
-				estadisticas.partidosTotal+=1;
-				for (var j = 0; j < players.length ; j++){					
-					if(players[j].team == 2 && players[j].id == jugador.id){ //team blue
-						estadisticas.partidosGanados+=1;
-						break;
-					}else if (players[j].team == 1  && players[j].id == jugador.id){ //team red
-						estadisticas.partidosPerdidos+=1;
-						break;
-					}
-				}
-				estadisticas.porcentajePartidosGanados = (estadisticas.partidosGanados/(estadisticas.partidosTotal+0.000001))*100;
-				estadisticas.porcentajePartidosPerdidos = (estadisticas.partidosPerdidos/(estadisticas.partidosTotal+0.000001))*100;
-			}	
 			equipoGanador = 2	;	
+			actualizarEstadisticasPorEquipo(equipoGanador, 1);
 		}else{
 			//room.sendAnnouncement("EMPATE");
 			//aumenta 1 partido total solamente
@@ -7130,8 +6882,6 @@ room.onGameStop = function(byPlayer) {
 			}	
 			equipoGanador = 0;		
 		}
-		//mostrarMaximosAsistidores();
-		//mostrarMaximosGoleadores();
 		//mostrar datos partida.
 		mostrarDatosPartida();
 		//MOSTRAR MVPS DE LA PARTIDA ( GOLES + ASISTENCIAS - AUTOGOLES), NO EL RANKING.
@@ -7231,10 +6981,10 @@ room.onPlayerBallKick = function(player) {
     }	*/
 	if (game.rsCorner == true) {
 		if (room.getDiscProperties(0).y < 0) { //top corner
-			room.sendAnnouncement(room.getPlayerDiscProperties(player.id).xspeed + " / -20 = " + room.getPlayerDiscProperties(player.id).xspeed/20*-1 )
+			//room.sendAnnouncement(room.getPlayerDiscProperties(player.id).xspeed + " / -20 = " + room.getPlayerDiscProperties(player.id).xspeed/20*-1 )
 		    room.setDiscProperties(0, {xgravity: room.getPlayerDiscProperties(player.id).xspeed/20*-1, ygravity: 0});
 		} else { //bottom corner
-			room.sendAnnouncement(room.getPlayerDiscProperties(player.id).xspeed + " / -20 = " + room.getPlayerDiscProperties(player.id).xspeed/20*-1 )
+			//room.sendAnnouncement(room.getPlayerDiscProperties(player.id).xspeed + " / -20 = " + room.getPlayerDiscProperties(player.id).xspeed/20*-1 )
 		    room.setDiscProperties(0, {xgravity: room.getPlayerDiscProperties(player.id).xspeed/20*-1, ygravity: 0});
 		}
 	}
@@ -7360,9 +7110,10 @@ function helpFun(player) {
   //message += '   Ver los resultados del torneo actual.\n\n';
   //message += '⯌ 👑 VER COMANDOS DEL ADMIN: !adminhelp\n';
   //message += '   Ver los comandos disponibles para los administradores.\n';
-  message += '⯌ 👑 Comandos randoms : !sexo  -  !size [numero] \n\n';
+  //message += '⯌ 👑 Comandos randoms : !sexo  -  !size [numero] \n\n';
   message += '⯌ 👑 Comandos  utiles : !afk  -  t mensaje  - expulsar [nombre] o expulsar [id jugador] \n\n';
   message += '⯌ 👑 Ver estadisticas: !me  - !poss   -  !jugadores   -  !ranking \n\n';
+  message += '⯌ 👑 Elegir posicion: !gk \n\n';
 
   room.sendAnnouncement(message, player.id, 0xffffff, "small-bold", 1);
 }
@@ -18735,7 +18486,7 @@ function afkFun(player, message) { // !classic
       room.sendAnnouncement("¡Espera un momento antes de volver a la partida! " + secondsLeft + " segundos restantes", player.id, 0xF9F264, 'normal', 2);
     }
   } else {
-	room.sendAnnouncement("entro aca");
+	//room.sendAnnouncement("entro aca");
     // Si el jugador no está en modo AFK, se verifica si ha pasado un tiempo mínimo desde la última vez que usó el comando !afk
     const currentTime = Date.now();
     const lastUsageTime = lastAfkUsage[player.id] || 0;
@@ -18954,10 +18705,10 @@ function changeOurSize(player, message){
     const DEFAULT_SIZE = 15;
     const MIN_SIZE = TamanoMinimoPermitido
     const MAX_SIZE = TamanoMaximoPermitido
-    const ACCELERATION_FACTOR = 5; //1.15
-    const KICK_STRENGTH_FACTOR = 5;//1.15;
+    const ACCELERATION_FACTOR = 2; //1.15
+    const KICK_STRENGTH_FACTOR = 2;//1.15;
 	//room.sendAnnouncement("FUERZA JUG1: " + player.kickStrength);
-    if (player.team !== 0 && !tookASize.hasOwnProperty(player.id)){
+    if (player.team !== 0){// && !tookASize.hasOwnProperty(player.id)){
         let size = message.substr("!size ".length);
         if (!isNaN(size) && size >= MIN_SIZE && size <= MAX_SIZE){
             let acceleration = player.acceleration;
@@ -21705,8 +21456,85 @@ room.onPlayerChat = function(player, message) {
 
 
 		return false;
+	}*//*
+	if(message.toLowerCase() == "!comba" && player.admin && efectoPowerShot == true){
+		if(efectoComba == true){
+			room.sendAnnouncement(" Comba desactivada para el powershot. ", null, 0xFF0000, "bold");
+			efectoComba = false;
+			balonGolpeado = false;
+		}else{
+			room.sendAnnouncement(" Comba activada para el powershot. ", null, 0xFF0000, "bold");
+			efectoComba = true;
+		}
+		return false;
 	}*/
+	//Verificar que la partida haya empezado primero para poder elegir gk.
+	if (message.toLowerCase() === "!gk") {
+		// Buscar el jugador en la lista de jugadores en la partida
+		var jugadorEstadisticaEnPartida = buscarJugadorEnPartida(player.id);
+	    if(room.getScores() == null){
+			room.sendAnnouncement("La partida no esta en curso.",player.id);
+			return false;
+		}
+		if (jugadorEstadisticaEnPartida) {
+		  var teamJugador = jugadorEstadisticaEnPartida.jugador.team;
+		  var posiciones = jugadorEstadisticaEnPartida.posicion; //gk,dfc,mco.
+		  var equipoJugadorString = "";
+		  var colorElegido = null;
+		  if(teamJugador == 1){
+			equipoJugadorString = "red";
+			colorElegido = 0xFF4F4F;
+		  }else if (teamJugador == 2){
+			equipoJugadorString = "blue";  
+			colorElegido = 0x4C85FF;
+		  }else {
+			equipoJugadorString = "espectador";
+		  }
+		
+		  // Obtener la lista de jugadores del mismo equipo del jugador actual
+		  var jugadoresMismoEquipo = listaJugadoresEstadisticasEnPartida.filter(jugador => jugador.jugador.team === teamJugador);
+		  //var gksEnEquipo = jugadoresMismoEquipo.filter(jugador => jugador.posicion.gk);
+		  //var nombresGks = gksEnEquipo.map(jugador => jugador.jugador.name);
 
+		  var posX = room.getPlayerDiscProperties(player.id).x;
+		  //Ve si hay algun gk de su mismo team.
+		  var hayGkEnEquipo = jugadoresMismoEquipo.some(jugador => jugador.posicion.gk);
+			//casos faltantes: cuando deja de ser gk. 
+			if(gkRedLimiteEjeX == null || gkBlueLimiteEjeX == null){
+				room.sendAnnouncement("este mapa no permite usar !gk",player.id,0xD4FF4C,"small-bold",0);
+				return false;
+			}
+			if(posX >= gkRedLimiteEjeX && teamJugador == 1){ 
+				room.sendAnnouncement("Acercate a tu area para ser GK red",player.id,0xD4FF4C,"small-bold",0);
+				return false;
+			}
+			if(posX <= gkBlueLimiteEjeX && teamJugador == 2){ 
+				room.sendAnnouncement("Acercate a tu area para ser GK blue ",player.id,0xD4FF4C,"small-bold",0);
+				return false;
+			}
+				if(teamJugador != 0){
+					if(posiciones.gk === false){
+						if(!hayGkEnEquipo){
+							posiciones.gk = true; // Marcar al jugador como portero
+							changeOurSize(player, "!size 16"); // Cambiar tamaño del jugador
+							//room.setPlayerAvatar(player.id, "🧤");
+							//room.setPlayerDiscProperties(player.id, {invMass: 0.1});
+							room.sendAnnouncement(player.name + " es nuevo GK " + equipoJugadorString , null , colorElegido , "bold",0)
+						}else{
+							var nombrePorteroActual = jugadoresMismoEquipo.find(jugador => jugador.posicion.gk)?.jugador.name || "ningún portero";
+							room.sendAnnouncement("ya hay gk en tu equipo : "+ nombrePorteroActual,player.id,0xD4FF4C,"small-bold",0);
+						}
+					}
+				}else{
+					room.sendAnnouncement("Eres espectador.",player.id,0xD4FF4C,"small-bold",0);
+				}
+		} else {
+			room.sendAnnouncement("Jugador no existe en la partida.",player.id,0xD4FF4C,"small-bold",0);
+		}
+		
+		return false;
+	  }
+	  
 	if(message.toLowerCase() == "!pw" && player.admin){ //El powershot incluye la comba.
 		if(efectoPowerShot == false){
 			efectoPowerShot = true;
@@ -22113,6 +21941,8 @@ room.onPlayerChat = function(player, message) {
 				reiniciarValoresMapasAleatorios();
 				RSRMap = true;
 				room.setCustomStadium(getRealSoccerMap());
+				gkRedLimiteEjeX = -270;
+				gkBlueLimiteEjeX = 270;
 			}
 			else {
 				whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -22123,6 +21953,8 @@ room.onPlayerChat = function(player, message) {
 				reiniciarValoresMapasAleatorios();
 				RSRMap = true;
 				room.setCustomStadium(getRealSoccerMap3());
+				gkRedLimiteEjeX = -270;
+				gkBlueLimiteEjeX = 270;
 			}
 			else {
 				whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -22133,6 +21965,8 @@ room.onPlayerChat = function(player, message) {
 				reiniciarValoresMapasAleatorios();
 				RSRMap = true;
 				room.setCustomStadium(getRealSoccerMap2());
+				gkRedLimiteEjeX = -270;
+				gkBlueLimiteEjeX = 270;
 			}
 			else {
 				whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -22170,12 +22004,16 @@ room.onPlayerChat = function(player, message) {
 					limiteParedEjeYbottom = 453; //si posBalonY >= 164 -> gravedad = 0 .
 					limiteParedEjeXleft = -943; //si posBalonX <= -361 -> gravedad = 0.
 					limiteParedEjeXright = 943; //si posBalonX >= 361 -> gravedad = 0.
+					gkRedLimiteEjeX = -143;
+					gkBlueLimiteEjeX = 143;
 				}else{
 					limiteParedEjeYtop = -453; //si posBalonY <= -233 -> gravedad = 0.
 					limiteParedEjeYbottom = 453; //si posBalonY >= 164 -> gravedad = 0 .
 					limiteParedEjeXleft = -943; //si posBalonX <= -361 -> gravedad = 0.
 					limiteParedEjeXright = 943; //si posBalonX >= 361 -> gravedad = 0.
 					room.setCustomStadium(getFutx5LaBrujitaMap());
+					gkRedLimiteEjeX = -143;
+					gkBlueLimiteEjeX = 143;
 				}
 			}
 			else {
@@ -22196,12 +22034,17 @@ room.onPlayerChat = function(player, message) {
 					limiteParedEjeYbottom = 593; //si posBalonY >= 164 -> gravedad = 0 .
 					limiteParedEjeXleft = -1193; //si posBalonX <= -361 -> gravedad = 0.
 					limiteParedEjeXright = 1193; //si posBalonX >= 361 -> gravedad = 0.
+					gkRedLimiteEjeX = -306;
+					gkBlueLimiteEjeX = 306;
+
 				}else{
 					room.setCustomStadium(getFutx7MapBrianCruyff());
 					limiteParedEjeYtop = -593; //si posBalonY <= -233 -> gravedad = 0.
 					limiteParedEjeYbottom = 593; //si posBalonY >= 164 -> gravedad = 0 .
 					limiteParedEjeXleft = -1193; //si posBalonX <= -361 -> gravedad = 0.
 					limiteParedEjeXright = 1193; //si posBalonX >= 361 -> gravedad = 0.
+					gkRedLimiteEjeX = -306;
+					gkBlueLimiteEjeX = 306;
 				}
 				//room.sendAnnouncement("El mapa x7 a jugar sera aleatorio!");
 			}
@@ -22218,6 +22061,8 @@ room.onPlayerChat = function(player, message) {
 			limiteParedEjeYbottom = 692; //si posBalonY >= 164 -> gravedad = 0 .
 			limiteParedEjeXleft = -1389; //si posBalonX <= -361 -> gravedad = 0.
 			limiteParedEjeXright = 1389; //si posBalonX >= 361 -> gravedad = 0.
+			gkRedLimiteEjeX = -306;
+			gkBlueLimiteEjeX = 306;
 		}
 		else {
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -22232,7 +22077,8 @@ room.onPlayerChat = function(player, message) {
 				limiteParedEjeYbottom = 164; //si posBalonY >= 164 -> gravedad = 0 .
 				limiteParedEjeXleft = -361; //si posBalonX <= -361 -> gravedad = 0.
 				limiteParedEjeXright = 361; //si posBalonX >= 361 -> gravedad = 0. //problemas aca
-
+				gkRedLimiteEjeX = null;
+				gkBlueLimiteEjeX = null;
 
 			}
 			else {
@@ -22248,6 +22094,8 @@ room.onPlayerChat = function(player, message) {
 				limiteParedEjeYbottom = 233; //si posBalonY >= 164 -> gravedad = 0 .
 				limiteParedEjeXleft = -543; //si posBalonX <= -361 -> gravedad = 0.
 				limiteParedEjeXright = 543; //si posBalonX >= 361 -> gravedad = 0. //problemas aca
+				gkRedLimiteEjeX = null;
+				gkBlueLimiteEjeX = null;
 			}
 			else {
 				whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -22262,6 +22110,9 @@ room.onPlayerChat = function(player, message) {
 			limiteParedEjeYbottom = 313; //si posBalonY >= 164 -> gravedad = 0 .
 			limiteParedEjeXleft = -693; //si posBalonX <= -361 -> gravedad = 0.
 			limiteParedEjeXright = 693 ;// 693; //si posBalonX >= 361 -> gravedad = 0.
+			gkRedLimiteEjeX = null;
+			gkBlueLimiteEjeX = null;
+
 		}
 		else {
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -22772,58 +22623,23 @@ function actualizarMasGolesAsistidores(){
 				}
 }
 
-function agregarJugadoresListaJugadoresEstadisticasEnPartidaSiFalta(listaActualizada) {
-	var listaJugadoresAgregar = [];
-	for (var i = 0; i < listaActualizada.length; i++) {
-	  var idJug = listaActualizada[i].id;
-	  var encontroId = false; // Suponemos inicialmente que el jugador no está en la lista.
-	  for (var j = 0; j < listaJugadoresEstadisticasEnPartida.length; j++) {
-		if (idJug == listaJugadoresEstadisticasEnPartida[j].jugador.id) {
-		  // Si encuentra una coincidencia, establecemos encontroId en true.
-		  encontroId = true;
-		  break; // No es necesario seguir buscando, ya encontramos una coincidencia.
-		}
-	  }
-	  // Ahora, realizamos una acción basada en el valor de encontroId.
-	  if (!encontroId) {
-		// el jugador no está en listaJugadores.
-  
-		// Agregar a listaJugadoresAgregar
-		listaJugadoresAgregar.push(listaActualizada[i]);
-	  }
-	}
-  
-	// Agregar los jugadores de listaJugadoresAgregar a listaJugadoresEstadisticasEnPartida
-	for (var v = 0; v < listaJugadoresAgregar.length; v++) {
-	  listaJugadoresEstadisticasEnPartida.push({
-		jugador: {
-		  id: listaJugadoresAgregar[v].id,
-		  name: listaJugadoresAgregar[v].name,
-		  team: listaJugadoresAgregar[v].team
-		},
-		estadisticas: {
-		  goles: 0,
-		  autogoles: 0,
-		  asistencias: 0,
-		  kda: 0,
-		}
-	  });
-	  //room.sendAnnouncement("Se agregó un jugador");
-	}
-  }
 function actualizarEquiposDeJugadores(listaActualizada){
 	for (var x = 0 ; x < listaActualizada.length ; x++){
 		//room.sendAnnouncement("name lj :"+listaActualizada[x].name );
 		for (y = 0 ; y < listaJugadoresEstadisticasEnPartida.length ; y++){
 			var jugadorActualizar = listaJugadoresEstadisticasEnPartida[y].jugador;
-
+			var jugadorPosiciones = listaJugadoresEstadisticasEnPartida[y].posicion;
 			//room.sendAnnouncement("name lista partida : " + jugadorActualizar.name);
 			//actualizar teams
 			if(jugadorActualizar.id == listaActualizada[x].id && jugadorActualizar.team != listaActualizada[x].team){
 				//room.sendAnnouncement(jugadorActualizar.name + "tenia equipos desactualizados.");	
 				jugadorActualizar.team = listaActualizada[x].team;
+				jugadorPosiciones.gk = false;
+				jugadorPosiciones.dfc = false;
+				jugadorPosiciones.mco = false;
 				//room.sendAnnouncement("team nuevo: "+ jugadorActualizar.team);
 			}
+			
 		}
 	}
 }
@@ -22843,10 +22659,10 @@ room.onTeamGoal = function(team) {
 		let goalType;
 		//ver si algun jugador se cambio de team o si un jugador no estaba en listaJugadoresEstadisticasEnPartida.
 		//puede ser porque se unio durante la partida.
-		var lj =room.getPlayerList() //-> devuelve lista jugadores con teams actualizados.
+		//var lj =room.getPlayerList() //-> devuelve lista jugadores con teams actualizados.
 		//verifica si entro algun jugador para agregarlo.
-		agregarJugadoresListaJugadoresEstadisticasEnPartidaSiFalta(lj);
-		actualizarEquiposDeJugadores(lj);
+		//agregarJugadoresListaJugadoresEstadisticasEnPartidaSiFalta(lj);
+		//actualizarEquiposDeJugadores(lj);
 		
 		if (team == 1) {
 			if (game.lastKickerTeam == 1) { //if goal type is goal
@@ -23136,19 +22952,31 @@ function actualizarPowerShootJugador(player, distance) {
   //room.sendAnnouncement("DIST: " + distance.toFixed(3) + " invMass pelota: " +room.getDiscProperties(0).invMass );
   if (distance.toFixed(0) <= 24) { // Si el jugador toca el balón
 	var tiempoConBalon = listaJugadoresTiempoConBalon[playerId];
+	//si jugador es gk -> y tiempoConBalon >= 1 && <2 -> powerShoot = true. coloBalonCambiado = true.
 
-	actualizarColoresBalon(tiempoConBalon);
-
-	if (tiempoConBalon >= 2){
+	if (tiempoConBalon >= 1.92){ //solo a jugadores que no sean gk
 		//room.sendAnnouncement(player.name + " POWERSHOOT ");
 		if(!powerShoot){ //Si pw esta en false, pw esta en true ahora y el set se ejecuta 1 sola vez.
+			//room.sendAnnouncement("tiro pw on");
+			//room.sendAnnouncement(">= 1.92");
 			room.setDiscProperties(0, { invMass : masaInvertidaBalon*MULTIPLICADOR_POWERSHOT }); 
 			powerShoot = true;
 			colorBalonCambiado = true;
 			//ahora se agregara efecto al balon.
 	  	}
 		
-    } else {
+    }else if(buscarJugadorEnPartida(player.id).posicion.gk && tiempoConBalon >= 1){// Se que es GK el jugador de cualquier team,pero es GK
+		if(!powerShoot){ //Si pw esta en false, pw esta en true ahora y el set se ejecuta 1 sola vez.
+			//room.sendAnnouncement("tiro pw gk on");
+			room.setDiscProperties(0, { invMass : masaInvertidaBalon*MULTIPLICADOR_POWERSHOT , color: listaColoresBalon[listaColoresBalon.length-1]}); 
+			powerShoot = true;
+			colorBalonCambiado = true;
+			//ahora se agregara efecto al balon.
+	  	}
+	}	
+	else {
+		actualizarColoresBalon(tiempoConBalon);
+
 		//room.sendAnnouncement(player.name + " TIEMPO CON BALON: " + listaJugadoresTiempoConBalon[playerId].toFixed(2) + " seg.");
 		// De lo contrario, aumenta el tiempo con balón del jugador en 1 tick (pero en segundos)
     	listaJugadoresTiempoConBalon[playerId] += 1 / 60;
@@ -23181,27 +23009,28 @@ function ajustarGravedadBalon(restaX,restaY){
 	var ygravityPoner;
 	if(restaX > 0 && restaY < 0){ //0.05 en y. //
 		//room.sendAnnouncement("pelota abajo a la izq.");
-		xgravityPoner = -0.05;
-		ygravityPoner = -0.05;
+		xgravityPoner = -0.04;
+		ygravityPoner = -0.04;
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
+		return true;
 	}else if (restaX > 0 && restaY > 0){ //x -> + importante
 		//room.sendAnnouncement("pelota arriba a la izq.");
-		xgravityPoner = -0.05;
-		ygravityPoner = 0.05;
+		xgravityPoner = -0.04;
+		ygravityPoner = 0.04;
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
-
+		return true;
 	}else if(restaX < 0 && restaY > 0){ //x -> + importante.
 		//room.sendAnnouncement("pelota arriba a la der.")
-		xgravityPoner = 0.05;
-		ygravityPoner = 0.05;
-
+		xgravityPoner = 0.04;
+		ygravityPoner = 0.04;
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
+		return true;
 	}else if (restaX < 0 && restaY < 0){
 		//room.sendAnnouncement("pelota abajo a la der.");
-		xgravityPoner = 0.05;
-		ygravityPoner = -0.05;
+		xgravityPoner = 0.04;
+		ygravityPoner = -0.04;
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
-
+		return true;
 	} //si restaX 0 resta Y es igual a 0 es porque la pelota va recta totalmente.
 		//room.sendAnnouncement(" no entro a niguno ");
 	
@@ -23239,6 +23068,10 @@ function pelotaTocaParedMapa(xBalon,yBalon){
 	}
 	return false;
 }
+function reiniciarValoresGK(gk){
+	gk.posicion.gk = false;
+	room.setPlayerDiscProperties(gk.jugador.id,{radius:15});
+}
 
 var tiempoBalonUltimaVezGolpeado = 0;
 
@@ -23258,13 +23091,64 @@ function verificarSiAjustarGravedadBalon(jugadorMasCercaBalon,distanciaMasCercaB
 	}
 	var dif = tiempoActual-tiempoBalonUltimaVezGolpeado;
 	if(dif >= 1.8 ){
-		//room.sendAnnouncement("tiempo >= 2 " + dif + " seg.");
+		//room.sendAnnouncement("tiempo >= 1.9 " + dif + " seg.");
 		room.setDiscProperties(0,{xgravity : 0, ygravity :0});
 		pelotaMoviendoseConPowershot = false;
 		return true;
 	}
 }
+function verificarJugadoresConPosiciones(jugadoresRedPosiciones, jugadoresBluePosiciones) {
+    // Filtrar jugadores gk en el equipo rojo
+    var gkRed = jugadoresRedPosiciones.filter(jugador => jugador.posicion.gk);
+    // Filtrar jugadores dfc en el equipo rojo
+    var dfcRed = jugadoresRedPosiciones.filter(jugador => jugador.posicion.dfc);
+    // Filtrar jugadores mco en el equipo rojo
+    var mcoRed = jugadoresRedPosiciones.filter(jugador => jugador.posicion.mco);
+    
+    // Filtrar jugadores gk en el equipo azul
+    var gkBlue = jugadoresBluePosiciones.filter(jugador => jugador.posicion.gk);
+    // Filtrar jugadores dfc en el equipo azul
+    var dfcBlue = jugadoresBluePosiciones.filter(jugador => jugador.posicion.dfc);
+    // Filtrar jugadores mco en el equipo azul
+    var mcoBlue = jugadoresBluePosiciones.filter(jugador => jugador.posicion.mco);
+  
+    var posx = 0;
+    var posy = 0;
+  
+    if (gkRed.length == 1) {
+        // Verificar si el jugador rojo existe antes de acceder a sus propiedades
+        var gkRedPlayer = room.getPlayerDiscProperties(gkRed[0].jugador.id);
+        if (gkRedPlayer) {
+            posx = gkRedPlayer.x;
+            posy = gkRedPlayer.y;
+            if (posx > gkRedLimiteEjeX) {
+                room.sendAnnouncement("Ya no hay GK red, se alejo de su area.", null, 0xFFE14C, "small-bold", 0);
+                reiniciarValoresGK(gkRed[0]);
+                return true;
+            }
+        }
+    }
+  
+    if (gkBlue.length == 1) {
+        // Verificar si el jugador azul existe antes de acceder a sus propiedades
+        var gkBluePlayer = room.getPlayerDiscProperties(gkBlue[0].jugador.id);
+        if (gkBluePlayer) {
+            posx = gkBluePlayer.x;
+            posy = gkBluePlayer.y;
+            if (posx < gkBlueLimiteEjeX) {
+                room.sendAnnouncement("Ya no hay GK blue, se alejo de su area.", null, 0xFFE14C, "small-bold", 0);
+                reiniciarValoresGK(gkBlue[0]);
+                return true;
+            }
+        }
+    }
 
+    // Puedes realizar cualquier verificación o procesamiento adicional que necesites con estas listas
+    // Por ejemplo, contar cuántos jugadores hay en cada posición o realizar alguna acción específica.
+}
+
+  
+  
 //es room.onGametick -> se ejecuta constantemente caundo la partida esta en curso.
 room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 	//room.sendAnnouncement("room gametick");
@@ -23275,9 +23159,11 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 
   var jugadorMasCercaBalon = null;
   var distanciaMasCercaBalon = null;
+  
   //room.sendAnnouncement("time: "+room.getScores().time);
 	//room.sendAnnouncement("x: " + ballPosition.x + " y  : " + ballPosition.y);
-
+	//para la comba.
+	///&& efectoComba
   if(balonGolpeado){ //se ejecuta despues de que el jugador pateo balon.
 	//guardo esta como el ultimo frame.
 	//Calculo posicion del balon en este frame, despues de que el jugador haya golpeado el balon.
@@ -23303,12 +23189,23 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
   }
   for (var i = 0; i < players.length; i++) {
     var player = players[i];
-    // Verifica si el jugador tiene una posición válida
+    /*var bcoef1 =  room.getPlayerDiscProperties(player.id).bCoef;
+		var invMas = room.getPlayerDiscProperties(player.id).invMass;
+		var daming = room.getPlayerDiscProperties(player.id).damping;
+		var accJug =  room.getPlayerDiscProperties(player.id).acceleration;
+		var kickAcc =  room.getPlayerDiscProperties(player.id).kickingAcceleration;
+		var kickDump = room.getPlayerDiscProperties(player.id).kickingDamping;
+		var kickSt =  room.getPlayerDiscProperties(player.id).kickStrength;
+		room.setPlayerDiscProperties(player.id, {invMass: 5});
+		room.sendAnnouncement("DATOS JUG: bcoef: " +bcoef1+" inv mass: "+invMas+" damping: "+daming+" jug acc: " +accJug+" kick acc : " + kickAcc +" kickDump : " + kickDump +
+				" kick st: " + kickSt);
+				*/
+	// Verifica si el jugador tiene una posición válida
     if (player.position === null || player.position === undefined) {
       continue; // Salta al siguiente jugador si no tiene una posición válida
     }
     var playerPosition = room.getPlayerDiscProperties(player.id);
-
+	//room.sendAnnouncement("x: "+playerPosition.x + "y : "+playerPosition.y);
     // Calcula la distancia entre el jugador y la pelota
     var distance = Math.sqrt(Math.pow(playerPosition.x - ballPosition.x, 2) + Math.pow(playerPosition.y - ballPosition.y, 2));
 
@@ -23331,7 +23228,9 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
     }
   }
     if(efectoPowerShot){
-		actualizarPowerShootJugador(jugadorMasCercaBalon,distanciaMasCercaBalon);
+		if(jugadorMasCercaBalon != null){
+			actualizarPowerShootJugador(jugadorMasCercaBalon,distanciaMasCercaBalon);
+		}
     }   
 	if(pelotaMoviendoseConPowershot){
 		verificarSiAjustarGravedadBalon(jugadorMasCercaBalon,distanciaMasCercaBalon,ballPosition,tiempoActual);
@@ -23345,6 +23244,20 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
     updateTimeOnHalves();
 	LinkDelScript();
 	var _0x59120c = _0x3c81f9;
+	actualizarEquiposDeJugadores(players);
+	//Si jugador tiene alguna posicion asignada (gk,mco,etc)
+	//verificar sus limites de mapa para asignarle los atributos.
+	// Obtener los jugadores red (team 1) y que tengan alguna posición asignada (gk, mco, dfc)
+	var jugadoresConPosicionesRed = listaJugadoresEstadisticasEnPartida.filter(jugador => jugador.jugador.team === 1 && (jugador.posicion.gk || jugador.posicion.mco || jugador.posicion.dfc));
+
+	// Obtener los jugadores blue (team 2) y que tengan alguna posición asignada (gk, mco, dfc)
+	var jugadoresConPosicionesBlue = listaJugadoresEstadisticasEnPartida.filter(jugador => jugador.jugador.team === 2 && (jugador.posicion.gk || jugador.posicion.mco || jugador.posicion.dfc));
+
+	// Llamar a la función para verificar los jugadores con posiciones asignadas en cada equipo
+	if (gkRedLimiteEjeX != null && gkRedLimiteEjeX != null){
+		verificarJugadoresConPosiciones(jugadoresConPosicionesRed, jugadoresConPosicionesBlue);
+	}
+
 	if (RSRMap == true) {
 		updateGameStatus();
 		handleBallTouch();
@@ -24128,7 +24041,24 @@ function getGeoLocation(ip) {
       city: data.city
     }));
 }
-
+function anadirJugadorListaJugadoresEnPartida(player) {
+	var jugadorEstadisticaEnPartida = {
+	  jugador: { name: player.name, id: player.id, team: player.team },
+	  estadisticas: {
+		goles: 0,
+		autogoles: 0,
+		asistencias: 0,
+		kda: 0 // es goles + asist - autogoles
+	  },
+	  posicion: {
+		gk: false,
+		dfc: false,
+		mco: false
+	  }
+	};
+	listaJugadoresEstadisticasEnPartida.push(jugadorEstadisticaEnPartida);
+  }
+  
 let connections = []
 //bandera entrar join
 room.onPlayerJoin = function(player) {
@@ -24189,7 +24119,15 @@ room.sendAnnouncement("[⌨] ¡Hola @" + playerName + "! Escribe '!help' en el c
 setTimeout(function() {
   //room.sendAnnouncement("⚽️ ¡EQUIPOS SELECCIONADOS! ⚔️ \n\nEquipo Rojo 🔴: " + teamRed + "  vs  Equipo Azul 🔵: " + teamBlue + " \n\n¡Que empiece el juego! 🎉⚽️", player.id, 0x00FFB3, "normal", 0);
 }, 3000);
+//añadir jugador a la  lista en partida.
+
+anadirJugadorListaJugadoresEnPartida(player);
+//var lj = room.getPlayerList();
+//agregarJugadoresListaJugadoresEstadisticasEnPartidaSiFalta(lj);
+//
 //añadir jugador a la lista.
+
+// ARREGLAR ACTUALIZACION > actualizarEquiposDeJugadores
 var jugadorEstadisticas = {
 	jugador: {name : player.name , id : player.id, team : player.team },
 	estadisticas : {
