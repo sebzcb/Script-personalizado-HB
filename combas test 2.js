@@ -196,12 +196,12 @@ room.onGameStop = function(byPlayer) {
 }
 
 room.onPlayerBallKick = function(player) {	
+	/*room.sendAnnouncement("PEGO");
 	room.sendAnnouncement("PEGO");
 	room.sendAnnouncement("PEGO");
 	room.sendAnnouncement("PEGO");
 	room.sendAnnouncement("PEGO");
-	room.sendAnnouncement("PEGO");
-	room.sendAnnouncement("PEGO      ");
+	room.sendAnnouncement("PEGO      ");*/
 	if (map == "RSR") {
 		game.rsTouchTeam = player.team;
 		game.updateLastKicker(player.id, player.name, player.team);
@@ -230,8 +230,8 @@ room.onPlayerBallKick = function(player) {
 			if (game.rsCorner == true) {
 				if (room.getDiscProperties(0).y < 0) { //top corner
 					room.setDiscProperties(0, {xgravity: room.getPlayerDiscProperties(player.id).xspeed/35*-1, ygravity: 0.05});
-					room.sendAnnouncement("X gravity en corner : " + room.getDiscProperties(0).xgravity);
-					room.sendAnnouncement("Y gravity en corner : " + room.getDiscProperties(0).ygravity);
+					//room.sendAnnouncement("X gravity en corner : " + room.getDiscProperties(0).xgravity);
+					//room.sendAnnouncement("Y gravity en corner : " + room.getDiscProperties(0).ygravity);
 
 					//room.setDiscProperties(0, {xgravity: -0.08, ygravity: 0.05});
 				}
@@ -264,7 +264,7 @@ room.onPlayerBallKick = function(player) {
 
 		var xPos = room.getPlayerDiscProperties(player.id).xspeed;
 		var yPos = room.getPlayerDiscProperties(player.id).yspeed;
-		room.sendAnnouncement("X vel: "+xPos + " y vel : " + yPos);*/
+		//room.sendAnnouncement("X vel: "+xPos + " y vel : " + yPos);*/
 
 	}
 }
@@ -286,8 +286,8 @@ room.onPlayerChat = function(player, message) {
 			// Hacer algo con el valor de "gx"
 			// Por ejemplo: player.x = value; // Modificar la posición del jugador en el eje x
 			xgElegido = value;
-			room.sendAnnouncement("x seteado " + xgElegido);
-			room.sendAnnouncement("X gravity : " + room.getDiscProperties(0).xgravity);
+			//room.sendAnnouncement("x seteado " + xgElegido);
+			//room.sendAnnouncement("X gravity : " + room.getDiscProperties(0).xgravity);
 
 		  }
 		  // Si es "gy", hacer algo con el valor en el eje y
@@ -516,12 +516,14 @@ room.onPositionsReset = function() {
 	}
 }
 
+var xd = 0 ; 
 room.onGameTick = function() {
 	
 
-	room.sendAnnouncement("1. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
+	//room.sendAnnouncement("1. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
 
 	if (map == "RSR") {
+		//xd+=1;
 		updateGameStatus();
 		handleBallTouch();
 		realSoccerRef();
@@ -532,7 +534,7 @@ function realSoccerRef() {
 	blockThrowIn();
 	blockGoalKick();
 	removeBlock();
-	room.sendAnnouncement("4. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
+	//room.sendAnnouncement("4. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
 
 	if (game.time == gameTime * 60 && game.extraTimeAnnounced == false) {
 		extraTime();
@@ -899,7 +901,7 @@ function handleBallTouch() {
 	var triggerDistance = ballRadius + playerRadius + 0.01;
 	var jugMasCercaBal = null;
 	var dis = 0;
-	room.sendAnnouncement("2. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
+	//room.sendAnnouncement("2. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
 
 	for (var i = 0; i < players.length; i++) { // Iterate over all the players
 		var player = players[i];
@@ -930,7 +932,7 @@ function handleBallTouch() {
 	var xPos = room.getPlayerDiscProperties(jugMasCercaBal.id).xspeed;
 	var yPos = room.getPlayerDiscProperties(jugMasCercaBal.id).yspeed;
 	//room.sendAnnouncement("X vel: "+xPos + " y vel : " + yPos);
-	room.sendAnnouncement("3. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
+	//room.sendAnnouncement("3. X gravity : " + room.getDiscProperties(0).xgravity + " y grav : " + room.getDiscProperties(0).ygravity);
 
 }
 
@@ -1114,7 +1116,7 @@ function secondsToMinutes(time) {
     ret += "" + secs;
     return ret;
 }
-
+var num = 0 ;
 function blockThrowIn() {
 	var players = room.getPlayerList().filter((player) => player.team != 0);
 	if (room.getBallPosition().y < 0) { // top throw line
@@ -1176,14 +1178,19 @@ function blockThrowIn() {
 					room.setPlayerDiscProperties(player.id, {cGroup: 2});
 				}
 				if (room.getDiscProperties(21).x != 1149) { // show bottom red line
-					room.setDiscProperties(21, {x: 1149});
+					//room.setDiscProperties(21, {x: 1149});
+					room.setDiscProperties(21,{x: 1149});
+					room.sendAnnouncement("muestra rojo , (debe ser x: 1149)x: "+ room.getDiscProperties(21).x ); 
 				}
 				if (room.getDiscProperties(23).x != -1149) { // hide bottom blue line
 					room.setDiscProperties(23, {x: -1149});
+					room.sendAnnouncement("esconde azul , x (debe ser x:-1149): "+room.getDiscProperties(23).x ); 
+
 				}
 			});
 		}
 		if (game.outStatus == "blueThrow") {
+			
 			players.forEach(function(player) {
 				if (player.team == 1 && room.getPlayerDiscProperties(player.id).y > 0) {
 					if (room.getPlayerDiscProperties(player.id).cGroup != 536870918) {
@@ -1197,10 +1204,12 @@ function blockThrowIn() {
 					room.setPlayerDiscProperties(player.id, {cGroup: 2});
 				}
 				if (room.getDiscProperties(23).x != 1149) { // show bottom blue line
-					room.setDiscProperties(23, {x: 1149});
+					room.setDiscProperties(23, {x: 1150});
+					room.sendAnnouncement("muestra azul , (debe ser x: 1149)x: "+room.getDiscProperties(23).x ); 
 				}
 				if (room.getDiscProperties(21).x != -1149) { // hide bottom red line
 					room.setDiscProperties(21, {x: -1149});
+					room.sendAnnouncement("esconde rojo ,(debbe ser x:-1149) x: "+room.getDiscProperties(21).x ); 
 				}
 			});
 		}		

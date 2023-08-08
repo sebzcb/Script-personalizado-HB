@@ -614,7 +614,7 @@ function realSoccerRef() {
 					game.rsTimer = 0;
 					game.rsReady = true;
 					room.setDiscProperties(0, {xspeed: 0, yspeed: 0, x: game.ballOutPositionX, y: game.throwInPosY, xgravity: 5, ygravity: 5});
-					announce("🖐️ Throw In: 🔵 Blue");
+					//announce("🖐️ Throw In: 🔵 Blue");
 					room.setDiscProperties(0, {color: "0x0fbcf9"});				
 				});	
 				sleep(100).then(() => {
@@ -629,7 +629,7 @@ function realSoccerRef() {
 					game.rsTimer = 0;
 					game.rsReady = true;
 					room.setDiscProperties(0, {xspeed: 0, yspeed: 0, x: game.ballOutPositionX, y: game.throwInPosY, xgravity: 5, ygravity: 5});
-					announce("🖐️ Throw In: 🔴 Red");
+					//announce("🖐️ Throw In: 🔴 Red");
 					room.setDiscProperties(0, {color: "0xff3f34"});				
 				});	
 				sleep(100).then(() => {
@@ -643,7 +643,7 @@ function realSoccerRef() {
 			if (game.lastPlayAnnounced == true) {
 				room.pauseGame(true);
 				game.lastPlayAnnounced = false;
-				announce("Fin");
+				//announce("Fin");
 			}
 			room.setDiscProperties(0, {xgravity: 1, ygravity: 0});
 			room.getPlayerList().forEach(function(player) {
@@ -656,7 +656,7 @@ function realSoccerRef() {
 					game.outStatus = "blueGK";
 					game.rsTimer = 0;
 					game.rsReady = true;
-					announce("🥅 Saque de Arco: 🔵 Blue");
+					//announce("🥅 Saque de Arco: 🔵 Blue");
 					game.rsGoalKick = true;
 					game.rsSwingTimer = 0;
 					game.boosterCount = 0;
@@ -1092,9 +1092,13 @@ function blockThrowIn() {
 					room.setPlayerDiscProperties(player.id, {cGroup: 2});
 				}
 				if (room.getDiscProperties(21).x != 1149) { // show bottom red line
+					room.sendAnnouncement("muestra rojo"+room.getDiscProperties(21).x);
+
 					room.setDiscProperties(21, {x: 1149});
 				}
 				if (room.getDiscProperties(23).x != -1149) { // hide bottom blue line
+					room.sendAnnouncement("saca azul"+room.getDiscProperties(23).x);
+
 					room.setDiscProperties(23, {x: -1149});
 				}
 			});
@@ -1113,9 +1117,12 @@ function blockThrowIn() {
 					room.setPlayerDiscProperties(player.id, {cGroup: 2});
 				}
 				if (room.getDiscProperties(23).x != 1149) { // show bottom blue line
+					room.sendAnnouncement("azul " +room.getDiscProperties(23).x);
 					room.setDiscProperties(23, {x: 1149});
 				}
 				if (room.getDiscProperties(21).x != -1149) { // hide bottom red line
+					room.sendAnnouncement("saca rojo "+room.getDiscProperties(21).x);
+
 					room.setDiscProperties(21, {x: -1149});
 				}
 			});

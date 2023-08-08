@@ -92,5 +92,29 @@ mco-> pw en 1.5 seg. desde la mitad hasta el area rival.
 
 ARREGLAR :
 NUEVO : 0-1 SEGUNDO -> NADA , COLOR NORMAL
-1-1.8 SEGUNDOS -> PASE CON EFECTO , COLOR VERDE
+1-1.8 SEGUNDOS -> PASE CON EFECTO , COLOR VERDE -> PASE CON EFECTO DEBE PARAR SI ES MAS DE 1.3 SEGUNDOS Y NO MAS DE 1.8 SGUNDOS COMO EL TIRO.
 1.8 SEGUNDOS EN ADELANTE -> TIRO POTENTE + EFECTO , COLOR ROJO
+
+
+me falta saber que bugea a las lineas decolores en rsx10
+
+MAPAS HAXBALL MOVER LINEAS ROJO / AZUL PARA SAQUE BANDA : 
+
+1) TOCAR EN EL EXTREMO DE LA LINEA , HAY UNA PELOTA INVISIBLE , LOS ATRIBUTOS SON : POS [X,Y] -> ESA X ES EL LIMITE QUE HAY QUE PONER (1149) QUE HAY QUE CAMBIAR PARA QUE 
+NO HAYAN BUGS VISUALES EN EL GAME. Y LUEGO ACTUALIZAR EN EL CODIGO ROOM.ONGAMETICK ->REALSOCCERREF->BLOCK LOS ROOM.GETDISCPROPERTIES(21 O 23 ).X != 1149
+, CAMBIA ESE 1149 POR EL NUEVO X SEGUN TU LARGO QUE QUIERAS.  (CAMBIAS LARGO LINEA ROJO/AZUL Y AYUDAS A QUE LAS LINEAS ESTEN RECTAS)  
+-> EVITAS BUGS VISUALES.
+
+2) ir a removeBlock() -> buscar :
+
+var disc21 = room.getDiscProperties(21);
+    if (disc21 !== null && disc21.x !== -1149) {
+      room.setDiscProperties(21, { x: -1149 });
+    }
+
+    var disc23 = room.getDiscProperties(23);
+    if (disc23 !== null && disc23.x !== -1149) {
+      room.setDiscProperties(23, { x: -1149 });
+    }
+
+    y cambias disc21.x  !== -1149  -> por el nuevo X que elegiste.  -> CON ESTO EVITARAS QUE LA LINEA VAYA LENTO PONIENDOSE .
