@@ -118,3 +118,55 @@ var disc21 = room.getDiscProperties(21);
     }
 
     y cambias disc21.x  !== -1149  -> por el nuevo X que elegiste.  -> CON ESTO EVITARAS QUE LA LINEA VAYA LENTO PONIENDOSE .
+
+
+    posicionBalonSalioDerechaEjeX -> 
+    rs,rs2,entre -> 1130
+    rsx10 ->
+
+    posicionBalonSalioIzquierdaEjeX -> -posicionBalonSalioDerechaEjeX
+
+    limiteMapaDerecha ->
+    rs,rs2,entre -> 1162
+    rsx10->
+
+limiteMapaIzquierda = -limiteMapaDerecha;
+
+
+    arcoDerechoPaloAbajoEjeY->
+    rs,rs2,entre -> 124
+    rsx10 ->
+    arcoDerechoPaloArribaEjeY =-arcoDerechoPaloAbajoEjeY 
+
+    balonSaqueArcoBlueEjeX->
+    rs,rs2,entre -> 1060
+
+
+balonSaqueArcoRedEjeX = -balonSaqueArcoBlueEjeX;[nuevo]
+
+
+
+
+balonCornerDerechaEjeX ->
+rs,rs,entre->1140
+balonCornerIzquierdaEjeX -> -balonCornerDerechaEjeX [NUEVO]
+
+
+balonCornerDerechaArribaEjeY->
+rs,rs2,entre-> -590
+
+balonCornerDerechaAbajoEjeY -> -balonCornerDerechaArribaEjeY
+
+
+puntoCornerDerechaEjeX->
+rs,rs2,entre->1150
+
+puntoCornerIzquierdaEjeX ->-puntoCornerDerechaEjeX; [nuevo]
+
+puntoCornerDerechaEjeYArriba->
+rs,rs2,entre-> -670
+puntoCornerDerechaEjeYAbajo-> -puntoCornerDerechaEjeYArriba -> XAMBIAR NOOMBRE A puntoCornerArribaEjeY , puntoCornerAbajoEjeY
+
+
+radioCornerRS->
+rs,rs2,entre->420
