@@ -159,7 +159,8 @@ var limiteCanchaLateralArriba = -limiteCanchaLateralAbajo;
 var posicionBalonSalioDerechaEjeX =1130;
 var posicionBalonSalioIzquierdaEjeX = -posicionBalonSalioDerechaEjeX;
 
-//limites mapas derecha-izquierda
+//Variables : limites mapas derecha-izquierda
+//cambiar estas variables para el !rsx10.
 var limiteMapaDerecha = 1162;
 var limiteMapaIzquierda = -limiteMapaDerecha;
 
@@ -169,13 +170,16 @@ var arcoDerechoPaloArribaEjeY = -arcoDerechoPaloAbajoEjeY;
 var balonSaqueArcoBlueEjeX = 1060;
 var balonSaqueArcoRedEjeX = -balonSaqueArcoBlueEjeX;
 
+// Variables para corners
+
+//Eje X
 var balonCornerDerechaEjeX = 1140;
 var balonCornerIzquierdaEjeX = -balonCornerDerechaEjeX;
-
-
+//Eje y
 var balonCornerDerechaArribaEjeY = -590;
 var balonCornerDerechaAbajoEjeY = -balonCornerDerechaArribaEjeY;
 
+//puntos radio de los corners
 var puntoCornerDerechaEjeX = 1150;
 var puntoCornerIzquierdaEjeX = -puntoCornerDerechaEjeX;
 
@@ -5414,7 +5418,7 @@ function getPenaltyBlueMap() {
 function getRSX10Map() {
 	var realSoccerMap = `{
 
-		"name" : "🗦⚽🗧 🙼REAL 10 VS 10 MODIFICADO🙼",
+		"name" : "🗦⚽🗧🙼REAL 10 VS 10 MODIFICADO🙼",
 	
 		"width" : 1950,
 	
@@ -5538,14 +5542,14 @@ function getRSX10Map() {
 			/* 25 */ { "x" : 935, "y" : -3, "trait" : "line" },
 			/* 26 */ { "x" : -935, "y" : 3, "trait" : "line" },
 			/* 27 */ { "x" : -935, "y" : -3, "trait" : "line" },
-			/* 28 */ { "x" : -1783, "y" : 900, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			/* 29 */ { "x" : -1753, "y" : 930, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			/* 30 */ { "x" : -1753, "y" : -930, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			/* 31 */ { "x" : -1783, "y" : -900, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			/* 32 */ { "x" : 1120, "y" : 600, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			/* 33 */ { "x" : 1150, "y" : 570, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			/* 34 */ { "x" : 1150, "y" : -570, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			/* 35 */ { "x" : 1120, "y" : -600, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 28 */ { "x" : -1783, "y" : 900, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 29 */ { "x" : -1753, "y" : 930, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 30 */ { "x" : -1753, "y" : -930, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 31 */ { "x" : -1783, "y" : -900, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 32 */ { "x" : 1120, "y" : 600, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 33 */ { "x" : 1150, "y" : 570, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 34 */ { "x" : 1150, "y" : -570, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			/* 35 */ { "x" : 1120, "y" : -600, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
 			
 			/* 36 */ { "x" : 0, "y" : 180, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["blueKO" ], "trait" : "kickOffBarrier", "curve" : -180 },
 			/* 37 */ { "x" : 0, "y" : -180, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO" ], "trait" : "kickOffBarrier", "curve" : 180 },
@@ -5717,7 +5721,7 @@ function getRSX10Map() {
 			
 			/* 180 */ { "x" : 1186.0412285355308, "y" : 593.2533143181114, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "line", "color" : "fde73b" },
 			
-			/* 181 */ { "x" : -1786.0875418258313, "y" : -957.0767479573768, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
+			/* 181 */ { "x" : -1784.5113333010017, "y" : -958.6529564822063, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
 			/* 182 */ { "x" : -1782, "y" : -930, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "cornerflag", "curve" : 0, "color" : "D7D7D9" },
 			
 			/* 183 */ { "x" : -1794.3204750175203, "y" : -964.3597326211624, "bCoef" : 0, "cMask" : ["wall" ], "cGroup" : ["all" ], "trait" : "line", "curve" : 0, "color" : "f83d38" },
@@ -5831,10 +5835,10 @@ function getRSX10Map() {
 			{ "v0" : 26, "v1" : 27, "curve" : -90, "trait" : "line", "x" : -935 },
 			{ "v0" : 24, "v1" : 25, "trait" : "line", "x" : 935 },
 			{ "v0" : 26, "v1" : 27, "trait" : "line", "x" : -935 },
-			{ "v0" : 28, "v1" : 29, "curve" : 90, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			{ "v0" : 30, "v1" : 31, "curve" : 90, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			{ "v0" : 32, "v1" : 33, "curve" : 90, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
-			{ "v0" : 34, "v1" : 35, "curve" : 90, "bCoef" : -2.65, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			{ "v0" : 28, "v1" : 29, "curve" : 90, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			{ "v0" : 30, "v1" : 31, "curve" : 90, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			{ "v0" : 32, "v1" : 33, "curve" : 90, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
+			{ "v0" : 34, "v1" : 35, "curve" : 90, "bCoef" : -4, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line" },
 			
 			{ "v0" : 37, "v1" : 36, "curve" : -180, "vis" : false, "bCoef" : 0.1, "cGroup" : ["blueKO" ], "trait" : "kickOffBarrier" },
 			
@@ -6034,7 +6038,7 @@ function getRSX10Map() {
 			{ "radius" : 0, "invMass" : 0, "pos" : [-1310,29 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["blue" ], "cGroup" : ["ball" ] },
 			{ "radius" : 0, "invMass" : 0, "pos" : [-1308,62 ], "color" : "ffffffff", "bCoef" : 0, "cMask" : ["red","blue" ], "cGroup" : ["ball" ] },
 			
-			{ "radius" : 0, "pos" : [-1148.9272589629797,610.9419585776069 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
+			{ "radius" : 0, "pos" : [-1848,868 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
 			{ "radius" : 0, "pos" : [1150,-600 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
 			{ "radius" : 0, "pos" : [1157.946229903854,597.2188195336512 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
 			
@@ -6047,7 +6051,7 @@ function getRSX10Map() {
 			{ "radius" : 2, "invMass" : 0, "pos" : [1250,-158 ], "color" : "000000", "bCoef" : 1, "trait" : "goalPost" },
 			{ "radius" : 2, "invMass" : 0, "pos" : [1250,158 ], "color" : "000000", "bCoef" : 1, "trait" : "goalPost" },
 			
-			{ "radius" : 0, "pos" : [-1150,-600 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
+			{ "radius" : 0, "pos" : [-1848,-868 ], "color" : "7af769", "cGroup" : ["ball" ], "trait" : "cornerflag" },
 			
 			{ "radius" : 0, "pos" : [-1779,-814 ], "cMask" : ["none" ] },
 			{ "radius" : 0, "pos" : [1779,-814 ], "cMask" : ["none" ] },
@@ -6117,7 +6121,7 @@ function getRSX10Map() {
 			{ "normal" : [1,0 ], "dist" : -1947.9736818688002, "bCoef" : 0 },
 			{ "normal" : [-1,0 ], "dist" : -1945.610903306797, "bCoef" : 0.1 },
 			{ "normal" : [1,0 ], "dist" : -1870.832755060932, "bCoef" : 0, "cMask" : ["ball" ], "cGroup" : ["ball" ] },
-			{ "normal" : [-1,0 ], "dist" : -1221.9117977468738, "bCoef" : 0, "cMask" : ["ball" ], "cGroup" : ["ball" ] }
+			{ "normal" : [-1,0 ], "dist" : -1870.985871820948, "bCoef" : 0, "cMask" : ["ball" ], "cGroup" : ["ball" ] }
 	
 		],
 	
@@ -21807,7 +21811,33 @@ room.onPlayerChat = function(player, message) {
 				//limites de la cancha en las bandas (linea fuera de cancha bandas)
 				limiteCanchaLateralAbajo = 612;
 				limiteCanchaLateralArriba = -limiteCanchaLateralAbajo;
-
+				 limiteMapaDerecha = 1162;
+				 limiteMapaIzquierda = -limiteMapaDerecha;
+				
+				 arcoDerechoPaloAbajoEjeY = 124;
+				 arcoDerechoPaloArribaEjeY = -arcoDerechoPaloAbajoEjeY;
+				
+				 balonSaqueArcoBlueEjeX = 1060;
+				 balonSaqueArcoRedEjeX = -balonSaqueArcoBlueEjeX;
+				
+				// Variables para corners
+				
+				//Eje X
+				 balonCornerDerechaEjeX = 1140;
+				 balonCornerIzquierdaEjeX = -balonCornerDerechaEjeX;
+				//Eje y
+				 balonCornerDerechaArribaEjeY = -590;
+				 balonCornerDerechaAbajoEjeY = -balonCornerDerechaArribaEjeY;
+				
+				//puntos radio de los corners
+				 puntoCornerDerechaEjeX = 1150;
+				 puntoCornerIzquierdaEjeX = -puntoCornerDerechaEjeX;
+				
+				 puntoCornerDerechaEjeYArriba = -670;
+				 puntoCornerDerechaEjeYAbajo = -puntoCornerDerechaEjeYArriba;
+				
+				 radioCornerRS = 420;
+				
 
 			}
 			else {
@@ -21983,6 +22013,24 @@ room.onPlayerChat = function(player, message) {
 				//limites de la cancha en las bandas (linea fuera de cancha bandas)
 			limiteCanchaLateralAbajo = 942;
 			limiteCanchaLateralArriba = -limiteCanchaLateralAbajo;
+			//limites por arcos
+
+			limiteMapaDerecha = 1782;
+			limiteMapaIzquierda = -limiteMapaDerecha;
+			// corners
+			balonCornerDerechaArribaEjeY = -920;
+			balonCornerDerechaAbajoEjeY = -balonCornerDerechaArribaEjeY;
+
+			balonCornerDerechaEjeX = 1772;
+			balonCornerIzquierdaEjeX = -balonCornerDerechaEjeX;
+
+			puntoCornerDerechaEjeX = 1782;
+			puntoCornerIzquierdaEjeX = -puntoCornerDerechaEjeX;
+
+			puntoCornerDerechaEjeYArriba = -1000;
+			puntoCornerDerechaEjeYAbajo =  - puntoCornerDerechaEjeYArriba;
+
+
 		}
 		else {
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
