@@ -172,3 +172,9 @@ radioCornerRS->
 rs,rs2,entre->420
 
 Hay puntos invisibles que afectan a la pelota en rsx10 : ubicacion :  -1848,868  . -1848,-868
+ubicacion punto 2 : -1858,867.
+
+aumentar areas de los arcos en x1,5.
+
+.. Ahora que agrande las areas en x1,5, me falta actualizar los lados en rsx10, actualizar para que no estorben los rivales en saque de arco.
+
