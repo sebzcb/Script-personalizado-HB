@@ -2,13 +2,13 @@
 var NombreHost = " todos juegan + tiros potentes "
 var CantidadDeJugadores = 22 // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
-var ClaveParaSerAdmin = "a"  // La clave va dentro de las comillas
+var ClaveParaSerAdmin = "!8xx282m82"  // La clave va dentro de las comillas
 var TiempoDeJuego = 5 // Son la cantidad de minutos que quieres que duren los partidos.
 var TamanoMinimoPermitido = 13 //14 // Tamaño mínimo permitido para un jugador
 var TamanoMaximoPermitido = 17 //16 Tamaño máximo permitido para un jugador
 // ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN INTERMEDIA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 var PasswordDelHost = null    // Dejar "null" si no quieres que tu Host tenga una Contraseña. Si quieres una contraseña,  reemplazar el null por la contraseña que quieras (debe llevar comillas).
-var VisibilidadDelHost = false // Si quieres que tu sala sea pública dejar 'true'. Si quieres que sea privada, poner 'false'.
+var VisibilidadDelHost = true // Si quieres que tu sala sea pública dejar 'true'. Si quieres que sea privada, poner 'false'.
 var BanderaDelHost = 'CL' // Se puede reemplazar GU (Bandera de Guam) por la que quieran.
 
 // Bandera HaxBall = FAM   
@@ -141,7 +141,7 @@ var gkBlueLimiteEjeX = 270;//es por el mapa default de rs.
 
 
 const TIEMPO_TIRO_POTENTE = 1.85; //tiempo necesario para que el balon sea un tiro potente con efecto.
-const TIEMPO_PASE_CON_EFECTO = 1; //tiempo necesario para que el balon tenga solo comba.
+const TIEMPO_PASE_CON_EFECTO = 1.2; //tiempo necesario para que el balon tenga solo comba.
 
 
 //parametros que sirven solo para ajustar RS, por defecto pongo las medidas del mapa inicial al ejecutar el script(RS).
@@ -5578,12 +5578,12 @@ function getRSX10Map() {
 			
 			/* 36 */ { "x" : 0, "y" : 180, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["blueKO" ], "trait" : "kickOffBarrier", "curve" : -180 },
 			/* 37 */ { "x" : 0, "y" : -180, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO" ], "trait" : "kickOffBarrier", "curve" : 180 },
-			/* 38 */ { "x" : 0, "y" : 180, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO" ], "trait" : "kickOffBarrier", "curve" : 180, "_selected" : true },
+			/* 38 */ { "x" : 0, "y" : 180, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO" ], "trait" : "kickOffBarrier", "curve" : 180 },
 			
-			/* 39 */ { "x" : -1602, "y" : -40, "bCoef" : -5.7, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : 70, "color" : "576C46", "vis" : false },
-			/* 40 */ { "x" : -1602, "y" : 40, "bCoef" : -5.7, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : 70, "color" : "576C46", "vis" : false },
-			/* 41 */ { "x" : 1602, "y" : -40, "bCoef" : -5.7, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : -70, "color" : "576C46", "vis" : false },
-			/* 42 */ { "x" : 1602, "y" : 40, "bCoef" : -5.7, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : -70, "color" : "576C46", "vis" : false },
+			/* 39 */ { "x" : -1602, "y" : -40, "bCoef" : -6, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : 70, "color" : "576C46", "vis" : false },
+			/* 40 */ { "x" : -1602, "y" : 40, "bCoef" : -6, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : 70, "color" : "576C46", "vis" : false },
+			/* 41 */ { "x" : 1602, "y" : -40, "bCoef" : -6, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : -70, "color" : "576C46", "vis" : false },
+			/* 42 */ { "x" : 1602, "y" : 40, "bCoef" : -6, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "curve" : -70, "color" : "576C46", "vis" : false },
 			/* 43 */ { "x" : 1602, "y" : -40, "trait" : "line", "color" : "576C46" },
 			/* 44 */ { "x" : 1602, "y" : 40, "trait" : "line", "color" : "576C46" },
 			/* 45 */ { "x" : -1602, "y" : -40, "trait" : "line", "color" : "576C46" },
@@ -5867,8 +5867,8 @@ function getRSX10Map() {
 			
 			{ "v0" : 37, "v1" : 36, "curve" : -180, "vis" : false, "bCoef" : 0.1, "cGroup" : ["blueKO" ], "trait" : "kickOffBarrier" },
 			
-			{ "v0" : 39, "v1" : 40, "curve" : 70, "vis" : false, "color" : "576C46", "bCoef" : -5.7, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "x" : -1030 },
-			{ "v0" : 41, "v1" : 42, "curve" : -70, "vis" : false, "color" : "576C46", "bCoef" : -5.7, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "x" : 1030 },
+			{ "v0" : 39, "v1" : 40, "curve" : 70, "vis" : false, "color" : "576C46", "bCoef" : -6, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "x" : -1030 },
+			{ "v0" : 41, "v1" : 42, "curve" : -70, "vis" : false, "color" : "576C46", "bCoef" : -6, "cMask" : ["ball" ], "cGroup" : ["c0" ], "trait" : "line", "x" : 1030 },
 			
 			{ "v0" : 37, "v1" : 38, "curve" : 180, "vis" : false, "bCoef" : 0.1, "cMask" : ["red","blue" ], "cGroup" : ["redKO" ], "trait" : "kickOffBarrier" },
 			
@@ -6953,21 +6953,18 @@ function helpFun(player) {
   message += '⯌ 👑 Comandos  utiles : !afk  -  t mensaje  - expulsar [nombre] o expulsar [id jugador] \n\n';
   message += '⯌ 👑 Ver estadisticas: !me  - !poss   -  !jugadores   -  !ranking \n\n';
   message += '⯌ 👑 Elegir posicion GK : !gk \n\n';
-	message+= '⯌ 👑 Si la pelota esta color verde : Das pase con efecto  \n\n';
-	message+= '⯌ 👑 Si la pelota esta color rojo : Das tiro potente con efecto  \n\n';
+	message+= '⯌ 👑 ¿Como hacer un tiro potente? Manten la pelota junto a ti por unos segundos y cambiara a color rojo.  \n\n';
   room.sendAnnouncement(message, player.id, 0xffffff, "small-bold", 1);
 }
 
 function TutorialFun(player) { // !tutorial
-    room.sendAnnouncement('CREÁ TU PROPIO HOST CON BOT:', player.id, 0xbfff35, "normal", 0);
+    room.sendAnnouncement('CREA TU PROPIO HOST CON BOT:', player.id, 0xbfff35, "normal", 0);
     room.sendAnnouncement('VIDEO TUTORIAL: https://youtu.be/Mkh7WcN8pSg', player.id, 0xbfff35, "normal", 0);
 
 }
-
 function ResultadosFun(player) { // !help
     room.sendAnnouncement('🏆 Tabla de posiciones: 🔗' + ChallongeLink + '/standings', player.id, 0xbfff35, "small-bold", 0);
 }
-
 function FixtureFun(player) { // !help
     room.sendAnnouncement('🏆 Fixture: 🔗' + ChallongeLink, player.id, 0xbfff35, "small-bold", 0);
 }
@@ -18302,50 +18299,48 @@ function moverJugadorEquipoCorrespondiente(player){
 	}
 }
 //bandera afk
-
-
 const lastAfkUsage = {};
 const afkCooldown = 30000; // 30 segundos en milisegundos
 const afkToGameCooldown = 60000; // 1 minuto en milisegundos
 
 function afkFun(player, message) { // !classic
-  if (afkPlayerIDs.has(player.id)) {
-    // Si el jugador ya está en modo AFK, se verifica si ha pasado el tiempo suficiente para volver a la partida
-    const currentTime = Date.now();
-    const lastUsageTime = lastAfkUsage[player.id] || 0;
-    const timeSinceLastUsage = currentTime - lastUsageTime;
+	if (afkPlayerIDs.has(player.id)) { // Si el jugador estaba en la lista de AFKS
+    	// Si el jugador ya está en modo AFK, se verifica si ha pasado el tiempo suficiente para volver a la partida
+    	const currentTime = Date.now();
+		const lastUsageTime = lastAfkUsage[player.id] || 0;
+		const timeSinceLastUsage = currentTime - lastUsageTime;
+		const blueTeamCount = room.getPlayerList().filter(p => p.team === 2).length;
+		const redTeamCount = room.getPlayerList().filter(p => p.team === 1).length;
 
-    if (timeSinceLastUsage >= afkToGameCooldown) {
-      afkPlayerIDs.delete(player.id);
-      room.setPlayerTeam(player.id, 1); // Se asume que el equipo rojo es el equipo 1, puedes ajustarlo según tu código
-      room.sendAnnouncement("↩ " + player.name + " volvió! 🎮", null, 0x00FFBB, "normal", 0);
-      // Puedes agregar aquí cualquier otra acción que desees realizar cuando el jugador vuelva a la partida
-    } else {
-      const secondsLeft = Math.ceil((afkToGameCooldown - timeSinceLastUsage) / 1000);
-      // El tiempo de enfriamiento aún no ha pasado, por lo que no se permite volver a la partida.
-      room.sendAnnouncement("¡Espera un momento antes de volver a la partida! " + secondsLeft + " segundos restantes", player.id, 0xF9F264, 'normal', 2);
-    }
-  } else {
-	//room.sendAnnouncement("entro aca");
-    // Si el jugador no está en modo AFK, se verifica si ha pasado un tiempo mínimo desde la última vez que usó el comando !afk
-    const currentTime = Date.now();
-    const lastUsageTime = lastAfkUsage[player.id] || 0;
-    const timeSinceLastUsage = currentTime - lastUsageTime;
+		//Si ya paso el tiempo suficiente para volver a partida
+		if (timeSinceLastUsage >= afkToGameCooldown) {
+			afkPlayerIDs.delete(player.id); //Se saca de la lista de AFKs
+			asignarEquipoJugadorNuevo(player,redTeamCount,blueTeamCount); //Se asigna a equipo nuevo segun la cantidad de jugadores red y blue.
+			room.sendAnnouncement("↩ " + player.name + " volvió! 🎮", null, 0x00FFBB, "normal", 0);
+		} else {
+			const secondsLeft = Math.ceil((afkToGameCooldown - timeSinceLastUsage) / 1000);
+			// El tiempo de enfriamiento aún no ha pasado, por lo que no se permite volver a la partida.
+			room.sendAnnouncement("¡Espera un momento antes de volver a la partida! " + secondsLeft + " segundos restantes", player.id, 0xF9F264, 'normal', 2);
+		}
+	} else {
+		// Si el jugador no está en modo AFK, se verifica si ha pasado un tiempo mínimo desde la última vez que usó el comando !afk
+		const currentTime = Date.now();
+		const lastUsageTime = lastAfkUsage[player.id] || 0;
+		const timeSinceLastUsage = currentTime - lastUsageTime;
 
-    if (timeSinceLastUsage >= afkCooldown) {
-      afkPlayerIDs.add(player.id);
-      room.setPlayerTeam(player.id, 0);
-      room.sendAnnouncement("[💤] " + player.name + " se encuentra 𝐀𝐅𝐊 ❗ ⌛ ", null, 0xff8400, 'normal', 2);
-      room.sendAnnouncement("[💤]  Para volver a la partida usa !afk", player.id, 0xff8400, 'normal', 2);
-
-      // Registra el tiempo actual como la última vez que usó el comando !afk
-      lastAfkUsage[player.id] = currentTime;
-    } else {
-      const secondsLeft = Math.ceil((afkCooldown - timeSinceLastUsage) / 1000);
-      // El tiempo de enfriamiento aún no ha pasado, por lo que no se permite usar el comando !afk nuevamente.
-      room.sendAnnouncement("¡Espera un momento antes de volver a usar !afk! " + secondsLeft + " segundos restantes", player.id, 0xF9F264, 'normal', 2);
-    }
-  }
+		if (timeSinceLastUsage >= afkCooldown) {
+			afkPlayerIDs.add(player.id);
+			room.setPlayerTeam(player.id, 0);
+			room.sendAnnouncement("[💤] " + player.name + " se encuentra 𝐀𝐅𝐊 ❗ ⌛ ", null, 0xff8400, 'normal', 2);
+			room.sendAnnouncement("[💤]  Para volver a la partida usa !afk", player.id, 0xff8400, 'normal', 2);
+			// Registra el tiempo actual como la última vez que usó el comando !afk
+			lastAfkUsage[player.id] = currentTime;
+		} else {
+			const secondsLeft = Math.ceil((afkCooldown - timeSinceLastUsage) / 1000);
+			// El tiempo de enfriamiento aún no ha pasado, por lo que no se permite usar el comando !afk nuevamente.
+			room.sendAnnouncement("¡Espera un momento antes de volver a usar !afk! " + secondsLeft + " segundos restantes", player.id, 0xF9F264, 'normal', 2);
+		}
+	}
 }
 
 
@@ -18459,7 +18454,10 @@ function pushMuteFun(player, message){ // !mute Anddy
     // Prevent somebody to talk in the room (uses the nickname, not the id)
     // need to be admin
     if (player.admin == true){
-        if (!(mutedPlayers.includes(message.substr(6)))) mutedPlayers.push(message.substr(6));
+        if (!(mutedPlayers.includes(message.substr(6)))){
+			mutedPlayers.push(message.substr(6));
+			room.sendAnnouncement(message.substr(6) + " ha sido muteado " ,player.id);
+		} 
     }
 }
 
@@ -18522,7 +18520,7 @@ function LinkDiscordFun(player) { // !1
 function LinkScriptFun(player) { // !1
     var ColoresRandomBot2 = [0xF6FF43, 0x00ffd5, 0xbfff50, 0xffd050];
     var GeneradorColoresRandom2 = ColoresRandomBot2[(Math.random() * ColoresRandomBot2.length) | 0]
-    room.sendAnnouncement('🔗 CREÁ TU PROPIO HOST: https://discord.gg/tDEUbJU8QB', player.id, GeneradorColoresRandom2, "normal", 0);
+    //room.sendAnnouncement('🔗 CREÁ TU PROPIO HOST: https://discord.gg/tDEUbJU8QB', player.id, GeneradorColoresRandom2, "normal", 0);
 }
 /*
 function AvatarNumerosFun(player) { // !1
@@ -18574,14 +18572,14 @@ var commands = {
     // Command that doesnt need to know players attributes.
     "!help": helpFun,
     "!ids": ListaDeJugadoresFun,
-    "!tutorial": TutorialFun,
-    "!resultados": ResultadosFun,
+    //"!tutorial": TutorialFun,
+    //"!resultados": ResultadosFun,
     "!reglamento": ReglamentoFun,
-    "!fixture": FixtureFun,
-    "!size": changeOurSize,
+    //"!fixture": FixtureFun,
+    //"!size": changeOurSize,
     "!tamaño": TamanoJugadorFun,
-    "!discord": LinkDiscordFun,
-    "!script": LinkScriptFun,
+    "!discord": LinkDiscordFun,//vacio
+    "!script": LinkScriptFun, //vacio
     //"!avatar": AvatarNumerosFun,
     //"!numeros": AvatarNumerosFun,
 	/*
@@ -20974,19 +20972,6 @@ function generar_respuesta_aleatoria() {
 // Estado del "Modo Juegan Todos"
 let jueganTodosMode = false;
 
-
-function removeAccents(str) {
-  const accents = "ÁÉÍÓÚáéíóú";
-  const replacements = "AEIOUaeiou";
-  const accentMap = new Map();
-
-  for (let i = 0; i < accents.length; i++) {
-    accentMap.set(accents[i], replacements[i]);
-  }
-
-  return str.replace(/[ÁÉÍÓÚáéíóú]/g, (character) => accentMap.get(character));
-}
-
 // Función para mezclar aleatoriamente los jugadores de los equipos
 function shuffleTeams() {
   const players = room.getPlayerList();
@@ -21356,7 +21341,7 @@ room.onPlayerChat = function(player, message) {
 					if(posiciones.gk === false){
 						if(!hayGkEnEquipo){
 							posiciones.gk = true; // Marcar al jugador como portero
-							changeOurSize(player, "!size 16.5"); // Cambiar tamaño del jugador
+							changeOurSize(player, "!size 16"); // Cambiar tamaño del jugador
 							//room.setPlayerAvatar(player.id, "🧤");
 							//room.setPlayerDiscProperties(player.id, {invMass: 0.1});
 							room.sendAnnouncement(player.name + " es nuevo GK " + equipoJugadorString , null , colorElegido , "bold",0)
@@ -21373,7 +21358,7 @@ room.onPlayerChat = function(player, message) {
 		}
 		
 		return false;
-	  }
+	}
 	  //1)
 	if(message.toLowerCase() == "!pw" && player.admin){ //El powershot incluye la comba.
 		if(efectoPowerShot == false){
@@ -21493,185 +21478,165 @@ room.onPlayerChat = function(player, message) {
 		room.sendAnnouncement("No se ha encontrado el jugador.");
 		return false;
   	}
-  if(message.toLowerCase().includes("https://discord.gg/")){
-	room.kickPlayer(player.id,"LINKS DISCORD = BAN",true);			 
+	if(message.toLowerCase().includes("https://discord.gg/") && !player.admin){
+		room.kickPlayer(player.id,"LINKS DISCORD = BAN",true);			 
+		room.sendAnnouncement(player.name +"baneado por compartir links ",null, 0xFF0000, "bold");
+		return false;
+	}
+	if (message.toLowerCase() == "!sexo"){
+		const players = room.getPlayerList();
+		//elije a otro jugador aleatorio
+		const jugadorAleatorio = players[Math.floor(Math.random() * players.length)];
+		//mensaje con ambos jugadores
+		room.sendAnnouncement(player.name +' quiere culearse a '+ jugadorAleatorio.name,null, 0xFF0000, "bold");
+		return false;
+	}
+	//verificar si el jugador es admin y el mensaje es solo !publicidadfin, entonces elimina la publicidad    programada
+	if (player.admin && message == "!publicidadfin") {
+		clearInterval(advertisingInterval);
+		room.sendAnnouncement('Publicidad eliminada');
+	}
+	// Verificar si el jugador es el administrador y si el mensaje comienza con "!publicidad"
+	else if (player.admin && message.startsWith('!publicidad')) {
+		// Obtener la cantidad de minutos y el mensaje de la publicidad
+		const command = message.split(' ');
+		if (command.length >= 3) {
+		const minutes = parseInt(command[1]);
+		const msg ="█ " +command.slice(2).join(' ');
+		// Verificar si los minutos son válidos
+		if (!isNaN(minutes) && minutes > 0) {
+			// Actualizar los datos de la publicidad
+			advertisingMinutes = minutes;
+			advertisingMessage = msg;
 
-	room.sendAnnouncement(player.name +"baneado por compartir links ",null, 0xFF0000, "bold");
-	return false;
-  }
-  if (message.toLowerCase() == "!sexo"){
-	const players = room.getPlayerList();
-	//elije a otro jugador aleatorio
-	const jugadorAleatorio = players[Math.floor(Math.random() * players.length)];
-	//mensaje con ambos jugadores
-	room.sendAnnouncement(player.name +' quiere culearse a '+ jugadorAleatorio.name,null, 0xFF0000, "bold");
-	return false;
-  }
-  //verificar si el jugador es admin y el mensaje es solo !publicidadfin, entonces elimina la publicidad    programada
-  if (player.admin && message == "!publicidadfin") {
-	clearInterval(advertisingInterval);
-	room.sendAnnouncement('Publicidad eliminada');
-  }
-  // Verificar si el jugador es el administrador y si el mensaje comienza con "!publicidad"
-  else if (player.admin && message.startsWith('!publicidad')) {
-    // Obtener la cantidad de minutos y el mensaje de la publicidad
-    const command = message.split(' ');
-    if (command.length >= 3) {
-      const minutes = parseInt(command[1]);
-      const msg ="█ " +command.slice(2).join(' ');
-      // Verificar si los minutos son válidos
-      if (!isNaN(minutes) && minutes > 0) {
-        // Actualizar los datos de la publicidad
-        advertisingMinutes = minutes;
-        advertisingMessage = msg;
+			// Reiniciar el intervalo de publicidad
+			clearInterval(advertisingInterval);
+			advertisingInterval = setInterval(sendAdvertisingMessage, advertisingMinutes * 60 * 1000);
 
-        // Reiniciar el intervalo de publicidad
-        clearInterval(advertisingInterval);
-        advertisingInterval = setInterval(sendAdvertisingMessage, advertisingMinutes * 60 * 1000);
-
-        // Enviar un mensaje de confirmación al administrador
-        room.sendAnnouncement(`Publicidad programada para cada ${advertisingMinutes} minutos: "${advertisingMessage}"`,player.id);
-      } else {
-        // Enviar un mensaje de error al administrador
-        room.sendAnnouncement('Error: La cantidad de minutos debe ser un número mayor a 0.',player.id);
-      }
-    } else {
-      // Enviar un mensaje de error al administrador
-      room.sendAnnouncement('Error: Comando de publicidad inválido. Formato correcto: !publicidad <minutos> <mensaje>');
-    }
-   
-  }
+			// Enviar un mensaje de confirmación al administrador
+			room.sendAnnouncement(`Publicidad programada para cada ${advertisingMinutes} minutos: "${advertisingMessage}"`,player.id);
+		} else {
+			// Enviar un mensaje de error al administrador
+			room.sendAnnouncement('Error: La cantidad de minutos debe ser un número mayor a 0.',player.id);
+		}
+		} else {
+		// Enviar un mensaje de error al administrador
+		room.sendAnnouncement('Error: Comando de publicidad inválido. Formato correcto: !publicidad <minutos> <mensaje>');
+		}
+	
+	}
   
   
-  //bandera2 funcion !cambiarjugador creado por mi xd
-  if (player.admin && message.startsWith('!cambiarjugador')){ //!cambiarjugador red o !cambiarjugador blue ->sintaxis mensaje
-	const cadenaSeparada = message.split(' '); //separa mensaje por espacios
-	if (cadenaSeparada.length >= 2 ){
-		const equipoJugador = cadenaSeparada[1];
-		const players = room.getPlayerList()
-		switch (equipoJugador.toLowerCase()){
-			case "red" : 
-				//selecciono a jugador aleatorio del team rojo
-				const activePlayers = players.filter(player => !player.spectator);
-  				const team1Players = activePlayers.filter(player => player.team === 1);
-				if (team1Players.length > 0){
-					//eleccion aleatoria
-					const jugadorAleatorio = team1Players[Math.floor(Math.random() * team1Players.length)];
-					//poner en el team azul
-					room.setPlayerTeam(jugadorAleatorio.id,2);
-					room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente.',null, 0xFF0000, "bold");
-				}else{
-					room.sendAnnouncement('No hay jugadores en el team red uwu',null, 0xFF0000, "bold");
-				}
-				break;
-			case "blue" :
-				//selecciono a jugador aleatorio del team rojo
-				const activePlayers2 = players.filter(player => !player.spectator);
-  				const team2Players = activePlayers2.filter(player => player.team === 2);
-				if (team2Players.length > 0){
-					//eleccion aleatoria
-					const jugadorAleatorio = team2Players[Math.floor(Math.random() * team2Players.length)];
-					//poner en el team azul
-					room.setPlayerTeam(jugadorAleatorio.id,1);
-					room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente ',null, 0xFF0000, "bold");
-				}else{
-					room.sendAnnouncement('No hay jugadores en el team blue uwu',null, 0xFF0000, "bold");
-				}
-				break;
-			default :
-				room.sendAnnouncement('No se eligio team red o blue, formato : !cambiarjugador red o !cambiarjugador blue ',player.id, 0xFF0000, "bold");
-				break;
+	//bandera2 funcion !cambiarjugador creado por mi xd
+	if (player.admin && message.startsWith('!cambiarjugador')){ //!cambiarjugador red o !cambiarjugador blue ->sintaxis mensaje
+		const cadenaSeparada = message.split(' '); //separa mensaje por espacios
+		if (cadenaSeparada.length >= 2 ){
+			const equipoJugador = cadenaSeparada[1];
+			const players = room.getPlayerList()
+			switch (equipoJugador.toLowerCase()){
+				case "red" : 
+					//selecciono a jugador aleatorio del team rojo
+					const activePlayers = players.filter(player => !player.spectator);
+					const team1Players = activePlayers.filter(player => player.team === 1);
+					if (team1Players.length > 0){
+						//eleccion aleatoria
+						const jugadorAleatorio = team1Players[Math.floor(Math.random() * team1Players.length)];
+						//poner en el team azul
+						room.setPlayerTeam(jugadorAleatorio.id,2);
+						room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente.',null, 0xFF0000, "bold");
+					}else{
+						room.sendAnnouncement('No hay jugadores en el team red uwu',null, 0xFF0000, "bold");
+					}
+					break;
+				case "blue" :
+					//selecciono a jugador aleatorio del team rojo
+					const activePlayers2 = players.filter(player => !player.spectator);
+					const team2Players = activePlayers2.filter(player => player.team === 2);
+					if (team2Players.length > 0){
+						//eleccion aleatoria
+						const jugadorAleatorio = team2Players[Math.floor(Math.random() * team2Players.length)];
+						//poner en el team azul
+						room.setPlayerTeam(jugadorAleatorio.id,1);
+						room.sendAnnouncement(jugadorAleatorio.name +' ha sido cambiado aleatoriamente ',null, 0xFF0000, "bold");
+					}else{
+						room.sendAnnouncement('No hay jugadores en el team blue uwu',null, 0xFF0000, "bold");
+					}
+					break;
+				default :
+					room.sendAnnouncement('No se eligio team red o blue, formato : !cambiarjugador red o !cambiarjugador blue ',player.id, 0xFF0000, "bold");
+					break;
+			}
 		}
 	}
-  }
-  // Verificar si el jugador que envió el mensaje es el administrador del host
-  if (player.admin) {
-    // Verificar si el mensaje comienza con "!silenciar"
-    if (message.indexOf('!silenciar') === 0) {
-      // Obtener la palabra a silenciar
-      var palabra = message.split(' ')[1];
-      // Agregar la palabra a la lista de palabras silenciadas
-      palabrasSilenciadas.push(palabra);
-      // Enviar un anuncio al administrador confirmando la acción
-      room.sendAnnouncement('La palabra "' + palabra + '" ha sido silenciada.', null, 0xFF0000, "bold");
-    }
-    // Verificar si el mensaje comienza con "!desilenciar"
-    else if (message.indexOf('!desilenciar') === 0) {
-      // Obtener la palabra a desilenciar
-      var palabra = message.split(' ')[1];
-      // Encontrar el índice de la palabra en la lista de palabras silenciadas
-      var indice = palabrasSilenciadas.indexOf(palabra);
-      // Verificar si la palabra se encontraba silenciada
-      if (indice !== -1) {
-        // Eliminar la palabra de la lista de palabras silenciadas
-        palabrasSilenciadas.splice(indice, 1);
-        // Enviar un anuncio al administrador confirmando la acción
-        room.sendAnnouncement('La palabra "' + palabra + '" ha sido habilitada.', null, 0xFF0000, "bold");
-      }
-    }
-  }
-  else {
-    // Verificar si el mensaje contiene alguna palabra silenciada
-    if (palabrasSilenciadas.some(function (palabra) {
-      return message.indexOf(palabra) !== -1;
-    })) {
-      // Cancelar el envío del mensaje del jugador
-      return false;
-    }
-  }
-  if (player.admin) {
-    if (message === "!random") {
-      shuffleTeams();
-    } else if (message === "!balance") {
-      balanceTeams();
-    } else if (message === "!auto_balance") {
-      autoBalanceEnabled = true; // Activar el equilibrio automático
-      room.sendAnnouncement("¡El equilibrio automático de equipos ha sido activado!");
-    } else if (message === "!auto_balance_off") {
-      autoBalanceEnabled = false; // Desactivar el equilibrio automático
-      room.sendAnnouncement("¡El equilibrio automático de equipos ha sido desactivado!");
+	// Verificar si el jugador que envió el mensaje es el administrador del host
+	if (player.admin) {
+		// Verificar si el mensaje comienza con "!silenciar"
+		if (message.indexOf('!silenciar') === 0) {
+		// Obtener la palabra a silenciar
+		var palabra = message.split(' ')[1];
+		// Agregar la palabra a la lista de palabras silenciadas
+		palabrasSilenciadas.push(palabra);
+		// Enviar un anuncio al administrador confirmando la acción
+		room.sendAnnouncement('La palabra "' + palabra + '" ha sido silenciada.', null, 0xFF0000, "bold");
+		}
+		// Verificar si el mensaje comienza con "!desilenciar"
+		else if (message.indexOf('!desilenciar') === 0) {
+		// Obtener la palabra a desilenciar
+		var palabra = message.split(' ')[1];
+		// Encontrar el índice de la palabra en la lista de palabras silenciadas
+		var indice = palabrasSilenciadas.indexOf(palabra);
+		// Verificar si la palabra se encontraba silenciada
+		if (indice !== -1) {
+			// Eliminar la palabra de la lista de palabras silenciadas
+			palabrasSilenciadas.splice(indice, 1);
+			// Enviar un anuncio al administrador confirmando la acción
+			room.sendAnnouncement('La palabra "' + palabra + '" ha sido habilitada.', null, 0xFF0000, "bold");
+		}
+		}
 	}
-  }
- var lowerCaseMessage = removeAccents(message.toLowerCase());
-
-  if (
-    lowerCaseMessage.includes("como me hago gordo") ||
-    lowerCaseMessage.includes("como me hago pequeño") ||
-    lowerCaseMessage.includes("como me hago grande") ||
-    lowerCaseMessage.includes("porque hay un gordo") ||
-    lowerCaseMessage.includes("porque hay uno pequeño") ||
-    lowerCaseMessage.includes("porque hay un enano") ||
-    lowerCaseMessage.includes("por que hay un gordo") ||
-    lowerCaseMessage.includes("por que hay uno pequeño") ||
-    lowerCaseMessage.includes("por que hay un enano") ||
-    lowerCaseMessage.includes("quiero ser enano") ||
-    lowerCaseMessage.includes("quiero ser gordo") ||
-    lowerCaseMessage.includes("como me hago gigante")
-  ) {
-    // Responder al jugador con un anuncio
-    room.sendAnnouncement("Para cambiar tu tamaño, utiliza el comando !size", player.id, 0xFF0000);
-  }
-  if (message === "!posesion") {
-	mostrarPosesionBalon();
-  }
-  if (player.admin) {
-    // Comando para activar el "Modo Juegan Todos"
-    if (message === "!juegantodos") {
-      jueganTodosMode = true;
-      room.sendAnnouncement("Modo 🎮 Juegan Todos 🤩 activado.", null, 0xFF0000, "bold");
-    }
-    // Comando para desactivar el "Modo Juegan Todos"
-    else if (message === "!juegantodosoff") {
-      jueganTodosMode = false;
-      room.sendAnnouncement("Modo 🚫 Juegan Todos 😔 desactivado.", null, 0xFF0000, "bold");
-    }
-  }
-  if (message.startsWith("!pregunta")) {
-    var pregunta = message.substring(9).trim(); // Obtiene la pregunta que sigue al comando
-    var respuesta = generar_respuesta_aleatoria();
-    var anuncio =  player.name + " ha preguntado: " + pregunta + "|| 🐵: Mi respuesta es \"" + respuesta + "\"";
-    room.sendAnnouncement(anuncio, null, 0xFF0000, "normal");
-  }
+	else {
+		// Verificar si el mensaje contiene alguna palabra silenciada
+		if (palabrasSilenciadas.some(function (palabra) {
+			return message.indexOf(palabra) !== -1;
+		})) {
+		// Cancelar el envío del mensaje del jugador
+		return false;
+		}
+	}
+	if (player.admin) {
+		if (message === "!random") {
+		shuffleTeams();
+		} else if (message === "!balance") {
+		balanceTeams();
+		} else if (message === "!auto_balance") {
+		autoBalanceEnabled = true; // Activar el equilibrio automático
+		room.sendAnnouncement("¡El equilibrio automático de equipos ha sido activado!");
+		} else if (message === "!auto_balance_off") {
+		autoBalanceEnabled = false; // Desactivar el equilibrio automático
+		room.sendAnnouncement("¡El equilibrio automático de equipos ha sido desactivado!");
+		}
+	}
+	if (message === "!posesion") {
+		mostrarPosesionBalon();
+	}
+	if (player.admin) {
+		// Comando para activar el "Modo Juegan Todos"
+		if (message === "!juegantodos") {
+		jueganTodosMode = true;
+		room.sendAnnouncement("Modo 🎮 Juegan Todos 🤩 activado.", null, 0xFF0000, "bold");
+		}
+		// Comando para desactivar el "Modo Juegan Todos"
+		else if (message === "!juegantodosoff") {
+		jueganTodosMode = false;
+		room.sendAnnouncement("Modo 🚫 Juegan Todos 😔 desactivado.", null, 0xFF0000, "bold");
+		}
+	}
+	if (message.startsWith("!pregunta")) {
+		var pregunta = message.substring(9).trim(); // Obtiene la pregunta que sigue al comando
+		var respuesta = generar_respuesta_aleatoria();
+		var anuncio =  player.name + " ha preguntado: " + pregunta + "|| 🐵: Mi respuesta es \"" + respuesta + "\"";
+		room.sendAnnouncement(anuncio, null, 0xFF0000, "normal");
+	}
 	if (message.startsWith("@@")) {
 		message = message.substr(2).trim();
 		if (message.indexOf(' ') !== -1) {
@@ -21706,64 +21671,212 @@ room.onPlayerChat = function(player, message) {
 		listaIdsAdmins.push(player.id);
     	return false; 
 	}
-    //banderaExpulsar
-	if(message.startsWith("expulsar ")==true){
-	playerFound = false;
-	Jugadores = room.getPlayerList();
-	
-	if(Jugadores.length <= 4){
-		room.sendAnnouncement("No puedes votar a otro jugador cuando hay menos de 4 personas en el host.",player.id,0xFF0000,"bold",2);
-		return true;
-	}
-	for(var i=0; i<Jugadores.length; i++){
-	    if((message === ("expulsar " + Jugadores[i].id) || message === ("expulsar " + Jugadores[i].name.toLowerCase))){			
-			if(Jugadores[i].admin == true){
-				room.sendAnnouncement("No puedes votar al admin XD.",player.id,0xFF0000,"bold",2);
-				return true;
-			}
-			if(Jugadores[i].id==player.id || Jugadores[i].name == player.name){
-		    room.sendAnnouncement("No te puedes votar a vos mismo XD.",player.id,0xFF0000,"bold",2);
-		    return true;
-			}
-		/*
-		if(votedPlayers.has(GetPlayer(player.id).auth)){
-		    room.sendAnnouncement("No podes votar a otro jugador más de una vez por minuto.",player.id,0xFF0000,"bold",2);
-		    return true;
-		}*/
-	 	votedPlayers.add(GetPlayer(player.id).auth);
-		playerFound = true;
-		if(JSON.parse(localStorage.getItem(GetPlayer(Jugadores[i].id).auth)) != null){
-		    var v = JSON.parse(localStorage.getItem(GetPlayer(Jugadores[i].id).auth)).votes;
-		    v++;
-		    var playerObject = {auth:GetPlayer(Jugadores[i].id).auth,votes:v};
-		    localStorage.setItem(GetPlayer(Jugadores[i].id).auth,JSON.stringify(playerObject));
 
-		    if(v == 1){
-			setTimeout(function(){
-			    if(v < Jugadores.length){
-				votekickRemove(player);
-			    }
-			},votekickTimeout);
-		    }
+    //banderaExpulsar
+	/*
+	if(message.startsWith("expulsar ")==true){
+		playerFound = false;
+		Jugadores = room.getPlayerList();
+	
+		if(Jugadores.length <= 4){
+			room.sendAnnouncement("No puedes votar a otro jugador cuando hay menos de 4 personas en el host.",player.id,0xFF0000,"bold",2);
+			return true;
 		}
-		votekickCheck(Jugadores[i]);
-	    }
-	}
-	if(playerFound === false){
-	    Jugadores = room.getPlayerList();
-	    playersString = "";
-	    for(i=0; i<Jugadores.length; i++){
-		playersString = playersString + Jugadores[i].name + ": [" + Jugadores[i].id + "]\n";
-	    }
-	    room.sendAnnouncement("No existe el ID de ese jugador, acá la lista de jugadores votables:" + "\n" + playersString,player.id,0xFFFF00,"normal",1);
-	}
-	return true;
-    }
+		for(var i=0; i<Jugadores.length; i++){
+			if((message === ("expulsar " + Jugadores[i].id) || message === ("expulsar " + Jugadores[i].name.toLowerCase))){			
+				if(Jugadores[i].admin == true){
+					room.sendAnnouncement("No puedes votar al admin XD.",player.id,0xFF0000,"bold",2);
+					return true;
+				}
+				if(Jugadores[i].id==player.id || Jugadores[i].name == player.name){
+					room.sendAnnouncement("No te puedes votar a ti mismo XD.",player.id,0xFF0000,"bold",2);
+					return true;
+				}*/
+			/*
+			if(votedPlayers.has(GetPlayer(player.id).auth)){
+				room.sendAnnouncement("No podes votar a otro jugador más de una vez por minuto.",player.id,0xFF0000,"bold",2);
+				return true;
+			}*//*
+			votedPlayers.add(GetPlayer(player.id).auth);
+			playerFound = true;
+			if(JSON.parse(localStorage.getItem(GetPlayer(Jugadores[i].id).auth)) != null){
+				var v = JSON.parse(localStorage.getItem(GetPlayer(Jugadores[i].id).auth)).votes;
+				v++;
+				var playerObject = {auth:GetPlayer(Jugadores[i].id).auth,votes:v};
+				localStorage.setItem(GetPlayer(Jugadores[i].id).auth,JSON.stringify(playerObject));
+
+				if(v == 1){
+				setTimeout(function(){
+					if(v < Jugadores.length){
+					votekickRemove(player);
+					}
+				},votekickTimeout);
+				}
+			}
+			votekickCheck(Jugadores[i]);
+			}
+		}
+		if(playerFound === false){
+			Jugadores = room.getPlayerList();
+			playersString = "";
+			for(i=0; i<Jugadores.length; i++){
+				playersString = playersString + Jugadores[i].name + ": [" + Jugadores[i].id + "]\n";
+			}
+			room.sendAnnouncement("No existe el ID de ese jugador, acá la lista de jugadores votables:" + "\n" + playersString,player.id,0xFFFF00,"normal",1);
+		}
+		return true;
+    }*/
+
     if (mutedPlayers.includes(player.name)) return false;
 	var _0x21989d = _0x3c81f9;
     let spacePos = message.search(" ");
     let command = message.substr(0, spacePos !== -1 ? spacePos : message.length);
     if (commands.hasOwnProperty(command) == true) return commands[command](player, message);
+	
+	cambiarMapa(message,player);
+
+    if (player.admin == true){
+    if (message.indexOf("!") == 0) return false;
+	if (message['startsWith']('t ')) {
+		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
+		if (player[_0x21989d(0x128)] == 0x1) {
+			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
+			_0x2789fd['forEach'](function (_0x1f1703) {
+				var _0x541b0a = _0x21989d;
+				room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
+			});
+		}
+		if (player['team'] == 0x2) {
+			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
+			_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
+				var _0x9b122b = _0x21989d;
+				room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
+			});
+		}
+		return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
+	}
+
+	// MENSAJES 
+    adminMessage = message;
+    message = message.split(/ +/);
+    	var adminChatColor = 0xFFD700; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
+		room.sendAnnouncement(`   « 👑 ADMIN ~ ` +  player.name + ` »: ` + adminMessage, null, adminChatColor, 'normal', 1);
+		return false;
+}
+
+	//EQUIPO ROJO CHAT
+	if (player.admin==false && ModoChatPausado.includes(player.id)==false  && player.team == 1) {
+		if (message['startsWith']('t ')) {
+			teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
+			if (player[_0x21989d(0x128)] == 0x1) {
+				var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
+				_0x2789fd['forEach'](function (_0x1f1703) {
+					var _0x541b0a = _0x21989d;
+					room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
+				});
+			}
+			if (player['team'] == 0x2) {
+				var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
+				_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
+					var _0x9b122b = _0x21989d;
+					room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
+				});
+			}
+			return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
+		}
+		ModoChatPausado.push(player.id);						
+		setTimeout(function(){
+				ModoChatPausado.splice(ModoChatPausado.indexOf(player.id),1);
+		}, 2000);
+
+	    adminMessage = message;
+    	message = message.split(/ +/);
+
+    	var RedChatColor = 0xff8e8e; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
+		var textoFinal = personalizarTextoConEmojis(null,player);
+		room.sendAnnouncement(textoFinal, null, RedChatColor, 'normal', 1);
+		return false;
+	}
+	//}
+	if (ModoChatPausado.includes(player.id)==true){
+		room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);
+		return false;
+    }
+	//EQUIPO AZUL CHAT
+	if (player.admin==false && ModoChatPausado.includes(player.id)==false && player.team == 2) {
+
+	if (message['startsWith']('t ')) {
+		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
+		if (player[_0x21989d(0x128)] == 0x1) {
+			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
+			_0x2789fd['forEach'](function (_0x1f1703) {
+				var _0x541b0a = _0x21989d;
+				room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
+			});
+		}
+		if (player['team'] == 0x2) {
+			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
+			_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
+				var _0x9b122b = _0x21989d;
+				room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
+			});
+		}
+		return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
+	}
+				ModoChatPausado.push(player.id);				
+				
+				setTimeout(function(){
+				ModoChatPausado.splice(ModoChatPausado.indexOf(player.id),1);
+				}, 2000);
+    adminMessage = message;
+    message = message.split(/ +/);
+    	var BlueChatColor = 0x8eb1ff; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
+		var textoFinalBlue = personalizarTextoConEmojis(null,player);
+		room.sendAnnouncement(textoFinalBlue, null, BlueChatColor, 'normal', 1);
+		return false;
+	}
+		if (ModoChatPausado.includes(player.id)==true){
+			room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);		
+			return false;
+    	}
+			if (player.admin==false && ModoChatPausado.includes(player.id)==false && player.team == 0) {
+	if (message['startsWith']('t ')) {
+		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
+		if (player[_0x21989d(0x128)] == 0x1) {
+			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
+			_0x2789fd['forEach'](function (_0x1f1703) {
+				var _0x541b0a = _0x21989d;
+				room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
+			});
+		}
+		if (player['team'] == 0x2) {
+			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
+			_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
+				var _0x9b122b = _0x21989d;
+				room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
+			});
+		}
+		return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
+	}
+				ModoChatPausado.push(player.id);				
+				
+				setTimeout(function(){
+				ModoChatPausado.splice(ModoChatPausado.indexOf(player.id),1);
+				}, 2000);
+    adminMessage = message;
+    message = message.split(/ +/);
+		//bandera chat espectador
+    	var SpectChatColor = 0xcccccc; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
+		var textoFinalSpec = personalizarTextoConEmojis("👁️",player);
+		room.sendAnnouncement(textoFinalSpec, null, SpectChatColor, 'normal', 1);		
+		return false;
+	}	
+    
+	if(CensuradorDeSpammeros(message)) return false;
+    if (message.indexOf("!") == 0) return false; 
+}
+
+function cambiarMapa(message,player){
 	//getFutx10Map
 	//reinicia los booleanos de mapas aleatorios.
 	if (message == '!rs2' && player.admin == true) { 			
@@ -21872,20 +21985,18 @@ room.onPlayerChat = function(player, message) {
 				const numRandom = Math.random();
 				if(numRandom >= 0.5){
 					room.setCustomStadium(getFutx5Map());
+					//LimiteParedEjeYtop,limiteParedEjeXLeft,gkRedLimiteEjeX
+					llenarParametrosFutsal(-453,-943,-143);
+					/*
 					limiteParedEjeYtop = -453; //si posBalonY <= -233 -> gravedad = 0.
 					limiteParedEjeYbottom = 453; //si posBalonY >= 164 -> gravedad = 0 .
 					limiteParedEjeXleft = -943; //si posBalonX <= -361 -> gravedad = 0.
 					limiteParedEjeXright = 943; //si posBalonX >= 361 -> gravedad = 0.
 					gkRedLimiteEjeX = -143;
-					gkBlueLimiteEjeX = 143;
+					gkBlueLimiteEjeX = 143;*/
 				}else{
-					limiteParedEjeYtop = -453; //si posBalonY <= -233 -> gravedad = 0.
-					limiteParedEjeYbottom = 453; //si posBalonY >= 164 -> gravedad = 0 .
-					limiteParedEjeXleft = -943; //si posBalonX <= -361 -> gravedad = 0.
-					limiteParedEjeXright = 943; //si posBalonX >= 361 -> gravedad = 0.
+					llenarParametrosFutsal(-453,-943,-143);
 					room.setCustomStadium(getFutx5LaBrujitaMap());
-					gkRedLimiteEjeX = -143;
-					gkBlueLimiteEjeX = 143;
 				}
 			}
 			else {
@@ -21901,22 +22012,13 @@ room.onPlayerChat = function(player, message) {
 
 				const numRandom = Math.random();
 				if(numRandom >= 0.5){
+					//LimiteParedEjeYtop,limiteParedEjeXLeft,gkRedLimiteEjeX
+					llenarParametrosFutsal(-593,-1193,-306);
 					room.setCustomStadium(getFutx7Map());
-					limiteParedEjeYtop = -593; //si posBalonY <= -233 -> gravedad = 0.
-					limiteParedEjeYbottom = 593; //si posBalonY >= 164 -> gravedad = 0 .
-					limiteParedEjeXleft = -1193; //si posBalonX <= -361 -> gravedad = 0.
-					limiteParedEjeXright = 1193; //si posBalonX >= 361 -> gravedad = 0.
-					gkRedLimiteEjeX = -306;
-					gkBlueLimiteEjeX = 306;
-
 				}else{
+					//LimiteParedEjeYtop,limiteParedEjeXLeft,gkRedLimiteEjeX
+					llenarParametrosFutsal(-593,-1193,-306);
 					room.setCustomStadium(getFutx7MapBrianCruyff());
-					limiteParedEjeYtop = -593; //si posBalonY <= -233 -> gravedad = 0.
-					limiteParedEjeYbottom = 593; //si posBalonY >= 164 -> gravedad = 0 .
-					limiteParedEjeXleft = -1193; //si posBalonX <= -361 -> gravedad = 0.
-					limiteParedEjeXright = 1193; //si posBalonX >= 361 -> gravedad = 0.
-					gkRedLimiteEjeX = -306;
-					gkBlueLimiteEjeX = 306;
 				}
 				//room.sendAnnouncement("El mapa x7 a jugar sera aleatorio!");
 			}
@@ -21929,16 +22031,8 @@ room.onPlayerChat = function(player, message) {
 			reiniciarValoresMapasAleatorios();
 			RSRMap = false;
 			room.setCustomStadium(getFutx10Map());
-			
-			limiteParedEjeYtop = -692; //si posBalonY <= -233 -> gravedad = 0.
-			limiteParedEjeYbottom = 692; //si posBalonY >= 164 -> gravedad = 0 .
-			limiteParedEjeXleft = -1389; //si posBalonX <= -361 -> gravedad = 0.
-			limiteParedEjeXright = 1389; //si posBalonX >= 361 -> gravedad = 0.
-			
-			gkRedLimiteEjeX = -306;
-			gkBlueLimiteEjeX = 306;
-
-
+			//LimiteParedEjeYtop,limiteParedEjeXLeft,gkRedLimiteEjeX
+			llenarParametrosFutsal(-692,-1389,-306);
 		}
 		else {
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -21948,14 +22042,9 @@ room.onPlayerChat = function(player, message) {
 			if (room.getScores() == null) {
 				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
-				room.setCustomStadium(getFutx2Map()); //posY = 159
-				limiteParedEjeYtop = -164; //si posBalonY <= -164 -> gravedad = 0.
-				limiteParedEjeYbottom = 164; //si posBalonY >= 164 -> gravedad = 0 .
-				limiteParedEjeXleft = -361; //si posBalonX <= -361 -> gravedad = 0.
-				limiteParedEjeXright = 361; //si posBalonX >= 361 -> gravedad = 0. //problemas aca
-				gkRedLimiteEjeX = null;
-				gkBlueLimiteEjeX = null;
-
+				room.setCustomStadium(getFutx2Map());
+				//LimiteParedEjeYtop,limiteParedEjeXLeft,gkRedLimiteEjeX
+				llenarParametrosFutsal(-164,-361,null);
 			}
 			else {
 				whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -21966,12 +22055,7 @@ room.onPlayerChat = function(player, message) {
 				reiniciarValoresMapasAleatorios();
 				RSRMap = false;
 				room.setCustomStadium(getFutx3Map());
-				limiteParedEjeYtop = -233; //si posBalonY <= -233 -> gravedad = 0.
-				limiteParedEjeYbottom = 233; //si posBalonY >= 164 -> gravedad = 0 .
-				limiteParedEjeXleft = -543; //si posBalonX <= -361 -> gravedad = 0.
-				limiteParedEjeXright = 543; //si posBalonX >= 361 -> gravedad = 0. //problemas aca
-				gkRedLimiteEjeX = null;
-				gkBlueLimiteEjeX = null;
+				llenarParametrosFutsal(-233,-543,null);
 			}
 			else {
 				whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -21982,13 +22066,7 @@ room.onPlayerChat = function(player, message) {
 			reiniciarValoresMapasAleatorios();
 			RSRMap = false;
 			room.setCustomStadium(getFutx4Map());
-			limiteParedEjeYtop = -313; //si posBalonY <= -233 -> gravedad = 0.
-			limiteParedEjeYbottom = 313; //si posBalonY >= 164 -> gravedad = 0 .
-			limiteParedEjeXleft = -693; //si posBalonX <= -361 -> gravedad = 0.
-			limiteParedEjeXright = 693 ;// 693; //si posBalonX >= 361 -> gravedad = 0.
-			gkRedLimiteEjeX = null;
-			gkBlueLimiteEjeX = null;
-
+			llenarParametrosFutsal(-311,-691,null);
 		}
 		else {
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
@@ -21999,12 +22077,10 @@ room.onPlayerChat = function(player, message) {
 		if (room.getScores() == null) {
 			reiniciarValoresMapasAleatorios();
 			RSRMap = true;
-			room.setCustomStadium(getRSX10Map());
+			room.setCustomStadium(getRSX10Map());//balonSaqueArcoBlueEjeX
 			llenarParametrosRSRS2Entrenamiento(
-				-270,1779,815,942,1782,124,1692,1772,-920,1782,-1000,700,-1317,-480
-			  );
-			  
-			  
+				-270,1779,815,942,1782,124,1632,1772,-920,1782,-1000,600,-1317,-480
+			  );			  
 /*GKRedLimiteEjeXParam: any, 
 limiteEjeXLineasColoresMostrarParam: any, 
 limiteEjeYLineasColoresAbajoParam: any,
@@ -22025,251 +22101,58 @@ limiteEjeYLineasColoresAbajoParam: any,
 			whisper("No puedes cambiar el mapa mientras el juego esta en progreso", player.id);
 		}
 	}
-
-    if (player.admin == true){
-    if (message.indexOf("!") == 0) return false;
-	if (message['startsWith']('t ')) {
-		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
-		if (player[_0x21989d(0x128)] == 0x1) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
-			_0x2789fd['forEach'](function (_0x1f1703) {
-				var _0x541b0a = _0x21989d;
-				room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
-			});
-		}
-		if (player['team'] == 0x2) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
-			_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
-				var _0x9b122b = _0x21989d;
-				room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
-			});
-		}
-		return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
-	}
-    adminMessage = message;
-    message = message.split(/ +/);
-    	var adminChatColor = 0xFFD700; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		room.sendAnnouncement(`   « 👑 ADMIN ~ ` +  player.name + ` »: ` + adminMessage, null, adminChatColor, 'normal', 1);
-		return false;
 }
-
-	//EQUIPO ROJO CHAT
-	if (player.admin==false && ModoChatPausado.includes(player.id)==false  && player.team == 1) {
-		if (message['startsWith']('t ')) {
-			teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
-			if (player[_0x21989d(0x128)] == 0x1) {
-				var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
-				_0x2789fd['forEach'](function (_0x1f1703) {
-					var _0x541b0a = _0x21989d;
-					room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
-				});
-			}
-			if (player['team'] == 0x2) {
-				var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
-				_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
-					var _0x9b122b = _0x21989d;
-					room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
-				});
-			}
-			return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
-		}
-		ModoChatPausado.push(player.id);						
-		setTimeout(function(){
-				ModoChatPausado.splice(ModoChatPausado.indexOf(player.id),1);
-		}, 2000);
-	    adminMessage = message;
-    	message = message.split(/ +/);
-    	var RedChatColor = 0xff8e8e; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		//room.sendAnnouncement(` 🔴 «  ` +  player.name + `» : ` + adminMessage, null, RedChatColor, 'normal', 1);
-		//return false;
-		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔴 ~ ` +  player.name + `: ` + adminMessage, null, RedChatColor, 'normal', 1);
-		//" 🔴⚽ «" +  player.name + " » : ";
-		//bandera chat rojo
-		var textoPersonalizar = "" ;
-		textoPersonalizar+=" ";
-		//room.sendAnnouncement(`🔴 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-		
-		//si es maximo goleador o asistidor agregare un emoji antes
-		var goat = false;
-		if(buscarJugadorEstadisticas(player.id) != null){
-		
-			if(maximosGoleadores[0] != undefined && maximosAsistidores[0] != undefined){
-				//si es el goat
-				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
-				maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-					textoPersonalizar+=" 🐐";
-					goat = true;
-				}
-			}
-			if(!goat){
-				//emoji maximo goleador
-				if(maximosGoleadores[0] != undefined){
-					//si es max goleador y no es admin
-					if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-						//room.sendAnnouncement(` 🔴⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-						textoPersonalizar+=" ⚽" ;
-					}
-				}
-				//emoji maximo asistidor
-				if(maximosAsistidores[0] != undefined){
-					if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
-						textoPersonalizar+=" 👟";
-					}
-				}
-			}
-		}
-		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
-		room.sendAnnouncement(textoPersonalizar, null, RedChatColor, 'normal', 1);
-
-	
-		
-		return false;
+function personalizarTextoConEmojis(emoji,player){
+	var textoPersonalizar = "" ;
+	if(emoji != null){
+		textoPersonalizar+=" "+emoji+" ";
 	}
-	//}
-	if (ModoChatPausado.includes(player.id)==true){
-		room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);
-		return false;
-    }
-	//EQUIPO AZUL CHAT
-	if (player.admin==false && ModoChatPausado.includes(player.id)==false && player.team == 2) {
-
-	if (message['startsWith']('t ')) {
-		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
-		if (player[_0x21989d(0x128)] == 0x1) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
-			_0x2789fd['forEach'](function (_0x1f1703) {
-				var _0x541b0a = _0x21989d;
-				room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
-			});
+	var goat = false;
+	//si es maximo goleador o asistidor agregare un emoji antes
+	if(buscarJugadorEstadisticas(player.id) != null){
+		//si es el goat
+		if(maximosGoleadores[0] != undefined && maximosAsistidores[0] != undefined && maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
+		maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+			textoPersonalizar+=" 🐐";
+			goat = true;
 		}
-		if (player['team'] == 0x2) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
-			_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
-				var _0x9b122b = _0x21989d;
-				room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
-			});
+		if(!goat){
+			//emoji maximo goleador
+			if(maximosGoleadores[0] != undefined){
+				//si es max goleador y no es admin
+				if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
+					textoPersonalizar+=" ⚽" ;
+				}
+			}
+			//emoji maximo asistidor
+			if(maximosAsistidores[0] != undefined){
+				if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
+					textoPersonalizar+=" 👟";
+				}
+			}
 		}
-		return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
+	textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
 	}
-				ModoChatPausado.push(player.id);				
-				
-				setTimeout(function(){
-				ModoChatPausado.splice(ModoChatPausado.indexOf(player.id),1);
-				}, 2000);
-    adminMessage = message;
-    message = message.split(/ +/);
-    	var BlueChatColor = 0x8eb1ff; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		var textoPersonalizar = "" ;
-		textoPersonalizar+=" ";
-		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-		
-		//si es maximo goleador o asistidor agregare un emoji antes
-		var goat = false;
-		if(buscarJugadorEstadisticas(player.id) != null){
-			//si es el goat
-			if(maximosGoleadores[0] != undefined && maximosAsistidores[0] != undefined && maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
-			maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-				textoPersonalizar+=" 🐐";
-				goat = true;
-			}
-			if(!goat){
-				//emoji maximo goleador
-				if(maximosGoleadores[0] != undefined){
-					//si es max goleador y no es admin
-					if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-						//room.sendAnnouncement(` 🔵⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-						textoPersonalizar+=" ⚽" ;
-					}
-				}
-				//emoji maximo asistidor
-				if(maximosAsistidores[0] != undefined){
-					if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
-						textoPersonalizar+=" 👟";
-					}
-				}
-			}
-		}
-		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
-		room.sendAnnouncement(textoPersonalizar, null, BlueChatColor, 'normal', 1);
-		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  🔵 ~ ` +  player.name + `: ` + adminMessage, null, BlueChatColor, 'normal', 1);
-		//bandera chat azul
-		//room.sendAnnouncement(`🔵 « ` +  player.name + ` » : ` + adminMessage, null, BlueChatColor, 'normal', 1);
-		return false;
-	}
-		if (ModoChatPausado.includes(player.id)==true){
-			room.sendAnnouncement("[💬] El Modo pausado está activado. Sólo puedes enviar 1 mensaje cada 2 segundos. ⏱",player.id,0x00FF00,"bold",2);		
-			return false;
-    	}
-			if (player.admin==false && ModoChatPausado.includes(player.id)==false && player.team == 0) {
-	if (message['startsWith']('t ')) {
-		teamMsg = message[_0x21989d(0x1b6)](0x1)[_0x21989d(0x1a5)]();
-		if (player[_0x21989d(0x128)] == 0x1) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x5c1f91 => _0x5c1f91[_0x21989d(0x128)] == 0x1);
-			_0x2789fd['forEach'](function (_0x1f1703) {
-				var _0x541b0a = _0x21989d;
-				room['sendAnnouncement']('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔴] ' + player[_0x541b0a(0x161)] + ': ' + teamMsg, _0x1f1703['id'], 0xff322c, _0x541b0a(0x1d6), 0x1);
-			});
-		}
-		if (player['team'] == 0x2) {
-			var _0x2789fd = room[_0x21989d(0x145)]()[_0x21989d(0x1b9)](_0x469cea => _0x469cea[_0x21989d(0x128)] == 0x2);
-			_0x2789fd[_0x21989d(0x19a)](function (_0x42a9fa) {
-				var _0x9b122b = _0x21989d;
-				room[_0x9b122b(0x1d2)]('[𝐓𝐄𝐀𝐌 𝐂𝐇𝐀𝐓 🔵] | ' + player[_0x9b122b(0x161)] + ': ' + teamMsg, _0x42a9fa['id'], 0x00d6ff, _0x9b122b(0x1d6), 0x1);
-			});
-		}
-		return player['team'] == 0x0 && whisper('[⚠️] Debes estar en el Equipo Rojo 🔴 o en el Equipo Azul 🔵 para poder utilizar el Team Chat', player['id']), ![];
-	}
-				ModoChatPausado.push(player.id);				
-				
-				setTimeout(function(){
-				ModoChatPausado.splice(ModoChatPausado.indexOf(player.id),1);
-				}, 2000);
-    adminMessage = message;
-    message = message.split(/ +/);
-		//bandera chat espectador
-    	var SpectChatColor = 0xcccccc; // Formato: 0xCOLOR (sustituye COLOR por el color en HEXADECIMAL, ejemplo azul es 33FFE0)
-		
-		
-		var textoPersonalizar = "" ;
-		textoPersonalizar+=" 👁️";
-		//room.sendAnnouncement(`👁️ « ` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-		var goat = false;
-		//si es maximo goleador o asistidor agregare un emoji antes
-		if(buscarJugadorEstadisticas(player.id) != null){
-			//si es el goat
-			if(maximosGoleadores[0] != undefined && maximosAsistidores[0] != undefined && maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin &&
-			maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-				textoPersonalizar+=" 🐐";
-				goat = true;
-			}
-			if(!goat){
-				//emoji maximo goleador
-				if(maximosGoleadores[0] != undefined){
-					//si es max goleador y no es admin
-					if(maximosGoleadores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin){
-						//room.sendAnnouncement(` 🔵⚽ «` +  player.name + ` » : ` + adminMessage, null, RedChatColor, 'normal', 1);
-						textoPersonalizar+=" ⚽" ;
-					}
-				}
-				//emoji maximo asistidor
-				if(maximosAsistidores[0] != undefined){
-					if(maximosAsistidores[0].jugador.id == buscarJugadorEstadisticas(player.id).jugador.id && !player.admin ){
-						textoPersonalizar+=" 👟";
-					}
-				}
-			}
-		}
-		textoPersonalizar+=" « "+  player.name + " » : " + adminMessage;
-		room.sendAnnouncement(textoPersonalizar, null, SpectChatColor, 'normal', 1);
-
-		//room.sendAnnouncement(`« ID: ` +  player.id + ` »  👁️ ~ ` +  player.name + `: ` + adminMessage, null, SpectChatColor, 'normal', 1);
-		
-		return false;
-}	
-    if(CensuradorDeSpammeros(message)) return false;
-    if (message.indexOf("!") == 0) return false; 
+	return textoPersonalizar;
 }
+function llenarParametrosFutsal(limiteParedEjeYtopParam,limiteParedEjeXleftParam,gkRedLimiteEjeXParam){
+		limiteParedEjeYtop = limiteParedEjeYtopParam; 
+		limiteParedEjeYbottom = -limiteParedEjeYtop; 
 
+		limiteParedEjeXleft = limiteParedEjeXleftParam; 
+		limiteParedEjeXright = -limiteParedEjeXleft;
+
+		gkRedLimiteEjeX = gkRedLimiteEjeXParam;
+
+		if( gkRedLimiteEjeX != null ){
+			gkBlueLimiteEjeX = -gkBlueLimiteEjeX;
+		}else{
+			gkBlueLimiteEjeX = null;
+		}
+		/*room.sendAnnouncement(" Parametros : " + limiteParedEjeYtop + " " + limiteParedEjeYbottom );
+		room.sendAnnouncement(" " + limiteParedEjeXleft + " " + limiteParedEjeXright );
+		room.sendAnnouncement(" " + gkRedLimiteEjeX + " " + gkBlueLimiteEjeX);*/
+}
 function llenarParametrosRSRS2Entrenamiento(GKRedLimiteEjeXParam,limiteEjeXLineasColoresMostrarParam,limiteEjeYLineasColoresAbajoParam,limiteCanchaLateralAbajoParam,
 	limiteMapaDerechaParam,arcoDerechoPaloAbajoEjeYParam,balonSaqueArcoBlueEjeXParam,balonCornerDerechaEjeXParam,
 	balonCornerDerechaArribaEjeYParam,puntoCornerDerechaEjeXParam,puntoCornerDerechaEjeYArribaParam,radioCornerRSParam,areaRedGKEjeXParam
@@ -23143,6 +23026,8 @@ var tiempoBalonUltimaVezGolpeadoConPaseEfecto = 0 ;
 function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,numEfecto){
 	if(!RSRMap ){
 		if(pelotaTocaParedMapa(ballPosition.x,ballPosition.y)){
+
+			//room.sendAnnouncement("pelota toco pared.");
 			room.setDiscProperties(0,{xgravity : 0, ygravity :0});
 			if(numEfecto == 2){
 				pelotaMoviendoseConPowershot = false;
@@ -23153,6 +23038,7 @@ function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tie
 		}
 	}
 	if(pelotaEnMovimientoTocaJugador(distanciaMasCercaBalon)){
+		//room.sendAnnouncement("pelota toca jug.");
 		//room.sendAnnouncement(jugadorMasCercaBalon.name + " toco balon , se puso gravedad normal");
 		room.setDiscProperties(0,{xgravity : 0, ygravity :0});
 		if(numEfecto == 2){
@@ -23172,6 +23058,7 @@ function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tie
 		 limiteTiempo = TIEMPO_PASE_CON_EFECTO;
 	}
 	if(dif >= limiteTiempo ){
+		//room.sendAnnouncement("pelota paso tiempo max : " + limiteTiempo);
 		//room.sendAnnouncement("tiempo >= 1.8 " + dif + " seg.");
 		room.setDiscProperties(0,{xgravity : 0, ygravity :0});
 		if(numEfecto == 2){
@@ -23335,7 +23222,6 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 	if(pelotaMoviendoseConPowershot){ //despues del golpeo tiro potente con efecto.
 		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,2);
 	}
-
 	if(pelotaMoviendoseConPaseEfecto){//despues del golpeo pase con efecto.
 		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,1);
 	}
@@ -23398,7 +23284,7 @@ function realSoccerRef() {
 	blockGoalKick(); //red y blue GK
 	removeBlock(); //lineas colores laterales rojo/azul
 
-		if (game.time == gameTime){
+	if (game.time == gameTime){
 		game.rsCorner2 = false;
 		game.rsGoalKick2 = false;
 		game.lateral2 = false;
@@ -23415,17 +23301,12 @@ function realSoccerRef() {
 	room.sendAnnouncement("                                                       💔 🚫   Si la pelota sale del terreno de juego, se finalizará el partido. ✋ 🛑", null, 0xf9fa00, 'small', 0);
 		game.lastPlayAnnounced = true;
 	}
-
-
-	
 	if (game.rsCorner2 == true || game.rsGoalKick2 == true || game.lateral2 == true) { //add extra time
 		game.extraTimeCount++;
 	}
-	
 	if (game.rsTimer < 99999 && game.paused == false && game.rsActive == false && game.rsReady == true) {
 		game.rsTimer++;
 	}
-	
 	if (game.rsSwingTimer < 150 && game.rsCorner == false && game.rsGoalKick == false) {
 		game.rsSwingTimer++;
 		if (game.rsSwingTimer > 5) {
@@ -23435,8 +23316,6 @@ function realSoccerRef() {
 			room.setDiscProperties(0, {xgravity: 0, ygravity: 0});
 		}
 	}
-	
-	
 	if (game.boosterState == true) {
 		game.boosterCount++;
 	}
@@ -23446,13 +23325,10 @@ function realSoccerRef() {
 		game.boosterCount = 0;
 		room.setDiscProperties(0, {cMask: 63});
 	}
-	
-	
 	if (room.getBallPosition().x == 0 && room.getBallPosition().y == 0) {	
 		game.rsActive = true;
 		game.outStatus = "";
 	}
-	
 	if (game.rsActive == false && game.rsReady == true) { //expire barrier time
 		if (game.outStatus == "redThrow") {
 			if (game.rsTimer == throwTimeOut - 120) { // warning indicator
@@ -23516,17 +23392,15 @@ function realSoccerRef() {
 	
 	if (game.rsActive == true) {
 		//DETECTA FUERA DE CANCHA O DENTRO DE CANCHA.
-		//Si es saque de banda.
-		
+		//Si es saque de banda.		
 		if ((room.getBallPosition().y > limiteCanchaLateralAbajo || room.getBallPosition().y < limiteCanchaLateralArriba)) {
 			game.rsActive = false;
 			if (game.lastPlayAnnounced == true) {
 				room.pauseGame(true);
 				game.lastPlayAnnounced = false;
-    		teamPossFun();
-   		 room.sendAnnouncement("███████████████████ " + teamRed + "  " + scorerNumber(room.getScores().red) + "      🞬      " + scorerNumber(room.getScores().blue) + "  " + teamBlue + " ███████████████████ ", null, 0xffd559, "normal", 1);
+    			teamPossFun();
+   		 		room.sendAnnouncement("███████████████████ " + teamRed + "  " + scorerNumber(room.getScores().red) + "      🞬      " + scorerNumber(room.getScores().blue) + "  " + teamBlue + " ███████████████████ ", null, 0xffd559, "normal", 1);
 			}
-			
 			room.setDiscProperties(0, {xgravity: 0, ygravity: 0});
 			
 			game.ballOutPositionX = Math.round(room.getBallPosition().x * 10) / 10;
@@ -23557,7 +23431,7 @@ function realSoccerRef() {
 					game.lateral = true;
 					game.lateral2 = true;
 					room.setDiscProperties(0, {xspeed: 0, yspeed: 0, x: game.ballOutPositionX, y: game.throwInPosY, xgravity: 0, ygravity: 0});
-					announce("🖐️ Throw In: 🔵 Blue");
+					//announce("🖐️ Throw In: 🔵 Blue");
 					room.setDiscProperties(0, {color: "0x00ccff"});				
 				});	
 				sleep(100).then(() => {
@@ -23574,7 +23448,7 @@ function realSoccerRef() {
 					game.lateral = true;
 					game.lateral2 = true;
 					room.setDiscProperties(0, {xspeed: 0, yspeed: 0, x: game.ballOutPositionX, y: game.throwInPosY, xgravity: 0, ygravity: 0});
-					announce("🖐️ Throw In: 🔴 Red");
+				//	announce("🖐️ Throw In: 🔴 Red");
 					room.setDiscProperties(0, {color: "0xff223c"});				
 				});	
 				sleep(100).then(() => {
@@ -23800,7 +23674,7 @@ function realSoccerRef() {
 		if (room.getBallPosition().y < limiteCanchaLateralAbajo && room.getBallPosition().y > limiteCanchaLateralArriba && game.throwinKicked == false && game.pushedOut == false) { //if bad throw from push ball back into active without kick		
 		//if (room.getBallPosition().y < 930 && room.getBallPosition().y > -930 && game.throwinKicked == false && game.pushedOut == false) { //if bad throw from push ball back into active without kick		
 		//if (room.getBallPosition().y < limiteCanchaLateralAbajo && room.getBallPosition().y > limiteCanchaLateralArriba && game.throwinKicked == false && game.pushedOut == false) { //if bad throw from push ball back into active without kick		
-			room.sendAnnouncement("mal saque sin pegar");
+			//room.sendAnnouncement("mal saque sin pegar");
 			if (game.outStatus == "redThrow") { //switch to blue throw
 				game.rsTimer = 0;
 				game.warningCount++;
@@ -23826,7 +23700,7 @@ function realSoccerRef() {
 		//if (room.getBallPosition().y < 930 && room.getBallPosition().y > -930 && game.throwinKicked == true) { // if throw is good
 		if (room.getBallPosition().y < limiteCanchaLateralAbajo && room.getBallPosition().y > limiteCanchaLateralArriba && game.throwinKicked == true) { // if throw is good		
 		//if (room.getBallPosition().y < limiteCanchaLateralAbajo && room.getBallPosition().y > limiteCanchaLateralArriba && game.throwinKicked == true) { // if throw is good		
-			room.sendAnnouncement("buen saque.");
+			//room.sendAnnouncement("buen saque.");
 			game.lateral = false;
 			game.lateral2 = false;
 			game.outStatus = "";
@@ -24090,12 +23964,12 @@ function blockThrowIn() {
 				}
 				if (room.getDiscProperties(21).x != limiteEjeXLineasColoresMostrar) { // show bottom red line
 					room.setDiscProperties(21, {x: limiteEjeXLineasColoresMostrar});
-					room.sendAnnouncement("se puso linea roja x (x:1149): " + room.getDiscProperties(21).x);
+					//room.sendAnnouncement("se puso linea roja x (x:1149): " + room.getDiscProperties(21).x);
 
 				}
 				if (room.getDiscProperties(23).x != limiteEjeXLineasColoresEsconder) { // hide bottom blue line
 					room.setDiscProperties(23, {x: limiteEjeXLineasColoresEsconder});;//EL LARGO DE LA LINEA LLEGA HASTA -1149 (NO SE DEBERIA VER en juego se supone)
-					room.sendAnnouncement("se esconde linea azul x (x:-1149): " + room.getDiscProperties(23).x);
+					//room.sendAnnouncement("se esconde linea azul x (x:-1149): " + room.getDiscProperties(23).x);
 
 				}/*
 				if (room.getDiscProperties(21).x != 1779) { // show bottom red line
@@ -24202,53 +24076,42 @@ function blockGoalKick() {
 
 
 function removeBlock() {
-  var players = room.getPlayerList().filter((player) => player.team !== 0);
-  if (game.outStatus === "") {
-    players.forEach(function(player) {
-      if (player.team === 1 && room.getPlayerDiscProperties(player.id).cGroup !== room.CollisionFlags.red) {
-        room.setPlayerDiscProperties(player.id, { cGroup: room.CollisionFlags.red });
-      }
-      if (player.team === 2 && room.getPlayerDiscProperties(player.id).cGroup !== room.CollisionFlags.blue) {
-        room.setPlayerDiscProperties(player.id, { cGroup: room.CollisionFlags.blue });
-      }
-    });
-	//Lineas rojo/azul de arriba cuando hay saque banda
-    var disc17 = room.getDiscProperties(17);
-    if (disc17 !== null && disc17.x !== limiteEjeXLineasColoresEsconder) {
-      room.setDiscProperties(17, { x: limiteEjeXLineasColoresEsconder });
-    }
+	var players = room.getPlayerList().filter((player) => player.team !== 0);
+	if (game.outStatus === "") {
+		players.forEach(function(player) {
+		if (player.team === 1 && room.getPlayerDiscProperties(player.id).cGroup !== room.CollisionFlags.red) {
+			room.setPlayerDiscProperties(player.id, { cGroup: room.CollisionFlags.red });
+		}
+		if (player.team === 2 && room.getPlayerDiscProperties(player.id).cGroup !== room.CollisionFlags.blue) {
+			room.setPlayerDiscProperties(player.id, { cGroup: room.CollisionFlags.blue });
+		}
+		});
+		//Lineas rojo/azul de arriba cuando hay saque banda
+		var disc17 = room.getDiscProperties(17);
+		if (disc17 !== null && disc17.x !== limiteEjeXLineasColoresEsconder) {
+		room.setDiscProperties(17, { x: limiteEjeXLineasColoresEsconder });
+		}
 
-    var disc19 = room.getDiscProperties(19);
-    if (disc19 !== null && disc19.x !== limiteEjeXLineasColoresEsconder) {
-      room.setDiscProperties(19, { x: limiteEjeXLineasColoresEsconder });
-    }
-	//Lineas rojo/azul de abajo cuando hay saque banda
-    var disc21 = room.getDiscProperties(21);
-    if (disc21 !== null && disc21.x !== limiteEjeXLineasColoresEsconder) {
-      room.setDiscProperties(21, { x: limiteEjeXLineasColoresEsconder });
-    }
+		var disc19 = room.getDiscProperties(19);
+		if (disc19 !== null && disc19.x !== limiteEjeXLineasColoresEsconder) {
+		room.setDiscProperties(19, { x: limiteEjeXLineasColoresEsconder });
+		}
+		//Lineas rojo/azul de abajo cuando hay saque banda
+		var disc21 = room.getDiscProperties(21);
+		if (disc21 !== null && disc21.x !== limiteEjeXLineasColoresEsconder) {
+		room.setDiscProperties(21, { x: limiteEjeXLineasColoresEsconder });
+		}
 
-    var disc23 = room.getDiscProperties(23);
-    if (disc23 !== null && disc23.x !== limiteEjeXLineasColoresEsconder) {
-      room.setDiscProperties(23, { x: limiteEjeXLineasColoresEsconder });
-    }
-
-  /*
-  var disc21 = room.getDiscProperties(21); //linea color en bandas. 
-    if (disc21 !== null && disc21.x !== -1779) {
-      room.setDiscProperties(21, { x: -1779 });
-    }
-
-    var disc23 = room.getDiscProperties(23);//linea color en bandas. 
-    if (disc23 !== null && disc23.x !== -1779) {
-      room.setDiscProperties(23, { x: -1779 });
-	}*/
-}
+		var disc23 = room.getDiscProperties(23);
+		if (disc23 !== null && disc23.x !== limiteEjeXLineasColoresEsconder) {
+		room.setDiscProperties(23, { x: limiteEjeXLineasColoresEsconder });
+		}
+	}
 }
 
   
-
-  function decryptHex(str) {
+/*
+function decryptHex(str) {
     let hexString = str;
     let strOut = "";
     for (let x = 0; x < hexString.length; x += 2) {
@@ -24270,7 +24133,7 @@ function getGeoLocation(ip) {
       region: data.state_prov,
       city: data.city
     }));
-}
+}*/
 function anadirJugadorListaJugadoresEnPartida(player) {
 	var jugadorEstadisticaEnPartida = {
 	  jugador: { name: player.name, id: player.id, team: player.team },
@@ -24288,7 +24151,16 @@ function anadirJugadorListaJugadoresEnPartida(player) {
 	};
 	listaJugadoresEstadisticasEnPartida.push(jugadorEstadisticaEnPartida);
   }
-  
+
+
+function asignarEquipoJugadorNuevo(player,redTeamCount,blueTeamCount){
+	if (redTeamCount <= blueTeamCount) {
+		room.setPlayerTeam(player.id, 1); // Equipo rojo (team = 1)
+	} else {
+		room.setPlayerTeam(player.id, 2); // Equipo azul (team = 2)
+	}
+}
+
 let connections = []
 //bandera entrar join
 room.onPlayerJoin = function(player) {
@@ -24300,11 +24172,7 @@ room.onPlayerJoin = function(player) {
   if (jueganTodosMode) {
 	//room.sendAnnouncement("blue: "+blueTeamCount + " red : " + redTeamCount);
     // Asignar al jugador al equipo con menos jugadores
-    if (redTeamCount <= blueTeamCount) {
-      room.setPlayerTeam(player.id, 1); // Equipo rojo (team = 1)
-    } else {
-      room.setPlayerTeam(player.id, 2); // Equipo azul (team = 2)
-    }
+	asignarEquipoJugadorNuevo(player,redTeamCount,blueTeamCount);
   }else{
 	if(jugadoresVersus!=null){
 		if(redTeamCount < jugadoresVersus){
@@ -24314,9 +24182,10 @@ room.onPlayerJoin = function(player) {
 		}
 	}
   }
+  /*
   if(IpPlayers.includes(decryptHex(player.conn)) == true){
         room.kickPlayer(player.id,"❌ El admin ha baneado tu IP 📶 por imbecil", true);
-	}
+	}*/
     CreatePlayer(player);
     GetPlayer(player.id).auth = player.auth;
     GetPlayer(player.id).conn = player.conn;
@@ -24329,61 +24198,55 @@ room.onPlayerJoin = function(player) {
 	localStorage.setItem(player.auth,JSON.stringify(playerObject)); 
     }
    let conn = connections.find(a => a[1] === player.conn);
-            if (conn) {
-				//bandera kick ip
-				//room.kickPlayer(player.id, "🚫 Otro jugador tiene tu misma IP. No se permite duplicados.", true)
-            }
-            else {
-            connections.push([player.id, player.conn]);
-            }
+    if (conn) {
+		//bandera kick ip
+		//room.kickPlayer(player.id, "🚫 Otro jugador tiene tu misma IP. No se permite duplicados.", true)
+    }
+    else {
+        connections.push([player.id, player.conn]);
+    }
     playerName = player.name.replace(/ /g,"_");
-var SaludosRandomBot = ['👋 ¡bienvenido al host!', '😊 ¡Hola pa!', '🎉 ¡acabas de unirte al host!', '🌟 ¡te damos las bienvenida!', '😄 ¡nos alegra mucho que nos elijas!', '¡hola! 😎 llegó el más crack.', '¡nos hacias falta en éste host. 😉', '¡hola!!! 🙌', '🙏 gracias por unirte a nuestra comunidad.', '¡te damos la bienvenida!', '😮 ¡ha llegado! Se acabó la fiesta.', '¡te estábamos esperando!', '😮 ¡está aquí, tal y como predijo la profecía!', '¡acaba de unirse! ¡Hagan como que están jugando!', '¡acaba de aterrizar! ✈️', '¡se ha unido!', '¡ha venido a carrear conos y a marcar muchos goles.', '¡está aquí!', '¡se ha unido al host! ¡Es superefectivo!', '¡se ha unido! Ahora deberán jugar más que el 100%.', '¡acaba de unirse... ¿O no?', '¡MIRÁ QUIÉN LLEGÓ! ¡Es un pájaro! ¡Es un avión! Ah no, no he dicho nada. Flashé', '¡hola! quédate un rato y disfruta.', '¡llegó el más grande!', '¡ha ingresado! Eh muchachos, miren quién llegó.', '¡Te estábamos esperando! ( ͡° ͜ʖ ͡°)', '¡se ha unido al host!', '¡acaba de llegar!', '¡apareció! ¡cuidado que es salvaje!', '¡Hola!! ¿Alguien lo andaba buscando?', '¡te estabamos esperando! 😊'];
+	var SaludosRandomBot = ['👋 ¡bienvenido al host!', '😊 ¡Hola pa!', '🎉 ¡acabas de unirte al host!', '🌟 ¡te damos las bienvenida!', '😄 ¡nos alegra mucho que nos elijas!', '¡hola! 😎 llegó el más crack.', '¡nos hacias falta en éste host. 😉', '¡hola!!! 🙌', '🙏 gracias por unirte a nuestra comunidad.', '¡te damos la bienvenida!', '😮 ¡ha llegado! Se acabó la fiesta.', '¡te estábamos esperando!', '😮 ¡está aquí, tal y como predijo la profecía!', '¡acaba de unirse! ¡Hagan como que están jugando!', '¡acaba de aterrizar! ✈️', '¡se ha unido!', '¡ha venido a carrear conos y a marcar muchos goles.', '¡está aquí!', '¡se ha unido al host! ¡Es superefectivo!', '¡se ha unido! Ahora deberán jugar más que el 100%.', '¡acaba de unirse... ¿O no?', '¡MIRÁ QUIÉN LLEGÓ! ¡Es un pájaro! ¡Es un avión! Ah no, no he dicho nada. Flashé', '¡hola! quédate un rato y disfruta.', '¡llegó el más grande!', '¡ha ingresado! Eh muchachos, miren quién llegó.', '¡Te estábamos esperando! ( ͡° ͜ʖ ͡°)', '¡se ha unido al host!', '¡acaba de llegar!', '¡apareció! ¡cuidado que es salvaje!', '¡Hola!! ¿Alguien lo andaba buscando?', '¡te estabamos esperando! 😊'];
     var GeneradorRandom = SaludosRandomBot[(Math.random() * SaludosRandomBot.length) | 0]
-getGeoLocation(decryptHex(player.conn)).then(location => {
-  //room.sendAnnouncement(`[📶🔒]💥 Hola ${playerName} 🥶`, player.id, 0x06ff00, 'normal', 0); //2 = sonido
-  room.sendAnnouncement("[⌨📶🔒] ¡Hola " + playerName + "! Escribe '!help' en el chat para ver los comandos. ¡Estamos aquí para ayudarte! 🌟🎮", player.id, 0x00FFB3, "normal", 0);
-});
 
-room.sendAnnouncement( playerName + " "+ GeneradorRandom, null, 0x00FFB3, "normal", 0);
+	/*getGeoLocation(decryptHex(player.conn)).then(location => { //Problemas aca : 
+	//room.sendAnnouncement(`[📶🔒]💥 Hola ${playerName} 🥶`, player.id, 0x06ff00, 'normal', 0); //2 = sonido
+	room.sendAnnouncement("[⌨📶🔒] ¡Hola " + playerName + "! Escribe '!help' en el chat para ver los comandos. ¡Estamos aquí para ayudarte! 🌟🎮", player.id, 0x00FFB3, "normal", 0);
+	});*/
+	room.sendAnnouncement("[⌨📶🔒] ¡Hola " + playerName + "! Escribe '!help' en el chat para ver los comandos. ¡Estamos aquí para ayudarte! 🌟🎮", player.id, 0x00FFB3, "normal", 0);
+	room.sendAnnouncement( playerName + " "+ GeneradorRandom, null, 0x00FFB3, "normal", 0);
 
 /*
 setTimeout(function() {
 //room.sendAnnouncement("[⌨] ¡Hola " + playerName + "! Escribe '!help' en el chat para ver los comandos. ¡Estamos aquí para ayudarte! 🌟🎮", player.id, 0x00FFB3, "normal", 0);
 }, 5000);
 */
-setTimeout(function() {
-  //room.sendAnnouncement("⚽️ ¡EQUIPOS SELECCIONADOS! ⚔️ \n\nEquipo Rojo 🔴: " + teamRed + "  vs  Equipo Azul 🔵: " + teamBlue + " \n\n¡Que empiece el juego! 🎉⚽️", player.id, 0x00FFB3, "normal", 0);
-	if(efectoPowerShot){
-		room.sendAnnouncement("El powershot esta activado en la sala.",player.id, 0xffffff, "small-bold", 1);
-		room.sendAnnouncement("Balon color verde : Das pase con efecto",player.id, 0xffffff, "small-bold", 1);
-		room.sendAnnouncement("Balon color rojo : Das tiro potente con efecto",player.id, 0xffffff, "small-bold", 1);
-	}	
-}, 3000);
+	setTimeout(function() {
+	//room.sendAnnouncement("⚽️ ¡EQUIPOS SELECCIONADOS! ⚔️ \n\nEquipo Rojo 🔴: " + teamRed + "  vs  Equipo Azul 🔵: " + teamBlue + " \n\n¡Que empiece el juego! 🎉⚽️", player.id, 0x00FFB3, "normal", 0);
+		if(efectoPowerShot){
+			room.sendAnnouncement("El powershot esta activado en la sala.",player.id, 0xffffff, "small-bold", 1);
+			room.sendAnnouncement("Balon verde : Pase con efecto",player.id, 0xffffff, "small-bold", 1);
+			room.sendAnnouncement("Balon rojo : Tiro potente",player.id, 0xffffff, "small-bold", 1);
+		}	
+	}, 3000);
 //añadir jugador a la  lista en partida.
+	anadirJugadorListaJugadoresEnPartida(player);
+	var jugadorEstadisticas = {
+		jugador: {name : player.name , id : player.id, team : player.team },
+		estadisticas : {
+			partidosTotal: 0,
+			partidosGanados:0,
+			partidosPerdidos:0,
+			porcentajePartidosGanados: 0,
+			porcentajePartidosPerdidos: 0,
+			goles:0,
+			autogoles:0,
+			asistencias:0,
+			kda: 0, //es goles+asist-autogoles
+		}
 
-anadirJugadorListaJugadoresEnPartida(player);
-//var lj = room.getPlayerList();
-//agregarJugadoresListaJugadoresEstadisticasEnPartidaSiFalta(lj);
-//
-//añadir jugador a la lista.
-
-// ARREGLAR ACTUALIZACION > actualizarEquiposDeJugadores
-var jugadorEstadisticas = {
-	jugador: {name : player.name , id : player.id, team : player.team },
-	estadisticas : {
-		partidosTotal: 0,
-		partidosGanados:0,
-		partidosPerdidos:0,
-		porcentajePartidosGanados: 0,
-		porcentajePartidosPerdidos: 0,
-		goles:0,
-		autogoles:0,
-		asistencias:0,
-		kda: 0, //es goles+asist-autogoles
-	}
-
-};//player,partidos total, partidos ganados,partidos perdidos, % ganados,%perdidos,goles, asistencias
-listaJugadoresEstadisticas.push(jugadorEstadisticas);
+	};//player,partidos total, partidos ganados,partidos perdidos, % ganados,%perdidos,goles, asistencias
+	listaJugadoresEstadisticas.push(jugadorEstadisticas);
 }
 
 function rfc3986EncodeURIComponent(_0x23ab4f) {

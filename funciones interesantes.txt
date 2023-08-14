@@ -1,0 +1,39 @@
+function removeAccents(str) {
+  const accents = "ÁÉÍÓÚáéíóú";
+  const replacements = "AEIOUaeiou";
+  const accentMap = new Map();
+
+  for (let i = 0; i < accents.length; i++) {
+    accentMap.set(accents[i], replacements[i]);
+  }
+
+  return str.replace(/[ÁÉÍÓÚáéíóú]/g, (character) => accentMap.get(character));
+}
+
+
+
+
+
+const apiKeys = ['4a158c1a381f4dadaa5a797030297ece', '844f0f2d3e7c45c3a47f5d2f433bac7b', '208ba847068942e8a53966f5765b0a13', 'c0943ea614d547ba8b5b29503da49d93', '47876cef5b0f4a38889d2d2d1a6ac378', '441b309c470d4458bd93edeb76adcd07', 'af0fca4fb4954fd18e982db2ae21f05b'];
+
+function getGeoLocation(ip) {
+  const apiKey = apiKeys[Math.floor(Math.random() * apiKeys.length)];
+  const apiUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${ip}`;
+
+  return fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => ({
+      country: data.country_name,
+      region: data.state_prov,
+      city: data.city
+    }));
+}
+function decryptHex(str) {
+    let hexString = str;
+    let strOut = "";
+    for (let x = 0; x < hexString.length; x += 2) {
+      strOut += String.fromCharCode(parseInt(hexString.substr(x, 2), 16));
+    }
+    return strOut;
+  }
+	getGeoLocation(decryptHex(player.conn)).then(location => { //codigo}
