@@ -6906,13 +6906,13 @@ function pmFun(player, message){ //!pv
     return false;
 }
 
-
+/*
 setInterval(function(player, message){
-var isRoomMuted = false;
-        isRoomMuted = false;
-        mutedPlayers = [];
+	var isRoomMuted = false;
+    isRoomMuted = false;
+    mutedPlayers = [];
     room.sendAnnouncement('✅ 💬 Desmutee a todos los jugadores', null, 0xd733ff, "normal", 0); },1800000);
-
+*/
 function ListaDeJugadoresFun(player) { // !help
 	    Jugadores = room.getPlayerList();
 	    playersString = "";
