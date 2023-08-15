@@ -2,13 +2,13 @@
 var NombreHost = " todos juegan + tiros potentes "
 var CantidadDeJugadores = 22 // La cantidad MÁXIMA de jugadores que pueden entrar al host (Cantidad mínima: 1 - Cantidad máxima: 30)
 
-var ClaveParaSerAdmin = "!8xx282m82"  // La clave va dentro de las comillas
+var ClaveParaSerAdmin = "a"  // La clave va dentro de las comillas
 var TiempoDeJuego = 5 // Son la cantidad de minutos que quieres que duren los partidos.
 var TamanoMinimoPermitido = 13 //14 // Tamaño mínimo permitido para un jugador
 var TamanoMaximoPermitido = 17 //16 Tamaño máximo permitido para un jugador
 // ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ CONFIGURACIÓN INTERMEDIA ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 var PasswordDelHost = null    // Dejar "null" si no quieres que tu Host tenga una Contraseña. Si quieres una contraseña,  reemplazar el null por la contraseña que quieras (debe llevar comillas).
-var VisibilidadDelHost = true // Si quieres que tu sala sea pública dejar 'true'. Si quieres que sea privada, poner 'false'.
+var VisibilidadDelHost = false // Si quieres que tu sala sea pública dejar 'true'. Si quieres que sea privada, poner 'false'.
 var BanderaDelHost = 'CL' // Se puede reemplazar GU (Bandera de Guam) por la que quieran.
 
 // Bandera HaxBall = FAM   
@@ -17,8 +17,7 @@ var BanderaDelHost = 'CL' // Se puede reemplazar GU (Bandera de Guam) por la que
 
 var ChallongeLink = 'challonge.com/es/' // Link de tu torneo
 
-let equipoAzulPosesion = 0;
-let equipoRojoPosesion = 0;
+
 var regla1 = '⯌ 4 vs 4'
 var regla2 = '⯌ Equipo que gana el partido, continua jugando. 🏆'
 var regla3 = '⯌ Dos jugadores ingresan por orden de Espectadores. Los otros dos restantes, los puede elegir.'
@@ -63,8 +62,8 @@ var Latitud = LatitudChile
 // ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 
 
 // Variables globales
-var posesionEquipoA = 0;
-var posesionEquipoB = 0;
+var posesionEquipoA = 0; //!poss
+var posesionEquipoB = 0; //!poss
 var ColorFondoRS = '6d945b'
 var RSRMap;
 var PartidoArrancado;
@@ -106,7 +105,7 @@ var jugadoresVersus = null;
 /*incia partida-> listaJugadoresEstadisticasEnPartida = [jugador: player.name , id:player.id | estadisticas: goles,autog,asist,kda]*/ 
 var listaJugadoresEstadisticasEnPartida=[]; 
 var golesRojoCopia = 0 ;
-var golesAzulCopia =0 ;
+var golesAzulCopia = 0 ;
 // Variables para almacenar los datos de la publicidad
 let advertisingInterval;
 let advertisingMessage = '';
@@ -6412,8 +6411,8 @@ var contJuegoEmpezar = 0;
 room.onGameStart = function(byPlayer) {
   contJuegoEmpezar+=1;
   //room.sendAnnouncement("========== JUEGO EMPEZADO ============= CONT:"+contJuegoEmpezar);
-  posesionEquipoA = 0;
-  posesionEquipoB = 0;
+  posesionEquipoA = 0; //!poss
+  posesionEquipoB = 0; //!poss
   let players = room.getPlayerList();
   let redTeam = players.filter(p => p.team === 1);
   let blueTeam = players.filter(p => p.team === 2);
@@ -6643,7 +6642,8 @@ function mostrarDatosPartida(){
 	//resultado partido.
 	room.sendAnnouncement(`${toMathBoldSmall(teamRed)} ${golesRojoCopia} 🆚 ${golesAzulCopia} ${toMathBoldSmall(teamBlue)}`,null,0xF9F264, 'bold', 0);
 	//posesion balon
-	mostrarPosesionBalon();
+    var mensaje = ' ' + teamRed + ' ' + getPossRedPorcentaje().toFixed(2) + '%    -    ' + teamBlue + ' ' + getPossBluePorcentaje().toFixed(2) + '%';
+    room.sendAnnouncement("Poss. %⚽ : "+ mensaje,null,0xF9F264, 'bold', 0);
 	//mvp
 	mostrarMVPdelPartido();
 
@@ -6762,12 +6762,6 @@ room.onPlayerBallKick = function(player) {
 		" kick st: " + kickStd);
 */
 
-  // Incrementar la posesión de balón del equipo del jugador que realiza el disparo
-  if (player.team === 1) {
-    equipoAzulPosesion++;
-  } else if (player.team === 2) {
-    equipoRojoPosesion++;
-  }
   
   game.rsTouchTeam = player.team;
   game.updateLastKicker(player.id, player.name, player.team);
@@ -18379,46 +18373,40 @@ function updateTeamPoss(value){
     if (value[1] == 2) bluePoss += value[0];
 }
  
+function getPossRedPorcentaje(){
+    var totalPosesion = posesionEquipoA + posesionEquipoB;
+	var posesionRed = totalPosesion === 0 ? 0 : (posesionEquipoA / totalPosesion) * 100;
+	return posesionRed;
+}
+function getPossBluePorcentaje(){
+    var totalPosesion = posesionEquipoA + posesionEquipoB;
+    var posesionBlue = totalPosesion === 0 ? 0 : (posesionEquipoB / totalPosesion) * 100;
+	return posesionBlue;
+}
 var bluePoss;
 var redPoss;
 var timeOnHalves;
 //bandera posesion balon
+//cuenta posesion por tiempo con balon. !poss
+//mostrarDatosPartida -> actualizaar
 function PosesionBalonFun(player, message){
    // Enviar el anuncio con el porcentaje de posesión de cada equipo
-    if (room.getScores() == null) return false;
+    if (room.getScores() == null) { //Si partido no esta en curso
+		return false;
+	}
     bluePoss = 0;
     redPoss = 0;
     ballCarrying.forEach(updateTeamPoss);
-    var redPossPercent = Math.round((redPoss / (redPoss + bluePoss + 0.000001)) * 100);
-    var bluePossPercent = Math.round((bluePoss / (redPoss + bluePoss + 0.000001)) * 100);
-    var totalPosesion = posesionEquipoA + posesionEquipoB;
-    var porcentajeEquipoA = totalPosesion === 0 ? 0 : (posesionEquipoA / totalPosesion) * 100;
-    var porcentajeEquipoB = totalPosesion === 0 ? 0 : (posesionEquipoB / totalPosesion) * 100;
-
-    var mensaje = 'Posesión de balón %⚽:\n ' + teamRed + ': ' + porcentajeEquipoA.toFixed(2) + '%\n ' + teamBlue + ': ' + porcentajeEquipoB.toFixed(2) + '%';
-    room.sendAnnouncement(mensaje);
-    var timeOnRedHalf = Math.round((timeOnHalves[0] / (timeOnHalves[0] + timeOnHalves[1] + 0.000001)) * 100);
+    var porcentajeEquipoA = getPossRedPorcentaje(); 
+	var porcentajeEquipoB = getPossBluePorcentaje();
+    var mensaje = 'Posesión %⚽: ' + teamRed + ' ' + porcentajeEquipoA.toFixed(2) + '%      ' + teamBlue + ' ' + porcentajeEquipoB.toFixed(2) + '%';
+    room.sendAnnouncement(mensaje, player.id, 0x33FFB4, "normal", 0);
+    
+	var timeOnRedHalf = Math.round((timeOnHalves[0] / (timeOnHalves[0] + timeOnHalves[1] + 0.000001)) * 100);
     var timeOnBlueHalf = Math.round((timeOnHalves[1] / (timeOnHalves[0] + timeOnHalves[1] + 0.000001)) * 100);
     room.sendAnnouncement("Pelota en campo %⚽ 𒁂  [ " +  teamRed + "  " + timeOnRedHalf + "% ] 🆚 [ " +  teamBlue + "  " + timeOnBlueHalf + "% ] 𒁂" , player.id, 0x33FFB4, "normal", 0);
 }
-function teamPossFun(player, message){
-    // Enviar el anuncio con el porcentaje de posesión de cada equipo
-    if (room.getScores() == null) return false;
-    bluePoss = 0;
-    redPoss = 0
-    ballCarrying.forEach(updateTeamPoss);
-    var redPossPercent = Math.round((redPoss / (redPoss + bluePoss + 0.000001)) * 100);
-    var bluePossPercent = Math.round((bluePoss / (redPoss + bluePoss + 0.000001)) * 100);
-    var totalPosesion = posesionEquipoA + posesionEquipoB;
-    var porcentajeEquipoA = totalPosesion === 0 ? 0 : (posesionEquipoA / totalPosesion) * 100;
-    var porcentajeEquipoB = totalPosesion === 0 ? 0 : (posesionEquipoB / totalPosesion) * 100;
 
-    var mensaje = 'Posesión de balón %⚽:\n ' + teamRed + ': ' + porcentajeEquipoA.toFixed(2) + '%\n ' + teamBlue + ': ' + porcentajeEquipoB.toFixed(2) + '%';
-    room.sendAnnouncement(mensaje);
-    var timeOnRedHalf = Math.round((timeOnHalves[0] / (timeOnHalves[0] + timeOnHalves[1] + 0.000001)) * 100);
-    var timeOnBlueHalf = Math.round((timeOnHalves[1] / (timeOnHalves[0] + timeOnHalves[1] + 0.000001)) * 100);
-    room.sendAnnouncement("Pelota en campo %⚽ 𒁂  [ " + teamRed + "  " + timeOnRedHalf + "% ] 🆚 [ " + teamBlue + "  " + timeOnBlueHalf + "% ] 𒁂" , null, 0x33FFB4, "normal", 0);
-} 
 function BanIpFun(player, message) { // !banip Anddy
     // Previene que alguien hable en la sala (utiliza el apodo, no el ID)
     // necesita ser administrador
@@ -21221,22 +21209,7 @@ function inicializarVersus(jugadoresNoAFKs) {
 		  }
 	},1000);
 }
-function mostrarPosesionBalon(){
-	const totalPosesion = equipoAzulPosesion + equipoRojoPosesion;
-    let porcentajeAzul = 0;
-    let porcentajeRojo = 0;
 
-    // Calcular el porcentaje de posesión de cada equipo
-    if (totalPosesion > 0) {
-      porcentajeAzul = (equipoAzulPosesion / totalPosesion) * 100;
-      porcentajeRojo = (equipoRojoPosesion / totalPosesion) * 100;
-    }
-
-    // Enviar el anuncio con el porcentaje de posesión de cada equipo
-    room.sendAnnouncement(
-     teamRed + `  ${porcentajeAzul.toFixed(2)}% - ` + teamBlue + ` : ${porcentajeRojo.toFixed(2)}%`,null,0xF9F264,'bold',0
-    );
-}
 /*
 entra jugador -> aumenta lista jugadores
 sale jugador -> resta lista jugadores y stats.
@@ -21616,9 +21589,7 @@ room.onPlayerChat = function(player, message) {
 		room.sendAnnouncement("¡El equilibrio automático de equipos ha sido desactivado!");
 		}
 	}
-	if (message === "!posesion") {
-		mostrarPosesionBalon();
-	}
+
 	if (player.admin) {
 		// Comando para activar el "Modo Juegan Todos"
 		if (message === "!juegantodos") {
@@ -22921,11 +22892,15 @@ function actualizarPowerShootJugador(player, distance) {
 	  }
 	}
   }
+
   
+const TipoEfecto = {
+	PASE_CON_EFECTO: 'PASE_CON_EFECTO',
+	TIRO_POTENTE_CON_EFECTO: 'TIRO_POTENTE_CON_EFECTO'
+};
 
 function ajustarGravedadBalon(restaX,restaY,tipoEfecto){
 	// para ajustar la gravedad tengo que tener en cuenta : velocidad balon x,y (xspeed,yspeed) 
-
 	//+velocidad que sale el balon disparado, + larga la curva (+amplitud)
 	//-velocidad que sal el balon , - amplitud curva
 	//var velx = room.getDiscProperties(0).xspeed;
@@ -22934,10 +22909,12 @@ function ajustarGravedadBalon(restaX,restaY,tipoEfecto){
 	var ygravityPoner;
 	if(restaX > 0 && restaY < 0){ //0.05 en y. //original : 0.04 <- usar esta.
 		//room.sendAnnouncement("pelota abajo a la izq.");
-		if(tipoEfecto == "pase con efecto"){
+		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
+			room.sendAnnouncement("pase con efecto");
 			xgravityPoner = -0.01;
-			ygravityPoner = -0.035;
+			ygravityPoner = -0.04;
 		}else{
+			room.sendAnnouncement("tiro potente");
 			xgravityPoner = -0.04;
 			ygravityPoner = -0.05;
 		}
@@ -22945,10 +22922,13 @@ function ajustarGravedadBalon(restaX,restaY,tipoEfecto){
 		return true;
 	}else if (restaX > 0 && restaY > 0){ //x -> + importante
 		//room.sendAnnouncement("pelota arriba a la izq.");
-		if(tipoEfecto == "pase con efecto"){
+		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
+			room.sendAnnouncement("pase con efecto");
 			xgravityPoner = -0.01;
-			ygravityPoner = 0.035;
+			ygravityPoner = 0.04;
 		}else{
+			room.sendAnnouncement("tiro potente");
+
 			xgravityPoner = -0.04;
 			ygravityPoner = 0.05;
 		}
@@ -22957,10 +22937,14 @@ function ajustarGravedadBalon(restaX,restaY,tipoEfecto){
 		return true;
 	}else if(restaX < 0 && restaY > 0){ //x -> + importante.
 		//room.sendAnnouncement("pelota arriba a la der.")
-		if(tipoEfecto == "pase con efecto"){
+		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
 			xgravityPoner = 0.01;
-			ygravityPoner = 0.035;
+			ygravityPoner = 0.04;
+			room.sendAnnouncement("pase con efecto");
+
 		}else{
+			room.sendAnnouncement("tiro potente");
+
 			xgravityPoner = 0.04;
 			ygravityPoner = 0.05;
 		}
@@ -22968,10 +22952,13 @@ function ajustarGravedadBalon(restaX,restaY,tipoEfecto){
 		return true;
 	}else if (restaX < 0 && restaY < 0){
 		//room.sendAnnouncement("pelota abajo a la der.");
-		if(tipoEfecto == "pase con efecto"){
+		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
 			xgravityPoner = 0.01;
-			ygravityPoner = -0.035;
+			ygravityPoner = -0.04;
+			room.sendAnnouncement("pase con efecto");
+
 		}else{
+			room.sendAnnouncement("tiro potente");
 			xgravityPoner = 0.04;
 			ygravityPoner = -0.05;
 		}
@@ -23023,15 +23010,14 @@ var tiempoBalonUltimaVezGolpeado = 0;
 var tiempoBalonUltimaVezGolpeadoConPaseEfecto = 0 ;
 
 //num efecto -> 1 = es pase con efecto. , 2 = es tiro potente con efecto.
-function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,numEfecto){
+function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,tipoEfecto){
 	if(!RSRMap ){
 		if(pelotaTocaParedMapa(ballPosition.x,ballPosition.y)){
-
 			//room.sendAnnouncement("pelota toco pared.");
 			room.setDiscProperties(0,{xgravity : 0, ygravity :0});
-			if(numEfecto == 2){
+			if(tipoEfecto == TipoEfecto.TIRO_POTENTE_CON_EFECTO){
 				pelotaMoviendoseConPowershot = false;
-			}else if (numEfecto == 1){
+			}else if (tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
 				pelotaMoviendoseConPaseEfecto = false;
 			}
 			return true;
@@ -23041,9 +23027,9 @@ function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tie
 		//room.sendAnnouncement("pelota toca jug.");
 		//room.sendAnnouncement(jugadorMasCercaBalon.name + " toco balon , se puso gravedad normal");
 		room.setDiscProperties(0,{xgravity : 0, ygravity :0});
-		if(numEfecto == 2){
+		if(tipoEfecto == TipoEfecto.TIRO_POTENTE_CON_EFECTO){
 			pelotaMoviendoseConPowershot = false;
-		}else if (numEfecto == 1){
+		}else if (tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
 			pelotaMoviendoseConPaseEfecto = false;
 		}
 		return true;
@@ -23061,12 +23047,11 @@ function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tie
 		//room.sendAnnouncement("pelota paso tiempo max : " + limiteTiempo);
 		//room.sendAnnouncement("tiempo >= 1.8 " + dif + " seg.");
 		room.setDiscProperties(0,{xgravity : 0, ygravity :0});
-		if(numEfecto == 2){
+		if(tipoEfecto == TipoEfecto.TIRO_POTENTE_CON_EFECTO){
 			//room.sendAnnouncement("tiro potente : " + limiteTiempo);
 			pelotaMoviendoseConPowershot = false;
-		}else if (numEfecto == 1){
+		}else if (tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
 			//room.sendAnnouncement(" pase con efecto : " + limiteTiempo);
-
 			pelotaMoviendoseConPaseEfecto = false;
 		}
 		return true;
@@ -23121,19 +23106,58 @@ function verificarJugadoresConPosiciones(jugadoresRedPosiciones, jugadoresBluePo
     // Puedes realizar cualquier verificación o procesamiento adicional que necesites con estas listas
     // Por ejemplo, contar cuántos jugadores hay en cada posición o realizar alguna acción específica.
 }
-
+function actualizarJugadorMasCercanoBalon(jugadorMasCercaBalon,distanciaMasCercaBalon,players,ballPosition){
+	for (var i = 0; i < players.length; i++) {
+		var player = players[i];
+		/*var bcoef1 =  room.getPlayerDiscProperties(player.id).bCoef;
+			var invMas = room.getPlayerDiscProperties(player.id).invMass;
+			var daming = room.getPlayerDiscProperties(player.id).damping;
+			var accJug =  room.getPlayerDiscProperties(player.id).acceleration;
+			var kickAcc =  room.getPlayerDiscProperties(player.id).kickingAcceleration;
+			var kickDump = room.getPlayerDiscProperties(player.id).kickingDamping;
+			var kickSt =  room.getPlayerDiscProperties(player.id).kickStrength;
+			room.setPlayerDiscProperties(player.id, {invMass: 5});
+			room.sendAnnouncement("DATOS JUG: bcoef: " +bcoef1+" inv mass: "+invMas+" damping: "+daming+" jug acc: " +accJug+" kick acc : " + kickAcc +" kickDump : " + kickDump +
+					" kick st: " + kickSt);
+					*/
+		// Verifica si el jugador tiene una posición válida
+		if (player.position === null || player.position === undefined) {
+			continue; // Salta al siguiente jugador si no tiene una posición válida
+		}
+		var playerPosition = room.getPlayerDiscProperties(player.id);
+		//room.sendAnnouncement("x: "+playerPosition.x + "y : "+playerPosition.y);
+		// Calcula la distancia entre el jugador y la pelota
+		var distance = Math.sqrt(Math.pow(playerPosition.x - ballPosition.x, 2) + Math.pow(playerPosition.y - ballPosition.y, 2));
+		//Obtengo jugador mas cercano a balon
+		if(jugadorMasCercaBalon == null){
+			jugadorMasCercaBalon = player;
+			distanciaMasCercaBalon = distance;
+		}else{
+			if( distance < distanciaMasCercaBalon){
+				jugadorMasCercaBalon = player;
+				distanciaMasCercaBalon = distance;
+			}
+		}
+		
+		// Actualiza la posesión del equipo correspondiente
+		if (distance <= 24) { //si toca balon.
+			if (player.team === 1) {
+				posesionEquipoA++;
+			} else if (player.team === 2) {
+				posesionEquipoB++;
+			}
+		}
+	}
+}
   
 pelotaMoviendoseConPaseEfecto = false;
 //es room.onGametick -> se ejecuta constantemente caundo la partida esta en curso.
 room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 	//room.sendAnnouncement("room gametick");
 
-  var players = room.getPlayerList();
-  var ballPosition = room.getBallPosition();
-  var tiempoActual = room.getScores().time;
-
-  var jugadorMasCercaBalon = null;
-  var distanciaMasCercaBalon = null;
+	var players = room.getPlayerList();
+	var ballPosition = room.getBallPosition();
+	var tiempoActual = room.getScores().time;
   
   //room.sendAnnouncement("time: "+room.getScores().time);
 	//room.sendAnnouncement("x: " + ballPosition.x + " y  : " + ballPosition.y);
@@ -23144,75 +23168,40 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 		var golpeBalonSiguienteTickY = room.getBallPosition().y;
 		var restaX = posBalonPaseConEfectoX - golpeBalonSiguienteTickX; //frame inicio x- frame final x
 		var restaY = posBalonPaseConEfectoY - golpeBalonSiguienteTickY;
-		ajustarGravedadBalon(restaX,restaY); //pone gravedad.
+		ajustarGravedadBalon(restaX,restaY,TipoEfecto.PASE_CON_EFECTO); //pone gravedad.
 		balonGolpeadoConPaseEfecto = false;
 		pelotaMoviendoseConPaseEfecto = true;
 		tiempoBalonUltimaVezGolpeadoConPaseEfecto = tiempoActual;
 	}
-  if(balonGolpeado){ //se ejecuta despues de que el jugador pateo balon.
-	//guardo esta como el ultimo frame.
-	//Calculo posicion del balon en este frame, despues de que el jugador haya golpeado el balon.
-	var golpeBalonSiguienteTickX = room.getBallPosition().x;
-	var golpeBalonSiguienteTickY = room.getBallPosition().y;
-	//room.sendAnnouncement (" ultimo X  :"+posBalonGolpeX + " ultimo y : " + posBalonGolpeY)
-	//room.sendAnnouncement("x en golpe : "+xgolpe +  " y en golpe : " + ygolpe);
+	if(balonGolpeado){ //se ejecuta despues de que el jugador pateo balon.
+		//guardo esta como el ultimo frame.
+		//Calculo posicion del balon en este frame, despues de que el jugador haya golpeado el balon.
+		var golpeBalonSiguienteTickX = room.getBallPosition().x;
+		var golpeBalonSiguienteTickY = room.getBallPosition().y;
+		//room.sendAnnouncement (" ultimo X  :"+posBalonGolpeX + " ultimo y : " + posBalonGolpeY)
+		//room.sendAnnouncement("x en golpe : "+xgolpe +  " y en golpe : " + ygolpe);
 
-	//console.log (" ultimo X guardado :"+posBalonGolpeX + " ultimo y : " + posBalonGolpeY)
-	//console.log("x en golpe : "+golpeBalonSiguienteTickX +  " y en golpe : " + golpeBalonSiguienteTickY);
-	//Resto la posicion actual del balon  con la posicion la pelota en el anterior frame, cuando golpeo el balon.
-	var restaX = posBalonGolpeX - golpeBalonSiguienteTickX; //frame inicio x- frame final x
-	var restaY = posBalonGolpeY - golpeBalonSiguienteTickY;//frame inicio y (pega balon) - frame final y (despues de pegar balon)
-	//console.log("X resta : "  + restaX + " y resta : " + restaY);
-	//room.sendAnnouncement("X resta : "  + restaX + " y resta : " + restaY);
-	//Segun la resta se la direccion del balon hacia d onde va
-	//Ahora ajusto gravedad a la bola segun la direccion a la que va el balon
-	ajustarGravedadBalon(restaX,restaY);
-	balonGolpeado = false;
-	pelotaMoviendoseConPowershot = true;
-	//agregar usando room.getScores().time -> da el tiempo actual del juego en segundos, se actualiza automaticamente.
-	tiempoBalonUltimaVezGolpeado = tiempoActual;
-  }
-  for (var i = 0; i < players.length; i++) {
-    var player = players[i];
-    /*var bcoef1 =  room.getPlayerDiscProperties(player.id).bCoef;
-		var invMas = room.getPlayerDiscProperties(player.id).invMass;
-		var daming = room.getPlayerDiscProperties(player.id).damping;
-		var accJug =  room.getPlayerDiscProperties(player.id).acceleration;
-		var kickAcc =  room.getPlayerDiscProperties(player.id).kickingAcceleration;
-		var kickDump = room.getPlayerDiscProperties(player.id).kickingDamping;
-		var kickSt =  room.getPlayerDiscProperties(player.id).kickStrength;
-		room.setPlayerDiscProperties(player.id, {invMass: 5});
-		room.sendAnnouncement("DATOS JUG: bcoef: " +bcoef1+" inv mass: "+invMas+" damping: "+daming+" jug acc: " +accJug+" kick acc : " + kickAcc +" kickDump : " + kickDump +
-				" kick st: " + kickSt);
-				*/
-	// Verifica si el jugador tiene una posición válida
-    if (player.position === null || player.position === undefined) {
-      continue; // Salta al siguiente jugador si no tiene una posición válida
-    }
-    var playerPosition = room.getPlayerDiscProperties(player.id);
-	//room.sendAnnouncement("x: "+playerPosition.x + "y : "+playerPosition.y);
-    // Calcula la distancia entre el jugador y la pelota
-    var distance = Math.sqrt(Math.pow(playerPosition.x - ballPosition.x, 2) + Math.pow(playerPosition.y - ballPosition.y, 2));
-
-	if(jugadorMasCercaBalon == null){
-		jugadorMasCercaBalon = player;
-		distanciaMasCercaBalon = distance;
-	}else{
-		if( distance < distanciaMasCercaBalon){
-			jugadorMasCercaBalon = player;
-			distanciaMasCercaBalon = distance;
-		}
+		//console.log (" ultimo X guardado :"+posBalonGolpeX + " ultimo y : " + posBalonGolpeY)
+		//console.log("x en golpe : "+golpeBalonSiguienteTickX +  " y en golpe : " + golpeBalonSiguienteTickY);
+		//Resto la posicion actual del balon  con la posicion la pelota en el anterior frame, cuando golpeo el balon.
+		var restaX = posBalonGolpeX - golpeBalonSiguienteTickX; //frame inicio x- frame final x
+		var restaY = posBalonGolpeY - golpeBalonSiguienteTickY;//frame inicio y (pega balon) - frame final y (despues de pegar balon)
+		//console.log("X resta : "  + restaX + " y resta : " + restaY);
+		//room.sendAnnouncement("X resta : "  + restaX + " y resta : " + restaY);
+		//Segun la resta se la direccion del balon hacia d onde va
+		//Ahora ajusto gravedad a la bola segun la direccion a la que va el balon
+		ajustarGravedadBalon(restaX,restaY,TipoEfecto.TIRO_POTENTE_CON_EFECTO);
+		balonGolpeado = false;
+		pelotaMoviendoseConPowershot = true;
+		//agregar usando room.getScores().time -> da el tiempo actual del juego en segundos, se actualiza automaticamente.
+		tiempoBalonUltimaVezGolpeado = tiempoActual;
 	}
-    // Actualiza la posesión del equipo correspondiente
-    if (distance < 50) {
-      if (player.team === 1) {
-        posesionEquipoA++;
-      } else if (player.team === 2) {
-        posesionEquipoB++;
-      }
-    }
-  }
-  	//2)
+	
+	var jugadorMasCercaBalon = null;
+	var distanciaMasCercaBalon = null;
+	actualizarJugadorMasCercanoBalon(jugadorMasCercaBalon,distanciaMasCercaBalon,players,ballPosition);
+	
+
     if(efectoPowerShot){ //pase efecto y tiro potente.
 		if(jugadorMasCercaBalon != null){
 			actualizarPowerShootJugador(jugadorMasCercaBalon,distanciaMasCercaBalon);
@@ -23220,13 +23209,13 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
     }   
 
 	if(pelotaMoviendoseConPowershot){ //despues del golpeo tiro potente con efecto.
-		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,2);
+		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,TipoEfecto.TIRO_POTENTE_CON_EFECTO);
 	}
 	if(pelotaMoviendoseConPaseEfecto){//despues del golpeo pase con efecto.
-		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,1);
+		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,TipoEfecto.PASE_CON_EFECTO);
 	}
   	PartidoArrancado = true;
-   if (whoTouchedLast != undefined) { 
+   	if (whoTouchedLast != undefined) { 
         if (ballCarrying.get(whoTouchedLast.name)) {
             ballCarrying.get(whoTouchedLast.name)[0] += 1/60;
         }
@@ -23239,7 +23228,6 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 	//verificar sus limites de mapa para asignarle los atributos.
 	// Obtener los jugadores red (team 1) y que tengan alguna posición asignada (gk, mco, dfc)
 	var jugadoresConPosicionesRed = listaJugadoresEstadisticasEnPartida.filter(jugador => jugador.jugador.team === 1 && (jugador.posicion.gk || jugador.posicion.mco || jugador.posicion.dfc));
-
 	// Obtener los jugadores blue (team 2) y que tengan alguna posición asignada (gk, mco, dfc)
 	var jugadoresConPosicionesBlue = listaJugadoresEstadisticasEnPartida.filter(jugador => jugador.jugador.team === 2 && (jugador.posicion.gk || jugador.posicion.mco || jugador.posicion.dfc));
 
@@ -23247,7 +23235,6 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 	if (gkRedLimiteEjeX != null && gkRedLimiteEjeX != null){
 		verificarJugadoresConPosiciones(jugadoresConPosicionesRed, jugadoresConPosicionesBlue);
 	}
-
 	if (RSRMap == true) {
 		updateGameStatus();
 		handleBallTouch();
@@ -23398,7 +23385,7 @@ function realSoccerRef() {
 			if (game.lastPlayAnnounced == true) {
 				room.pauseGame(true);
 				game.lastPlayAnnounced = false;
-    			teamPossFun();
+				PosesionBalonFun();
    		 		room.sendAnnouncement("███████████████████ " + teamRed + "  " + scorerNumber(room.getScores().red) + "      🞬      " + scorerNumber(room.getScores().blue) + "  " + teamBlue + " ███████████████████ ", null, 0xffd559, "normal", 1);
 			}
 			room.setDiscProperties(0, {xgravity: 0, ygravity: 0});
