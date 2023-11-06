@@ -141,7 +141,8 @@ var gkBlueLimiteEjeX = 270;//es por el mapa default de rs.
 
 const TIEMPO_TIRO_POTENTE = 1.85; //tiempo necesario para que el balon sea un tiro potente con efecto.
 const TIEMPO_PASE_CON_EFECTO = 1.2; //tiempo necesario para que el balon tenga solo comba.
-
+const TIEMPO_LIMITE_TIRO_POTENTE = 1.5; //Tiempo en que el balon terminara de ir con tiro potente
+const TIEMPO_LIMITE_PASE_CON_EFECTO = 1.2;//Tiempo en que el balon terminara de ir con pase con efecto
 
 //parametros que sirven solo para ajustar RS, por defecto pongo las medidas del mapa inicial al ejecutar el script(RS).
 //Largo de las lineas rojo/azul que aparecen en saques de banda.
@@ -6943,7 +6944,6 @@ function helpFun(player) {
   //message += '   Ver los resultados del torneo actual.\n\n';
   //message += '⯌ 👑 VER COMANDOS DEL ADMIN: !adminhelp\n';
   //message += '   Ver los comandos disponibles para los administradores.\n';
-  //message += '⯌ 👑 Comandos randoms : !sexo  -  !size [numero] \n\n';
   message += '⯌ 👑 Comandos  utiles : !afk  -  t mensaje  - expulsar [nombre] o expulsar [id jugador] \n\n';
   message += '⯌ 👑 Ver estadisticas: !me  - !poss   -  !jugadores   -  !ranking \n\n';
   message += '⯌ 👑 Elegir posicion GK : !gk \n\n';
@@ -20817,7 +20817,7 @@ function LinkDelScript(player) {
     	isTimeAddedShownseis = true;
 	}
     if (scores.time > 1 && !isTimeAddedShownseis) {
-    room.sendAnnouncement("   🏆    E S T A N    J U G A N D O  :       " + teamRed + "   vs   " + teamBlue, player, GeneradorColoresRandom, "normal", 0);
+    	room.sendAnnouncement("   🏆    E S T A N    J U G A N D O  :       " + teamRed + "   vs   " + teamBlue, player, GeneradorColoresRandom, "normal", 0);
     //room.sendAnnouncement("Escribe !resultados para ver cómo va el torneo.", player, GeneradorColoresRandom, "normal", 0);    
 		isTimeAddedShownseis = true;
     }
@@ -21073,18 +21073,27 @@ function autoBalanceTeams() {
 }
 //ListaDeJugadores esta actualizado cada que entra y sale un jugador del server.
 function buscarJugador(jugadorId){
-	for (var i = 0;i<ListaDeJugadores.length;i++){
+	var largo = ListaDeJugadores.length;
+	for (var i = 0, j = largo - 1 ; i < largo && j >= 0 ; i++,j--){
 		if(ListaDeJugadores[i].id == jugadorId){
 			return ListaDeJugadores[i];
+		}
+		if(ListaDeJugadores[j].id == jugadorId){
+			return ListaDeJugadores[j];
 		}
 	}
 	return null;
 }
 function buscarJugadorEstadisticas(id){
-	for (var i = 0;i<listaJugadoresEstadisticas.length;i++){
-		jugador = listaJugadoresEstadisticas[i].jugador;
+	var largo = listaJugadoresEstadisticas.length;
+	for (var i = 0, j = largo - 1 ; i<largo && j >= 0 ;i++,j--){
+		var jugador = listaJugadoresEstadisticas[i].jugador;
+		var jugador2 = listaJugadoresEstadisticas[j].jugador;
 		if(jugador.id == id){
 			return listaJugadoresEstadisticas[i];
+		}
+		if(jugador2.id == id){
+			return listaJugadoresEstadisticas[j];
 		}
 	}
 	return null;
@@ -21454,14 +21463,6 @@ room.onPlayerChat = function(player, message) {
 	if(message.toLowerCase().includes("https://discord.gg/") && !player.admin){
 		room.kickPlayer(player.id,"LINKS DISCORD = BAN",true);			 
 		room.sendAnnouncement(player.name +"baneado por compartir links ",null, 0xFF0000, "bold");
-		return false;
-	}
-	if (message.toLowerCase() == "!sexo"){
-		const players = room.getPlayerList();
-		//elije a otro jugador aleatorio
-		const jugadorAleatorio = players[Math.floor(Math.random() * players.length)];
-		//mensaje con ambos jugadores
-		room.sendAnnouncement(player.name +' quiere culearse a '+ jugadorAleatorio.name,null, 0xFF0000, "bold");
 		return false;
 	}
 	//verificar si el jugador es admin y el mensaje es solo !publicidadfin, entonces elimina la publicidad    programada
@@ -22335,41 +22336,66 @@ function getRandomAutoGoalEmoji() {
   return goalEmojis[Math.floor(Math.random() * goalEmojis.length)];
 }
 function buscarJugadorEnPartida(idJugador){
-	for (var i = 0 ; i < listaJugadoresEstadisticasEnPartida.length ;i++){
-		var jugador = listaJugadoresEstadisticasEnPartida[i].jugador
+	var largo = listaJugadoresEstadisticasEnPartida.length;
+	for (var i = 0 , j = largo-1; i < largo && j >= 0  ;i++,j--){
+		var jugador = listaJugadoresEstadisticasEnPartida[i].jugador;
+		var jugador2 = listaJugadoresEstadisticasEnPartida[j].jugador;
 		if(idJugador == jugador.id){
 			return listaJugadoresEstadisticasEnPartida[i];
+		}
+		if(idJugador == jugador2.id){
+			return listaJugadoresEstadisticasEnPartida[j];
 		}
 	}
 	return null;
 }
 function aumentarGolJugador(idJugadorAumentarGol){
-	for (var i = 0; i < listaJugadoresEstadisticas.length; i++) {
+	var largo = listaJugadoresEstadisticas.length;
+	for (var i = 0, j = largo - 1; i < largo && j >= 0 ; i++, j--) {
+
 		var jugador = listaJugadoresEstadisticas[i].jugador;
+		var jugador2 = listaJugadoresEstadisticas[j].jugador;
 		if (jugador.id === idJugadorAumentarGol) {
 		  listaJugadoresEstadisticas[i].estadisticas.goles += 1;
 		  return false; 
+		}
+		if(jugador2.id === idJugadorAumentarGol){
+			listaJugadoresEstadisticas[j].estadisticas.goles += 1;
+			return false;
 		}
 	}
 	return true;
 }
 
 function aumentarAutogolJugador(idJugadorAumentarGol){
-	for (var i = 0; i < listaJugadoresEstadisticas.length; i++) {
+	var largo = listaJugadoresEstadisticas.length;
+	for (var i = 0, j = largo - 1 ; i < largo && j >= 0 ; i++,j--) {
 		var jugador = listaJugadoresEstadisticas[i].jugador;
+		var jugador2 = listaJugadoresEstadisticas[j].jugador;
 		if (jugador.id === idJugadorAumentarGol) {
 		  listaJugadoresEstadisticas[i].estadisticas.autogoles += 1;
 		  return false; 
+		}
+		if (jugador2.id === idJugadorAumentarGol) {
+			listaJugadoresEstadisticas[j].estadisticas.autogoles += 1;
+			return false; 
 		}
 	}
 	return true;
 }
 function aumentarAsistenciaJugador(idJugadorAumentarGol){
-	for (var i = 0; i < listaJugadoresEstadisticas.length; i++) {
+	var largo = listaJugadoresEstadisticas.length;
+	for (var i = 0,j=largo-1 ; i < largo && j >=  0; i++,j--) {
 		var jugador = listaJugadoresEstadisticas[i].jugador;
+		var jugador2 = listaJugadoresEstadisticas[j].jugador;
+
 		if (jugador.id === idJugadorAumentarGol) {
 		  listaJugadoresEstadisticas[i].estadisticas.asistencias += 1;
 		  return false; 
+		}
+		if (jugador2.id === idJugadorAumentarGol) {
+			listaJugadoresEstadisticas[j].estadisticas.asistencias += 1;
+			return false; 
 		}
 	}
 	return true;
@@ -22648,17 +22674,6 @@ room.onTeamGoal = function(team) {
     announce(
       `${goalType}       ${toMathBoldSmall(teamRed)} ${redScore} 🆚 ${blueScore} ${toMathBoldSmall(teamBlue)}   A los ${goalTime} 🕒\n\n ${scorer}${assister}`
     );
-		//room.sendAnnouncement(" datos actualizados: ");
-	//mostrar resultados
-	/*
-	for (var j = 0 ; j < listaJugadoresEstadisticasEnPartida.length ; j++){
-		var jug  = listaJugadoresEstadisticasEnPartida[j].jugador;
-		var st = listaJugadoresEstadisticasEnPartida[j].estadisticas;
-		//room.sendAnnouncement(jug.name + " " + jug.id + " team:  " +jug.team);
-		//room.sendAnnouncement("G: " + st.goles + " AG : "+st.autogoles +" Ass: "+ st.asistencias + "kda: " +  st.kda);
-	}*/
-
-
 	game.lastKicker = undefined;
 	game.secondLastKicker = undefined;
 	game.lastKickerTeam = undefined;
@@ -22742,90 +22757,13 @@ function actualizarColoresBalon(tiempo) {
   if (tiempo < 1) {
     return false;
   }
-
   var indiceColor = tiempo >= TIEMPO_TIRO_POTENTE ? 1 : 0; // Si el tiempo es mayor o igual a 1.8 segundos, el índice es 1 (segundoColor), de lo contrario, es 0 (primerColor)
   var nuevoColor = listaColoresBalon[indiceColor];
-
   room.setDiscProperties(0, { color: nuevoColor });
   colorBalonCambiado = true;
 }
-
-
 var paseConEfecto = false;
 //3)
-/*
-function actualizarPowerShootJugador(player, distance) {
-  var playerId = player.id;
-  if(game.outStatus == "blueGK" || game.outStatus == "redGK" ||	game.outStatus == "redCK" || game.outStatus == "blueCK"  ){
-	//room.sendAnnouncement("estado : " + game.outStatus);
-	return false;
-  }
-  if (listaJugadoresTiempoConBalon[playerId] === undefined) {
-    // Agrego al jugador al objeto con tiempo con balón en 0, solo si no existe previamente
-    listaJugadoresTiempoConBalon[playerId] = 1/60;
-	return false;
-  }
-  //room.sendAnnouncement("Jugador mas cercano: " + player.name);
-  //room.sendAnnouncement("DIST: " + distance.toFixed(3) + " invMass pelota: " +room.getDiscProperties(0).invMass );
-  if (distance.toFixed(0) <= 24) { // Si el jugador toca el balón
-	var tiempoConBalon = listaJugadoresTiempoConBalon[playerId];
-	//si jugador es gk -> y tiempoConBalon >= 1 && <2 -> powerShoot = true. coloBalonCambiado = true.
-	//room.sendAnnouncement("tiempo: " + tiempoConBalon);
-	if(tiempoConBalon >= TIEMPO_PASE_CON_EFECTO && tiempoConBalon < TIEMPO_TIRO_POTENTE){ //solo efecto. no potencia.
-		if(!paseConEfecto){
-			room.sendAnnouncement(">= 1");
-			paseConEfecto = true;
-		}
-		listaJugadoresTiempoConBalon[playerId] += 1 / 60;
-		actualizarColoresBalon(tiempoConBalon);
-	}
-	else if (tiempoConBalon >= TIEMPO_TIRO_POTENTE){ //solo a jugadores que no sean gk
-		//room.sendAnnouncement(player.name + " POWERSHOOT ");
-		//viene de player on chat room -> aca
-		if(!powerShoot){ //Si pw esta en false, pw esta en true ahora y el set se ejecuta 1 sola vez.
-			//room.sendAnnouncement("tiro pw on");
-			//room.sendAnnouncement(">= 1.8");
-			room.setDiscProperties(0, { invMass : masaInvertidaBalon*MULTIPLICADOR_POWERSHOT }); 
-			powerShoot = true;
-			colorBalonCambiado = true;
-			paseConEfecto = false;
-			//ahora se agregara efecto al balon.
-	  	}
-		  actualizarColoresBalon(tiempoConBalon);
-
-    }else if(buscarJugadorEnPartida(player.id).posicion.gk && tiempoConBalon >= 1){// Se que es GK el jugador de cualquier team,pero es GK
-		room.sendAnnouncement("entro en if gk");
-		if(!powerShoot){ //Si pw esta en false, pw esta en true ahora y el set se ejecuta 1 sola vez.
-			//room.sendAnnouncement("tiro pw gk on");
-			room.setDiscProperties(0, { invMass : masaInvertidaBalon*MULTIPLICADOR_POWERSHOT , color: listaColoresBalon[listaColoresBalon.length-1]}); 
-			powerShoot = true;
-			colorBalonCambiado = true;
-			//ahora se agregara efecto al balon.
-	  	}
-	}	
-	else {
-//		actualizarColoresBalon(tiempoConBalon);
-
-		//room.sendAnnouncement(player.name + " TIEMPO CON BALON: " + listaJugadoresTiempoConBalon[playerId].toFixed(2) + " seg.");
-		// De lo contrario, aumenta el tiempo con balón del jugador en 1 tick (pero en segundos)
-    	listaJugadoresTiempoConBalon[playerId] += 1 / 60;
-		//room.setDiscProperties(0, { invMass : masaInvertidaBalon, color: colorBalonOriginal });
-    }
-  } else {
-    // De lo contrario, reinicio el tiempo con balón del jugador a 0 segundos
-    listaJugadoresTiempoConBalon[playerId] = 0;
-	if(colorBalonCambiado){
-		room.setDiscProperties(0, { color: colorBalonOriginal });
-		//room.sendAnnouncement("color reiniciado .");
-		colorBalonCambiado = false;
-	}
-	if(powerShoot){
-		//room.sendAnnouncement("reiniciado");
-		room.setDiscProperties(0, { invMass : masaInvertidaBalon, color: colorBalonOriginal });
-		powerShoot = false;
-	}
-  }
-}*/
 // Función para actualizar el poder del tiro del jugador
 function actualizarPowerShootJugador(player, distance) {
 	var playerId = player.id;
@@ -22910,44 +22848,47 @@ function ajustarGravedadBalon(restaX,restaY,tipoEfecto){
 	if(restaX > 0 && restaY < 0){ //0.05 en y. //original : 0.04 <- usar esta.
 		//room.sendAnnouncement("pelota abajo a la izq.");
 		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
-			room.sendAnnouncement("pase con efecto");
+			//room.sendAnnouncement("pase con efecto");
 			xgravityPoner = -0.01;
 			ygravityPoner = -0.04;
 		}else{
-			room.sendAnnouncement("tiro potente");
+			//room.sendAnnouncement("tiro potente");
 			xgravityPoner = -0.04;
-			ygravityPoner = -0.05;
+			ygravityPoner = -0.04;
 		}
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
+	//	room.sendAnnouncement("xg: " + xgravityPoner + " yg: " + ygravityPoner);
 		return true;
 	}else if (restaX > 0 && restaY > 0){ //x -> + importante
 		//room.sendAnnouncement("pelota arriba a la izq.");
 		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
-			room.sendAnnouncement("pase con efecto");
+		//	room.sendAnnouncement("pase con efecto");
 			xgravityPoner = -0.01;
 			ygravityPoner = 0.04;
 		}else{
-			room.sendAnnouncement("tiro potente");
+			//room.sendAnnouncement("tiro potente");
 
 			xgravityPoner = -0.04;
-			ygravityPoner = 0.05;
+			ygravityPoner = 0.04;
 		}
 		
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
+	//	room.sendAnnouncement("xg: " + xgravityPoner + " yg: " + ygravityPoner);
 		return true;
 	}else if(restaX < 0 && restaY > 0){ //x -> + importante.
 		//room.sendAnnouncement("pelota arriba a la der.")
 		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
 			xgravityPoner = 0.01;
 			ygravityPoner = 0.04;
-			room.sendAnnouncement("pase con efecto");
+		//	room.sendAnnouncement("pase con efecto");
 
 		}else{
-			room.sendAnnouncement("tiro potente");
+			//room.sendAnnouncement("tiro potente");
 
 			xgravityPoner = 0.04;
-			ygravityPoner = 0.05;
+			ygravityPoner = 0.04;
 		}
+		//room.sendAnnouncement("xg: " + xgravityPoner + " yg: " + ygravityPoner);
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
 		return true;
 	}else if (restaX < 0 && restaY < 0){
@@ -22955,13 +22896,14 @@ function ajustarGravedadBalon(restaX,restaY,tipoEfecto){
 		if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
 			xgravityPoner = 0.01;
 			ygravityPoner = -0.04;
-			room.sendAnnouncement("pase con efecto");
+		//	room.sendAnnouncement("pase con efecto");
 
 		}else{
-			room.sendAnnouncement("tiro potente");
+		//	room.sendAnnouncement("tiro potente");
 			xgravityPoner = 0.04;
-			ygravityPoner = -0.05;
+			ygravityPoner = -0.04;
 		}
+		//room.sendAnnouncement("xg: " + xgravityPoner + " yg: " + ygravityPoner);
 		room.setDiscProperties(0,{ xgravity : xgravityPoner, ygravity : ygravityPoner });
 		return true;
 	} //si restaX 0 resta Y es igual a 0 es porque la pelota va recta totalmente.
@@ -23013,6 +22955,7 @@ var tiempoBalonUltimaVezGolpeadoConPaseEfecto = 0 ;
 function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,tipoEfecto){
 	if(!RSRMap ){
 		if(pelotaTocaParedMapa(ballPosition.x,ballPosition.y)){
+			
 			//room.sendAnnouncement("pelota toco pared.");
 			room.setDiscProperties(0,{xgravity : 0, ygravity :0});
 			if(tipoEfecto == TipoEfecto.TIRO_POTENTE_CON_EFECTO){
@@ -23034,15 +22977,17 @@ function verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tie
 		}
 		return true;
 	}
-	var dif ;
+	var dif = 0 ;
 	var limiteTiempo = 0;
-	if(numEfecto == 2){
-		 dif = tiempoActual-tiempoBalonUltimaVezGolpeado;
-		 limiteTiempo = TIEMPO_TIRO_POTENTE;
-	}else if(numEfecto == 1){
-		 dif = tiempoActual-tiempoBalonUltimaVezGolpeadoConPaseEfecto;
-		 limiteTiempo = TIEMPO_PASE_CON_EFECTO;
+
+	if(tipoEfecto == TipoEfecto.TIRO_POTENTE_CON_EFECTO){
+		dif = tiempoActual-tiempoBalonUltimaVezGolpeado;
+		limiteTiempo = TIEMPO_LIMITE_TIRO_POTENTE;
+	}else if(tipoEfecto == TipoEfecto.PASE_CON_EFECTO){
+		dif = tiempoActual-tiempoBalonUltimaVezGolpeadoConPaseEfecto;
+		limiteTiempo = TIEMPO_LIMITE_PASE_CON_EFECTO;
 	}
+//	room.sendAnnouncement("dif:"+ dif +"tiempo lim: "  + limiteTiempo);
 	if(dif >= limiteTiempo ){
 		//room.sendAnnouncement("pelota paso tiempo max : " + limiteTiempo);
 		//room.sendAnnouncement("tiempo >= 1.8 " + dif + " seg.");
@@ -23106,7 +23051,7 @@ function verificarJugadoresConPosiciones(jugadoresRedPosiciones, jugadoresBluePo
     // Puedes realizar cualquier verificación o procesamiento adicional que necesites con estas listas
     // Por ejemplo, contar cuántos jugadores hay en cada posición o realizar alguna acción específica.
 }
-function actualizarJugadorMasCercanoBalon(jugadorMasCercaBalon,distanciaMasCercaBalon,players,ballPosition){
+function actualizarJugadorMasCercanoBalon(jugadorCercanoDatos,players,ballPosition){
 	for (var i = 0; i < players.length; i++) {
 		var player = players[i];
 		/*var bcoef1 =  room.getPlayerDiscProperties(player.id).bCoef;
@@ -23129,16 +23074,15 @@ function actualizarJugadorMasCercanoBalon(jugadorMasCercaBalon,distanciaMasCerca
 		// Calcula la distancia entre el jugador y la pelota
 		var distance = Math.sqrt(Math.pow(playerPosition.x - ballPosition.x, 2) + Math.pow(playerPosition.y - ballPosition.y, 2));
 		//Obtengo jugador mas cercano a balon
-		if(jugadorMasCercaBalon == null){
-			jugadorMasCercaBalon = player;
-			distanciaMasCercaBalon = distance;
+		if(jugadorCercanoDatos.jugadorMasCercaBalon == null){
+			jugadorCercanoDatos.jugadorMasCercaBalon = player;
+			jugadorCercanoDatos.distanciaMasCercaBalon = distance;
 		}else{
-			if( distance < distanciaMasCercaBalon){
-				jugadorMasCercaBalon = player;
-				distanciaMasCercaBalon = distance;
+			if( distance < jugadorCercanoDatos.distanciaMasCercaBalon){
+				jugadorCercanoDatos.jugadorMasCercaBalon = player;
+				jugadorCercanoDatos.distanciaMasCercaBalon = distance;
 			}
-		}
-		
+		}		
 		// Actualiza la posesión del equipo correspondiente
 		if (distance <= DISTANCIA_TOCAR_BALON) { //si toca balon.
 			if (player.team === 1) {
@@ -23149,7 +23093,6 @@ function actualizarJugadorMasCercanoBalon(jugadorMasCercaBalon,distanciaMasCerca
 		}
 	}
 }
-  
 pelotaMoviendoseConPaseEfecto = false;
 //es room.onGametick -> se ejecuta constantemente caundo la partida esta en curso.
 room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
@@ -23158,8 +23101,7 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 	var players = room.getPlayerList();
 	var ballPosition = room.getBallPosition();
 	var tiempoActual = room.getScores().time;
-  
-  //room.sendAnnouncement("time: "+room.getScores().time);
+    //room.sendAnnouncement("time: "+room.getScores().time);
 	//room.sendAnnouncement("x: " + ballPosition.x + " y  : " + ballPosition.y);
 	//para la comba.
 	///&& efectoComba
@@ -23180,9 +23122,6 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 		var golpeBalonSiguienteTickY = room.getBallPosition().y;
 		//room.sendAnnouncement (" ultimo X  :"+posBalonGolpeX + " ultimo y : " + posBalonGolpeY)
 		//room.sendAnnouncement("x en golpe : "+xgolpe +  " y en golpe : " + ygolpe);
-
-		//console.log (" ultimo X guardado :"+posBalonGolpeX + " ultimo y : " + posBalonGolpeY)
-		//console.log("x en golpe : "+golpeBalonSiguienteTickX +  " y en golpe : " + golpeBalonSiguienteTickY);
 		//Resto la posicion actual del balon  con la posicion la pelota en el anterior frame, cuando golpeo el balon.
 		var restaX = posBalonGolpeX - golpeBalonSiguienteTickX; //frame inicio x- frame final x
 		var restaY = posBalonGolpeY - golpeBalonSiguienteTickY;//frame inicio y (pega balon) - frame final y (despues de pegar balon)
@@ -23196,29 +23135,28 @@ room[_0x3c81f9(0x19c)] = function () { // Es el room.ongametick
 		//agregar usando room.getScores().time -> da el tiempo actual del juego en segundos, se actualiza automaticamente.
 		tiempoBalonUltimaVezGolpeado = tiempoActual;
 	}
-	
-	var jugadorMasCercaBalon = null;
-	var distanciaMasCercaBalon = null;
-	actualizarJugadorMasCercanoBalon(jugadorMasCercaBalon,distanciaMasCercaBalon,players,ballPosition);
-	
 
+	var jugadorCercanoDatos = {jugadorMasCercaBalon: null, distanciaMasCercaBalon :null};
+	actualizarJugadorMasCercanoBalon(jugadorCercanoDatos,players,ballPosition);
     if(efectoPowerShot){ //pase efecto y tiro potente.
-		if(jugadorMasCercaBalon != null){
-			actualizarPowerShootJugador(jugadorMasCercaBalon,distanciaMasCercaBalon);
+		if(jugadorCercanoDatos.jugadorMasCercaBalon != null){
+			actualizarPowerShootJugador(jugadorCercanoDatos.jugadorMasCercaBalon,jugadorCercanoDatos.distanciaMasCercaBalon);
 		}
     }   
+	
 
 	if(pelotaMoviendoseConPowershot){ //despues del golpeo tiro potente con efecto.
-		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,TipoEfecto.TIRO_POTENTE_CON_EFECTO);
+		//room.sendAnnouncement("pelota moviendo con pw");
+		verificarSiAjustarGravedadBalon(jugadorCercanoDatos.distanciaMasCercaBalon,ballPosition,tiempoActual,TipoEfecto.TIRO_POTENTE_CON_EFECTO);
 	}
 	if(pelotaMoviendoseConPaseEfecto){//despues del golpeo pase con efecto.
-		verificarSiAjustarGravedadBalon(distanciaMasCercaBalon,ballPosition,tiempoActual,TipoEfecto.PASE_CON_EFECTO);
+		verificarSiAjustarGravedadBalon(jugadorCercanoDatos.distanciaMasCercaBalon,ballPosition,tiempoActual,TipoEfecto.PASE_CON_EFECTO);
 	}
   	PartidoArrancado = true;
    	if (whoTouchedLast != undefined) { 
         if (ballCarrying.get(whoTouchedLast.name)) {
             ballCarrying.get(whoTouchedLast.name)[0] += 1/60;
-        }
+        } 
     }
     updateTimeOnHalves();
 	LinkDelScript();
@@ -23261,8 +23199,7 @@ function scorerNumber(num){
     }while(num > 0);
     for (var i = reversedDigits.length; i-- > 0; ){
         result += ScoresNumbers.substr(reversedDigits[i]*3, 3);
-    }
-   
+    }  
     return result;
 }
 
@@ -24147,7 +24084,7 @@ function asignarEquipoJugadorNuevo(player,redTeamCount,blueTeamCount){
 		room.setPlayerTeam(player.id, 2); // Equipo azul (team = 2)
 	}
 }
-
+   
 let connections = []
 //bandera entrar join
 room.onPlayerJoin = function(player) {
